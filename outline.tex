@@ -55,6 +55,20 @@ preprint,
 %%height=10in,a5paper,hmargin={3cm,0.8in},
 %]{geometry}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  PREAMBLES %%%%%%%%%
+\newcommand{\ud}[1]{{#1^{\dagger}}}
+\newcommand{\bra}[1]{\left\langle #1\right|}
+\newcommand{\ket}[1]{\left| #1\right\rangle}
+\newcommand\Tr{\mathrm{Tr}}
+\newcommand{\braket}[2]{\langle #1 \mid #2 \rangle}
+\newcommand\d{\mathrm{d}}
+\newcommand\I{\mathbb{I}}
+\newcommand{\avg}[1]{\left< #1 \right>}
+%%%%%%  PREAMBLES %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
 %\preprint{APS/123-QED}
@@ -94,7 +108,7 @@ preprint,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-PLACEHOLDER
+ABSTRACT PLACEHOLDER
 % \begin{description}
 % \item[Usage]
 % Secondary publications and information retrieval purposes.
@@ -116,6 +130,11 @@ PLACEHOLDER
 
 \section{\label{introduction}Introduction}
 
+\begin{enumerate}
+    \item Work done before, but the physics is not clear
+    \item Decompose the system into Rabi oscillations
+\end{enumerate}
+
 
 \section{\label{review}Brief Review of this Topic}
 
@@ -133,16 +152,36 @@ PLACEHOLDER
 \end{equation}
 
 
+
 \begin{equation}
-\begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix}.
+\begin{pmatrix} \ket{\nu_1} \\ \ket{\nu_2} \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \ket{\nu_{b1}} \\ \ket{\nu_{b2}} \end{pmatrix}.
 \end{equation}
 
 
+
 \begin{equation}
-H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \sum_{n_1} \cdots \sum_{n_N} \begin{pmatrix} 0 & B_{n_1,\cdots,n_N} \Phi_{n_1,\cdots, n_N} e^{i \left( \sum_{a} n_a k_a   \right)x} \\ B_{n_1,\cdots,n_N}^* \Phi_{n_1,\cdots, n_N}^* e^{-i \left( \sum_{a} n_a k_a   \right)x} & 0 \end{pmatrix}.
+ H = -\frac{\sigma_3}{2} - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta} \\ e^{-2 i\eta } & 0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix},
 \end{equation}
+
+with
+
+\begin{equation}
+ \eta(x) =  \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.
+\end{equation}
+
+
+
 
 \subsection{Modes Method}
+
+\begin{align}
+H =& -\frac{\omega_m}{2} \sigma_3 \nonumber \\
+&+ \frac{1}{2} \sum_{n_1} \cdots \sum_{n_N} \begin{pmatrix} 0 & B_{n_1,\cdots,n_N} \Phi_{n_1,\cdots, n_N} e^{i \left( \sum_{a} n_a k_a   \right)x} \\ B_{n_1,\cdots,n_N}^* \Phi_{n_1,\cdots, n_N}^* e^{-i \left( \sum_{a} n_a k_a   \right)x} & 0 \end{pmatrix}.
+\end{align}
+
+
+
+
 
 \subsection{Rabi Oscillation}
 
@@ -178,13 +217,8 @@ H = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \sum_{n_1} \cdots \sum_{n_N} \beg
 
 
 
-\subsection{Introduction}
 
 
-\begin{enumerate}
-    \item Work done before, but the physics is not clear
-    \item Decompose the system into Rabi oscillations
-\end{enumerate}
 
 
 
