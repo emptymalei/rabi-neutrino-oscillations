@@ -65,6 +65,8 @@ preprint,
 \newcommand{\braket}[2]{\langle #1 \mid #2 \rangle}
 \newcommand\I{\mathbb{I}}
 \newcommand{\avg}[1]{\left< #1 \right>}
+\newcommand{\sech}[1]{{\operatorname{sech}{#1}}}
+\newcommand{\csch}[1]{{\operatorname{csch}{#1}}}
 %%%%%%  PREAMBLES %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -135,10 +137,114 @@ ABSTRACT PLACEHOLDER
 \end{enumerate}
 
 
-\section{\label{review}Brief Review of this Topic}
+\section{\label{rabi}Rabi Oscillations}
 
 
-Matter profile
+%% 
+
+\begin{itemize}
+    \item Rabi oscillations
+    \item Width, detuning, and Rabi frequency, and their significance. (Relation to amplitude and oscillation wavelength)
+    \item Interference: destruction
+\end{itemize}
+
+
+{\bf Rabi oscillation}
+
+\begin{equation}
+H_{\mathrm R} = -\frac{\omega_m}{2} \sigma_3 - A \cos(k t) \sigma_1
+\end{equation}
+
+Important mode
+
+\begin{align}
+H_{\mathrm R}' &= -\frac{\omega_m}{2} \sigma_3 - \frac{A}{2} \begin{pmatrix}0 & e^{i k t} \\ e^{-i k t} & 0 \end{pmatrix} \\
+& =  -\frac{\omega_m}{2} \sigma_3 - \frac{A}{2} \cos(kt) \sigma_1 + \frac{A}{2} \sin (kt) \sigma_2.
+\end{align}
+
+Probability
+
+\begin{equation}
+P(x) = \frac{\lvert A\rvert^2}{ \Omega_R^2 }  \sin^2 \left( \Omega_R x/2 \right).
+\end{equation}
+
+Rabi frequency
+
+\begin{equation}
+\Omega_{\mathrm R} = \sqrt{ \lvert A\rvert^2 + (k - \omega_m)^2 },
+\end{equation}
+
+$k - \omega_m$ is the detuning.
+
+
+
+
+\begin{enumerate}
+    \item Significance of $A$, detuning $k - \omega_m$, and Rabi frequency $\Omega_{\mathrm R}$.
+        \begin{itemize}
+            \item $\lvert A \rvert$ is the width of the resonance.
+            \item $Q = \lvert A\rvert/\lvert k - \omega_m \rvert$ determines how close to exact resonance.
+            \item $\Omega_{\mathrm R}$ determines the oscillation wavelength. The order of the wavelength is determined by the width, as long as the system is not too far away from exact resonance.
+        \end{itemize}
+    \item Interference: destruction
+        \begin{itemize}
+            \item First mode on exact resonance,  $k_1 = \omega_m$
+            \item A slow mode will change the energy gap, $\omega_m' = \sqrt{\omega_m^2 + A_2^2} \approx \omega_m + \frac{A_2^2}{2\omega_m}$
+            \item A plot showing that this approximation actually works.
+        \end{itemize}
+\end{enumerate}
+
+
+
+
+To show the effect of a slow rotating perturbation, we construct system of two perturbations.
+
+\begin{equation}
+-\frac{\omega_m}{2} \sigma_3 - \frac{1}{2} \left(A_1 \cos(k_1 t) + A_2 \cos(k_2t) \right) \sigma_1 + \frac{1}{2} \left( A_1 \sin (k_1t) + A_2 \cos(k_2t) \right) \sigma_2.
+\end{equation}
+
+with $k_1 \gg k_2$
+
+\begin{equation}
+\omega_m' = \sqrt{\omega_m^2 + A_2^2}
+\end{equation}
+
+Predict the critical $A_2$ that significantly reduces the transition amplitude,
+
+\begin{equation}
+\lvert k_1 - \omega_m' \rvert \gtrsim \text{width of resonance}.
+\end{equation}
+
+
+
+
+Figures showing that this hypothesis is true.
+
+
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\textwidth]{assets/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png}
+                \caption{Reduction of transition amplitude. The mode at resonance; Adding a second mode could destroy the resonance if the condition is satisfied. {\bf Should also add in the exact resonance (with only one perturbation)} }
+                \label{fig-resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field}
+\end{figure}
+
+
+
+
+
+\section{\label{stimulated}Stimulated Neutrino Oscillations}
+
+
+
+\subsection{Neutrino oscillations in matter}
+
+\begin{itemize}
+    \item The formalism
+    \item What has been found before
+\end{itemize}
+
+
+    Matter profile
 
 \begin{equation}
     \lambda(x) = \lambda_0 + \sum_{n=1}^{N} \delta \lambda_n (x),
@@ -158,7 +264,18 @@ Hamiltonian becomes
     H^{(m)} = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin 2 \theta_m \sigma_1.
 \end{equation}
 
-Apply rotation
+
+\subsection{To Make connections to Rabi oscillation}
+
+\begin{itemize}
+    \item Transofrmation
+    \item Jacobi-Anger expansion
+    \item Interpretation of each mode
+\end{itemize}
+
+
+A New Basis: Hamiltonian looks like a Rabi oscillation but with some complicated perturbations.
+    Apply rotation
 
 
 \begin{equation}
@@ -178,19 +295,198 @@ with
 \end{equation}
 
 
-
-
-\subsection{Modes Method}
-
+\subsubsection{Jacobi-Anger Expansion: Write the system into a superposition of Rabi oscillations.}
+    
+    
 \begin{align}
 H =& -\frac{\omega_m}{2} \sigma_3 \nonumber \\
-&+ \frac{1}{2} \sum_{n_1} \cdots \sum_{n_N} \begin{pmatrix} 0 & B_{n_1,\cdots,n_N} \Phi_{n_1,\cdots, n_N} e^{i \left( \sum_{a} n_a k_a   \right)x} \\ B_{n_1,\cdots,n_N}^* \Phi_{n_1,\cdots, n_N}^* e^{-i \left( \sum_{a} n_a k_a   \right)x} & 0 \end{pmatrix}.
+&+ \frac{1}{2} \sum_{n_1} \cdots \sum_{n_N} \begin{pmatrix} 0 & B_{n_1,\cdots,n_N} \Phi_{n_1,\cdots, n_N} e^{i \left( \sum_{a} n_a k_a   \right)x} \\ B_{n_1,\cdots,n_N}^* \Phi_{n_1,\cdots, n_N}^* e^{-i \left( \sum_{a} n_a k_a   \right)x} & 0 \end{pmatrix},
 \end{align}
+
+where
+
+\begin{align}
+B_{n_1,\cdots,n_N} &= -(-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+\Phi_{n_1,\cdots, n_N} &= e^{i\left( \sum_a n_a \phi_a \right)}.
+\end{align}
+
+
+For each mode the solution is
+
+\begin{equation}
+P = \lvert \psi_2 \rvert^2 = \lvert \psi_{b2} \rvert^2 = \frac{\lvert B_{n_1,\cdots,n_N} \rvert}{\lvert B_{n_1,\cdots,n_N} \rvert + (\sum_i n_i k_i - \omega_m )^2}.
+\end{equation}
 
 
 Single perturbation modes (width at large n limit)
 
-\begin{figure}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{assets/placeholder.jpg}
+    \caption{Single perturbation: Resonance, modes, and width of each mode}
+    \label{fig:single-perturbation-modes}
+\end{figure}
+
+
+Show that the width drops for higher orders probably using
+
+\begin{equation}
+J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }.
+\end{equation}
+
+
+
+
+
+    
+
+\subsection{The Important Factors}
+
+
+
+\begin{itemize}
+            \item Width of resonance $B$
+            \item Deviation from exact resonance $g$, called {\bf{detuning}} (value).
+            \item Oscillation wavelength of mode (determined by Rabi frequency, which is in turn related to $B$ and $g$ ) compared to size of physical system
+\end{itemize}
+
+
+
+
+
+
+
+\section{\label{conclusions}Conclusions}
+
+%%%% Do not repeat what has been said
+
+
+\begin{itemize}
+    \item A simple interpretation with some caveats.
+    \item Realistic matter profile probably destroys the resonance due to this shift in the energy gap.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% APPENDIX  %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage\null\thispagestyle{empty}
+\vspace{20em}
+This page is intentionally left blank
+\newpage
+
+
+\clearpage
+\appendix
+\section{Interesting Results}
+
+
+\begin{itemize}
+    \item
+Width drops for higher orders (for the systems we have)
+    
+    \item
+Width and detuning $\to$ Q Value $\to$ Amplitude of oscillation
+    
+    \item
+Width and detuning $\to$ Oscillation wavelength $\to$ Can be used to compare with the physical system
+
+    \item
+Interference between different modes/perturbations
+
+\end{itemize}
+
+
+
+
+\clearpage
+
+\section{Keypoints}
+
+
+
+\begin{itemize}
+    \item Hamiltonian in matter basis:
+    
+    Matter profile
+
+\begin{equation}
+    \lambda(x) = \lambda_0 + \sum_{n=1}^{N} \delta \lambda_n (x),
+\end{equation}
+
+where
+
+\begin{align}
+    \lambda_0 &= \sqrt{2}G_F n_{e0} \\
+    \delta \lambda_n(x) &= \sqrt{2}G_F \delta n_{e,n}(x)
+\end{align}
+
+
+Hamiltonian becomes
+
+\begin{equation}
+    H^{(m)} = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin 2 \theta_m \sigma_1.
+\end{equation}
+    
+    
+    \item A New Basis: Hamiltonian looks like a Rabi oscillation but with some complicated perturbations.
+    Apply rotation
+
+
+\begin{equation}
+\begin{pmatrix} \ket{\nu_1} \\ \ket{\nu_2} \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & e^{i \eta (x)}  \end{pmatrix} \begin{pmatrix} \ket{\nu_{b1}} \\ \ket{\nu_{b2}} \end{pmatrix}.
+\end{equation}
+
+Hamiltonian
+
+\begin{equation}
+ H = -\frac{\sigma_3}{2} - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta(x)} \\ e^{-2 i\eta(x) } & 0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix},
+\end{equation}
+
+with
+
+\begin{equation}
+ \eta(x) =  \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.
+\end{equation}
+
+    \item Jacobi-Anger Expansion: Write the system into a superposition of Rabi oscillations.
+    
+    
+\begin{align}
+H =& -\frac{\omega_m}{2} \sigma_3 \nonumber \\
+&+ \frac{1}{2} \sum_{n_1} \cdots \sum_{n_N} \begin{pmatrix} 0 & B_{n_1,\cdots,n_N} \Phi_{n_1,\cdots, n_N} e^{i \left( \sum_{a} n_a k_a   \right)x} \\ B_{n_1,\cdots,n_N}^* \Phi_{n_1,\cdots, n_N}^* e^{-i \left( \sum_{a} n_a k_a   \right)x} & 0 \end{pmatrix},
+\end{align}
+
+where
+
+\begin{align}
+B_{n_1,\cdots,n_N} &= -(-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+\Phi_{n_1,\cdots, n_N} &= e^{i\left( \sum_a n_a \phi_a \right)}.
+\end{align}
+
+
+For each mode the solution is
+
+\begin{equation}
+P = \lvert \psi_2 \rvert^2 = \lvert \psi_{b2} \rvert^2 = \frac{\lvert B_{n_1,\cdots,n_N} \rvert}{\lvert B_{n_1,\cdots,n_N} \rvert + (\sum_i n_i k_i - \omega_m )^2}.
+\end{equation}
+
+
+Single perturbation modes (width at large n limit)
+
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{assets/placeholder.jpg}
     \caption{Single perturbation: Resonance, modes, and width of each mode}
@@ -201,7 +497,11 @@ Single perturbation modes (width at large n limit)
 
 
 
-\subsection{Rabi Oscillation}
+    
+    \item Each mode can be solved and explained using Rabi oscillation. Slightly different from Rabi oscillation but approximately true.
+    
+    
+    
 
 
 
@@ -222,13 +522,35 @@ Probability
 P(x) = \frac{\lvert A\rvert^2}{ \lvert A\rvert^2 + (k - \omega_m)^2 }  \sin^2 \left( \sqrt{ \lvert A\rvert^2 + (k - \omega_m)^2 } x/2 \right).
 \end{equation}
 
+Rabi frequency
+
+\begin{equation}
+\Omega_{\mathrm R} = \sqrt{ \lvert A\rvert^2 + (k - \omega_m)^2 }.
+\end{equation}
 
 
 
 
-\section{Destruction Effect}
+\begin{enumerate}
+    \item Significance of $A$.
+    \item Why each mode is a Rabi oscillation? \bf{ Requires some really convincing evidence that each mode is really close to a Rabi oscillation. }
+\end{enumerate}
 
-Construct system of two perturbations
+    
+    
+    
+    \item Whether a mode is important depends on several factors.
+        \begin{itemize}
+            \item Width of resonance $B$
+            \item Deviation from exact resonance $g$, called {\bf{detuning}} (value).
+            \item Oscillation wavelength of mode (determined by Rabi frequency, which is in turn related to $B$ and $g$ ) compared to size of physical system
+        \end{itemize}
+    \item Interference between each modes can cause destruction.
+        \begin{itemize}
+            \item Slow rotating perturbation
+            
+            
+            Construct system of two perturbations
 
 \begin{equation}
 -\frac{\omega_m}{2} \sigma_3 - \frac{1}{2} \left(A_1 \cos(k_1 t) + A_2 \cos(k_2t) \right) \sigma_1 + \frac{1}{2} \left( A_1 \sin (k_1t) + A_2 \cos(k_2t) \right) \sigma_2.
@@ -256,32 +578,10 @@ Figures showing that this hypothesis is true.
 \end{figure}
 
 
-
-\clearpage
-\appendix
-\section{Keypoints}
-
-
-
-\begin{itemize}
-    \item A New Basis: Hamiltonian looks like a Rabi oscillation but with some complicated perturbations.
-    \item Jacobi-Anger Expansion: Write the system into a superposition of Rabi oscillations.
-    \item Each mode can be solved and explained using Rabi oscillation. Slightly different from Rabi oscillation but approximately true.
-    \item Whether a mode is important depends on several factors.
-        \begin{itemize}
-            \item Width of resonance $B$
-            \item Deviation from exact resonance $g$
-            \item Oscillation wavelength of mode (related to $B$ and $g$ ) compared to size of physical system
-        \end{itemize}
-    \item Interference between each modes can cause destruction.
-        \begin{itemize}
-            \item Slow rotating perturbation
         \end{itemize}
     
 \end{itemize}
     
-
-
 
 
 
