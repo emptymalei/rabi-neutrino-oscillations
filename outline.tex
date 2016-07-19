@@ -152,64 +152,70 @@ ABSTRACT PLACEHOLDER
 {\bf Rabi oscillation}
 
 \begin{equation}
-H_{\mathrm R} = -\frac{\omega_m}{2} \sigma_3 - A \cos(k t) \sigma_1
+H_{\mathrm R} = -\frac{\omega_m}{2} \sigma_3 - \frac{1}{2}A_1 \cos(k_1 x) \sigma_1 + \frac{1}{2} A_1 \sin(k_1 x) \sigma_2,
 \end{equation}
 
-Important mode
+which is equivalent to
 
-\begin{align}
-H_{\mathrm R}' &= -\frac{\omega_m}{2} \sigma_3 - \frac{A}{2} \begin{pmatrix}0 & e^{i k t} \\ e^{-i k t} & 0 \end{pmatrix} \\
-& =  -\frac{\omega_m}{2} \sigma_3 - \frac{A}{2} \cos(kt) \sigma_1 + \frac{A}{2} \sin (kt) \sigma_2.
-\end{align}
+\begin{equation}
+H_{\mathrm R} = -\frac{\omega_m}{2} \sigma_3 - \frac{A_1}{2} \begin{pmatrix}0 & e^{i k_1 x} \\ e^{-i k_1 x} & 0 \end{pmatrix} 
+\end{equation}
+
 
 Probability
 
 \begin{equation}
-P(x) = \frac{\lvert A\rvert^2}{ \Omega_R^2 }  \sin^2 \left( \Omega_R x/2 \right).
+P(x) = \frac{\lvert A_1 \rvert^2}{ \Omega_R^2 }  \sin^2 \left( \Omega_R x/2 \right).
 \end{equation}
 
 Rabi frequency
 
 \begin{equation}
-\Omega_{\mathrm R} = \sqrt{ \lvert A\rvert^2 + (k - \omega_m)^2 },
+\Omega_{\mathrm R} = \sqrt{ \lvert A_1 \rvert^2 + (k_1 - \omega_m)^2 },
 \end{equation}
 
-$k - \omega_m$ is the detuning.
+$k_1 - \omega_m$ is the detuning.
 
 
 
 
 \begin{enumerate}
-    \item Significance of $A$, detuning $k - \omega_m$, and Rabi frequency $\Omega_{\mathrm R}$.
+    \item Significance of $A_1$, detuning $k_1 - \omega_m$, and Rabi frequency $\Omega_{\mathrm R}$.
         \begin{itemize}
-            \item $\lvert A \rvert$ is the width of the resonance.
-            \item $Q = \lvert A\rvert/\lvert k - \omega_m \rvert$ determines how close to exact resonance.
+            \item $\lvert A_1 \rvert$ is the width of the resonance.
+            \item $Q = \lvert k_1 - \omega_m \rvert/\lvert A_1 \rvert$ (relative detuning?) determines how close to exact resonance.
             \item $\Omega_{\mathrm R}$ determines the oscillation wavelength. The order of the wavelength is determined by the width, as long as the system is not too far away from exact resonance.
         \end{itemize}
     \item Interference: destruction
         \begin{itemize}
-            \item First mode on exact resonance,  $k_1 = \omega_m$
-            \item A slow mode will change the energy gap, $\omega_m' = \sqrt{\omega_m^2 + A_2^2} \approx \omega_m + \frac{A_2^2}{2\omega_m}$
+            \item First mode is on exact resonance,  $k_1 = \omega_m$.
+            \item Add in a new perturbation with $k_2\ll k_1$, so that
+            
+            \begin{equation}
+            H_{\mathrm R}' = -\frac{\omega_m}{2} \sigma_3 - \frac{1}{2}( A_1 \cos(k_1 x) + A_2 \cos(k_2 x)) \sigma_1 + \frac{1}{2} ( A_1 \sin(k_1 x) + A_2 \sin(k_2 x)   ) \sigma_2.
+            \end{equation}
+            
+            \item The slow mode will change the energy gap, $\omega_m' = \sqrt{\omega_m^2 + A_2^2} \approx \omega_m + \frac{A_2^2}{2\omega_m}$, to significantly decrease the amplitude we need a large $A_2$ which satisfies $\lvert \omega_m' - k_1 \rvert \gg A_1$.
             \item A plot showing that this approximation actually works.
         \end{itemize}
 \end{enumerate}
 
 
-
-
-To show the effect of a slow rotating perturbation, we construct system of two perturbations.
+Design a Rabi oscillation system with one mode on exact resonance and a slow modes,
 
 \begin{equation}
--\frac{\omega_m}{2} \sigma_3 - \frac{1}{2} \left(A_1 \cos(k_1 t) + A_2 \cos(k_2t) \right) \sigma_1 + \frac{1}{2} \left( A_1 \sin (k_1t) + A_2 \cos(k_2t) \right) \sigma_2.
+H_{\mathrm R}' = -\frac{\omega_m}{2} \sigma_3 - \frac{1}{2}( A_1 \cos(k_1 x) + A_2 \cos(k_2 x)) \sigma_1 + \frac{1}{2} ( A_1 \sin(k_1 x) + A_2 \sin(k_2 x)   ) \sigma_2.
 \end{equation}
 
-with $k_1 \gg k_2$
+where $k_1 = \omega_m$, and $k_1 \gg k_2$.
+
+The new energy gap can be predicted
 
 \begin{equation}
 \omega_m' = \sqrt{\omega_m^2 + A_2^2}
 \end{equation}
 
-Predict the critical $A_2$ that significantly reduces the transition amplitude,
+Predict the critical $A_2$ that significantly reduces the transition amplitude by setting the detuning value larger than the width,
 
 \begin{equation}
 \lvert k_1 - \omega_m' \rvert \gtrsim \text{width of resonance}.
@@ -218,14 +224,14 @@ Predict the critical $A_2$ that significantly reduces the transition amplitude,
 
 
 
-Figures showing that this hypothesis is true.
+Figure \ref{fig-rabi-oscillations-energy-gap-change} shows that this hypothesis gives us the qualitative understanding of the amplitude. {\bf Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s.}
 
 
 \begin{figure}[!htbp]
                 \centering
-                \includegraphics[width=\textwidth]{assets/resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field.png}
-                \caption{Reduction of transition amplitude. The mode at resonance; Adding a second mode could destroy the resonance if the condition is satisfied. {\bf Should also add in the exact resonance (with only one perturbation)} }
-                \label{fig-resonance-freq-example-1-added-new-slow-perturbation-destruction-compare-rotating-field}
+                \includegraphics[width=\textwidth]{assets/rabi-oscillations-energy-gap-change}
+                \caption{Reduction of transition amplitudes. Black dashed line: one perturbation at exact resonance; Green long dashed line: $A_2=A_{2,\mathrm{Critical}}=0.0083666$; Blue dotted line: $A_2=0.01$; Red line: $A_2=0.02$. The grid lines are the amplitude predicted using Rabi formula correspondingly.}
+                \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
 
 
@@ -314,8 +320,9 @@ B_{n_1,\cdots,n_N} &= -(-i)^{\sum_a n_a} \tan 2\theta_m \left( \sum_a n_a k_a \r
 For each mode the solution is
 
 \begin{equation}
-P = \lvert \psi_2 \rvert^2 = \lvert \psi_{b2} \rvert^2 = \frac{\lvert B_{n_1,\cdots,n_N} \rvert}{\lvert B_{n_1,\cdots,n_N} \rvert + (\sum_i n_i k_i - \omega_m )^2}.
+P = \lvert \psi_2 \rvert^2 = \lvert \psi_{b2} \rvert^2 = \frac{\lvert B_{n_1,\cdots,n_N} \rvert}{\lvert B_{n_1,\cdots,n_N} \rvert + (\sum_i n_i k_i - \omega_m )^2} \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} x \right) .
 \end{equation}
+
 
 
 Single perturbation modes (width at large n limit)
