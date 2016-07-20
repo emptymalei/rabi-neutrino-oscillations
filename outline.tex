@@ -74,12 +74,20 @@ preprint,
 
 %\preprint{APS/123-QED}
 
-\title{Stimulated Neutrino Oscillations - A Rabi Oscillations View}% Force line breaks with \\
+\title{Stimulated Neutrino Oscillations - A Rabi Oscillation View}% Force line breaks with \\
 %\thanks{A footnote to the article title}%
 
-\author{}
-%  \altaffiliation[Also at ]{Physics Department, XYZ University.}%Lines break automatically or can be forced with \\
-% \author{Second Author}%
+\author{Lei Ma}
+\email{leima@unm.edu}
+\author{Shashank Shalgar}%
+\email{shashankshalgar@unm.edu}
+\author{Huaiyu Duan}%
+\email{duan@unm.edu}
+\affiliation{%
+ Department of Physics \& Astronomy, University of New Mexico,
+ Albuquerque, NM 87131, USA
+}%
+% \author{Huaiyu Duan}%
 %  \email{Second.Author@institution.edu}
 % \affiliation{%
 %  Authors' institution and/or address\\
@@ -88,7 +96,7 @@ preprint,
 
 % \collaboration{MUSO Collaboration}%\noaffiliation
 
-% \author{Charlie Author}
+% \author{Shashank Shalgar}
 %  \homepage{http://www.Second.institution.edu/~Charlie.Author}
 % \affiliation{
 %  Second institution and/or address\\
@@ -104,6 +112,25 @@ preprint,
 % }%
 
 % \collaboration{CLEO Collaboration}%\noaffiliation
+
+% \author{Huaiyu Duan}
+%  \homepage{http://www.Second.institution.edu/~Charlie.Author}
+% \affiliation{
+%  Second institution and/or address\\
+%  This line break forced% with \\
+% }%
+% \affiliation{
+%  Third institution, the second for Charlie Author
+% }%
+% \author{Delta Author}
+% \affiliation{%
+%  Authors' institution and/or address\\
+%  This line break forced with \textbackslash\textbackslash
+% }%
+
+% \collaboration{CLEO Collaboration}%\noaffiliation
+
+
 
 \date{\today}% It is always \today, today,
              %  but any date may be explicitly specified
@@ -137,19 +164,55 @@ ABSTRACT PLACEHOLDER
 \end{enumerate}
 
 
-\section{\label{rabi}Rabi Oscillations}
+\section{\label{rabi}Neutrino Oscillations and Rabi Oscillation}
 
 
 %% 
 
 \begin{itemize}
+    \item Neutrino oscillations in matter (background matter basis)
     \item Rabi oscillations
     \item Width, detuning, and Rabi frequency, and their significance. (Relation to amplitude and oscillation wavelength)
     \item Interference: destruction
 \end{itemize}
 
 
-{\bf Rabi oscillation}
+\subsection{Neutrino oscillations in matter}
+
+
+\begin{itemize}
+    \item The formalism
+    \item What has been found before
+\end{itemize}
+
+
+Matter profile
+
+\begin{equation}
+    \lambda(x) = \lambda_0 + \sum_{n=1}^{N} \delta \lambda_n (x),
+\end{equation}
+
+where
+
+\begin{align}
+    \lambda_0 &= \sqrt{2}G_F n_{e0} \\
+    \delta \lambda_n(x) &= \sqrt{2}G_F \delta n_{e,n}(x)
+\end{align}
+
+
+Hamiltonian becomes
+
+\begin{equation}
+    H^{(m)} = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin 2 \theta_m \sigma_1.
+\end{equation}
+
+
+
+
+
+
+
+\subsection{Rabi oscillation}
 
 \begin{equation}
 H_{\mathrm R} = -\frac{\omega_m}{2} \sigma_3 - \frac{1}{2}A_1 \cos(k_1 x) \sigma_1 + \frac{1}{2} A_1 \sin(k_1 x) \sigma_2,
@@ -229,7 +292,7 @@ Figure \ref{fig-rabi-oscillations-energy-gap-change} shows that this hypothesis 
 
 \begin{figure}[!htbp]
                 \centering
-                \includegraphics[width=\textwidth]{assets/rabi-oscillations-energy-gap-change}
+                \includegraphics[width=\textwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
                 \caption{Reduction of transition amplitudes. Black dashed line: one perturbation at exact resonance; Green long dashed line: $A_2=A_{2,\mathrm{Critical}}=0.0083666$; Blue dotted line: $A_2=0.01$; Red line: $A_2=0.02$. The grid lines are the amplitude predicted using Rabi formula correspondingly.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
