@@ -189,28 +189,46 @@ ABSTRACT PLACEHOLDER
 Matter profile
 
 \begin{equation}
-    \lambda(x) = \lambda_0 + \sum_{n=1}^{N} \delta \lambda_n (x),
+    \lambda(x) = \lambda_0 + \delta \lambda (x),
 \end{equation}
 
 where
 
 \begin{align}
-    \lambda_0 &= \sqrt{2}G_F n_{e0} \\
-    \delta \lambda_n(x) &= \sqrt{2}G_F \delta n_{e,n}(x)
+    \lambda_0 &= \sqrt{2}G_F n_{e0}. \\
+    \delta \lambda (x) &= \sqrt{2}G_F \delta n_{e}(x)
 \end{align}
 
-
-Hamiltonian becomes
+We use
 
 \begin{equation}
-    H^{(m)} = - \frac{\omega_m}{2} \sigma_3 + \frac{\delta \lambda}{2} \cos 2\theta_m \sigma_3 - \frac{\delta \lambda}{2} \sin 2 \theta_m \sigma_1.
+\delta \lambda = A \sin (k x).
 \end{equation}
 
 
+\fbox{Question: Should we use $A\cos(kx)$ to make comparision with Rabi oscillation?}
+
+
+Choose $\lambda_0 = 0.5\lambda_{\mathrm{MSW}}$. (For easier reading, specify the actual number density for some characteristic energy such as 10\;MeV.)
+
+
+In background basis, Hamiltonian becomes
+
+\begin{equation}
+    H^{(m)} = - \frac{\omega_m}{2} \sigma_3 + \frac{1}{2}A \sin (k x) \cos 2\theta_m \sigma_3 - \frac{1}{2}A\sin(kx) \sin 2 \theta_m \sigma_1.
+\end{equation}
+
+
+At resonance, $k=\omega_m$, the $\sigma_3$ component of perturbation has no effect when the system is at resonance, as we would prove later more rigorously.
 
 
 
 
+
+
+%%%%%%%%%
+%%%%%%%%% Rabi oscillation
+%%%%%%%%%
 
 \subsection{Rabi oscillation}
 
@@ -287,13 +305,13 @@ Predict the critical $A_2$ that significantly reduces the transition amplitude b
 
 
 
-Figure \ref{fig-rabi-oscillations-energy-gap-change} shows that this hypothesis gives us the qualitative understanding of the amplitude. {\bf Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s.}
+Figure \ref{fig-rabi-oscillations-energy-gap-change} shows that this hypothesis works. {\bf Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s.}
 
 
 \begin{figure}[!htbp]
                 \centering
                 \includegraphics[width=\textwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
-                \caption{Reduction of transition amplitudes. Black dashed line: one perturbation at exact resonance; Green long dashed line: $A_2=A_{2,\mathrm{Critical}}=0.0083666$; Blue dotted line: $A_2=0.01$; Red line: $A_2=0.02$. The grid lines are the amplitude predicted using Rabi formula correspondingly.}
+                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666$; Blue dotted line: $A_2=0.01$; Red line: $A_2=0.02$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
 
@@ -344,7 +362,7 @@ Hamiltonian becomes
 
 
 A New Basis: Hamiltonian looks like a Rabi oscillation but with some complicated perturbations.
-    Apply rotation
+    Apply rotation (name this new basis? Rabi basis?)
 
 
 \begin{equation}
@@ -433,6 +451,7 @@ J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tan
 
 \begin{itemize}
     \item A simple interpretation with some caveats.
+    \item Phase of the matter profile doesn't play any role in the resonance argument.
     \item Realistic matter profile probably destroys the resonance due to this shift in the energy gap.
 \end{itemize}
 
