@@ -178,11 +178,11 @@ In this section we present the relation between neutrino oscillations in matter 
 \end{equation}
 where $G_{\mathrm F}$ is the Fermi constant and $n_{\mathrm e}(x)$ is the electron number density in the medium. For better understanding of the transition between states, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $A\sin(kx)$, so that the Hamiltonian becomes
 \begin{equation}
-    H^{(\mathrm{m})} = -\frac{\omega_3}{2} \sigma_3 + \frac{1}{2} A\sin (kx) \cos 2\theta_{\mathrm m} \sigma_3 -\frac{1}{2} \sin(kx) \sin 2\theta_{\mathrm m} \sigma_1,
+    H^{(\mathrm{m})} = -\frac{\omega_3}{2} \sigma_3 + \frac{1}{2} A\sin (kx) \cos 2\theta_{\mathrm m} \sigma_3 -\frac{1}{2} \sin(kx) \sin 2\theta_{\mathrm m} \sigma_1,\label{neutrino-matter-single-frequency-hamiltonian}
 \end{equation}
 where $\sigma_i$ are the Pauli matrices, $\theta_{\mathrm m}$ is the mixing angle in a constant matter profile $\lambda_0$, which is calculated using relation $\tan 2\theta_{\mathrm{m}}=\sin 2\theta_{\mathrm v}/\left( \cos 2\theta_{\mathrm v} - \lambda_0/\omega_{\mathrm v} \right)$ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_{\mathrm v}$ denoting the vacuum mixing angle.
 
-To make connections with Rabi oscillation, we argue that the second term in Hamiltonian is not relevant when the system is close to resonance. Figure \ref{fig-rabi-oscillations-energy-gap-change} shows the comparison of the solution of neutrino oscillation in matter and corresponding Rabi oscillation.
+To make connections with Rabi oscillation, we argue that the second term in Hamiltonian is not relevant when the system is close to resonance. FIG.~\ref{fig-rabi-oscillations-energy-gap-change} \verb|+| marker shows transition probability of neutrino oscillation in matter.
 
 
 
@@ -194,10 +194,28 @@ To make connections with Rabi oscillation, we argue that the second term in Hami
 \subsection{Rabi Oscillation}
 
 
+An optical field interacts with two-level atoms and can stimulate transition from low energy state to high energy state. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi oscillation. Rabi oscillation has been well studied in quantum optics.\cite{Boyd2008} 
+
+The Hamiltonian we use as an example is
+\begin{equation}
+    H_{\mathrm R} = - \frac{\omega_{\mathrm m}}{2} - \frac{1}{2}A_{1} \cos (k_1 x) \sigma_1 + \frac{1}{2} \sin (k_1 x) \sigma_2,\label{rabi-oscillation-single-perturbation}
+\end{equation}
+in which $\omega_{\mathrm m}$ serves as the energy split of the two level system, while $A_1$ and $k_1$ are the strength and frequency of the driving field, respectively. Such a system has analytical transition probability from low energy state to high energy state
+\begin{equation}
+    P(x) = \frac{\left \lvert A_1 \right \rvert ^2}{ \Omega_{\mathrm R}^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} x \right),
+\end{equation}
+where $\Omega_{\mathrm R} = \sqrt{ \lvert A_1\rvert^2 + (k_1 - \omega_{\mathrm m})^2 }$ is known as Rabi frequency. The detuning, which is defined as $k_1 - \omega_{\mathrm m}$, determines how off-resonance the system is, and amplitude of optical field $A_1$ determines the resonance width. The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, optical field amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance.
 
 
 
-Figure \ref{fig-rabi-oscillations-energy-gap-change} shows that this hypothesis works. {\bf Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s.}
+
+
+
+To show that neutrino oscillations can be treated as Rabi oscillations, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. The \verb|+| marker is the result of neutrino oscillations, meanwhile we display the result of Rabi oscillation using $\circ$ in FIG.~\ref{fig-rabi-oscillations-energy-gap-change}.
+
+\fbox{
+\parbox{0.9\textwidth}{\bf Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s.}
+}
 
 
 \begin{figure}[!htbp]
