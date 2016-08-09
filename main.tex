@@ -74,7 +74,7 @@ preprint,
 
 %\preprint{APS/123-QED}
 
-\title{Neutrino Oscillations - A Rabi Oscillation View}% Force line breaks with \\
+\title{A Rabi Oscillation View of Neutrino Flavor Transitions}% Force line breaks with \\
 %\thanks{A footnote to the article title}%
 
 \author{Lei Ma}
@@ -158,9 +158,9 @@ ABSTRACT PLACEHOLDER
 
 \section{\label{introduction}Introduction}
 
-In many astrophysical environments neutrinos propagate through dense fluctuating medium, which will interact with neutrinos and dramatically change the flavor oscillations of neutrinos. The significance of matter effect on neutrino flavor oscillations has been demonstrated in Mikheyev–Smirnov–Wolfenstein effect (MSW effect), which plays a role in solar neutrino oscillations.\cite{wolf78} Another matter effect of interest is parametric resonance of neutrino flavor oscillations due to perturbations in matter.\cite{Krastev1989} Recently matter stimulated neutrino oscillations has been researched using more advanced mathematical tools by Kneller, et al..\cite{Kneller2013,Patton2014} They have shown that many stimulated neutrino oscillations can be explained by resonances of the system. 
+In many astrophysical environments neutrinos propagate through dense fluctuating medium, which will interact with neutrinos and dramatically change the flavor oscillations of neutrinos. The significance of matter effect on neutrino flavor oscillations has been demonstrated in Mikheyev–-Smirnov–-Wolfenstein (MSW) effect, which plays a role in solar neutrino oscillations.\cite{wolf78} Another matter effect of interest is parametric resonance of neutrino flavor oscillations due to perturbations in matter.\cite{Krastev1989} Recently matter stimulated neutrino oscillations has been researched using more advanced mathematical tools by Kneller, et al..\cite{Kneller2013,Patton2014} They have shown that many stimulated neutrino oscillations can be explained by resonances of the system. 
 
-In this manuscript, we take a step further and interpret matter effect, both MSW resonance and parametric resonance, as superposition of Rabi oscillations. Using a specific unitary transformations of the states, we can rewrite the system into a superposition of Rabi oscillations and investigate the resonances of each mode.
+In this manuscript, we take a step further and interpret matter effect, parametric resonance \cite{Akhmedov2000, Krastev1989} and stimulated neutrino oscillations \cite{Kneller2013, Patton2014}, as superposition of Rabi oscillations. In the second section we show that the neutrino oscillations in matter is related to Rabi oscillations by calculating the flavor transition probabilities and resonance conditions. \fbox{BRIEF INTRODUCTION OF THE NEXT SECTIONS} By applying a specific unitary transformation of the basis, we can rewrite the system into a superposition of Rabi oscillations and investigate the resonances of each mode, as well as the interferences between the modes.
 
 
 
@@ -168,8 +168,6 @@ In this manuscript, we take a step further and interpret matter effect, both MSW
 
 
 %% Introduction to neutrino oscillations in matter
-
-
 
 
 In this section we present the relation between neutrino oscillations in matter and Rabi oscillation using a system with single frequency perturbations in the matter profile $\lambda(x)\equiv\sqrt{2}G_{\mathrm F} n_{\mathrm e}(x)$, which is specifically written as
@@ -211,26 +209,37 @@ where $\Omega_{\mathrm R} = \sqrt{ \lvert A_1\rvert^2 + (k_1 - \omega_{\mathrm m
 
 
 
-To show that neutrino oscillations can be treated as Rabi oscillations, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. The \verb|+| marker is the result of neutrino oscillations, meanwhile we display the result of Rabi oscillation using $\circ$ in FIG.~\ref{fig-rabi-oscillations-energy-gap-change}.
+To show that neutrino oscillations can be treated as Rabi oscillations, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. The \verb|+| marker in FIG.~\ref{fig-rabi-oscillations-energy-gap-change} is the result of neutrino oscillations, meanwhile we show the result of Rabi oscillation using $\circ$.
 
 \fbox{
-\parbox{0.9\textwidth}{\bf Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s.}
+\parbox{0.9\textwidth}{\bf 
+\begin{itemize}
+    \item Explicitly show the parameters in this paragraph? But some papers don't.
+    \item Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s. But at the same time that would be too much information for one plot.
+\end{itemize}
+}
 }
 
 
 \begin{figure}[!htbp]
                 \centering
                 \includegraphics[width=\textwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
-                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$.}
+                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\theta_m$ was set to $\pi/7$.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
 
 
 
-\subsection{Parametric Resonance}
+\subsection{Parametric Resonance and MSW Resonance}
 
-The parametric resonance condition is exactly the condition of Rabi oscillations.
 
+\fbox{
+\parbox{0.9\textwidth}{
+\begin{itemize}
+\item The parametric resonance condition is exactly the condition of Rabi oscillations. 
+\item MSW resonance can also be interpreted as Rabi resonance. {\bf This might be a good example of the relation between Rabi oscillation and neutrino oscillation.}
+\end{itemize}
+}}
 
 
 
@@ -266,12 +275,14 @@ The parametric resonance condition is exactly the condition of Rabi oscillations
 
 
 
+\fbox{
+\parbox{0.9\textwidth}{
 \begin{itemize}
             \item Width of resonance $B$
             \item Deviation from exact resonance $g$, called {\bf{detuning}} (value).
             \item Oscillation wavelength of mode (determined by Rabi frequency, which is in turn related to $B$ and $g$ ) compared to size of physical system
 \end{itemize}
-
+}}
 
 
 
@@ -282,7 +293,12 @@ The parametric resonance condition is exactly the condition of Rabi oscillations
 
 %%%% Do not repeat what has been said
 
+
+\fbox{
+\parbox{0.9\textwidth}{
 CONCLUSION PLACEHOLDER
+}}
+
 
 
 
