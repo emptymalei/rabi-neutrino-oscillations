@@ -226,17 +226,12 @@ To show that this conjecture is correct, we calculate transition probabilities o
 \begin{figure}[!htbp]
                 \centering
                 \includegraphics[width=\textwidth]{assets/rabiOscillationsNeutrinoCoincidence}
-                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\theta_m$ was set to $\pi/7$.}
+                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
 
-\begin{figure}[!htbp]
-                \centering
-                \includegraphics[width=\textwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
-                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\theta_m$ was set to $\pi/7$.}
-                \label{fig-rabi-oscillations-energy-gap-change}
-\end{figure}
+
 
 
 
@@ -250,6 +245,47 @@ To show that this conjecture is correct, we calculate transition probabilities o
 \item MSW resonance can also be interpreted as Rabi resonance. {\bf This might be a good example of the relation between Rabi oscillation and neutrino oscillation.}
 \end{itemize}
 }}
+
+For a single frequency perturbation in matter profile $\lambda(x) =\lambda_1 +  A_1\sin(k_1 x)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(x)$ varies slowly.\cite{Krastev1989}. This condition is very similar to a Rabi resonance condition when $n=1$. Another well researched profile is a castle wall matter profile, which is periodic and within one period we have
+\begin{equation}
+    \lambda(x) = \begin{cases} \lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x \le -\frac{X_1}{2} \\
+\lambda_1, &\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
+\lambda_2, &\quad \frac{X_1}{2}\le x\le \frac{X_1}{2}+\frac{X_2}{2}
+\end{cases}
+\end{equation}
+The parametric resonance condition derived by E. Akhmedov\cite{Akhmedov2000},
+\begin{equation}
+    \frac{\tan (\omega_{m1}X_1/2)}{\tan (\omega_{m2}X_2/2)} = - \frac{\cos 2\theta_{m2}}{\cos 2\theta_{m1}},
+\end{equation}
+where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for matter profile $\lambda_i$ respectively. To show this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
+\begin{equation}
+\lambda(x) = \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( q k_0  x \right),
+\end{equation}
+where 
+\begin{align*}
+k_0 &= \frac{2\pi}{X_1+X_2}, \\
+\Lambda_0 &= \frac{\lambda_2 X_2 + \lambda_1 X_1}{X}, \\
+\lambda_q & = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q \pi ) - \sin(q \pi X_1/X) \right) + \lambda_1 \sin( q\pi X_1/X)  \right).
+\end{align*}
+
+To show the transitions due to the variation of matter profile, we rotate to the background matter basis with respect to $\Lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
+\begin{equation}
+H = - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( k_0 q x \right) \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( k_0 q x \right) \sin 2\theta_m \sigma_1,
+\end{equation}
+determines the transitions between the two background matter states.
+
+
+FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states.
+
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\textwidth]{assets/akhmedovOscPlt}
+                \caption{\fbox{SHOULD HAVE A COMPARISON FOR DIFFERENT AMPLITUDES}}
+                \label{fig-akhmedovOscPlt}
+\end{figure}
+
+
+
 
 
 
@@ -279,6 +315,7 @@ To show that this conjecture is correct, we calculate transition probabilities o
 
 
 
+
     
 
 \subsection{The Important Factors}
@@ -295,7 +332,14 @@ To show that this conjecture is correct, we calculate transition probabilities o
 }}
 
 
+\subsection{Interference}
 
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\textwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
+                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement.}
+                \label{fig-rabi-oscillations-energy-gap-change}
+\end{figure}
 
 
 
