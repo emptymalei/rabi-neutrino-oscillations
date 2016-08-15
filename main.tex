@@ -136,7 +136,7 @@ preprint,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-ABSTRACT PLACEHOLDER
+\fbox{ABSTRACT PLACEHOLDER}
 % \begin{description}
 % \item[Usage]
 % Secondary publications and information retrieval purposes.
@@ -175,6 +175,7 @@ In this section we present the coincidence between neutrino oscillations in matt
 The first example to consider is one with single frequency perturbation in the matter profile $\lambda(x)\equiv\sqrt{2}G_{\mathrm F} n_{\mathrm e}(x)$, which is explicitly written as
 \begin{equation}
     \lambda(x) = \lambda_0 + A_1 \sin (k_1 x) ,
+    \label{single-frequency-matter-profile}
 \end{equation}
 where $G_{\mathrm F}$ is the Fermi constant and $n_{\mathrm e}(x)$ is the electron number density in the medium. For better understanding of the transition between states, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $A_1\sin(k_1 x)$, so that the Hamiltonian becomes
 \begin{equation}
@@ -275,7 +276,7 @@ H = - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q 
 determines the transitions between the two background matter states.
 
 
-FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states.
+FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states. It's clearly shown that these neutrino transitions matches the theory of Rabi oscillation.
 
 \begin{figure}[!htbp]
                 \centering
@@ -296,15 +297,36 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions betwe
 %%%%%%%%%  Stimulated Neutrino Oscillations  %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\label{stimulated}Analysis of Stimulated Neutrino Oscillations Using Rabi Oscillations}
+\section{\label{stimulated}Analysis of Stimulated Neutrino Transitions Using Rabi Oscillation}
 
 
+In this section, we show that the matter effect can be decomposed into superpositions of Rabi oscillations. For a system of single frequency matter perturbation, cf. Eq.~(\ref{single-frequency-matter-profile}), whose Hamiltonian is described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), we apply an unitary transformation of the form
+\begin{equation}
+    \mathbf{U} =  \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & e^{i \eta (x)}  \end{pmatrix},
+\end{equation}
+which is a transformation used in \cite{Kneller2006} to remove the diagonal elements of the Hamiltonian. In this work, this transformation is used to remove the varying terms of diagonal elements in the Hamiltonian, so that the energy gap is fixed in the new basis $\left(\ket{\nu_{\mathrm{r1}}},\ket{\nu_{\mathrm{r2}}}\right)^{\mathrm{T}}$, which is defined as
+\begin{equation}
+    \begin{pmatrix} \ket{\nu_{\mathrm{r1}}}\\ \ket{\nu_{\mathrm{r2}}} \end{pmatrix} =  \mathbf{U}^\dagger \begin{pmatrix} \ket{\nu_{\mathrm{L}}} \\ \ket{\nu_{\mathrm{H}}} \end{pmatrix}.
+\end{equation}
+For convenience, we name this new basis the Rabi basis. In Rabi basis, we find the Schr\"{o}dinger equation
+\begin{align*}
+    &\begin{pmatrix}  \frac{d\eta}{dx}  & 0 \\ 0 & - \frac{d\eta}{dx}  \end{pmatrix} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} + i \frac{d}{dx} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} \\
+    =&
+\left[ -\frac{\omega_m}{2} \sigma_3  + \frac{\delta \lambda}{2} \cos 2\theta_m  \sigma_3  - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta} \\ e^{-2 i\eta } & 0 \end{pmatrix}   \right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix},
+\end{align*}
+in which the varying diagonal elements in Hamiltonian is eliminated by choosing $\eta(x)$ properly, i.e.,
+\begin{equation}
+    \eta(x) - \eta(0) = - \frac{\omega_{\mathrm{m}}}{2} x + \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^x \delta\lambda (\tau) d\tau.
+\end{equation}
+The Schr\"{o}dinger equation becomes
+\begin{equation}
+    i \frac{d}{dx} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} = \left[ - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta} \\ e^{-2 i\eta } & 0 \end{pmatrix}\right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix},
+\end{equation}
+where $\eta(x) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $ for the Hamiltonian Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}).
 
-\subsection{Neutrino oscillations in matter}
+To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in \cite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$.
 
-
-
-\subsection{To Make connections to Rabi oscillation}
+\fbox{PUT THE DECOMPOSED HAMILTONIAN HERE.}
 
 
 
