@@ -322,26 +322,49 @@ The Schr\"{o}dinger equation becomes
 \begin{equation}
     i \frac{d}{dx} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} = \left[ - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta} \\ e^{-2 i\eta } & 0 \end{pmatrix}\right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix},
 \end{equation}
-where $\eta(x) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $ for the Hamiltonian Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}).
+where $\eta(x) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $ for the Hamiltonian Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}).  One can easily show that the transition probability between two eigenstates in Rabi basis is the same as the transition probability between two eigenstates in background matter basis.
 
-To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in \cite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$.
+To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in \cite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$. The final form of Hamiltonian that show the Hamiltonian is a summation of Rabi systems is
+\begin{equation}
+    H^{(\mathrm{r})} = -\frac{\omega_{\mathrm{m}}}{2} -  \frac{1}{2} \sum_{n=-\infty}^\infty B_n \begin{pmatrix}
+    0 &  \Phi_n e^{i (n k_1-\omega_{\mathrm{m}}) x} \\
+     \Phi_n^* e^{ - i (n k_1 -\omega_{\mathrm{m}}) x} & 0
+    \end{pmatrix},
+\end{equation}
+where
+\begin{align*}
+    B_n &= \tan 2\theta_{\mathrm m} n k_1 J_{n} \left( \frac{A_1}{k_1}\cos 2\theta_{\mathrm m} \right),\\
+    \Phi_n &= e^{i\pi (3n/2+1)}.
+\end{align*}
+The constant phase $\Phi_n$ doesn't play any role in the transition probability since it only determines the initial direction of Hamiltonian. For the same reason, phase in matter profile is not included. As such systems can be graphically represented on a Bloch sphere, the second term in the Hamiltonian is the many driving fields of the system. It can also be derived for arbitrary multi-frequency matter profile,
+\begin{equation}
+    \lambda(x) = \lambda_0 + \sum_n A_n \sin (n k_n)
+\end{equation}
+that the Hamiltonian also takes a form of summations of Rabi oscillations,
+\begin{equation}
+    H^{(\mathrm r)} = -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} \sum_{n_1=-\infty}^\infty \cdots \sum_{n_N = -\infty}^\infty B_N 
+    \begin{pmatrix}
+    0 & \Phi_N e^{i\left( \sum_a n_a k_a - \omega_{\mathrm{m}}\right)x} \\
+    \Phi_N^* e^{-i\left( \sum_a n_a k_a - \omega_{\mathrm{m}}\right)x} & 0
+    \end{pmatrix},
+\end{equation}
+where
+\begin{align*}
+    B_N &=  \tan 2\theta_{\mathrm m} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+    \Phi_N &= e^{i\pi (3\sum_a n_a/2+1)}.
+\end{align*}
 
-\fbox{PUT THE DECOMPOSED HAMILTONIAN HERE.}
-
-
-
-\subsubsection{Jacobi-Anger Expansion: Write the system into a superposition of Rabi oscillations.}
-    
-    
-
-
-
-
+The following sections will determine the important modes of the system (i.e., which $n$ to include) and explore the interference between modes hence explain the coincidence presented in the previous sections. For numerical calculations, we use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
+\begin{align*}
+    \hat x &= \omega_{\mathrm{m}}x, \\
+    \hat k_1 & = \frac{k_1}{\omega_{\mathrm{m}}}, \\
+    \hat A_1 & = \frac{A_1}{\omega_{\mathrm{m}}}, \\
+    \hat B_n &= \frac{B_n}{\omega_{\mathrm{m}}}.
+\end{align*}
 
     
 
 \subsection{The Important Factors}
-
 
 
 \fbox{
@@ -352,6 +375,12 @@ To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, whi
             \item Oscillation wavelength of mode (determined by Rabi frequency, which is in turn related to $B$ and $g$ ) compared to size of physical system
 \end{itemize}
 }}
+
+
+To determine the important modes, the resonance width for each mode which is determined by $B_n$ for single frequency matter profile or $B_N$ for multi-frequency matter profile, the deviation from exact resonance (i.e., detuning) which is calculated as $\lvert n k_1 - \omega_{\mathrm{m}} \rvert$ for single frequency matter profile or $\lvert \sum_a n_a k_a - \omega_{\mathrm{m}} \rvert$ for multi-frequency matter profile, and oscillation wavelength of each mode compared to the size of the physical system should be considered. By utilizing the theory of Rabi oscillation, we know that the oscillation wavelength of each mode is determined by the Rabi frequency.
+
+More specifically, we define the relative detuning $Q = \lvert B_n/( n k_1 - \omega_{\mathrm{m}}  )\rvert$, which measures how well the resonance is. For exact resonance, $Q=0$, while large $Q$ says the system is too far away from the resonance of this specific mode.
+
 
 
 \subsection{Interference}
@@ -377,6 +406,9 @@ CONCLUSION PLACEHOLDER
 
 
 
+\section{\label{acknowledgement}Acknowledgement}
+
+The first author would like to thank J. Kneller and K. Patton for their help during this research.
 
 
 \bibliographystyle{abbrv}
