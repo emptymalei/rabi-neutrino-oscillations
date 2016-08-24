@@ -19,13 +19,13 @@
 %  4)  latex apssamp.tex
 %
 \documentclass[%
-%reprint,
+reprint,
 %superscriptaddress,
 %groupedaddress,
 %unsortedaddress,
 %runinaddress,
 %frontmatterverbose, 
-preprint,
+%preprint,
 %showpacs,preprintnumbers,
 %nofootinbib,
 %nobibnotes,
@@ -74,7 +74,7 @@ preprint,
 
 %\preprint{APS/123-QED}
 
-\title{A Rabi Oscillation View of Neutrino Flavor Transitions}% Force line breaks with \\
+\title{Parametric neutrino flavor conversion and Rabi oscillation}% Force line breaks with \\
 %\thanks{A footnote to the article title}%
 
 \author{Lei Ma}
@@ -160,19 +160,40 @@ preprint,
 
 In many astrophysical environments neutrinos propagate through dense fluctuating medium, which will interact with neutrinos and dramatically change the flavor oscillations of neutrinos. The significance of matter effect on neutrino flavor oscillations has been demonstrated in Mikheyev–-Smirnov–-Wolfenstein (MSW) effect, which plays a role in solar neutrino oscillations.\cite{wolf78} Another matter effect of interest is parametric resonance of neutrino flavor oscillations due to perturbations in matter.\cite{Krastev1989} Recently matter stimulated neutrino oscillations has been researched using more advanced mathematical tools by Kneller, et al..\cite{Kneller2013,Patton2014} They have shown that many stimulated neutrino oscillations can be explained by resonances of the system. 
 
-In this manuscript, we take a step further and interpret matter effect, parametric resonance \cite{Akhmedov2000, Krastev1989} and stimulated neutrino oscillations \cite{Kneller2013, Patton2014}, as superposition of Rabi oscillations. In the second section we show that the neutrino oscillations in matter is related to Rabi oscillations by calculating the flavor transition probabilities and resonance conditions. \fbox{BRIEF INTRODUCTION OF THE NEXT SECTIONS} By applying a specific unitary transformation of the basis, we can rewrite the system into a superposition of Rabi oscillations and investigate the resonances of each mode, as well as the interferences between the modes.
+In this manuscript, we take a step further and interpret parametric resonance \cite{Akhmedov2000, Krastev1989} as well as other stimulated neutrino oscillations \cite{Kneller2013, Patton2014}, as superpositions of Rabi oscillations. In Sec.~\ref{sec:background}, we define the formalism of neutrino oscillations in matter to be used. In Sec.~\ref{sec:simple} we discuss how neutrino oscillations is related to Rabi oscillations using a very simple model. In Sec.~\ref{sec:jacobi} we show the exact theory of decomposing neutrino oscillations in matter into Rabi oscillations, by applying a specific unitary transformation of the basis and Jacobi-Anger expansion.
+
+\section{\label{sec:background}Background and Formalism}
+
+We consider neutrinos that has only two flavors propagate through matter which is define by electron number density profile $n(x)$. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian is
+\begin{equation}
+    H =  \frac{1}{2} \begin{pmatrix}
+    -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} + \lambda(x) & \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \\
+   \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}} & \omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} - \lambda(x)
+    \end{pmatrix},
+\end{equation}
+where $\lambda(x)= \sqrt{2}G_F n_e(x)$ and $G_F$ is the Fermi constant. For the convenience of notation, we use Pauli matrices to denote the Hamiltonian, which simplifies the notation of the Schr\"{o}dinger equation,
+\begin{equation}
+    i\frac{d}{dx}\Psi(x) = \frac{1}{2} \left(  
+    (- \omega_{\mathrm{v}} + \lambda(x) ) \sigma_3 + \omega_{\mathrm{v}} \sigma_1 
+    \right)
+    \Psi(x),
+\end{equation}
+where $\Psi(x)$ is the wave function in flavor basis. For two flavor system, it is written as $ \Psi(x) = \left(
+    \psi_{\mathrm{e}} ,
+    \psi_{\mathrm{x}}
+    \right)^{\mathrm{T}}$ where $\psi_{\mathrm{e}}$ and $\psi_{\mathrm{x}}$ are the amplitude for electron flavor and the other flavor respectively.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Simplified Model
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\label{rabi}Neutrino Oscillations in Matter and Rabi Oscillation}%
+\section{\label{sec:simple}Parametric Resonance and Rabi oscillation --- a simplified model}%
 
 
-%% Introduction to neutrino oscillations in matter
+In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations.
 
-
-In this section we present the coincidence between neutrino oscillations in matter and Rabi oscillation using two simple neutrino oscillation systems. 
-
-The first example to consider is one with single frequency perturbation in the matter profile $\lambda(x)\equiv\sqrt{2}G_{\mathrm F} n_{\mathrm e}(x)$, which is explicitly written as
+Now consider a system with single frequency matter perturbation in the matter profile $\lambda(x)\equiv\sqrt{2}G_{\mathrm F} n_{\mathrm e}(x)$, which is explicitly written as
 \begin{equation}
     \lambda(x) = \lambda_0 + A_1 \sin (k_1 x) ,
     \label{single-frequency-matter-profile}
@@ -190,7 +211,7 @@ where $\sigma_i$ are the Pauli matrices, $\theta_{\mathrm m}$ is the mixing angl
 %%%%%%%%% Rabi oscillation
 %%%%%%%%%
 
-\subsection{Rabi Oscillation}
+%\subsection{Rabi Oscillation}
 
 
 An optical field interacts with two-level atoms and can stimulate transition from low energy state to high energy state. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi oscillation. Rabi oscillation has been well studied in quantum optics.\cite{Boyd2008} 
@@ -204,7 +225,10 @@ in which $\omega_{\mathrm R}$ serves as the energy split of the two level system
     P(x) = \frac{\left \lvert A_{\mathrm{R}} \right \rvert ^2}{ \Omega_{\mathrm R}^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} x \right),
     \label{rabi-system-hamiltonian}
 \end{equation}
-where $\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }$ is known as Rabi frequency. The detuning, which is defined as $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of optical field $A_{\mathrm{R}}$ determines the resonance width. The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, optical field amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance.
+where
+\begin{equation}
+\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }
+\end{equation} is known as Rabi frequency. The detuning, which is defined as $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of optical field $A_{\mathrm{R}}$ determines the resonance width. The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, optical field amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance.
 
 
 To make connections with the neutrino system described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), we argue that the second term in Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}) and the third term in Eq.~(\ref{rabi-system-hamiltonian}) are not relevant when the systems are close to resonance. \fbox{Which explained rigorously later.}, which indicates that the neutrino oscillation system is a Rabi oscillation system, with external driving field frequency $k_1$ and energy gap $\omega_m$. The resonance condition is determined by matching the energy gap $\omega_m$ with external driving field frequency $k_1$, i.e., $\omega_m \sim k_1$. When the condition is close to resonance, we predict the transition probability using Rabi formula.
@@ -216,7 +240,7 @@ To show that this conjecture is correct, we calculate transition probabilities o
 
 
 \fbox{
-\parbox{0.9\textwidth}{\bf 
+\parbox{0.9\columnwidth}{\bf 
 \begin{itemize}
     \item Explicitly show the parameters in this paragraph? But some papers don't.
     \item Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s. But at the same time that would be too much information for one plot.
@@ -226,7 +250,7 @@ To show that this conjecture is correct, we calculate transition probabilities o
 
 \begin{figure}[!htbp]
                 \centering
-                \includegraphics[width=\textwidth]{assets/rabiOscillationsNeutrinoCoincidence}
+                \includegraphics[width=\columnwidth]{assets/rabiOscillationsNeutrinoCoincidence}
                 \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
@@ -240,7 +264,7 @@ To show that this conjecture is correct, we calculate transition probabilities o
 
 
 \fbox{
-\parbox{0.9\textwidth}{
+\parbox{0.9\columnwidth}{
 \begin{itemize}
 \item The parametric resonance condition is exactly the condition of Rabi oscillations. 
 \item MSW resonance can also be interpreted as Rabi resonance. {\bf This might be a good example of the relation between Rabi oscillation and neutrino oscillation.}
@@ -280,8 +304,12 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions betwe
 
 \begin{figure}[!htbp]
                 \centering
-                \includegraphics[width=\textwidth]{assets/akhmedovOscPlt}
-                \caption{\fbox{SHOULD HAVE A COMPARISON FOR DIFFERENT AMPLITUDES}}
+                \includegraphics[width=\columnwidth]{assets/akhmedovOscPlt}
+                \caption{
+                \parbox{0.9\columnwidth}{
+                \fbox{SHOULD HAVE A COMPARISON FOR DIFFERENT AMPLITUDES}
+                }
+                }
                 \label{fig-akhmedovOscPlt}
 \end{figure}
 
@@ -297,7 +325,7 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions betwe
 %%%%%%%%%  Stimulated Neutrino Oscillations  %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\label{stimulated}Analysis of Stimulated Neutrino Transitions Using Rabi Oscillation}
+\section{\label{sec:jacobi}Parametric Resonance and Rabi oscillation --- Jacobi-Anger expansion}
 
 
 In this section, we show that the matter effect can be decomposed into superpositions of Rabi oscillations. For a system of single frequency matter perturbation, cf. Eq.~(\ref{single-frequency-matter-profile}), whose Hamiltonian is described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), we apply an unitary transformation of the form
@@ -368,7 +396,7 @@ The following sections will determine the important modes of the system (i.e., w
 
 
 \fbox{
-\parbox{0.9\textwidth}{
+\parbox{0.9\columnwidth}{
 \begin{itemize}
             \item Width of resonance $B$
             \item Deviation from exact resonance $g$, called {\bf{detuning}} (value).
@@ -377,19 +405,70 @@ The following sections will determine the important modes of the system (i.e., w
 }}
 
 
-To determine the important modes, the resonance width for each mode which is determined by $B_n$ for single frequency matter profile or $B_N$ for multi-frequency matter profile, the deviation from exact resonance (i.e., detuning) which is calculated as $\lvert n k_1 - \omega_{\mathrm{m}} \rvert$ for single frequency matter profile or $\lvert \sum_a n_a k_a - \omega_{\mathrm{m}} \rvert$ for multi-frequency matter profile, and oscillation wavelength of each mode compared to the size of the physical system should be considered. By utilizing the theory of Rabi oscillation, we know that the oscillation wavelength of each mode is determined by the Rabi frequency.
+For illustration purpose, we use single frequency matter profile to demonstrate the important factors in this system. To determine the important modes, the resonance width for each mode which is determined by $B_n$, the deviation from exact resonance (i.e., detuning) which is calculated as $\lvert n k_1 - \omega_{\mathrm{m}} \rvert$, and oscillation wavelength of each mode compared to the size of the physical system should be considered. By utilizing the theory of Rabi oscillation, we know that the oscillation wavelength of each mode is determined by the Rabi frequency $\Omega_n$.
 
-More specifically, we define the relative detuning $Q = \lvert B_n/( n k_1 - \omega_{\mathrm{m}}  )\rvert$, which measures how well the resonance is. For exact resonance, $Q=0$, while large $Q$ says the system is too far away from the resonance of this specific mode.
+More specifically, we define the resonance quality $Q_n = \lvert B_n/( n k_1 - \omega_{\mathrm{m}}  )\rvert$, which measures how well the resonance is. For exact resonance, $Q_n=0$, while large $Q_n$ says the system is too far away from the resonance of this specific mode. FIG.~\ref{fig-modes-and-detuning} explains the meaning of $Q_n$. Small $Q_n$ modes are the modes that are dramatically important to the system, on the other hand, modes that has much larger oscillation wavelength are not subjected to be considered even though their $Q_n$'s are close to zero, which is due to the fact that such modes have not accumulated much transition probabilities within the size of the physical system.
+
+
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\columnwidth]{assets/placeholder.jpg}%fig-modes-and-detuning}
+                \caption{fig-modes-and-detuning}
+                \label{fig-modes-and-detuning}
+\end{figure}
+
+
+\fbox{
+\parbox{\columnwidth}{%
+FIGS:
+\begin{itemize}
+    \item Resonance width and transition amplitude? But this is probably something people already know about.
+    \item {\bf Width is dropping as n increase. Combine the plot with the limit when $n$ is large.}
+    \item Show that only the first mode is important in some situations. And the correction due to higher orders.
+\end{itemize}
+}
+}
+
+
+Similar quantities are to be considered for multi-frequency matter profile, such as the resonance width of each mode $B_N$, detuning $\lvert \sum_a n_a k_a - \omega_{\mathrm{m}} \rvert$, and Rabi frequency $\Omega_N$, as well as $Q_N =\lvert B_N/( \sum_a n_a k_a - \omega_{\mathrm{m}}  )\rvert$.
+
+
+
 
 
 
 \subsection{Interference}
 
+\fbox{
+\parbox{\columnwidth}{
+\begin{itemize}
+    \item Two limits: strong interference regime and low-interference regime
+    \item For strong interference we include multiple modes
+    \item For weak interference, we can interpret the case that one of the matter profile wavelength is much larger than the other. In this case we have a shift of background matter density of the short wavelength perturbation profile.
+    \item Examples. A slight shift in the background density could remove the resonance, which can be quantified.
+    \begin{equation*}
+        a
+    \end{equation*}
+\end{itemize}
+}
+}
+
+
 \begin{figure}[!htbp]
                 \centering
-                \includegraphics[width=\textwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
+                \includegraphics[width=\columnwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
                 \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement.}
                 \label{fig-rabi-oscillations-energy-gap-change}
+\end{figure}
+
+
+
+
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\columnwidth]{assets/interference}
+                \caption{}
+                \label{fig-interference}
 \end{figure}
 
 
