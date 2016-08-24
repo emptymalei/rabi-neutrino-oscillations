@@ -164,14 +164,14 @@ In this manuscript, we take a step further and interpret parametric resonance \c
 
 \section{\label{sec:background}Background and Formalism}
 
-We consider neutrinos that has only two flavors propagate through matter which is define by electron number density profile $n(x)$. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian is
+We consider two-flavor neutrinos of energy $E$ and mass squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(x)$. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian is
 \begin{equation}
-    H =  \frac{1}{2} \begin{pmatrix}
+    H^{(\mathrm{f})} =  \frac{1}{2} \begin{pmatrix}
     -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} + \lambda(x) & \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \\
    \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}} & \omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} - \lambda(x)
     \end{pmatrix},
 \end{equation}
-where $\lambda(x)= \sqrt{2}G_F n_e(x)$ and $G_F$ is the Fermi constant. For the convenience of notation, we use Pauli matrices to denote the Hamiltonian, which simplifies the notation of the Schr\"{o}dinger equation,
+where $\lambda(x)= \sqrt{2}G_F n_e(x)$ and $G_F$ is the Fermi constant, $\theta_{\mathrm{v}}$ is the vacuum mixing angle, $\omega_{\mathrm{v}} = \delta m^2/4E$ is the vacuum oscillation frequency. For the convenience of notation, we use Pauli matrices $\sigma_i$ to denote the Hamiltonian, which simplifies the notation of the Schr\"{o}dinger equation,
 \begin{equation}
     i\frac{d}{dx}\Psi(x) = \frac{1}{2} \left(  
     (- \omega_{\mathrm{v}} + \lambda(x) ) \sigma_3 + \omega_{\mathrm{v}} \sigma_1 
@@ -193,57 +193,53 @@ where $\Psi(x)$ is the wave function in flavor basis. For two flavor system, it 
 
 In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations.
 
-Now consider a system with single frequency matter perturbation in the matter profile $\lambda(x)\equiv\sqrt{2}G_{\mathrm F} n_{\mathrm e}(x)$, which is explicitly written as
+Now consider a system with a very general perturbation on top of a constant matter profile, which is explicitly written as
 \begin{equation}
-    \lambda(x) = \lambda_0 + A_1 \sin (k_1 x) ,
-    \label{single-frequency-matter-profile}
+    \lambda(x) = \lambda_0 + \delta \lambda(x).
+    \label{eq-general-matter-profile}
 \end{equation}
-where $G_{\mathrm F}$ is the Fermi constant and $n_{\mathrm e}(x)$ is the electron number density in the medium. For better understanding of the transition between states, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $A_1\sin(k_1 x)$, so that the Hamiltonian becomes
-\begin{equation}
-    H^{(\mathrm{m})} = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} A_1 \sin (k_1 x) \cos 2\theta_{\mathrm m} \sigma_3 -\frac{1}{2} A_1  \sin(k_1 x) \sin 2\theta_{\mathrm m} \sigma_1,\label{neutrino-matter-single-frequency-hamiltonian}
-\end{equation}
-where $\sigma_i$ are the Pauli matrices, $\theta_{\mathrm m}$ is the mixing angle in a constant matter profile $\lambda_0$, which is calculated using relation $\tan 2\theta_{\mathrm{m}}=\sin 2\theta_{\mathrm v}/\left( \cos 2\theta_{\mathrm v} - \lambda_0/\omega_{\mathrm v} \right)$ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_{\mathrm v}$ denoting the vacuum mixing angle.
+For better understanding of the transition between states due to the effect of matter, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $\delta\lambda(x)$, so that the Hamiltonian becomes
+\begin{align}
+    H^{(\mathrm{m})} =& -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \delta\lambda(x) \cos 2\theta_{\mathrm m} \sigma_3 \nonumber \\
+    & -\delta\lambda(x) \sin 2\theta_{\mathrm m} \sigma_1,
+    \label{eq-hamiltonian-bg-matter-basis-general}
+\end{align}
+$\theta_{\mathrm m}$ is the mixing angle in a constant matter profile $\lambda_0$, which is calculated using relation
+\begin{equation*}
+\tan 2\theta_{\mathrm{m}}=\sin 2\theta_{\mathrm v}/\left( \cos 2\theta_{\mathrm v} - \lambda_0/\omega_{\mathrm v} \right)
+\end{equation*}
+with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_{\mathrm v}$ denoting the vacuum mixing angle.
 
 
-
-
-%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% Rabi oscillation
-%%%%%%%%%
-
-%\subsection{Rabi Oscillation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-An optical field interacts with two-level atoms and can stimulate transition from low energy state to high energy state. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi oscillation. Rabi oscillation has been well studied in quantum optics.\cite{Boyd2008} 
+An optical field interacts with two-level atoms and can stimulate transition from low energy state to high energy state. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi oscillation. Rabi oscillation has been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in \cite{Duan2006a}.
 
-The Hamiltonian for Rabi oscillation that we use as an example is
-\begin{equation}
-    H_{\mathrm R} = - \frac{\omega_{\mathrm R}}{2} - \frac{1}{2}A_{\mathrm{R}} \cos (k_{\mathrm{R}} x) \sigma_1 + \frac{1}{2} A_{\mathrm{R}} \sin (k_{\mathrm{R}} x) \sigma_2,\label{rabi-oscillation-single-perturbation}
-\end{equation}
-in which $\omega_{\mathrm R}$ serves as the energy split of the two level system, while $A_{\mathrm{R}}$ and $k_{\mathrm{R}}$ are the strength and frequency of the driving field, respectively. Such a system has analytical transition probability from low energy state to high energy state
-\begin{equation}
-    P(x) = \frac{\left \lvert A_{\mathrm{R}} \right \rvert ^2}{ \Omega_{\mathrm R}^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} x \right),
-    \label{rabi-system-hamiltonian}
-\end{equation}
-where
-\begin{equation}
-\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }
-\end{equation} is known as Rabi frequency. The detuning, which is defined as $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of optical field $A_{\mathrm{R}}$ determines the resonance width. The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, optical field amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance.
+To make connections with the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) and Rabi oscillations, we argue that the second term in Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) is not relevant when the systems are close to resonance, as we will explain later using Jacobi-Anger expansion. 
 
 
-To make connections with the neutrino system described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), we argue that the second term in Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}) and the third term in Eq.~(\ref{rabi-system-hamiltonian}) are not relevant when the systems are close to resonance. \fbox{Which explained rigorously later.}, which indicates that the neutrino oscillation system is a Rabi oscillation system, with external driving field frequency $k_1$ and energy gap $\omega_m$. The resonance condition is determined by matching the energy gap $\omega_m$ with external driving field frequency $k_1$, i.e., $\omega_m \sim k_1$. When the condition is close to resonance, we predict the transition probability using Rabi formula.
+\subsection{\label{sec:single-freq}Single Frequency Matter Profile}
 
-To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, \verb|+| marker shows transition probability of neutrino oscillation in matter, while $\circ$ stands for the numerical result for the corresponding Rabi systems. To show the consistency, we also plotted the result predicted by Rabi formula with black dashed line.
+The first example we examine is single frequency matter profile $\delta\lambda(x) = A_1 \sin(k_1 x)$. With the varying diagonal elements removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system when close to resonance, with external driving field frequency $k_1$ and energy gap $\omega_m$. The resonance condition is determined by matching the energy gap $\omega_m$ with external driving field frequency $k_1$, i.e., $\omega_m \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
 
+To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, \verb|+| marker shows transition probability of neutrino oscillation in matter, while $\circ$ stands for the numerical result for the corresponding Rabi systems. To show the consistency, we also plotted the result predicted by Rabi formula with black dashed line.
+
+For a single frequency perturbation in matter profile $\lambda(x) =\lambda_1 +  A_1\sin(k_1 x)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(x)$ varies slowly.\cite{Krastev1989}. This condition is very similar to a Rabi resonance condition when $n=1$. 
 
 
 
 
 \fbox{
 \parbox{0.9\columnwidth}{\bf 
+FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence} : Remake using python
 \begin{itemize}
-    \item Explicitly show the parameters in this paragraph? But some papers don't.
-    \item Maybe a plot that shows the comparison of the predicted amplitudes and numerical amplitudes for different $A_2$'s. But at the same time that would be too much information for one plot.
+    \item Remove the title of the figure
+    \item Remove the epilog of parameters
+    \item Remove the result of rabi oscillation numerical result ($\circ$).
+    \item Using larger fonts
 \end{itemize}
 }
 }
@@ -260,18 +256,18 @@ To show that this conjecture is correct, we calculate transition probabilities o
 
 
 
-\subsection{Parametric Resonance and MSW Resonance}
+\subsection{Parametric Resonance}
 
 
 \fbox{
 \parbox{0.9\columnwidth}{
 \begin{itemize}
 \item The parametric resonance condition is exactly the condition of Rabi oscillations. 
-\item MSW resonance can also be interpreted as Rabi resonance. {\bf This might be a good example of the relation between Rabi oscillation and neutrino oscillation.}
+\item STRIKETHROUGH: MSW resonance can also be interpreted as Rabi resonance. STRIKETHROUGH
 \end{itemize}
 }}
 
-For a single frequency perturbation in matter profile $\lambda(x) =\lambda_1 +  A_1\sin(k_1 x)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(x)$ varies slowly.\cite{Krastev1989}. This condition is very similar to a Rabi resonance condition when $n=1$. Another well researched profile is a castle wall matter profile, which is periodic and within one period we have
+Another well researched matter profile is castle wall matter profile, which is periodic and within one period we have
 \begin{equation}
     \lambda(x) = \begin{cases} \lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x \le -\frac{X_1}{2} \\
 \lambda_1, &\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
@@ -282,21 +278,25 @@ The parametric resonance condition derived by E. Akhmedov\cite{Akhmedov2000},
 \begin{equation}
     \frac{\tan (\omega_{m1}X_1/2)}{\tan (\omega_{m2}X_2/2)} = - \frac{\cos 2\theta_{m2}}{\cos 2\theta_{m1}},
 \end{equation}
-where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for matter profile $\lambda_i$ respectively. To show this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
+where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for matter profile $\lambda_i$ respectively. 
+
+For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
 \begin{equation}
 \lambda(x) = \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( q k_0  x \right),
 \end{equation}
 where 
 \begin{align*}
-k_0 &= \frac{2\pi}{X_1+X_2}, \\
-\Lambda_0 &= \frac{\lambda_2 X_2 + \lambda_1 X_1}{X}, \\
-\lambda_q & = \frac{2}{q\pi} \left( \lambda_2\left( \sin(q \pi ) - \sin(q \pi X_1/X) \right) + \lambda_1 \sin( q\pi X_1/X)  \right).
+k_0 &= \frac{2\pi}{X}, \\
+\Lambda_0 &= \frac{\lambda_2 + \lambda_1 }{2}, \\
+\lambda_q & = \frac{2}{q\pi}  \left( \lambda_2 -  \lambda_1 \right) \sin(q \pi /2) .
 \end{align*}
 
 To show the transitions due to the variation of matter profile, we rotate to the background matter basis with respect to $\Lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
+\begin{widetext}
 \begin{equation}
 H = - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( k_0 q x \right) \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( k_0 q x \right) \sin 2\theta_m \sigma_1,
 \end{equation}
+\end{widetext}
 determines the transitions between the two background matter states.
 
 
@@ -306,8 +306,12 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions betwe
                 \centering
                 \includegraphics[width=\columnwidth]{assets/akhmedovOscPlt}
                 \caption{
-                \parbox{0.9\columnwidth}{
-                \fbox{SHOULD HAVE A COMPARISON FOR DIFFERENT AMPLITUDES}
+                \fbox{
+                \parbox{0.7\columnwidth}
+                {
+                SHOULD HAVE A COMPARISON FOR DIFFERENT AMPLITUDES:
+                Since $\lambda_1-\lambda_2$ determines how far away the system is from resonance, we need to vary this quantity.
+                }
                 }
                 }
                 \label{fig-akhmedovOscPlt}
@@ -369,6 +373,7 @@ The constant phase $\Phi_n$ doesn't play any role in the transition probability 
     \lambda(x) = \lambda_0 + \sum_n A_n \sin (n k_n)
 \end{equation}
 that the Hamiltonian also takes a form of summations of Rabi oscillations,
+\begin{widetext}
 \begin{equation}
     H^{(\mathrm r)} = -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} \sum_{n_1=-\infty}^\infty \cdots \sum_{n_N = -\infty}^\infty B_N 
     \begin{pmatrix}
@@ -376,6 +381,7 @@ that the Hamiltonian also takes a form of summations of Rabi oscillations,
     \Phi_N^* e^{-i\left( \sum_a n_a k_a - \omega_{\mathrm{m}}\right)x} & 0
     \end{pmatrix},
 \end{equation}
+\end{widetext}
 where
 \begin{align*}
     B_N &=  \tan 2\theta_{\mathrm m} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
@@ -479,7 +485,7 @@ Similar quantities are to be considered for multi-frequency matter profile, such
 
 
 \fbox{
-\parbox{0.9\textwidth}{
+\parbox{0.9\columnwidth}{
 CONCLUSION PLACEHOLDER
 }}
 
@@ -488,6 +494,54 @@ CONCLUSION PLACEHOLDER
 \section{\label{acknowledgement}Acknowledgement}
 
 The first author would like to thank J. Kneller and K. Patton for their help during this research.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% APPENDIX  %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% \newpage\null\thispagestyle{empty}
+% \vspace{20em}
+% This page is intentionally left blank
+% \newpage
+
+
+% \clearpage
+\appendix
+\section{\label{sec:rabi-oscillations}Rabi Oscillations}
+
+
+\fbox{
+\parbox{0.9\columnwidth}{
+
+\begin{itemize}
+\item Derive the transition probability using flavor isospin method.    
+\end{itemize}
+
+}
+}
+
+
+The Hamiltonian for Rabi oscillation that we use as an example is
+\begin{equation}
+    H_{\mathrm R} = - \frac{\omega_{\mathrm R}}{2} - \frac{1}{2}A_{\mathrm{R}} \cos (k_{\mathrm{R}} x) \sigma_1 + \frac{1}{2} A_{\mathrm{R}} \sin (k_{\mathrm{R}} x) \sigma_2,\label{rabi-oscillation-single-perturbation}
+\end{equation}
+in which $\omega_{\mathrm R}$ serves as the energy split of the two level system, while $A_{\mathrm{R}}$ and $k_{\mathrm{R}}$ are the strength and frequency of the driving field, respectively. Such a system has analytical transition probability from low energy state to high energy state
+\begin{equation}
+    P(x) = \frac{\left \lvert A_{\mathrm{R}} \right \rvert ^2}{ \Omega_{\mathrm R}^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} x \right),
+    \label{rabi-system-hamiltonian}
+\end{equation}
+where
+\begin{equation}
+\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }
+\end{equation} is known as Rabi frequency. The detuning, which is defined as $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of optical field $A_{\mathrm{R}}$ determines the resonance width. The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, optical field amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance.
+
+
+
 
 
 \bibliographystyle{abbrv}
