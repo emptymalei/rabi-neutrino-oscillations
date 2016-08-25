@@ -164,7 +164,7 @@ In this manuscript, we take a step further and interpret parametric resonance \c
 
 \section{\label{sec:background}Background and Formalism}
 
-We consider two-flavor neutrinos of energy $E$ and mass squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(x)$. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian is
+We consider two-flavor neutrinos of energy $E$ and mass squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(x)$. Three different bases are used in this work, i.e., flavor basis, in which the wave function describes the probability amplitude of different flavors, background matter basis, in which the wave function describe the probability amplitude of different mass states with the appearance of only background matter density, and Rabi basis which will be defined explicitly later. These different bases are also defined in Appendix~\ref{sec:three-bases}. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian in flavor basis is
 \begin{equation}
     H^{(\mathrm{f})} =  \frac{1}{2} \begin{pmatrix}
     -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} + \lambda(x) & \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \\
@@ -201,14 +201,17 @@ Now consider a system with a very general perturbation on top of a constant matt
 For better understanding of the transition between states due to the effect of matter, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $\delta\lambda(x)$, so that the Hamiltonian becomes
 \begin{align}
     H^{(\mathrm{m})} =& -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \delta\lambda(x) \cos 2\theta_{\mathrm m} \sigma_3 \nonumber \\
-    & -\delta\lambda(x) \sin 2\theta_{\mathrm m} \sigma_1,
+    & - \frac{1}{2} \delta\lambda(x) \sin 2\theta_{\mathrm m} \sigma_1,
     \label{eq-hamiltonian-bg-matter-basis-general}
 \end{align}
 $\theta_{\mathrm m}$ is the mixing angle in a constant matter profile $\lambda_0$, which is calculated using relation
 \begin{equation*}
 \tan 2\theta_{\mathrm{m}}=\sin 2\theta_{\mathrm v}/\left( \cos 2\theta_{\mathrm v} - \lambda_0/\omega_{\mathrm v} \right)
 \end{equation*}
-with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_{\mathrm v}$ denoting the vacuum mixing angle.
+with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_{\mathrm v}$ denoting the vacuum mixing angle. The energy split is defined as
+\begin{equation}
+\omega_{\mathrm{m}} = \omega_{\mathrm{v}} \sqrt{ ( \lambda_0/\omega_{\mathrm{v}} - \cos (2\theta_{\mathrm{v}}) )^2 + \sin^2(2\theta_{\mathrm{v}}) }.
+\end{equation}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,18 +219,23 @@ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-An optical field interacts with two-level atoms and can stimulate transition from low energy state to high energy state. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi oscillation. Rabi oscillation has been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in \cite{Duan2006a}.
+An optical field interacts with two-level atoms and can stimulate transition from low energy state to high energy state. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi oscillation. Rabi oscillation has been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
 
-To make connections with the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) and Rabi oscillations, we argue that the second term in Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) is not relevant when the systems are close to resonance, as we will explain later using Jacobi-Anger expansion. 
+To make connections with the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) and Rabi oscillations, we argue that the second term in Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), i.e., the varying diagonal elements of Hamiltonian, is not relevant when the systems are close to resonance, as we will explain later using Jacobi-Anger expansion. 
 
 
 \subsection{\label{sec:single-freq}Single Frequency Matter Profile}
 
-The first example we examine is single frequency matter profile $\delta\lambda(x) = A_1 \sin(k_1 x)$. With the varying diagonal elements removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system when close to resonance, with external driving field frequency $k_1$ and energy gap $\omega_m$. The resonance condition is determined by matching the energy gap $\omega_m$ with external driving field frequency $k_1$, i.e., $\omega_m \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
+The first example we examine is single frequency matter profile $\delta\lambda(x) = A_1 \sin(k_1 x)$. With the varying diagonal elements of Hamiltonian removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system when close to resonance, with external driving field frequency $k_1$ and energy gap $\omega_m$. More specifically, the Hamiltonian is simplified to
+\begin{equation}
+H^{(\mathrm{m})}_1 \sim -\frac{\omega_m}{2} \sigma_3  -\frac{1}{2}A_1 \sin(k_1 x) \sin 2\theta_{\mathrm m} \sigma_1,
+    \label{eq-hamiltonian-bg-matter-basis-single-frequency}
+\end{equation}
+The resonance condition is determined by matching the energy gap $\omega_m$ with external driving field frequency $k_1$, i.e., $\omega_m \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
 
 To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, \verb|+| marker shows transition probability of neutrino oscillation in matter, while $\circ$ stands for the numerical result for the corresponding Rabi systems. To show the consistency, we also plotted the result predicted by Rabi formula with black dashed line.
 
-For a single frequency perturbation in matter profile $\lambda(x) =\lambda_1 +  A_1\sin(k_1 x)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(x)$ varies slowly.\cite{Krastev1989}. This condition is very similar to a Rabi resonance condition when $n=1$. 
+For a single frequency perturbation in matter profile $\lambda(x) =\lambda_1 +  A_1\sin(k_1 x)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(x)$ varies slowly.\cite{Krastev1989} This condition is exactly the Rabi resonance condition when $n=1$, as such condition matches the driving field frequency to the energy split.
 
 
 
@@ -512,6 +520,10 @@ The first author would like to thank J. Kneller and K. Patton for their help dur
 
 % \clearpage
 \appendix
+\section{\label{sec:three-bases}Three Bases}
+
+\fbox{Define the three different bases used.}
+
 \section{\label{sec:rabi-oscillations}Rabi Oscillations}
 
 
