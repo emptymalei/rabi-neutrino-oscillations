@@ -269,11 +269,11 @@ FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence} : Remake using python
 \parbox{0.9\columnwidth}{
 \begin{itemize}
 \item The parametric resonance condition is exactly the condition of Rabi oscillations. 
-\item STRIKETHROUGH: MSW resonance can also be interpreted as Rabi resonance. STRIKETHROUGH
+\item \textless STRIKETHROUGH\textgreater MSW resonance can also be interpreted as Rabi resonance. \textless/STRIKETHROUGH\textgreater
 \end{itemize}
 }}
 
-Another well researched matter profile is castle wall matter profile, which is periodic and within one period we have
+Another well researched matter profile is the castle wall matter profile, which is periodic and within one period we have
 \begin{equation}
     \lambda(x) = \begin{cases} \lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x \le -\frac{X_1}{2} \\
 \lambda_1, &\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
@@ -286,21 +286,21 @@ The parametric resonance condition derived by E. Akhmedov\cite{Akhmedov2000},
 \end{equation}
 where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for matter profile $\lambda_i$ respectively. 
 
-For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
+For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino transitions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
 \begin{equation}
-\lambda(x) = \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( q k_0  x \right),
+\lambda(x) = \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( (2q-1) k_0  x \right),
 \end{equation}
 where 
 \begin{align*}
 k_0 &= \frac{2\pi}{X}, \\
-\Lambda_0 &= \frac{\lambda_2 + \lambda_1 }{2}, \\
-\lambda_q & = \frac{2}{q\pi}  \left( \lambda_2 -  \lambda_1 \right) \sin(q \pi /2) .
+\Lambda_0 &= \frac{\lambda_1 + \lambda_2 }{2}, \\
+\Lambda_q & = \frac{2}{(2q-1)\pi}  \left( \lambda_1 -  \lambda_2 \right) (-1)^q .
 \end{align*}
 
-To show the transitions due to the variation of matter profile, we rotate to the background matter basis with respect to $\Lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
+To calculate the transitions between two mass states of background matter profile $\Lambda_0$, we rotate to the background matter basis with respect to $\Lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
 \begin{widetext}
 \begin{equation}
-H = - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( k_0 q x \right) \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( k_0 q x \right) \sin 2\theta_m \sigma_1,
+H = - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( (2q-1)k_0  x \right) \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( (2q-1)k_0 x \right) \sin 2\theta_m \sigma_1,
 \end{equation}
 \end{widetext}
 determines the transitions between the two background matter states.
