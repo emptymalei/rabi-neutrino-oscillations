@@ -219,9 +219,9 @@ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-An optical field interacts with two-level atoms and can stimulate transition from low energy state to high energy state. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi oscillation. Rabi oscillation has been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
+The Hamiltonian Eq.~\ref{eq-hamiltonian-bg-matter-basis-general} has a lot in common with the Rabi oscillation Hamiltonian. One example of Rabi oscillation is the transition between low energy state and high energy state in two level atoms, when stimulated by optical fields with frequency that matches the energy gap of the two level atoms. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi formula. Rabi oscillations have been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}. 
 
-To make connections with the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) and Rabi oscillations, we argue that the second term in Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), i.e., the varying diagonal elements of Hamiltonian, is not relevant when the systems are close to resonance, as we will explain later using Jacobi-Anger expansion. 
+In the light of Rabi oscillations, we argue that the second term in the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), i.e., the varying diagonal elements of Hamiltonian, is not relevant when the system is close to resonance, as we will explain later using Jacobi-Anger expansion. 
 
 
 \subsection{\label{sec:single-freq}Single Frequency Matter Profile}
@@ -232,6 +232,8 @@ H^{(\mathrm{m})}_1 \sim -\frac{\omega_m}{2} \sigma_3  -\frac{1}{2}A_1 \sin(k_1 x
     \label{eq-hamiltonian-bg-matter-basis-single-frequency}
 \end{equation}
 The resonance condition is determined by matching the energy gap $\omega_m$ with external driving field frequency $k_1$, i.e., $\omega_m \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
+
+For a graphical representation of such resonances, decompositions of Hamiltonian onto Pauli matrices are denoted as vectors on , c.f.~Appendix~\ref{sec:rabi-oscillations}. The Hamiltonian is decomposed into three different components, i.e., the constant energy gap on z axis $\vec H_z$, the varying perturbation on z axis $\vec H_{z}'$, and the rotating perturbations in xy plane $\vec H_{\pm}$. The frequency of the rotating component $H_{+}$ in the xy can easily match the energy gap $\omega_{\mathrm{m}}$ even with a varying $\vec H_z'$ component in the Hamiltonian vector, as long as the system is close to resonance.
 
 To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, \verb|+| marker shows transition probability of neutrino oscillation in matter, while $\circ$ stands for the numerical result for the corresponding Rabi systems. To show the consistency, we also plotted the result predicted by Rabi formula with black dashed line.
 
@@ -273,7 +275,7 @@ FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence} : Remake using python
 \end{itemize}
 }}
 
-Another well researched matter profile is the castle wall matter profile, which is periodic and within one period we have
+Another well researched matter profile is the periodic castle wall matter profile. Within one period the profile,
 \begin{equation}
     \lambda(x) = \begin{cases} \lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x \le -\frac{X_1}{2} \\
 \lambda_1, &\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
@@ -294,7 +296,7 @@ where
 \begin{align*}
 k_0 &= \frac{2\pi}{X}, \\
 \Lambda_0 &= \frac{\lambda_1 + \lambda_2 }{2}, \\
-\Lambda_q & = \frac{2}{(2q-1)\pi}  \left( \lambda_1 -  \lambda_2 \right) (-1)^q .
+\Lambda_q & = \frac{2}{(2q-1)\pi}  (-1)^q  \left( \lambda_1 -  \lambda_2 \right).
 \end{align*}
 
 To calculate the transitions between two mass states of background matter profile $\Lambda_0$, we rotate to the background matter basis with respect to $\Lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
@@ -304,6 +306,8 @@ H = - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q 
 \end{equation}
 \end{widetext}
 determines the transitions between the two background matter states.
+
+Similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, since the rotating frequency of Hamiltonian vector associated with $\sigma_1$ can always match the background energy gap $\omega_{\mathrm{m}}$,  which is shown exactly later. We expect the .
 
 
 FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states. It's clearly shown that these neutrino transitions matches the theory of Rabi oscillation.
@@ -323,6 +327,48 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions betwe
                 \label{fig-akhmedovOscPlt}
 \end{figure}
 
+
+
+
+
+%%%%%%%%%
+%%%% Interference
+%%%%%%%%
+
+
+\subsection{Interference}
+
+\fbox{
+\parbox{0.9\columnwidth}{
+\begin{itemize}
+    \item Two limits: strong interference regime and low-interference regime
+    \item For strong interference we include multiple modes
+    \item For weak interference, we can interpret the case that one of the matter profile wavelength is much larger than the other. In this case we have a shift of background matter density of the short wavelength perturbation profile.
+    \item Examples. A slight shift in the background density could remove the resonance, which can be quantified.
+    \begin{equation*}
+        a
+    \end{equation*}
+\end{itemize}
+}
+}
+
+
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\columnwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
+                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement.}
+                \label{fig-rabi-oscillations-energy-gap-change}
+\end{figure}
+
+
+
+
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\columnwidth]{assets/interference}
+                \caption{.... Remake this fig}
+                \label{fig-interference}
+\end{figure}
 
 
 
@@ -448,40 +494,6 @@ Similar quantities are to be considered for multi-frequency matter profile, such
 
 
 
-
-\subsection{Interference}
-
-\fbox{
-\parbox{\columnwidth}{
-\begin{itemize}
-    \item Two limits: strong interference regime and low-interference regime
-    \item For strong interference we include multiple modes
-    \item For weak interference, we can interpret the case that one of the matter profile wavelength is much larger than the other. In this case we have a shift of background matter density of the short wavelength perturbation profile.
-    \item Examples. A slight shift in the background density could remove the resonance, which can be quantified.
-    \begin{equation*}
-        a
-    \end{equation*}
-\end{itemize}
-}
-}
-
-
-\begin{figure}[!htbp]
-                \centering
-                \includegraphics[width=\columnwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
-                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement.}
-                \label{fig-rabi-oscillations-energy-gap-change}
-\end{figure}
-
-
-
-
-\begin{figure}[!htbp]
-                \centering
-                \includegraphics[width=\columnwidth]{assets/interference}
-                \caption{}
-                \label{fig-interference}
-\end{figure}
 
 
 
