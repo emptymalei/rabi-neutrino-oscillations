@@ -164,44 +164,35 @@ In this manuscript, we take a step further and interpret parametric resonance \c
 
 \section{\label{sec:background}Background and Formalism}
 
-We consider two-flavor neutrinos of energy $E$ and mass squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(x)$. Three different bases are used in this work, i.e., flavor basis, in which the wave function describes the probability amplitude of different flavors, background matter basis, in which the wave function describe the probability amplitude of different mass states with the appearance of only background matter density, and Rabi basis which will be defined explicitly later. These different bases are also defined in Appendix~\ref{sec:three-bases}. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian in flavor basis is
+We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ and mass-squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(r)$ along the path of neutrino propagation $r$. Three different bases are used in this work, i.e., flavor basis, in which the wave function describes the probability amplitude of different flavors, background matter basis, in which the wave function describe the probability amplitude of different mass states with the appearance of only background matter density, and Rabi basis which will be defined explicitly later. These different bases are also defined in Appendix~\ref{sec:three-bases}. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian in flavor basis is
 \begin{equation}
     H^{(\mathrm{f})} =  \frac{1}{2} \begin{pmatrix}
-    -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} + \lambda(x) & \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \\
-   \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}} & \omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} - \lambda(x)
+    -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} + \lambda(r) & \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \\
+   \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}} & \omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} - \lambda(r)
     \end{pmatrix},
 \end{equation}
-where $\lambda(x)= \sqrt{2}G_F n_e(x)$ and $G_F$ is the Fermi constant, $\theta_{\mathrm{v}}$ is the vacuum mixing angle, $\omega_{\mathrm{v}} = \delta m^2/4E$ is the vacuum oscillation frequency. For the convenience of notation, we use Pauli matrices $\sigma_i$ to denote the Hamiltonian, which simplifies the notation of the Schr\"{o}dinger equation,
+where $\lambda(r)= \sqrt{2}G_F n_e(r)$ is the potential due to neutrino interaction with matter and $G_F$ is the Fermi constant, $\theta_{\mathrm{v}}$ is the vacuum mixing angle, $\omega_{\mathrm{v}} = \delta m^2/2E$ is the vacuum oscillation frequency. For the convenience of notation, we use Pauli matrices $\sigma_i$ to denote the Hamiltonian, which simplifies the notation of the Schr\"{o}dinger equation,
 \begin{equation}
-    i\frac{d}{dx}\Psi(x) = \frac{1}{2} \left(  
-    (- \omega_{\mathrm{v}} + \lambda(x) ) \sigma_3 + \omega_{\mathrm{v}} \sigma_1 
+    \mathrm i\frac{\mathrm d}{\mathrm d r}\Psi(r) = \frac{1}{2} \left(  
+    (- \omega_{\mathrm{v}} + \lambda(r) ) \sigma_3 + \omega_{\mathrm{v}} \sigma_1 
     \right)
-    \Psi(x),
+    \Psi(r),
 \end{equation}
-where $\Psi(x)$ is the wave function in flavor basis. For two flavor system, it is written as $ \Psi(x) = \left(
-    \psi_{\mathrm{e}} ,
-    \psi_{\mathrm{x}}
-    \right)^{\mathrm{T}}$ where $\psi_{\mathrm{e}}$ and $\psi_{\mathrm{x}}$ are the amplitude for electron flavor and the other flavor respectively.
+where $\Psi(r)$ is the wave function in flavor basis. For two flavor system, it is written as $ \Psi(r) = \left(
+    \psi_{e} ,
+    \psi_{x}
+    \right)^{\mathrm{T}}$ where $\psi_{e}$ and $\psi_{x}$ are the amplitudes for electron flavor and the other flavor respectively.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Simplified Model
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{\label{sec:simple}Parametric Resonance and Rabi oscillation --- a simplified model}%
-
-
-In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations.
-
-Now consider a system with a very general perturbation on top of a constant matter profile, which is explicitly written as
+Now consider a system with a very general perturbation on top of a constant matter profile, so that the potential $\lambda(r)$ is explicitly written as
 \begin{equation}
-    \lambda(x) = \lambda_0 + \delta \lambda(x).
+    \lambda(r) = \lambda_0 + \delta \lambda(r).
     \label{eq-general-matter-profile}
 \end{equation}
-For better understanding of the transition between states due to the effect of matter, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $\delta\lambda(x)$, so that the Hamiltonian becomes
+For better understanding of the transition between states due to the effect of matter, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $\delta\lambda(r)$, so that the Hamiltonian becomes
 \begin{align}
-    H^{(\mathrm{m})} =& -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \delta\lambda(x) \cos 2\theta_{\mathrm m} \sigma_3 \nonumber \\
-    & - \frac{1}{2} \delta\lambda(x) \sin 2\theta_{\mathrm m} \sigma_1,
+    H^{(\mathrm{m})} =& -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3 \nonumber \\
+    & - \frac{1}{2} \delta\lambda(r) \sin 2\theta_{\mathrm m} \sigma_1,
     \label{eq-hamiltonian-bg-matter-basis-general}
 \end{align}
 $\theta_{\mathrm m}$ is the mixing angle in a constant matter profile $\lambda_0$, which is calculated using relation
@@ -214,48 +205,57 @@ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_
 \end{equation}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Simplified Model
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\label{sec:simple}Parametric Resonance and Rabi oscillation --- a simplified model}%
+
+
+In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations.
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% Rabi oscillation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The Hamiltonian Eq.~\ref{eq-hamiltonian-bg-matter-basis-general} has a lot in common with the Rabi oscillation Hamiltonian. One example of Rabi oscillation is the transition between low energy state and high energy state in two level atoms, when stimulated by optical fields with frequency that matches the energy gap of the two level atoms. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi formula. Rabi oscillations have been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}. 
+% The Hamiltonian Eq.~\ref{eq-hamiltonian-bg-matter-basis-general} has a lot in common with the Rabi oscillation Hamiltonian. One example of Rabi oscillation is the transition between low energy state and high energy state in two level atoms, when stimulated by optical fields with frequency that matches the energy gap of the two level atoms. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi formula. Rabi oscillations have been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}. 
 
-In the light of Rabi oscillations, we argue that the second term in the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), i.e., the varying diagonal elements of Hamiltonian, is not relevant when the system is close to resonance, as we will explain later using Jacobi-Anger expansion. 
+% In the light of Rabi oscillations, we argue that the second term in the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), i.e., the varying diagonal elements of Hamiltonian, is not relevant when the system is close to resonance, as we will explain later using Jacobi-Anger expansion. 
 
 
 \subsection{\label{sec:single-freq}Single Frequency Matter Profile}
 
-The first example we examine is single frequency matter profile $\delta\lambda(x) = A_1 \sin(k_1 x)$. With the varying diagonal elements of Hamiltonian removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system when close to resonance, with external driving field frequency $k_1$ and energy gap $\omega_m$. More specifically, the Hamiltonian is simplified to
+The first example we examine is single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. With the varying diagonal elements of Hamiltonian removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system when close to resonance, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. More specifically, the Hamiltonian is simplified to
+% \begin{align}
+% H^{(\mathrm{m})}_1 &= -\frac{\omega_{\mathrm m}}{2} \sigma_3 + \frac{1}{2} \lambda_1 \sin(k_1 r) \cos 2\theta_{\mathrm m} \sigma_3 -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1 \\
+% &\to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1,
+%     \label{eq-hamiltonian-bg-matter-basis-single-frequency}
+% \end{align}
 \begin{equation}
-H^{(\mathrm{m})}_1 \sim -\frac{\omega_m}{2} \sigma_3  -\frac{1}{2}A_1 \sin(k_1 x) \sin 2\theta_{\mathrm m} \sigma_1,
+H^{(\mathrm{m})} \to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1,
     \label{eq-hamiltonian-bg-matter-basis-single-frequency}
 \end{equation}
 The resonance condition is determined by matching the energy gap $\omega_m$ with external driving field frequency $k_1$, i.e., $\omega_m \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
 
-For a graphical representation of such resonances, decompositions of Hamiltonian onto Pauli matrices are denoted as vectors on , c.f.~Appendix~\ref{sec:rabi-oscillations}. The Hamiltonian is decomposed into three different components, i.e., the constant energy gap on z axis $\vec H_z$, the varying perturbation on z axis $\vec H_{z}'$, and the rotating perturbations in xy plane $\vec H_{\pm}$. The frequency of the rotating component $H_{+}$ in the xy can easily match the energy gap $\omega_{\mathrm{m}}$ even with a varying $\vec H_z'$ component in the Hamiltonian vector, as long as the system is close to resonance.
+% For a graphical representation of such resonances, decompositions of Hamiltonian onto Pauli matrices are denoted as vectors on , c.f.~Appendix~\ref{sec:rabi-oscillations}. The Hamiltonian is decomposed into three different components, i.e., the constant energy gap on z axis $\vec H_z$, the varying perturbation on z axis $\vec H_{z}'$, and the rotating perturbations in xy plane $\vec H_{\pm}$. The frequency of the rotating component $H_{+}$ in the xy can easily match the energy gap $\omega_{\mathrm{m}}$ even with a varying $\vec H_z'$ component in the Hamiltonian vector, as long as the system is close to resonance.
 
-To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, \verb|+| marker shows transition probability of neutrino oscillation in matter, while $\circ$ stands for the numerical result for the corresponding Rabi systems. To show the consistency, we also plotted the result predicted by Rabi formula with black dashed line.
+To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, black dots show the transition probability of neutrino oscillation in matter, while solid line stands for the result predicted using Rabi formula.
 
-For a single frequency perturbation in matter profile $\lambda(x) =\lambda_1 +  A_1\sin(k_1 x)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(x)$ varies slowly.\cite{Krastev1989} This condition is exactly the Rabi resonance condition when $n=1$, as such condition matches the driving field frequency to the energy split.
-
-
+For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(r)$ associated with the matter profile at distance $r$ varies slowly.\cite{Krastev1989} This condition is exactly the Rabi resonance condition when $n=1$, as such condition matches the driving field frequency to the energy split.
 
 
-\fbox{
-\parbox{0.9\columnwidth}{\bf 
-FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence} : Remake using python
-\begin{itemize}
-    \item Font family of the plot? It looks weird.
-\end{itemize}
-}
-}
+
+
 
 \begin{figure}[!htbp]
                 \centering
                 \includegraphics[width=\columnwidth]{assets/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
-                \caption{Single frequency matter profile and Rabi oscillation.  Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1x)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement. The red line is the probabilities predicted using Rabi formula.}
+                \caption{Single frequency matter profile and Rabi oscillation.  Black dots are the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement. The red line is the probabilities predicted using Rabi formula.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
@@ -275,42 +275,45 @@ FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence} : Remake using python
 \end{itemize}
 }}
 
-Another well researched matter profile is the periodic castle wall matter profile. Within one period the profile,
+Another well studied matter profile is the periodic castle wall matter profile. Within one period the potential is defined as,
 \begin{equation}
-    \lambda(x) = \begin{cases} \lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x \le -\frac{X_1}{2} \\
-\lambda_1, &\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
-\lambda_2, &\quad \frac{X_1}{2}\le x\le \frac{X_1}{2}+\frac{X_2}{2}
+    \lambda(r) = \begin{cases} \Lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le r \le -\frac{X_1}{2} \\
+\Lambda_1, &\quad -\frac{X_1}{2}\le r\le \frac{X_1}{2} \\
+\Lambda_2, &\quad \frac{X_1}{2}\le r\le \frac{X_1}{2}+\frac{X_2}{2}
 \end{cases}
 \end{equation}
-The parametric resonance condition derived by E. Akhmedov\cite{Akhmedov2000},
+where $X_1$ and $X_2$ are the two periods of the matter profile or potential. The parametric resonance condition derived by E. Akhmedov\cite{Akhmedov2000},
 \begin{equation}
     \frac{\tan (\omega_{m1}X_1/2)}{\tan (\omega_{m2}X_2/2)} = - \frac{\cos 2\theta_{m2}}{\cos 2\theta_{m1}},
 \end{equation}
-where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for matter profile $\lambda_i$ respectively. 
+where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for potential $\Lambda_1$ and $\Lambda_2$ respectively.
+
+Even though this castle wall problem is exactly solved, the physics behind it is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations by making appropriate approximation, which will be be specifically proved in Sec.~\ref{sec:jacobi}.
 
 For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino transitions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
 \begin{equation}
-\lambda(x) = \Lambda_0 + \sum_{q=1}^{\infty} \Lambda_q \cos\left( (2q-1) k_0  x \right),
+\lambda(x) = \lambda_0 + \sum_{q=1}^{\infty} \lambda_q \cos\left( (2q-1) k_0  x \right),
 \end{equation}
 where 
 \begin{align*}
 k_0 &= \frac{2\pi}{X}, \\
-\Lambda_0 &= \frac{\lambda_1 + \lambda_2 }{2}, \\
-\Lambda_q & = \frac{2}{(2q-1)\pi}  (-1)^q  \left( \lambda_1 -  \lambda_2 \right).
+\lambda_0 &= \frac{\Lambda_1 + \Lambda_2 }{2}, \\
+\lambda_q & = \frac{2}{(2q-1)\pi}  (-1)^q  \left( \Lambda_1 -  \Lambda_2 \right).
 \end{align*}
 
-To calculate the transitions between two mass states of background matter profile $\Lambda_0$, we rotate to the background matter basis with respect to $\Lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
+To calculate the transitions between two mass states of background matter potential $\lambda_0$, we rotate to the background matter basis with respect to $\lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
 \begin{widetext}
 \begin{equation}
-H = - \frac{1}{2}\omega_m \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( (2q-1)k_0  x \right) \cos 2\theta_m \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \Lambda_q \cos\left( (2q-1)k_0 x \right) \sin 2\theta_m \sigma_1,
+H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \lambda_q \cos\left( (2q-1)k_0  r \right) \cos 2\theta_{\mathrm m} \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \lambda_q \cos\left( (2q-1)k_0 r \right) \sin 2\theta_{\mathrm m} \sigma_1,
 \end{equation}
 \end{widetext}
 determines the transitions between the two background matter states.
 
-Similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, since the rotating frequency of Hamiltonian vector associated with $\sigma_1$ can always match the background energy gap $\omega_{\mathrm{m}}$,  which is shown exactly later. We expect the .
+Similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, since the rotating frequency of Hamiltonian vector associated with $\sigma_1$ can always match the background energy gap $\omega_{\mathrm{m}}$ easily as long as the resonance width is large enough, which is shown exactly later.
 
+\fbox{EVERYTHING BEYONGD THIS POINT IS CHAOS. I'LL WRITE THE FOLLOWING AS SOON AS POSSIBLE.}
 
-FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states. It's clearly shown that these neutrino transitions matches the theory of Rabi oscillation.
+FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states. It's clearly shown that these neutrino transitions matches the theory of Rabi oscillation. \fbox{TO DO HERE}
 
 \begin{figure}[!htbp]
                 \centering
