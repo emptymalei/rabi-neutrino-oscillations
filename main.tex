@@ -158,11 +158,16 @@ reprint,
 
 \section{\label{introduction}Introduction}
 
-In many astrophysical environments neutrinos propagate through dense fluctuating medium, which will interact with neutrinos and dramatically change the flavor oscillations of neutrinos. The significance of matter effect on neutrino flavor oscillations has been demonstrated in Mikheyev–-Smirnov–-Wolfenstein (MSW) effect, which plays a role in solar neutrino oscillations.\cite{wolf78} Another matter effect of interest is parametric resonance of neutrino flavor oscillations due to perturbations in matter.\cite{Krastev1989} Recently matter stimulated neutrino oscillations has been researched using more advanced mathematical tools by Kneller, et al..\cite{Kneller2013,Patton2014} They have shown that many stimulated neutrino oscillations can be explained by resonances of the system. 
+In many astrophysical environments, such as core-collapse supernova,  neutrinos propagate through dense fluctuating medium, which will interact with neutrinos and dramatically change the flavor oscillations of neutrinos. The significance of matter effect on neutrino flavor oscillations has been demonstrated in Mikheyev–-Smirnov–-Wolfenstein (MSW) effect, which is used to explain the deficit of electron flavor neutrino flux, thus solved the solar neutrino problem~\cite{wolf78,Petcov2002}. Another matter effect of interest is parametric resonance of neutrino flavor oscillations due to fluctuations in matter~\cite{Krastev1989,Akhmedov2000}. Recently matter stimulated neutrino flavor conversion in varying matter density has been researched using Jacobi-Anger expansion by Kneller, et al.~\cite{Kneller2013,Patton2014}. They have shown that many stimulated neutrino oscillations can be explained by resonances of the system. 
 
-In this manuscript, we take a step further and interpret parametric resonance \cite{Akhmedov2000, Krastev1989} as well as other stimulated neutrino oscillations \cite{Kneller2013, Patton2014}, as superpositions of Rabi oscillations. In Sec.~\ref{sec:background}, we define the formalism of neutrino oscillations in matter to be used. In Sec.~\ref{sec:simple} we discuss how neutrino oscillations is related to Rabi oscillations using a very simple model. In Sec.~\ref{sec:jacobi} we show the exact theory of decomposing neutrino oscillations in matter into Rabi oscillations, by applying a specific unitary transformation of the basis and Jacobi-Anger expansion.
+In this manuscript, we take a step further and interpret parametric resonance~\cite{Akhmedov2000, Krastev1989} as well as other stimulated neutrino oscillations~\cite{Kneller2013, Patton2014}, as superpositions of Rabi oscillations. In Sec.~\ref{sec:background}, we define the formalism of neutrino oscillations in matter used in this paper. In Sec.~\ref{sec:simple} we discuss how neutrino oscillations are related to Rabi oscillations by dropping less important terms. In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino oscillation system into Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion.
+
+
+\fbox{TODO:more about oscillation in matter}
 
 \section{\label{sec:background}Background and Formalism}
+
+\fbox{TODO: Explain why two flavor}
 
 We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ and mass-squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(r)$ along the path of neutrino propagation $r$. Three different bases are used in this work, i.e., flavor basis, in which the wave function describes the probability amplitude of different flavors, background matter basis, in which the wave function describe the probability amplitude of different mass states with the appearance of only background matter density, and Rabi basis which will be defined explicitly later. These different bases are also defined in Appendix~\ref{sec:three-bases}. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian in flavor basis is
 \begin{equation}
@@ -171,20 +176,21 @@ We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ 
    \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}} & \omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} - \lambda(r)
     \end{pmatrix},
 \end{equation}
-where $\lambda(r)= \sqrt{2}G_F n_e(r)$ is the potential due to neutrino interaction with matter and $G_F$ is the Fermi constant, $\theta_{\mathrm{v}}$ is the vacuum mixing angle, $\omega_{\mathrm{v}} = \delta m^2/2E$ is the vacuum oscillation frequency. For the convenience of notation, we use Pauli matrices $\sigma_i$ to denote the Hamiltonian, which simplifies the notation of the Schr\"{o}dinger equation,
+where $\lambda(r)= \sqrt{2}G_F n(r)$ is the potential due to neutrino interaction with matter and $G_F$ is the Fermi constant, $\theta_{\mathrm{v}}$ is the vacuum mixing angle, $\omega_{\mathrm{v}} = \delta m^2/2E$ is the vacuum oscillation frequency. For the convenience of notation, we use Pauli matrices $\sigma_i$ to denote the Hamiltonian, so that the Schr\"{o}dinger equation becomes,
 \begin{equation}
     \mathrm i\frac{\mathrm d}{\mathrm d r}\Psi(r) = \frac{1}{2} \left(  
-    (- \omega_{\mathrm{v}} + \lambda(r) ) \sigma_3 + \omega_{\mathrm{v}} \sigma_1 
+    (- \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} + \lambda(r) ) \sigma_3 + \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \sigma_1 
     \right)
     \Psi(r),
 \end{equation}
 where $\Psi(r)$ is the wave function in flavor basis. For two flavor system, it is written as $ \Psi(r) = \left(
     \psi_{e} ,
     \psi_{x}
-    \right)^{\mathrm{T}}$ where $\psi_{e}$ and $\psi_{x}$ are the amplitudes for electron flavor and the other flavor respectively.
+    \right)^{\mathrm{T}}$ 
+where $\psi_{e}$ and $\psi_{x}$ are the amplitudes for electron flavor and the second flavor ($\mu$ flavor or $\tau$ flavor) respectively. The equation of motion in flavor basis reveals the transitions between different flavors directly.
 
 
-Now consider a system with a very general perturbation on top of a constant matter profile, so that the potential $\lambda(r)$ is explicitly written as
+The potential $\lambda(r)$ for a general perturbation on top of a constant matter profile can be written as
 \begin{equation}
     \lambda(r) = \lambda_0 + \delta \lambda(r).
     \label{eq-general-matter-profile}
@@ -203,6 +209,8 @@ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_
 \begin{equation}
 \omega_{\mathrm{m}} = \omega_{\mathrm{v}} \sqrt{ ( \lambda_0/\omega_{\mathrm{v}} - \cos (2\theta_{\mathrm{v}}) )^2 + \sin^2(2\theta_{\mathrm{v}}) }.
 \end{equation}
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -245,7 +253,7 @@ The resonance condition is determined by matching the energy gap $\omega_m$ with
 
 To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, black dots show the transition probability of neutrino oscillation in matter, while solid line stands for the result predicted using Rabi formula.
 
-For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(r)$ associated with the matter profile at distance $r$ varies slowly.\cite{Krastev1989} This condition is exactly the Rabi resonance condition when $n=1$, as such condition matches the driving field frequency to the energy split.
+For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(r)$ associated with the matter profile at distance $r$ varies slowly~\cite{Krastev1989}. This condition is exactly the Rabi resonance condition when $n=1$, as such condition matches the driving field frequency to the energy split.
 
 
 
@@ -282,7 +290,7 @@ Another well studied matter profile is the periodic castle wall matter profile. 
 \Lambda_2, &\quad \frac{X_1}{2}\le r\le \frac{X_1}{2}+\frac{X_2}{2}
 \end{cases}
 \end{equation}
-where $X_1$ and $X_2$ are the two periods of the matter profile or potential. The parametric resonance condition derived by E. Akhmedov\cite{Akhmedov2000},
+where $X_1$ and $X_2$ are the two periods of the matter profile or potential. The parametric resonance condition derived by E. Akhmedov~\cite{Akhmedov2000},
 \begin{equation}
     \frac{\tan (\omega_{m1}X_1/2)}{\tan (\omega_{m2}X_2/2)} = - \frac{\cos 2\theta_{m2}}{\cos 2\theta_{m1}},
 \end{equation}
