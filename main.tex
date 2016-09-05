@@ -196,12 +196,14 @@ The potential $\lambda(r)$ for a general perturbation on top of a constant matte
     \label{eq-general-matter-profile}
 \end{equation}
 For better understanding of the transition between states due to the effect of matter, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $\delta\lambda(r)$, so that the Hamiltonian becomes
-\begin{align}
-    H^{(\mathrm{m})} =& -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3 \nonumber \\
-    & - \frac{1}{2} \delta\lambda(r) \sin 2\theta_{\mathrm m} \sigma_1,
+\begin{widetext}
+\begin{equation}
+    H^{(\mathrm{m})} = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3 
+     - \frac{1}{2} \delta\lambda(r) \sin 2\theta_{\mathrm m} \sigma_1,
     \label{eq-hamiltonian-bg-matter-basis-general}
-\end{align}
-$\theta_{\mathrm m}$ is the mixing angle in a constant matter profile $\lambda_0$, which is calculated using relation
+\end{equation}
+\end{widetext}
+where $\theta_{\mathrm m}$ is the mixing angle in a constant matter profile $\lambda_0$, which is calculated using relation
 \begin{equation*}
 \tan 2\theta_{\mathrm{m}}=\sin 2\theta_{\mathrm v}/\left( \cos 2\theta_{\mathrm v} - \lambda_0/\omega_{\mathrm v} \right)
 \end{equation*}
@@ -237,16 +239,22 @@ In this section we present a simple picture to explain neutrino parametric reson
 
 \subsection{\label{sec:single-freq}Single Frequency Matter Profile}
 
-The first example we examine is single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. With the varying diagonal elements of Hamiltonian removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system when close to resonance, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. More specifically, the Hamiltonian is simplified to
+The first example we examine is single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. With the varying diagonal elements of Hamiltonian removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system when close to resonance, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. Apply rotating wave approximation by dropping the rotating term that leads to high frequency oscillations. More specifically, the Hamiltonian is simplified to
 % \begin{align}
 % H^{(\mathrm{m})}_1 &= -\frac{\omega_{\mathrm m}}{2} \sigma_3 + \frac{1}{2} \lambda_1 \sin(k_1 r) \cos 2\theta_{\mathrm m} \sigma_3 -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1 \\
 % &\to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1,
 %     \label{eq-hamiltonian-bg-matter-basis-single-frequency}
 % \end{align}
-\begin{equation}
-H^{(\mathrm{m})} \to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin 2\theta_{\mathrm m} \sin(k_1 r) \sigma_1,
+\begin{align}
+H^{(\mathrm{m})} \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m} \sin( k_1 r ) \sigma_1 \\
+\to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2,\nonumber 
     \label{eq-hamiltonian-bg-matter-basis-single-frequency}
+\end{align}
+where
+\begin{equation}
+A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2i}.
 \end{equation}
+
 The resonance condition is determined by matching the energy gap $\omega_{\mathrm m}$ with external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
 
 % For a graphical representation of such resonances, decompositions of Hamiltonian onto Pauli matrices are denoted as vectors on , c.f.~Appendix~\ref{sec:rabi-oscillations}. The Hamiltonian is decomposed into three different components, i.e., the constant energy gap on z axis $\vec H_z$, the varying perturbation on z axis $\vec H_{z}'$, and the rotating perturbations in xy plane $\vec H_{\pm}$. The frequency of the rotating component $H_{+}$ in the xy can easily match the energy gap $\omega_{\mathrm{m}}$ even with a varying $\vec H_z'$ component in the Hamiltonian vector, as long as the system is close to resonance.
@@ -312,10 +320,15 @@ H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{
 determines the transitions between the two background matter states.
 
 In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a proper $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbations frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first mode is the resonance mode due to the value we choose. As an estimation, we drop all other modes. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, so that
+\begin{align*}
+    H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m}  \cos\left( k_0 r \right) \sigma_1\\
+    \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} A_1 \cos ( k_0 r) \sigma_1 + \frac{1}{2} A_1 \sin(k_0 r) \sigma_2,
+\end{align*}
+where
 \begin{equation*}
-    H^{(\mathrm m)} \to - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \lambda_q \sin 2\theta_{\mathrm m}  \cos\left( k_0 r \right) \sigma_1.
+A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2} .
 \end{equation*}
-    
+
 FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. The lines are the prediction using Rabi formula for the base frequency perturbation only, while the markers are the numerical results of the system. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance mode $k_0$ only matches the numerical results. The reason is that the resonance width of each mode is small, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results as $\Lambda_2-\Lambda_1$ becomes larger, which is due to the destruction effect of the interference.
 
 \begin{figure}[!htbp]
@@ -354,8 +367,30 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two mat
 }
 
 
-The interference effect between different modes in multiple frequency Rabi oscillations can be illustrated using a two-mode model. In Fig.~\ref{fig-akhmedovOscPlt}, the transition amplitude drops for larger fluctuations $\Lambda_2-\Lambda_1$. Such destruction effect can be interpreted as shift of energy gap due to the long wavelength perturbation. 
+The interference effect between different modes in multiple frequency Rabi oscillations can be illustrated using a two-mode model. In Fig.~\ref{fig-akhmedovOscPlt}, the transition amplitude drops for larger fluctuations $\Lambda_2-\Lambda_1$. Such destruction effect can be interpreted as shift of energy gap due to the long wavelength perturbation. To model the effect, we construct a Rabi oscillation Hamiltonian with two modes of different frequency,
+\begin{widetext}
+\begin{equation}
+H^{(\mathrm{m})}  = -\frac{\omega_{\mathrm{m}}}{2} - \frac{1}{2} \sum_{n=1}^2  A_n \cos (k_n r) \sigma_1 + \frac{1}{2} \sum_{n=1}^2  A_n \sin (k_n r) \sigma_2 .
+\label{eq-hamiltonian-rabi-two-modes-interference}
+\end{equation}
+\end{widetext}
 
+To show the destruction effect, the Hamiltonian Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is written as vectors with sigma matrices as the basis,
+\begin{equation}
+\mathbf H = \begin{pmatrix}
+0\\
+0\\
+\omega_m
+\end{pmatrix} + \begin{pmatrix}
+A_1 \cos (k_1 r)\\
+-A_1 \sin (k_1 r)\\
+0
+\end{pmatrix} + \begin{pmatrix}
+A_2 \cos (k_2 r)\\
+-A_2 \sin (k_2 r)\\
+0
+\end{pmatrix}.
+\end{equation}
 
 
 
@@ -365,8 +400,8 @@ The interference effect between different modes in multiple frequency Rabi oscil
 
 \begin{figure}[!htbp]
                 \centering
-                \includegraphics[width=\columnwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
-                \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement.}
+                \includegraphics[width=\columnwidth]{assets/interference-reduction}
+                \caption{Reduction of transition amplitudes. Black dots are the numerical transition amplitudes for only one mode perturbation which is at resonance, i.e., $A_1=0.000035\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$; Green diamonds are the numerical transition amplitude with a second mode, $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$; Red up-pointing triangles are the numerical transition amplitudes with a second mode, $A_2=0.01\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$; Blue down-pointing triangles  the numerical transition amplitudes with a second mode, $A_2=0.02\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$. The lines are the probabilities predicted using Rabi formula correspondingly. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
 
