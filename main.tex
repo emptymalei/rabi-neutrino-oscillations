@@ -244,10 +244,10 @@ The first example we examine is single frequency matter profile $\delta\lambda(r
 %     \label{eq-hamiltonian-bg-matter-basis-single-frequency}
 % \end{align}
 \begin{equation}
-H^{(\mathrm{m})} \to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1,
+H^{(\mathrm{m})} \to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin 2\theta_{\mathrm m} \sin(k_1 r) \sigma_1,
     \label{eq-hamiltonian-bg-matter-basis-single-frequency}
 \end{equation}
-The resonance condition is determined by matching the energy gap $\omega_m$ with external driving field frequency $k_1$, i.e., $\omega_m \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
+The resonance condition is determined by matching the energy gap $\omega_{\mathrm m}$ with external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
 
 % For a graphical representation of such resonances, decompositions of Hamiltonian onto Pauli matrices are denoted as vectors on , c.f.~Appendix~\ref{sec:rabi-oscillations}. The Hamiltonian is decomposed into three different components, i.e., the constant energy gap on z axis $\vec H_z$, the varying perturbation on z axis $\vec H_{z}'$, and the rotating perturbations in xy plane $\vec H_{\pm}$. The frequency of the rotating component $H_{+}$ in the xy can easily match the energy gap $\omega_{\mathrm{m}}$ even with a varying $\vec H_z'$ component in the Hamiltonian vector, as long as the system is close to resonance.
 
@@ -263,7 +263,7 @@ For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
                 \centering
                 \includegraphics[width=\columnwidth]{assets/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
-                \caption{Single frequency matter profile and Rabi oscillation.  Black dots are the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement. The red line is the probabilities predicted using Rabi formula.}
+                \caption{Single frequency matter profile and Rabi oscillation.  Black dots are the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$. The red line is the probabilities predicted using Rabi formula.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
@@ -319,21 +319,17 @@ determines the transitions between the two background matter states.
 
 Similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, since the rotating frequency of Hamiltonian vector associated with $\sigma_1$ can always match the background energy gap $\omega_{\mathrm{m}}$ easily as long as the resonance width is large enough, which is shown exactly later.
 
-\fbox{EVERYTHING BEYONGD THIS POINT IS CHAOS. I'LL WRITE THE FOLLOWING AS SOON AS POSSIBLE.}
 
-FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states. It's clearly shown that these neutrino transitions matches the theory of Rabi oscillation. \fbox{TO DO HERE}
+FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. It's clearly shown that these neutrino transitions matches the theory of Rabi oscillation.
+
+Since $\Lambda_1-\Lambda_2$ determines how far away the system is from resonance, we need to vary this quantity.
 
 \begin{figure}[!htbp]
                 \centering
-                \includegraphics[width=\columnwidth]{assets/akhmedovOscPlt}
-                \caption{
-                \fbox{
-                \parbox{0.7\columnwidth}
-                {
-                SHOULD HAVE A COMPARISON FOR DIFFERENT AMPLITUDES:
-                Since $\lambda_1-\lambda_2$ determines how far away the system is from resonance, we need to vary this quantity.
-                }
-                }
+                \includegraphics[width=\columnwidth]{assets/castle-wall}
+                \caption{Transition probabilities for castle wall matter profile. 
+                %The black solid line is the transition probabilities for $\lambda_2-\lambda_1=0.09\lambda_0$ calculated using Rabi formula, while black dots are the numerical solution; The red dashed line is the transition probabilities for $\lambda_2-\lambda_1=0.1\lambda_0$ calculated using Rabi formula, while red up-pointing triangles are the numerical solution; The blue dash-dotted line is the transition probabilities for $\lambda_2-\lambda_1=0.2\lambda_0$ calculated using Rabi formula, while blue down-pointing triangles are the numerical solution. 
+                he black solid line, red dashed line, and blue dash-dotted line are the transition probabilities calculated using Rabi formula for $\Lambda_2-\Lambda_1=0.09\Lambda_0$, $\Lambda_2-\Lambda_1=0.1\Lambda_0$, $\Lambda_2-\Lambda_1=0.2\Lambda_0$ respectively, while the black dots, red up-pointing triangles, and blue down-pointing triangles are the corresponding numerical solution of castle wall matter profile. During the calculation, the background potential $\Lambda_0$ is set to half the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.
                 }
                 \label{fig-akhmedovOscPlt}
 \end{figure}
