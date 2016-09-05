@@ -275,13 +275,6 @@ For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
 \subsection{Parametric Resonance}
 
 
-\fbox{
-\parbox{0.9\columnwidth}{
-\begin{itemize}
-\item The parametric resonance condition is exactly the condition of Rabi oscillations. 
-\item \textless STRIKETHROUGH\textgreater MSW resonance can also be interpreted as Rabi resonance. \textless/STRIKETHROUGH\textgreater
-\end{itemize}
-}}
 
 Another well studied matter profile is the periodic castle wall matter profile. Within one period the potential is defined as,
 \begin{equation}
@@ -300,7 +293,7 @@ Even though this castle wall problem is exactly solved, the physics behind it is
 
 For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino transitions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
 \begin{equation}
-\lambda(x) = \lambda_0 + \sum_{q=1}^{\infty} \lambda_q \cos\left( (2q-1) k_0  x \right),
+\lambda(r) = \lambda_0 + \sum_{q=1}^{\infty} \lambda_q \cos\left( (2q-1) k_0  r \right),
 \end{equation}
 where 
 \begin{align*}
@@ -312,24 +305,25 @@ k_0 &= \frac{2\pi}{X}, \\
 To calculate the transitions between two mass states of background matter potential $\lambda_0$, we rotate to the background matter basis with respect to $\lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
 \begin{widetext}
 \begin{equation}
-H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \lambda_q \cos\left( (2q-1)k_0  r \right) \cos 2\theta_{\mathrm m} \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \lambda_q \cos\left( (2q-1)k_0 r \right) \sin 2\theta_{\mathrm m} \sigma_1,
+H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \lambda_q \cos 2\theta_{\mathrm m} \cos\left( (2q-1)k_0  r \right)  \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \lambda_q \sin 2\theta_{\mathrm m}  \cos\left( (2q-1)k_0 r \right) \sigma_1,
+\label{castle-wall-decomposed-hamiltonian}
 \end{equation}
 \end{widetext}
 determines the transitions between the two background matter states.
 
-Similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, since the rotating frequency of Hamiltonian vector associated with $\sigma_1$ can always match the background energy gap $\omega_{\mathrm{m}}$ easily as long as the resonance width is large enough, which is shown exactly later.
-
-
-FIG.~\ref{fig-akhmedovOscPlt} shows the comparison of neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. It's clearly shown that these neutrino transitions matches the theory of Rabi oscillation.
-
-Since $\Lambda_1-\Lambda_2$ determines how far away the system is from resonance, we need to vary this quantity.
+In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a proper $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbations frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first mode is the resonance mode due to the value we choose. As an estimation, we drop all other modes. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, so that
+\begin{equation*}
+    H^{(\mathrm m)} \to - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \lambda_q \sin 2\theta_{\mathrm m}  \cos\left( k_0 r \right) \sigma_1.
+\end{equation*}
+    
+FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. The lines are the prediction using Rabi formula for the base frequency perturbation only, while the markers are the numerical results of the system. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance mode $k_0$ only matches the numerical results. The reason is that the resonance width of each mode is small, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results as $\Lambda_2-\Lambda_1$ becomes larger, which is due to the destruction effect of the interference.
 
 \begin{figure}[!htbp]
                 \centering
                 \includegraphics[width=\columnwidth]{assets/castle-wall}
                 \caption{Transition probabilities for castle wall matter profile. 
                 %The black solid line is the transition probabilities for $\lambda_2-\lambda_1=0.09\lambda_0$ calculated using Rabi formula, while black dots are the numerical solution; The red dashed line is the transition probabilities for $\lambda_2-\lambda_1=0.1\lambda_0$ calculated using Rabi formula, while red up-pointing triangles are the numerical solution; The blue dash-dotted line is the transition probabilities for $\lambda_2-\lambda_1=0.2\lambda_0$ calculated using Rabi formula, while blue down-pointing triangles are the numerical solution. 
-                he black solid line, red dashed line, and blue dash-dotted line are the transition probabilities calculated using Rabi formula for $\Lambda_2-\Lambda_1=0.09\Lambda_0$, $\Lambda_2-\Lambda_1=0.1\Lambda_0$, $\Lambda_2-\Lambda_1=0.2\Lambda_0$ respectively, while the black dots, red up-pointing triangles, and blue down-pointing triangles are the corresponding numerical solution of castle wall matter profile. During the calculation, the background potential $\Lambda_0$ is set to half the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.
+                he black solid line, red dashed line, and blue dash-dotted line are the transition probabilities calculated using Rabi formula for $\Lambda_2-\Lambda_1=0.09\Lambda_0$, $\Lambda_2-\Lambda_1=0.1\Lambda_0$, $\Lambda_2-\Lambda_1=0.2\Lambda_0$ respectively, while the black dots, red up-pointing triangles, and blue down-pointing triangles are the corresponding numerical solution of castle wall matter profile. During the calculation, the background potential $\Lambda_0$ is set to half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
                 }
                 \label{fig-akhmedovOscPlt}
 \end{figure}
@@ -360,12 +354,25 @@ Since $\Lambda_1-\Lambda_2$ determines how far away the system is from resonance
 }
 
 
+The interference effect between different modes in multiple frequency Rabi oscillations can be illustrated using a two-mode model. In Fig.~\ref{fig-akhmedovOscPlt}, the transition amplitude drops for larger fluctuations $\Lambda_2-\Lambda_1$. Such destruction effect can be interpreted as shift of energy gap due to the long wavelength perturbation. 
+
+
+
+
+
+%%%%%%%%%%% Plot to be renewed
+
+
 \begin{figure}[!htbp]
                 \centering
                 \includegraphics[width=\columnwidth]{assets/rabi-oscillations-energy-gap-change-k2-0-01}
                 \caption{Reduction of transition amplitudes. Black dashed line: the system has only one perturbation which is at exact resonance; Green dash-dotted line: $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Blue dotted line: $A_2=0.01\omega_{\mathrm m}$; Red line: $A_2=0.02\omega_{\mathrm m}$. The markers are the probabilities predicted using Rabi formula correspondingly. Black cross is the transition probability between two background mass eigenstates for the neutrinos with matter perturbation $A\sin(kx)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance requirement.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
+
+
+
+
 
 
 
