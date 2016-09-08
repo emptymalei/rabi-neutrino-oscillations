@@ -1,0 +1,20 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+  axis lines=middle,
+  axis line style={Stealth-Stealth,very thick},
+  xmin=-5.5,xmax=5.5,ymin=-5.5,ymax=5.5,
+  xtick distance=1,
+  ytick distance=1,
+  xlabel=$x$,
+  ylabel=$y$,
+  %title={Wonderful plot},
+  %grid=major,
+  %grid style={thin,densely dotted,black!20}]
+\addplot [Latex-Latex,domain=-5:3,samples=2] {x*2/3} node[right]{$a$};
+\end{axis}
+\end{tikzpicture}
+\end{document}

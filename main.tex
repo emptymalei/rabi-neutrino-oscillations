@@ -273,7 +273,7 @@ For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
                 \centering
                 \includegraphics[width=\columnwidth]{assets/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
-                \caption{Single frequency matter profile and Rabi oscillation.  Black dots are the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$. The solid line is the probabilities predicted using Rabi formula.}
+                \caption{Single frequency matter profile and Rabi oscillation.  Black dots are the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$ and mixing angle is chosen so that $\sin^2(2\theta_{\mathrm v}) = 0.093$. The solid line is the probabilities predicted using Rabi formula.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
@@ -284,7 +284,7 @@ For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
 
 \subsection{Castle Wall Matter Profile}
 
-The approach applied to single frequency matter profile also helps with the understanding of multiple frequency matter profile. Since any matter profile can be Fourier decomposed into superposition of many single frequency matter profile, we show an example of another well studied matter profile is the periodic castle wall matter profile, the potential of which is defined as,
+The approach applied to single frequency matter profile also helps with the understanding of multiple frequency matter profile. Since any matter profile can be Fourier decomposed into superposition of many single frequency matter profile, we show an example of another well studied matter profile which is the periodic castle wall matter profile. The potential shown in Fig.~\ref{fig-castlewall-profile-illustration} is defined as,
 \begin{equation}
     \lambda(r) = \begin{cases} 
 \Lambda_1, &\quad -\frac{X_1}{2}+nX\le r\le \frac{X_1}{2}+nX \\
@@ -298,11 +298,12 @@ where $X_1$ and $X_2$ are the two periods of the matter profile or potential, $X
 \end{equation}
 where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for potential $\Lambda_1$ and $\Lambda_2$ respectively.
 
-\fbox{
-\parbox{\columnwidth}{Include a plot of potential in Eq.~(\ref{eq-castle-wall-potential})
-Explain why this is important. \bf{Same to the the single frequency profile.}
-}
-}
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{assets/castlewall-profile}
+    \caption{The castle wall matter potential profile with $X_1=X_2=X/2$.}
+    \label{fig-castlewall-profile-illustration}
+\end{figure}
 
 Even though this castle wall problem is exactly solved, the condition itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations by making appropriate approximation, which will be be specifically proved in Sec.~\ref{sec:jacobi}.
 
@@ -333,7 +334,7 @@ determines the transitions between the two background matter states.
                 \includegraphics[width=\columnwidth]{assets/castle-wall}
                 \caption{Transition probabilities for castle wall matter profile. 
                 %The black solid line is the transition probabilities for $\lambda_2-\lambda_1=0.09\lambda_0$ calculated using Rabi formula, while black dots are the numerical solution; The red dashed line is the transition probabilities for $\lambda_2-\lambda_1=0.1\lambda_0$ calculated using Rabi formula, while red up-pointing triangles are the numerical solution; The blue dash-dotted line is the transition probabilities for $\lambda_2-\lambda_1=0.2\lambda_0$ calculated using Rabi formula, while blue down-pointing triangles are the numerical solution. 
-                The black solid line, red dashed line, and blue dash-dotted line are the transition probabilities calculated using Rabi formula for $\Lambda_2-\Lambda_1=0.09\Lambda_0$, $\Lambda_2-\Lambda_1=0.1\Lambda_0$, $\Lambda_2-\Lambda_1=0.2\Lambda_0$ respectively, while the black dots, red up-pointing triangles, and blue down-pointing triangles are the corresponding numerical solution of castle wall matter profile. During the calculation, the background potential $\Lambda_0$ is set to half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
+                The black dots, and blue triangles are the transition probabilities of castle wall matter profile calculated numerically for $\Lambda_2-\Lambda_1=0.04\Lambda_0$, and $\Lambda_2-\Lambda_1=0.8\Lambda_0$ respectively, while the black solid line, and blue dashed line are the corresponding Rabi formula. During the calculation, the energy of neutrinos is $10\,\mathrm{MeV}$, mass-squared difference is $\delta m^2=2.6\times 10^{-3}\,\mathrm{eV^2}$, and the vacuum mixing angle chosen so that $\sin^2(2\theta_v)=0.093$. The background potential $\Lambda_0$ is chosen so that it's half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
                 }
                 \label{fig-akhmedovOscPlt}
 \end{figure}
@@ -350,7 +351,7 @@ A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2} .
 \end{equation*}
 
 
-FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. The lines are the prediction using Rabi formula for the base frequency perturbation only, while the markers are the numerical results of the system. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance mode $k_0$ only matches the numerical results. The reason is that the resonance width of each mode is small, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results as $\Lambda_2-\Lambda_1$ becomes larger, which is due to the destruction effect of the interference.
+FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance mode $k_0$ only matches the numerical results. The reason is that the resonance width of each mode is small, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results for large $\Lambda_2-\Lambda_1$, which is due to the destruction effect of the interference with between modes.
 
 
 
@@ -486,18 +487,24 @@ in which the varying diagonal elements in Hamiltonian can be eliminated by choos
     \eta(x) - \eta(0) = - \frac{\omega_{\mathrm{m}}}{2} x + \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^x \delta\lambda (\tau) d\tau.
 \end{equation}
 In Rabi basis, the Schr\"{o}dinger equation becomes
-\begin{equation}
+%\begin{widetext}
+\begin{equation*}
     i \frac{d}{dx} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} = \left[ - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta} \\ e^{-2 i\eta } & 0 \end{pmatrix}\right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix},
-\end{equation}
-where $\eta(x) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $ for the Hamiltonian Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}).  One can easily show that the transition probability between two eigenstates in Rabi basis is the same as the transition probability between two eigenstates in background matter basis.
+\end{equation*}
+%\end{widetext}
+where $\eta(x) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $ for single frequency matter profile with potential $\delta\lambda(x) = A_1\sin(k_1x)$.  One can easily show that the transition probability between two eigenstates in Rabi basis is the same as the transition probability between two eigenstates in background matter basis.
 
 To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in \cite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$, i.e., to decompose spherical waves into plane waves. The final form of Hamiltonian that show the Hamiltonian is a summation of Rabi systems is
-\begin{equation}
-    H^{(\mathrm{r})} = -\frac{\omega_{\mathrm{m}}}{2} -  \frac{1}{2} \sum_{n=-\infty}^\infty B_n \begin{pmatrix}
+%\begin{widetext}
+\begin{equation*}
+    %H^{(\mathrm{R})} = 
+    -\frac{\omega_{\mathrm{m}}}{2} 
+    -  \frac{1}{2} \sum_{n=-\infty}^\infty B_n \begin{pmatrix}
     0 &  \Phi_n e^{i (n k_1-\omega_{\mathrm{m}}) x} \\
      \Phi_n^* e^{ - i (n k_1 -\omega_{\mathrm{m}}) x} & 0
     \end{pmatrix},
-\end{equation}
+\end{equation*}
+%\end{widetext}
 where
 \begin{align*}
     B_n &= \tan 2\theta_{\mathrm m} n k_1 J_{n} \left( \frac{A_1}{k_1}\cos 2\theta_{\mathrm m} \right),\\
