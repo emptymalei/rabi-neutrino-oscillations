@@ -32,6 +32,7 @@ reprint,
 %bibnotes,
  amsmath,amssymb,
  aps,
+%linenumbers,
 %pra,
 %prb,
 %rmp,
@@ -222,7 +223,7 @@ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_
 \section{\label{sec:simple}Parametric Resonance and Rabi oscillation --- a simplified model}%
 
 
-In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations.
+In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations. Rabi oscillations have been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
 
 
 
@@ -232,14 +233,15 @@ In this section we present a simple picture to explain neutrino parametric reson
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% The Hamiltonian Eq.~\ref{eq-hamiltonian-bg-matter-basis-general} has a lot in common with the Rabi oscillation Hamiltonian. One example of Rabi oscillation is the transition between low energy state and high energy state in two level atoms, when stimulated by optical fields with frequency that matches the energy gap of the two level atoms. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi formula. Rabi oscillations have been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}. 
+% The Hamiltonian Eq.~\ref{eq-hamiltonian-bg-matter-basis-general} has a lot in common with the Rabi oscillation Hamiltonian. One example of Rabi oscillation is the transition between low energy state and high energy state in two level atoms, when stimulated by optical fields with frequency that matches the energy gap of the two level atoms. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi formula. 
 
 % In the light of Rabi oscillations, we argue that the second term in the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), i.e., the varying diagonal elements of Hamiltonian, is not relevant when the system is close to resonance, as we will explain later using Jacobi-Anger expansion. 
 
 
 \subsection{\label{sec:single-freq}Single Frequency Matter Profile}
 
-The first example we examine is single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. With the varying diagonal elements of Hamiltonian removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system when close to resonance, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. Apply rotating wave approximation by dropping the rotating term that leads to high frequency oscillations. More specifically, the Hamiltonian is simplified to
+
+The first example we examine is single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. As proved later, the varying $\sigma_3$ term $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in Hamiltonian Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) has little effect on the transition probabilities when the system is close to resonance. With the varying $\sigma_3$ term removed, it indicates that this single frequency matter perturbation neutrino oscillation system is a Rabi oscillation system, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. By dropping the off resonance terms, the Hamiltonian is simplified to
 % \begin{align}
 % H^{(\mathrm{m})}_1 &= -\frac{\omega_{\mathrm m}}{2} \sigma_3 + \frac{1}{2} \lambda_1 \sin(k_1 r) \cos 2\theta_{\mathrm m} \sigma_3 -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1 \\
 % &\to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1,
@@ -271,7 +273,7 @@ For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
                 \centering
                 \includegraphics[width=\columnwidth]{assets/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
-                \caption{Single frequency matter profile and Rabi oscillation.  Black dots are the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$. The red line is the probabilities predicted using Rabi formula.}
+                \caption{Single frequency matter profile and Rabi oscillation.  Black dots are the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$. The solid line is the probabilities predicted using Rabi formula.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
@@ -280,44 +282,62 @@ For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
 
 
 
-\subsection{Parametric Resonance}
+\subsection{Castle Wall Matter Profile}
 
-
-
-Another well studied matter profile is the periodic castle wall matter profile. Within one period the potential is defined as,
+The approach applied to single frequency matter profile also helps with the understanding of multiple frequency matter profile. Since any matter profile can be Fourier decomposed into superposition of many single frequency matter profile, we show an example of another well studied matter profile is the periodic castle wall matter profile, the potential of which is defined as,
 \begin{equation}
-    \lambda(r) = \begin{cases} \Lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le r \le -\frac{X_1}{2} \\
-\Lambda_1, &\quad -\frac{X_1}{2}\le r\le \frac{X_1}{2} \\
-\Lambda_2, &\quad \frac{X_1}{2}\le r\le \frac{X_1}{2}+\frac{X_2}{2}
+    \lambda(r) = \begin{cases} 
+\Lambda_1, &\quad -\frac{X_1}{2}+nX\le r\le \frac{X_1}{2}+nX \\
+\Lambda_2, &\quad \frac{X_1}{2}+nX\le r\le \frac{X_1}{2}+\frac{X_2}{2} +nX
 \end{cases}
+\label{eq-castle-wall-potential}
 \end{equation}
-where $X_1$ and $X_2$ are the two periods of the matter profile or potential. The parametric resonance condition derived by E. Akhmedov~\cite{Akhmedov2000},
+where $X_1$ and $X_2$ are the two periods of the matter profile or potential, $X=X_1+X_2$, and $n$ is integer. The parametric resonance condition derived by E. Akhmedov~\cite{Akhmedov2000} is,
 \begin{equation}
-    \frac{\tan (\omega_{m1}X_1/2)}{\tan (\omega_{m2}X_2/2)} = - \frac{\cos 2\theta_{m2}}{\cos 2\theta_{m1}},
+    \frac{\tan (\omega_{\mathrm m1}X_1/2)}{\tan (\omega_{\mathrm m2}X_2/2)} = - \frac{\cos 2\theta_{\mathrm m2}}{\cos 2\theta_{\mathrm m1}},
 \end{equation}
 where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for potential $\Lambda_1$ and $\Lambda_2$ respectively.
 
-Even though this castle wall problem is exactly solved, the physics behind it is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations by making appropriate approximation, which will be be specifically proved in Sec.~\ref{sec:jacobi}.
+\fbox{
+\parbox{\columnwidth}{Include a plot of potential in Eq.~(\ref{eq-castle-wall-potential})
+Explain why this is important. \bf{Same to the the single frequency profile.}
+}
+}
+
+Even though this castle wall problem is exactly solved, the condition itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations by making appropriate approximation, which will be be specifically proved in Sec.~\ref{sec:jacobi}.
 
 For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino transitions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
 \begin{equation}
-\lambda(r) = \lambda_0 + \sum_{q=1}^{\infty} \lambda_q \cos\left( (2q-1) k_0  r \right),
+\lambda(r) = \lambda_0 + \sum_{n=1}^{\infty} \lambda_n \cos\left( k_n  r \right),
 \end{equation}
 where 
 \begin{align*}
-k_0 &= \frac{2\pi}{X}, \\
-\lambda_0 &= \frac{\Lambda_1 + \Lambda_2 }{2}, \\
-\lambda_q & = \frac{2}{(2q-1)\pi}  (-1)^q  \left( \Lambda_1 -  \Lambda_2 \right).
+\lambda_0 &= (\Lambda_1 + \Lambda_2)/2, \\
+\lambda_n & = \frac{2}{(2n-1)\pi}  (-1)^n  \left( \Lambda_1 -  \Lambda_2 \right),\\
+k_n &= (2n-1)k_0, \\
+k_0 &= 2\pi/X.
 \end{align*}
 
 To calculate the transitions between two mass states of background matter potential $\lambda_0$, we rotate to the background matter basis with respect to $\lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
 \begin{widetext}
 \begin{equation}
-H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{q=1}^{\infty} \lambda_q \cos 2\theta_{\mathrm m} \cos\left( (2q-1)k_0  r \right)  \sigma_3 - \frac{1}{2} \sum_{q=1}^{\infty} \lambda_q \sin 2\theta_{\mathrm m}  \cos\left( (2q-1)k_0 r \right) \sigma_1,
+H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{n=1}^{\infty} \lambda_n \cos 2\theta_{\mathrm m} \cos\left( k_n  r \right)  \sigma_3 - \frac{1}{2} \sum_{n=1}^{\infty} \lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1,
 \label{castle-wall-decomposed-hamiltonian}
 \end{equation}
 \end{widetext}
 determines the transitions between the two background matter states.
+
+
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\columnwidth]{assets/castle-wall}
+                \caption{Transition probabilities for castle wall matter profile. 
+                %The black solid line is the transition probabilities for $\lambda_2-\lambda_1=0.09\lambda_0$ calculated using Rabi formula, while black dots are the numerical solution; The red dashed line is the transition probabilities for $\lambda_2-\lambda_1=0.1\lambda_0$ calculated using Rabi formula, while red up-pointing triangles are the numerical solution; The blue dash-dotted line is the transition probabilities for $\lambda_2-\lambda_1=0.2\lambda_0$ calculated using Rabi formula, while blue down-pointing triangles are the numerical solution. 
+                The black solid line, red dashed line, and blue dash-dotted line are the transition probabilities calculated using Rabi formula for $\Lambda_2-\Lambda_1=0.09\Lambda_0$, $\Lambda_2-\Lambda_1=0.1\Lambda_0$, $\Lambda_2-\Lambda_1=0.2\Lambda_0$ respectively, while the black dots, red up-pointing triangles, and blue down-pointing triangles are the corresponding numerical solution of castle wall matter profile. During the calculation, the background potential $\Lambda_0$ is set to half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
+                }
+                \label{fig-akhmedovOscPlt}
+\end{figure}
+
 
 In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a proper $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbations frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first mode is the resonance mode due to the value we choose. As an estimation, we drop all other modes. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, so that
 \begin{align*}
@@ -329,17 +349,9 @@ where
 A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2} .
 \end{equation*}
 
+
 FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. The lines are the prediction using Rabi formula for the base frequency perturbation only, while the markers are the numerical results of the system. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance mode $k_0$ only matches the numerical results. The reason is that the resonance width of each mode is small, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results as $\Lambda_2-\Lambda_1$ becomes larger, which is due to the destruction effect of the interference.
 
-\begin{figure}[!htbp]
-                \centering
-                \includegraphics[width=\columnwidth]{assets/castle-wall}
-                \caption{Transition probabilities for castle wall matter profile. 
-                %The black solid line is the transition probabilities for $\lambda_2-\lambda_1=0.09\lambda_0$ calculated using Rabi formula, while black dots are the numerical solution; The red dashed line is the transition probabilities for $\lambda_2-\lambda_1=0.1\lambda_0$ calculated using Rabi formula, while red up-pointing triangles are the numerical solution; The blue dash-dotted line is the transition probabilities for $\lambda_2-\lambda_1=0.2\lambda_0$ calculated using Rabi formula, while blue down-pointing triangles are the numerical solution. 
-                he black solid line, red dashed line, and blue dash-dotted line are the transition probabilities calculated using Rabi formula for $\Lambda_2-\Lambda_1=0.09\Lambda_0$, $\Lambda_2-\Lambda_1=0.1\Lambda_0$, $\Lambda_2-\Lambda_1=0.2\Lambda_0$ respectively, while the black dots, red up-pointing triangles, and blue down-pointing triangles are the corresponding numerical solution of castle wall matter profile. During the calculation, the background potential $\Lambda_0$ is set to half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
-                }
-                \label{fig-akhmedovOscPlt}
-\end{figure}
 
 
 
@@ -350,7 +362,7 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two mat
 %%%%%%%%
 
 
-\subsection{Interference}
+\subsection{Interference with Long Wave Length Mode}
 
 % \fbox{
 % \parbox{0.9\columnwidth}{
@@ -405,13 +417,8 @@ To begin with, the first rotating perturbation satisfies the resonance condition
 \end{equation}
 which leads to
 \begin{equation}
-A_2 \geq 2\omega_{\mathrm{m}}A_1 \equiv A_{2,\mathrm{Critical}}.
+A_2 \geq \sqrt{2\omega_{\mathrm{m}}A_1} \equiv A_{2,\mathrm{Critical}}.
 \end{equation}
-
-We choose a system with two modes where the first modes has amplitude $A_1 = 0.000035\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. Without the appearance of the second mode, we obtain full resonance. For larger $A_2$ the destruction effect is more effective. As shown in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}, black dots, green diamonds, red up-pointing triangles, and blue down-pointing triangles are the numerical result for Hamiltonian Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}). The agreement between markers and corresponding lines verifies the approximation that the slow rotating field works as a shift in energy gaps.
-
-
-%%%%%%%%%%% Plot to be renewed
 
 
 \begin{figure}[!htbp]
@@ -420,6 +427,13 @@ We choose a system with two modes where the first modes has amplitude $A_1 = 0.0
                 \caption{Reduction of transition amplitudes. Black dots are the numerical transition amplitudes for only one mode perturbation which is at resonance, i.e., $A_1=0.000035\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$; Green diamonds are the numerical transition amplitude with a second mode, $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$; Red up-pointing triangles are the numerical transition amplitudes with a second mode, $A_2=0.01\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$; Blue down-pointing triangles  the numerical transition amplitudes with a second mode, $A_2=0.02\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$. The lines are the probabilities predicted using Rabi formula correspondingly. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
+
+
+We choose a system with two modes where the first modes has amplitude $A_1 = 0.000035\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. Without the appearance of the second mode, we obtain full resonance. For larger $A_2$ the destruction effect is more effective. As shown in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}, black dots, green diamonds, red up-pointing triangles, and blue down-pointing triangles are the numerical result for Hamiltonian Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}). The agreement between markers and corresponding lines verifies the approximation that the slow rotating field works as a shift in energy gaps. 
+
+
+
+
 
 
 
@@ -449,31 +463,35 @@ We choose a system with two modes where the first modes has amplitude $A_1 = 0.0
 \section{\label{sec:jacobi}Parametric Resonance and Rabi oscillation --- Jacobi-Anger expansion}
 
 
-In this section, we show that the matter effect can be decomposed into superpositions of Rabi oscillations. For a system of single frequency matter perturbation, cf. Eq.~(\ref{single-frequency-matter-profile}), whose Hamiltonian is described by Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}), we apply an unitary transformation of the form
+With the intuition of the Rabi oscillation itself as well as the interference with long wave length mode shown in Sec.~\ref{sec:simple}, we can interpret the transition probabilities of any matter profile more precisely if the system can be exactly decomposed into multiple Rabi oscillations. In this section, we show that the matter effect can be decomposed into superpositions of Rabi oscillations. For a system of single frequency matter perturbation, $\delta \lambda(r) = \lambda_1 \sin(k_1 r)$ in Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), we apply an unitary transformation of the form
 \begin{equation}
-    \mathbf{U} =  \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & e^{i \eta (x)}  \end{pmatrix},
+    \mathbf{U} =  \begin{pmatrix} e^{-i \eta (r)} & 0 \\  0 & e^{i \eta (r)}  \end{pmatrix},
+    \label{eq-rabi-transformation}
 \end{equation}
-which is a transformation used in \cite{Kneller2006} to remove the diagonal elements of the Hamiltonian. In this work, this transformation is used to remove the varying terms of diagonal elements in the Hamiltonian, so that the energy gap is fixed in the new basis $\left(\ket{\nu_{\mathrm{r1}}},\ket{\nu_{\mathrm{r2}}}\right)^{\mathrm{T}}$, which is defined as
+which is a transformation used in reference \onlinecite{Kneller2006} to remove the diagonal elements of the Hamiltonian. In this work, this transformation is used to remove the varying $\sigma_3$ terms $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in the Hamiltonian, so that the energy gap is fixed in the new basis $\left(\ket{\nu_{\mathrm{r1}}},\ket{\nu_{\mathrm{r2}}}\right)^{\mathrm{T}}$, which is defined as
 \begin{equation}
     \begin{pmatrix} \ket{\nu_{\mathrm{r1}}}\\ \ket{\nu_{\mathrm{r2}}} \end{pmatrix} =  \mathbf{U}^\dagger \begin{pmatrix} \ket{\nu_{\mathrm{L}}} \\ \ket{\nu_{\mathrm{H}}} \end{pmatrix}.
+    \label{eq-rabi-basis}
 \end{equation}
-For convenience, we name this new basis the Rabi basis. In Rabi basis, we find the Schr\"{o}dinger equation
-\begin{align*}
-    &\begin{pmatrix}  \frac{d\eta}{dx}  & 0 \\ 0 & - \frac{d\eta}{dx}  \end{pmatrix} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} + i \frac{d}{dx} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} \\
-    =&
-\left[ -\frac{\omega_m}{2} \sigma_3  + \frac{\delta \lambda}{2} \cos 2\theta_m  \sigma_3  - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta} \\ e^{-2 i\eta } & 0 \end{pmatrix}   \right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix},
-\end{align*}
-in which the varying diagonal elements in Hamiltonian is eliminated by choosing $\eta(x)$ properly, i.e.,
+For convenience, we name this unitary transformation Rabi transformation in Eq.~(\ref{eq-rabi-transformation}) as well as the new basis in Eq.~(\ref{eq-rabi-basis}) the Rabi basis. In Rabi basis, we find the Schr\"{o}dinger equation
+\begin{widetext}
+\begin{equation*}
+    \begin{pmatrix}  \frac{\mathrm d\eta}{\mathrm dr}  & 0 \\ 0 & - \frac{\mathrm d\eta}{\mathrm d r}  \end{pmatrix} \begin{pmatrix} \psi_{\mathrm R1} \\ \psi_{\mathrm R2} \end{pmatrix} + \mathrm i \frac{\mathrm d}{\mathrm dr} \begin{pmatrix} \psi_{\mathrm R1} \\ \psi_{\mathrm R2} \end{pmatrix} 
+    =
+\left[ -\frac{\omega_{\mathrm m} }{2} \sigma_3  + \frac{\delta \lambda}{2} \cos 2\theta_{\mathrm m}  \sigma_3  - \frac{\delta \lambda}{2} \sin 2\theta_{\mathrm m} \begin{pmatrix} 0 & e^{2\mathrm i\eta} \\ e^{-2 \mathrm i\eta } & 0 \end{pmatrix}   \right] \begin{pmatrix} \psi_{\mathrm R1} \\ \psi_{\mathrm R2} \end{pmatrix},
+\end{equation*}
+\end{widetext}
+in which the varying diagonal elements in Hamiltonian can be eliminated by choosing $\eta(x)$ properly, i.e.,
 \begin{equation}
     \eta(x) - \eta(0) = - \frac{\omega_{\mathrm{m}}}{2} x + \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^x \delta\lambda (\tau) d\tau.
 \end{equation}
-The Schr\"{o}dinger equation becomes
+In Rabi basis, the Schr\"{o}dinger equation becomes
 \begin{equation}
     i \frac{d}{dx} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} = \left[ - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2i\eta} \\ e^{-2 i\eta } & 0 \end{pmatrix}\right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix},
 \end{equation}
 where $\eta(x) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $ for the Hamiltonian Eq.~(\ref{neutrino-matter-single-frequency-hamiltonian}).  One can easily show that the transition probability between two eigenstates in Rabi basis is the same as the transition probability between two eigenstates in background matter basis.
 
-To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in \cite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$. The final form of Hamiltonian that show the Hamiltonian is a summation of Rabi systems is
+To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in \cite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$, i.e., to decompose spherical waves into plane waves. The final form of Hamiltonian that show the Hamiltonian is a summation of Rabi systems is
 \begin{equation}
     H^{(\mathrm{r})} = -\frac{\omega_{\mathrm{m}}}{2} -  \frac{1}{2} \sum_{n=-\infty}^\infty B_n \begin{pmatrix}
     0 &  \Phi_n e^{i (n k_1-\omega_{\mathrm{m}}) x} \\
@@ -483,9 +501,10 @@ To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, whi
 where
 \begin{align*}
     B_n &= \tan 2\theta_{\mathrm m} n k_1 J_{n} \left( \frac{A_1}{k_1}\cos 2\theta_{\mathrm m} \right),\\
-    \Phi_n &= e^{i\pi (3n/2+1)}.
+    \Phi_n &= e^{i\pi (3n/2+1)},
 \end{align*}
-The constant phase $\Phi_n$ doesn't play any role in the transition probability since it only determines the initial direction of Hamiltonian. For the same reason, phase in matter profile is not included. As such systems can be graphically represented on a Bloch sphere, the second term in the Hamiltonian is the many driving fields of the system. It can also be derived for arbitrary multi-frequency matter profile,
+with $J_n$ standing for the Bessel function.
+The constant phase $\Phi_n$ doesn't play any role in the transition probability since it only determines the initial phase of perturbing Hamiltonian vector in the flavor isospin picture.\fbox{More about the picture.} For the same reason, phase in matter profile is not included. As such systems can be graphically represented on a Bloch sphere, the second term in the Hamiltonian is the many driving fields of the system. It can also be derived for arbitrary multi-frequency matter profile,
 \begin{equation}
     \lambda(x) = \lambda_0 + \sum_n A_n \sin (n k_n)
 \end{equation}
@@ -505,7 +524,7 @@ where
     \Phi_N &= e^{i\pi (3\sum_a n_a/2+1)}.
 \end{align*}
 
-The following sections will determine the important modes of the system (i.e., which $n$ to include) and explore the interference between modes hence explain the coincidence presented in the previous sections. For numerical calculations, we use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
+When the system has one dominate resonance mode and without significant interference between the resonance mode and other modes, all modes off resonance can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{sec:simple}, interference might happen between different modes. A qualitative measure should be introduced so that we know what the conditions are for dropping other modes. The following subsections will determine the important modes of the system (i.e., which $n$ to include) and explore the interference between modes hence explain the coincidence presented in the previous sections. For numerical calculations, we use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
 \begin{align*}
     \hat x &= \omega_{\mathrm{m}}x, \\
     \hat k_1 & = \frac{k_1}{\omega_{\mathrm{m}}}, \\
@@ -631,7 +650,7 @@ where
 
 
 
-\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
 \bibliography{ref.bib} 
 
 
