@@ -639,11 +639,37 @@ The first author would like to thank J. Kneller and K. Patton for their help dur
 }
 
 
-The Hamiltonian for Rabi oscillation that we use as an example is
+The Hamiltonian for Rabi oscillation is
 \begin{equation}
-    H_{\mathrm R} = - \frac{\omega_{\mathrm R}}{2} - \frac{1}{2}A_{\mathrm{R}} \cos (k_{\mathrm{R}} x) \sigma_1 + \frac{1}{2} A_{\mathrm{R}} \sin (k_{\mathrm{R}} x) \sigma_2,\label{rabi-oscillation-single-perturbation}
+    H_{\mathrm R} = - \frac{\omega_{\mathrm R}}{2} \sigma_3 - A_{\mathrm{R}} \cos (k_{\mathrm{R}} x + \phi_{\mathrm{R}}) \sigma_1,
+    \label{rabi-oscillation-single-perturbation}
 \end{equation}
-in which $\omega_{\mathrm R}$ serves as the energy split of the two level system, while $A_{\mathrm{R}}$ and $k_{\mathrm{R}}$ are the strength and frequency of the driving field, respectively. Such a system has analytical transition probability from low energy state to high energy state
+in which $\omega_{\mathrm R}$ serves as the energy split of the two level system, while $A_{\mathrm{R}}$ and $k_{\mathrm{R}}$ are the strength and frequency of the driving field, respectively. A decomposition of the second term shows that
+\begin{align*}
+H_{\mathrm R} =& -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{\mathrm{R}} }{2}  \left( \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}})\sigma_1  - \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \sigma_2 \right) \nonumber \\
+&- \frac{A_{\mathrm{R}} }{2}  \left( \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}})\sigma_1 + \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \sigma_2 \right) \\
+=& - \frac{\boldsymbol{\sigma}}{2} \cdot (\mathbf{H}_3 + \mathbf{H}_+ + \mathbf{H}_- ) ,
+\end{align*}
+where $\boldsymbol{\sigma}$ is the the vector of Pauli matrices, and the three vectors are
+\begin{align}
+    \mathbf{H}_3 = & \begin{pmatrix}
+    0 \\ 0 \\ \omega_{\mathrm R}
+    \end{pmatrix} \\
+    \mathbf{H}_+ = & \begin{pmatrix}
+    A_{\mathrm{R}} \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \\
+    - A_{\mathrm{R}} \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \\
+    0
+    \end{pmatrix} \\
+    \mathbf{H}_- = & \begin{pmatrix}
+    A_{\mathrm{R}} \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \\
+    A_{\mathrm{R}} \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}})  \\
+    0
+    \end{pmatrix}.
+\end{align}
+
+The three vectors are mapped onto a Cartesian coordinate system, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$ and $\mathbf{H}_-$ are two rotating vectors in a plane perpendicular to $\mathbf{H}_3$.
+
+Such a system has analytical transition probability from low energy state to high energy state
 \begin{equation}
     P(x) = \frac{\left \lvert A_{\mathrm{R}} \right \rvert ^2}{ \Omega_{\mathrm R}^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} x \right),
     \label{rabi-system-hamiltonian}
