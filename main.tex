@@ -628,15 +628,8 @@ The first author would like to thank J. Kneller and K. Patton for their help dur
 \section{\label{sec:rabi-oscillations}Rabi Oscillations}
 
 
-\fbox{
-\parbox{0.9\columnwidth}{
 
-\begin{itemize}
-\item Derive the transition probability using flavor isospin method.    
-\end{itemize}
-
-}
-}
+In this appendix we introduce flavor isospin \cite{Duan2006a} to Rabi oscillations and derive the transition probabilities as well as explain the resonance and width briefly.
 
 
 The Hamiltonian for Rabi oscillation is
@@ -667,7 +660,15 @@ where $\boldsymbol{\sigma}$ is the the vector of Pauli matrices, and the three v
     \end{pmatrix}.
 \end{align}
 
-The three vectors are mapped onto a Cartesian coordinate system, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$ and $\mathbf{H}_-$ are two rotating vectors in a plane perpendicular to $\mathbf{H}_3$.
+The three vectors are mapped onto a Cartesian coordinate system, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$ and $\mathbf{H}_-$ are two rotating vectors in a plane perpendicular to $\mathbf{H}_3$. The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the vector $\mathbf{s}$
+\begin{equation}
+    \mathbf{s} = \Psi^\dagger \frac{\boldsymbol{\sigma}}{2}\Psi.
+\end{equation}
+The third component of $\mathbf{s}$, which is denoted as $s_3$, is half of the difference between the probability of the system on the low energy state and the probability of the system on a high energy state. $s_3=0$ if the system has equal probabilities to be on high energy state and low energy state. The Schr\"odinger becomes
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d}t} \mathbf{s} = \mathbf{s} \times \mathbf{H},
+\end{equation}
+which is the precession equation.
 
 Such a system has analytical transition probability from low energy state to high energy state
 \begin{equation}
@@ -677,7 +678,7 @@ Such a system has analytical transition probability from low energy state to hig
 where
 \begin{equation}
 \Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }
-\end{equation} is known as Rabi frequency. The detuning, which is defined as $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of optical field $A_{\mathrm{R}}$ determines the resonance width. The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, optical field amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance.
+\end{equation} is known as Rabi frequency. The detuning, which is defined by $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of optical field $A_{\mathrm{R}}$ determines the resonance width. The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, optical field amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. 
 
 
 
