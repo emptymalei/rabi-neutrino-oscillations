@@ -464,7 +464,7 @@ We choose a system with two modes where the first modes has amplitude $A_1 = 0.0
 \section{\label{sec:jacobi}Parametric Resonance and Rabi oscillation --- Jacobi-Anger expansion}
 
 
-With the intuition of the Rabi oscillation itself as well as the interference with long wave length mode shown in Sec.~\ref{sec:simple}, we can interpret the transition probabilities of any matter profile more precisely if the system can be exactly decomposed into multiple Rabi oscillations. In this section, we show that the matter effect can be decomposed into superpositions of Rabi oscillations. For a system of single frequency matter perturbation, $\delta \lambda(r) = \lambda_1 \sin(k_1 r)$ in Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), we apply an unitary transformation of the form
+With the intuition of the Rabi oscillation itself as well as the interference with long wave length mode shown in Sec.~\ref{sec:simple}, we can interpret the transition probabilities of any matter profile more precisely if the system can be exactly decomposed into multiple Rabi oscillations. In this section, we show that the matter effect can be decomposed into superpositions of Rabi oscillations by applying a Jacobi-Anger expansion to the Hamiltonian. Similar trick has been used in reference \onlinecite{Kneller2013}. However, we take a different approach by applying a unitary transformation and simplify the , then write the final result as superpositions of Rabi oscillation. For a system of single frequency matter perturbation, $\delta \lambda(r) = \lambda_1 \sin(k_1 r)$ in Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), we apply an unitary transformation of the form
 \begin{equation}
     \mathbf{U} =  \begin{pmatrix} e^{-i \eta (r)} & 0 \\  0 & e^{i \eta (r)}  \end{pmatrix},
     \label{eq-rabi-transformation}
@@ -634,41 +634,52 @@ In this appendix we introduce flavor isospin \cite{Duan2006a} to Rabi oscillatio
 
 The Hamiltonian for Rabi oscillation is
 \begin{equation}
-    H_{\mathrm R} = - \frac{\omega_{\mathrm R}}{2} \sigma_3 - A_{\mathrm{R}} \cos (k_{\mathrm{R}} x + \phi_{\mathrm{R}}) \sigma_1,
+    H_{\mathrm R} = -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{\mathrm{R}} }{2}  \left( \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}})\sigma_1  - \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \sigma_2\right),
     \label{rabi-oscillation-single-perturbation}
 \end{equation}
 in which $\omega_{\mathrm R}$ serves as the energy split of the two level system, while $A_{\mathrm{R}}$ and $k_{\mathrm{R}}$ are the strength and frequency of the driving field, respectively. A decomposition of the second term shows that
-\begin{align*}
-H_{\mathrm R} =& -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{\mathrm{R}} }{2}  \left( \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}})\sigma_1  - \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \sigma_2 \right) \nonumber \\
-&- \frac{A_{\mathrm{R}} }{2}  \left( \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}})\sigma_1 + \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \sigma_2 \right) \\
-=& - \frac{\boldsymbol{\sigma}}{2} \cdot (\mathbf{H}_3 + \mathbf{H}_+ + \mathbf{H}_- ) ,
-\end{align*}
+\begin{equation*}
+H_{\mathrm R} 
+= - \frac{\boldsymbol{\sigma}}{2} \cdot (\mathbf{H}_3 + \mathbf{H}_+ ) ,
+\end{equation*}
 where $\boldsymbol{\sigma}$ is the the vector of Pauli matrices, and the three vectors are
 \begin{align}
     \mathbf{H}_3 = & \begin{pmatrix}
     0 \\ 0 \\ \omega_{\mathrm R}
-    \end{pmatrix} \\
+    \end{pmatrix}, \\
     \mathbf{H}_+ = & \begin{pmatrix}
     A_{\mathrm{R}} \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \\
     - A_{\mathrm{R}} \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \\
     0
-    \end{pmatrix} \\
-    \mathbf{H}_- = & \begin{pmatrix}
-    A_{\mathrm{R}} \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \\
-    A_{\mathrm{R}} \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}})  \\
-    0
     \end{pmatrix}.
 \end{align}
 
-The three vectors are mapped onto a Cartesian coordinate system, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$ and $\mathbf{H}_-$ are two rotating vectors in a plane perpendicular to $\mathbf{H}_3$. The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the vector $\mathbf{s}$
-\begin{equation}
-    \mathbf{s} = \Psi^\dagger \frac{\boldsymbol{\sigma}}{2}\Psi.
-\end{equation}
-The third component of $\mathbf{s}$, which is denoted as $s_3$, is half of the difference between the probability of the system on the low energy state and the probability of the system on a high energy state. $s_3=0$ if the system has equal probabilities to be on high energy state and low energy state. The Schr\"odinger becomes
+The three vectors are mapped onto a Cartesian coordinate system, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$is a rotating vectors in a plane perpendicular to $\mathbf{H}_3$. The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the state vector $\mathbf{s}$
+\begin{align}
+    \mathbf{s} =& \Psi^\dagger \frac{\boldsymbol{\sigma}}{2}\Psi \\
+    =& \frac{1}{2}\begin{pmatrix}
+    2\,\mathrm{Re}\,(\psi_1^* \psi_2) \\
+    2\,\mathrm{Im}\,(\psi_1^*\psi_2) \\
+    \lvert \psi_1 \rvert^2 - \lvert \psi_2 \rvert^2
+    \end{pmatrix}
+\end{align}
+The third component of $\mathbf{s}$, which is denoted as $s_3$, is within range $[-1/2,1/2]$. The two limits, $s_3=-1/2$ and $s=1/2$ stand for the system in high energy state and low energy state respectively. $s_3=0$ if the system has equal probabilities to be on high energy state and low energy state. The Schr\"odinger equation becomes
 \begin{equation}
 \frac{\mathrm{d}}{\mathrm{d}t} \mathbf{s} = \mathbf{s} \times \mathbf{H},
 \end{equation}
-which is the precession equation.
+which is the precession equation. For static $\mathbf{H}$, the state vector $\mathbf{s}$ precess around $\mathbf{H}$. 
+
+In a frame that corotates with $\mathbf{H}_+$, the new Hamiltonian is
+\begin{equation}
+\frac{\mathrm d}{\mathrm dt} \mathbf{s} = \mathbf{s} \times (\mathbf{H}_3 + \mathbf{H}_+ - \mathbf{H}'_3),
+\end{equation}
+where
+\begin{equation}
+\mathbf{H}'_3 = \begin{pmatrix}
+    0 \\ 0 \\ k_{\mathrm R}
+    \end{pmatrix}
+\end{equation}
+Resonance occurs when the term $\mathbf{H}_3$ disappears in this corotating frame, since the state vector $\mathbf{s}$ converts completely between $+1/2$ (low energy state) and $-1/2$ (high energy state).
 
 Such a system has analytical transition probability from low energy state to high energy state
 \begin{equation}
