@@ -634,7 +634,7 @@ In this appendix we introduce flavor isospin \cite{Duan2006a} to Rabi oscillatio
 
 The Hamiltonian for Rabi oscillation is
 \begin{equation}
-    H_{\mathrm R} = -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{\mathrm{R}} }{2}  \left( \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}})\sigma_1  - \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \sigma_2\right),
+    H_{\mathrm R} = -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{\mathrm{R}} }{2}  \left( \cos(k_{\mathrm{R}} t +\phi_{\mathrm{R}})\sigma_1  - \sin(k_{\mathrm{R}} t +\phi_{\mathrm{R}}) \sigma_2\right),
     \label{rabi-oscillation-single-perturbation}
 \end{equation}
 in which $\omega_{\mathrm R}$ serves as the energy split of the two level system, while $A_{\mathrm{R}}$ and $k_{\mathrm{R}}$ are the strength and frequency of the driving field, respectively. A decomposition of the second term shows that
@@ -648,8 +648,8 @@ where $\boldsymbol{\sigma}$ is the the vector of Pauli matrices, and the three v
     0 \\ 0 \\ \omega_{\mathrm R}
     \end{pmatrix}, \\
     \mathbf{H}_+ = & \begin{pmatrix}
-    A_{\mathrm{R}} \cos(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \\
-    - A_{\mathrm{R}} \sin(k_{\mathrm{R}}r+\phi_{\mathrm{R}}) \\
+    A_{\mathrm{R}} \cos(k_{\mathrm{R}} t +\phi_{\mathrm{R}}) \\
+    - A_{\mathrm{R}} \sin(k_{\mathrm{R}} t +\phi_{\mathrm{R}}) \\
     0
     \end{pmatrix}.
 \end{align}
@@ -665,34 +665,64 @@ The three vectors are mapped onto a Cartesian coordinate system, so that $\mathb
 \end{align}
 The third component of $\mathbf{s}$, which is denoted as $s_3$, is within range $[-1/2,1/2]$. The two limits, $s_3=-1/2$ and $s=1/2$ stand for the system in high energy state and low energy state respectively. $s_3=0$ if the system has equal probabilities to be on high energy state and low energy state. The Schr\"odinger equation becomes
 \begin{equation}
-\frac{\mathrm{d}}{\mathrm{d}t} \mathbf{s} = \mathbf{s} \times \mathbf{H},
+\frac{\mathrm{d}}{\mathrm{d} t } \mathbf{s} = \mathbf{s} \times \mathbf{H},
 \end{equation}
 which is the precession equation. For static $\mathbf{H}$, the state vector $\mathbf{s}$ precess around $\mathbf{H}$. 
 
 In a frame that corotates with $\mathbf{H}_+$, the new Hamiltonian is
 \begin{equation}
-\frac{\mathrm d}{\mathrm dt} \mathbf{s} = \mathbf{s} \times (\mathbf{H}_3 + \mathbf{H}_+ - \mathbf{H}'_3),
+\frac{\mathrm d}{\mathrm d t } \mathbf{s} = \mathbf{s} \times (\mathbf{H}'_3 + \mathbf{H}‘_+),
 \end{equation}
 where
 \begin{equation}
 \mathbf{H}'_3 = \begin{pmatrix}
-    0 \\ 0 \\ k_{\mathrm R}
-    \end{pmatrix}
+    0 \\ 0 \\ 　\omega_{\mathrm{R}} - k_{\mathrm R}
+    \end{pmatrix}, \qquad \mathbf{H}'_+ = \begin{pmatrix}
+    A_{\mathrm{R}} \\ 0 \\ 　0
+    \end{pmatrix}.
+\end{equation}
+The state vector $\mathbf{s}$ precess around a static vector $\mathbf{H}'_3 + \mathbf{H}'_+$ with a frequency $\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }$. A geometric analysis shows that
+\begin{equation}
+s_3 = \frac{1}{2} - \frac{\lvert A_{\mathrm R}\rvert ^2}{\Omega_{\mathrm R}^2}\sin^2\left(\frac{\Omega_{\mathrm R}}{2} t\right).
 \end{equation}
 Resonance occurs when the term $\mathbf{H}_3$ disappears in this corotating frame, since the state vector $\mathbf{s}$ converts completely between $+1/2$ (low energy state) and $-1/2$ (high energy state).
 
 Such a system has analytical transition probability from low energy state to high energy state
 \begin{equation}
-    P(x) = \frac{\left \lvert A_{\mathrm{R}} \right \rvert ^2}{ \Omega_{\mathrm R}^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} x \right),
-    \label{rabi-system-hamiltonian}
+    P(r) = \frac{1}{2}(1- 2 s_3(r))= \frac{\left \lvert A_{\mathrm{R}} \right \rvert ^2}{ \Omega_{\mathrm R}^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} t \right),
+    \label{rabi-system-transition-probability}
 \end{equation}
 where
 \begin{equation}
 \Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }
-\end{equation} is known as Rabi frequency. The detuning, which is defined by $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of optical field $A_{\mathrm{R}}$ determines the resonance width. The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, optical field amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. 
+\end{equation} is known as Rabi frequency. The detuning, which is defined by $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of perturbing field $A_{\mathrm{R}}$ determines the resonance width,
+\begin{align}
+\text{Detuning} =&~\lvert k_{\mathrm{R}} - \omega_{\mathrm R} \rvert, \\
+\text{Resonance Width} =&~\lvert A_{\mathrm R} \rvert.
+\end{align}
+The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance.
 
-
-
+Given a Rabi oscillation system with two perturbing frequencies
+\begin{align*}
+    H_{\mathrm R} =& -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{1} }{2}  \left( \cos(k_{1} t +\phi_{1})\sigma_1  - \sin(k_{1} t +\phi_{1}) \sigma_2\right) \nonumber\\
+    & - \frac{A_{2} }{2}  \left( \cos(k_{2} t +\phi_{2})\sigma_1  - \sin(k_{2} t +\phi_{2}) \sigma_2\right)
+\end{align*}
+we decompose it into $\mathbf{H}_{\mathrm R}=\mathbf{H}_3 + \mathbf{H}_{1} + \mathbf{H}_2$, where
+\begin{equation*}
+    \mathbf{H}_1 =  \begin{pmatrix}
+     A_{1} \cos(k_{1}t+\phi_{1}) \\
+     A_{1} \sin(k_{1}t+\phi_{1})  \\
+     0
+      \end{pmatrix},   \mathbf{H}_2 =  \begin{pmatrix}
+     A_{2} \cos(k_{2}t+\phi_{2}) \\
+     A_{2} \sin(k_{2}t+\phi_{2})  \\
+     0
+      \end{pmatrix}.
+\end{equation*}
+Assume $\mathbf{H}_1$ is the on-resonance perturbation which requires $k_1 = \omega_{\mathrm{R}}$. The condition that we can drop the new perturbation $\mathbf{H}_2$ is to make sure $k_2$ is far from the resonance condition compared to the resonance width,
+\begin{equation}
+\frac{\lvert k_2 -\omega_{\mathrm R}\rvert}{\lvert A_2\rvert} \gg 1.
+\end{equation}
 
 
 \bibliographystyle{unsrt}
