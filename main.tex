@@ -42,6 +42,9 @@ reprint,
 ]{revtex4-1}
 
 \usepackage{graphicx}% Include figure files
+
+\usepackage{subcaption}
+
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
 %\usepackage{hyperref}% add hypertext capabilities
@@ -170,7 +173,7 @@ In this manuscript, we take a step further and interpret parametric resonance~\c
 
 \fbox{TODO: Explain why two flavor}
 
-We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ and mass-squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(r)$ along the path of neutrino propagation $r$. Three different bases are used in this work, i.e., flavor basis, in which the wave function describes the probability amplitude of different flavors, background matter basis, in which the wave function describe the probability amplitude of different mass states with the appearance of only background matter density, and Rabi basis which will be defined explicitly later. These different bases are also defined in Appendix~\ref{sec:three-bases}. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian in flavor basis is
+We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ and mass-squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(r)$ along the path of neutrino propagation $r$. Three different bases are used in this work, i.e., flavor basis, in which the wave function describes the probability amplitude of different flavors, background matter basis, in which the wave function describe the probability amplitude of different mass states with the appearance of only background matter density, and Rabi basis which will be defined explicitly later. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian in flavor basis is
 \begin{equation}
     H^{(\mathrm{f})} =  \frac{1}{2} \begin{pmatrix}
     -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} + \lambda(r) & \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \\
@@ -223,7 +226,7 @@ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_
 \section{\label{sec:simple}Parametric Resonance and Rabi oscillation --- a simplified model}%
 
 
-In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations. Rabi oscillations have been well studied in quantum optics.\cite{Boyd2008} In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
+In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations. Rabi oscillations have been well studied in quantum optics~\cite{Boyd2008}. In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
 
 
 
@@ -652,7 +655,27 @@ The first author would like to thank J. Kneller and K. Patton for their help dur
 
 \section{\label{sec:rabi-oscillations}Rabi Oscillations}
 
-
+%  trim={<left> <lower> <right> <upper>}
+%\begin{widetext}
+\begin{figure*}
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[trim={2cm 3.2cm 9.5cm 1cm},clip]{assets/rabi-isospin-static-frame}
+    \caption{}
+    \label{fig-rabi-isospin-static-frame}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[trim={6cm 3cm 9.5cm 2cm},clip]{assets/rabi-isospin-rotating-frame}
+        \caption{}
+        \label{fig-rabi-isospin-rotating-frame}
+    \end{subfigure}
+    \caption{Rabi oscillations in static frame and rotating frame. In both figures the red dashed vector is the flavor isospin, while the black solid vectors are the vectors of Hamiltonian. The left panel shows the rotating Hamiltonian $\mathbf{H}_3+\mathbf{H}_+$. The right panel shows the rotation of flavor isospin around a static vector $\mathbf{H}'_3+\mathbf{H}'_+$ in the rotating frame.}
+    \label{fig-rabi-isospin-different-frame}
+\end{figure*}
+%\end{widetext}
 
 In this appendix we introduce flavor isospin \cite{Duan2006a} to Rabi oscillations and derive the transition probabilities as well as explain the resonance and width briefly.
 
@@ -679,7 +702,7 @@ where $\boldsymbol{\sigma}$ is the the vector of Pauli matrices, and the three v
     \end{pmatrix}.
 \end{align}
 
-The three vectors are mapped onto a Cartesian coordinate system, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$is a rotating vectors in a plane perpendicular to $\mathbf{H}_3$. The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the state vector $\mathbf{s}$
+The three vectors are mapped onto a Cartesian coordinate system as shown in Fig.~\ref{fig-rabi-isospin-static-frame}, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$ is a rotating vectors in a plane perpendicular to $\mathbf{H}_3$. The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the state vector $\mathbf{s}$
 \begin{align}
     \mathbf{s} =& \Psi^\dagger \frac{\boldsymbol{\sigma}}{2}\Psi \\
     =& \frac{1}{2}\begin{pmatrix}
@@ -694,7 +717,7 @@ The third component of $\mathbf{s}$, which is denoted as $s_3$, is within range 
 \end{equation}
 which is the precession equation. For static $\mathbf{H}$, the state vector $\mathbf{s}$ precess around $\mathbf{H}$. 
 
-In a frame that corotates with $\mathbf{H}_+$, the new Hamiltonian is
+In a frame that corotates with $\mathbf{H}_+$, which is described in Fig.~\ref{fig-rabi-isospin-rotating-frame}, the new Hamiltonian is
 \begin{equation}
 \frac{\mathrm d}{\mathrm d t } \mathbf{s} = \mathbf{s} \times (\mathbf{H}'_3 + \mathbf{H}‘_+),
 \end{equation}
@@ -706,11 +729,13 @@ where
     A_{\mathrm{R}} \\ 0 \\ 　0
     \end{pmatrix}.
 \end{equation}
-The state vector $\mathbf{s}$ precess around a static vector $\mathbf{H}'_3 + \mathbf{H}'_+$ with a frequency $\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }$. A geometric analysis shows that
+The state vector $\mathbf{s}$ precess around a static vector $\mathbf{H}'_3 + \mathbf{H}'_+$ with a frequency $\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }$. A geometric analysis by projecting the state vector $\mathbf{s}$ on to the verticle axis shows that
 \begin{equation}
 s_3 = \frac{1}{2} - \frac{\lvert A_{\mathrm R}\rvert ^2}{\Omega_{\mathrm R}^2}\sin^2\left(\frac{\Omega_{\mathrm R}}{2} t\right).
 \end{equation}
 Resonance occurs when the term $\mathbf{H}_3$ disappears in this corotating frame, since the state vector $\mathbf{s}$ converts completely between $+1/2$ (low energy state) and $-1/2$ (high energy state).
+
+
 
 Such a system has analytical transition probability from low energy state to high energy state
 \begin{equation}
