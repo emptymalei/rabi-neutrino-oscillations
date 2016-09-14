@@ -464,12 +464,12 @@ We choose a system with two modes where the first modes has amplitude $A_1 = 0.0
 \section{\label{sec:jacobi}Parametric Resonance and Rabi oscillation --- Jacobi-Anger expansion}
 
 
-With the intuition of the Rabi oscillation itself as well as the interference with long wave length mode shown in Sec.~\ref{sec:simple}, we can interpret the transition probabilities of any matter profile more precisely if the system can be exactly decomposed into multiple Rabi oscillations. In this section, we show that the matter effect can be decomposed into superpositions of Rabi oscillations by applying a Jacobi-Anger expansion to the Hamiltonian. Similar trick has been used in reference \onlinecite{Kneller2013}. However, we take a different approach by applying a unitary transformation and simplify the , then write the final result as superpositions of Rabi oscillation. For a system of single frequency matter perturbation, $\delta \lambda(r) = \lambda_1 \sin(k_1 r)$ in Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), we apply an unitary transformation of the form
+With the intuition of the Rabi oscillation itself as well as the interference with long wave length mode shown in Sec.~\ref{sec:simple}, we can interpret the transition probabilities of any matter profile more precisely if the system can be exactly decomposed into multiple Rabi oscillations. In this section, we show that the matter effect can be decomposed into superpositions of Rabi oscillations by applying a Jacobi-Anger expansion to the Hamiltonian. Similar trick has been used in Ref.~\onlinecite{Kneller2013}. However, we take a different approach by applying a unitary transformation first which make the motivation of Jacobi-Anger expansion, then write the final result as superpositions of Rabi oscillation. For a system with general matter perturbation, c.f. Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), we apply an unitary transformation of the form
 \begin{equation}
     \mathbf{U} =  \begin{pmatrix} e^{-i \eta (r)} & 0 \\  0 & e^{i \eta (r)}  \end{pmatrix},
     \label{eq-rabi-transformation}
 \end{equation}
-which is a transformation used in reference \onlinecite{Kneller2006} to remove the diagonal elements of the Hamiltonian. In this work, this transformation is used to remove the varying $\sigma_3$ terms $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in the Hamiltonian, so that the energy gap is fixed in the new basis $\left(\ket{\nu_{\mathrm{r1}}},\ket{\nu_{\mathrm{r2}}}\right)^{\mathrm{T}}$, which is defined as
+which is a transformation used in Ref.~\onlinecite{Kneller2006} to remove the diagonal elements of the Hamiltonian. In this work, this transformation is used to remove the varying $\sigma_3$ terms $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in the Hamiltonian, so that the energy gap is fixed in the new basis $\left(\ket{\nu_{\mathrm{r1}}},\ket{\nu_{\mathrm{r2}}}\right)^{\mathrm{T}}$, which is defined as
 \begin{equation}
     \begin{pmatrix} \ket{\nu_{\mathrm{r1}}}\\ \ket{\nu_{\mathrm{r2}}} \end{pmatrix} =  \mathbf{U}^\dagger \begin{pmatrix} \ket{\nu_{\mathrm{L}}} \\ \ket{\nu_{\mathrm{H}}} \end{pmatrix}.
     \label{eq-rabi-basis}
@@ -494,7 +494,7 @@ In Rabi basis, the Schr\"{o}dinger equation becomes
 %\end{widetext}
 where $\eta(x) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $ for single frequency matter profile with potential $\delta\lambda(x) = A_1\sin(k_1x)$.  One can easily show that the transition probability between two eigenstates in Rabi basis is the same as the transition probability between two eigenstates in background matter basis.
 
-To make a connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in \cite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$, i.e., to decompose spherical waves into plane waves. The final form of Hamiltonian that show the Hamiltonian is a summation of Rabi systems is
+To make connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in Ref.~\onlinecite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$, i.e., to decompose spherical waves into plane waves. The decomposed form of Hamiltonian explicitly shows that the Hamiltonian is a summation of Rabi systems, which is
 %\begin{widetext}
 \begin{equation*}
     %H^{(\mathrm{R})} = 
@@ -511,11 +511,22 @@ where
     \Phi_n &= e^{i\pi (3n/2+1)},
 \end{align*}
 with $J_n$ standing for the Bessel function.
-The constant phase $\Phi_n$ doesn't play any role in the transition probability since it only determines the initial phase of perturbing Hamiltonian vector in the flavor isospin picture.\fbox{More about the picture.} For the same reason, phase in matter profile is not included. As such systems can be graphically represented on a Bloch sphere, the second term in the Hamiltonian is the many driving fields of the system. It can also be derived for arbitrary multi-frequency matter profile,
+The constant phase $\Phi_n$ doesn't play any role for the reason discussed in Appendix~\ref{sec:rabi-oscillations}. Phase in matter potential is not included in the current problem due to the same reason. The first term in Hamiltonian describes the energy gap, while the second term is the summation of many driving fields. The resonance width for a given mode $n$ is $\lvert B_{n}\rvert$.
+
+When the system has one dominate resonance mode and without significant interference between the resonance mode and other modes, all off-resonance modes can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{sec:simple}, interference might happen between different modes. A qualitative measure should be introduced so that we know what the conditions are for dropping other modes. The following subsections will determine the important modes of the system (i.e., which $n$ to include) and explore the interference between modes hence explain the coincidence presented in the previous sections. For numerical calculations, we use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
+\begin{align*}
+    \hat x &= \omega_{\mathrm{m}}x, \\
+    \hat k_1 & = \frac{k_1}{\omega_{\mathrm{m}}}, \\
+    \hat A_1 & = \frac{A_1}{\omega_{\mathrm{m}}}, \\
+    \hat B_n &= \frac{B_n}{\omega_{\mathrm{m}}}.
+\end{align*}
+
+
+Even for arbitrary multi-frequency matter potential
 \begin{equation}
-    \lambda(x) = \lambda_0 + \sum_n A_n \sin (n k_n)
+    \lambda(x) = \lambda_0 + \sum_n A_n \sin (n k_n),
 \end{equation}
-that the Hamiltonian also takes a form of summations of Rabi oscillations,
+the Hamiltonian also takes a form of summation of Rabi oscillations,
 \begin{widetext}
 \begin{equation}
     H^{(\mathrm r)} = -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} \sum_{n_1=-\infty}^\infty \cdots \sum_{n_N = -\infty}^\infty B_N 
@@ -528,18 +539,13 @@ that the Hamiltonian also takes a form of summations of Rabi oscillations,
 where
 \begin{align*}
     B_N &=  \tan 2\theta_{\mathrm m} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
-    \Phi_N &= e^{i\pi (3\sum_a n_a/2+1)}.
+    \Phi_N &= e^{i\pi (3\sum_a n_a/2+1)},
 \end{align*}
+which is similar to the single frequency matter potential Hamiltonian. For illustration purpose, we use single frequency matter profile to demonstrate the important factors in this system.
+\fbox{Maybe move multi-frequency to the very end of all the discussions.}
 
-When the system has one dominate resonance mode and without significant interference between the resonance mode and other modes, all modes off resonance can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{sec:simple}, interference might happen between different modes. A qualitative measure should be introduced so that we know what the conditions are for dropping other modes. The following subsections will determine the important modes of the system (i.e., which $n$ to include) and explore the interference between modes hence explain the coincidence presented in the previous sections. For numerical calculations, we use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
-\begin{align*}
-    \hat x &= \omega_{\mathrm{m}}x, \\
-    \hat k_1 & = \frac{k_1}{\omega_{\mathrm{m}}}, \\
-    \hat A_1 & = \frac{A_1}{\omega_{\mathrm{m}}}, \\
-    \hat B_n &= \frac{B_n}{\omega_{\mathrm{m}}}.
-\end{align*}
 
-    
+
 
 \subsection{The Important Factors}
 
@@ -554,9 +560,15 @@ When the system has one dominate resonance mode and without significant interfer
 }}
 
 
-For illustration purpose, we use single frequency matter profile to demonstrate the important factors in this system. To determine the important modes, the resonance width for each mode which is determined by $B_n$, the deviation from exact resonance (i.e., detuning) which is calculated as $\lvert n k_1 - \omega_{\mathrm{m}} \rvert$, and oscillation wavelength of each mode compared to the size of the physical system should be considered. By utilizing the theory of Rabi oscillation, we know that the oscillation wavelength of each mode is determined by the Rabi frequency $\Omega_n$.
+To determine the important modes and justify the approximations used in Sec.~\ref{sec:simple}, the resonance width for each mode which is determined by $B_n$, the deviation from exact resonance (i.e., detuning) which is calculated as $\lvert n k_1 - \omega_{\mathrm{m}} \rvert$, and oscillation wavelength of each mode compared to the size of the physical system should be considered.
 
-More specifically, we define the resonance quality $Q_n = \lvert B_n/( n k_1 - \omega_{\mathrm{m}}  )\rvert$, which measures how well the resonance is. For exact resonance, $Q_n=0$, while large $Q_n$ says the system is too far away from the resonance of this specific mode. FIG.~\ref{fig-modes-and-detuning} explains the meaning of $Q_n$. Small $Q_n$ modes are the modes that are dramatically important to the system, on the other hand, modes that has much larger oscillation wavelength are not subjected to be considered even though their $Q_n$'s are close to zero, which is due to the fact that such modes have not accumulated much transition probabilities within the size of the physical system.
+% By utilizing the theory of Rabi oscillation, we know that the oscillation wavelength of each mode is determined by the Rabi frequency $\Omega_n$.
+
+More specifically, we define the resonance quality of each mode using the reciprocal of scaled detuning 
+　\begin{equation}
+　Q_n = \lvert B_n/( n k_1 - \omega_{\mathrm{m}}  )\rvert,
+　\end{equation}
+which measures how well the resonance is. For exact resonance, $Q_n=0$, while large $Q_n$ says the system is too far away from the resonance of this specific mode. FIG.~\ref{fig-modes-and-detuning} explains the meaning of $Q_n$. Small $Q_n$ modes are the modes that are dramatically important to the system, on the other hand, modes that has much larger oscillation wavelength are not subjected to be considered even though their $Q_n$'s are close to zero, which is due to the fact that such modes have not accumulated much transition probabilities within the size of the physical system.
 
 
 \begin{figure}[!htbp]
@@ -695,14 +707,14 @@ Such a system has analytical transition probability from low energy state to hig
 where
 \begin{equation}
 \Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }
-\end{equation} is known as Rabi frequency. The detuning, which is defined by $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of perturbing field $A_{\mathrm{R}}$ determines the resonance width,
+\end{equation} is known as Rabi frequency. The detuning, which is defined by $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of driving field $A_{\mathrm{R}}$ determines the resonance width,
 \begin{align}
 \text{Detuning} =&~\lvert k_{\mathrm{R}} - \omega_{\mathrm R} \rvert, \\
 \text{Resonance Width} =&~\lvert A_{\mathrm R} \rvert.
 \end{align}
-The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance.
+The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. The phase of the matter potential $\phi_{\mathrm{R}}$ has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\mathbf{H}_+$.
 
-Given a Rabi oscillation system with two perturbing frequencies
+Given a Rabi oscillation system with two driving frequencies
 \begin{align*}
     H_{\mathrm R} =& -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{1} }{2}  \left( \cos(k_{1} t +\phi_{1})\sigma_1  - \sin(k_{1} t +\phi_{1}) \sigma_2\right) \nonumber\\
     & - \frac{A_{2} }{2}  \left( \cos(k_{2} t +\phi_{2})\sigma_1  - \sin(k_{2} t +\phi_{2}) \sigma_2\right)
@@ -721,7 +733,7 @@ we decompose it into $\mathbf{H}_{\mathrm R}=\mathbf{H}_3 + \mathbf{H}_{1} + \ma
 \end{equation*}
 Assume $\mathbf{H}_1$ is the on-resonance perturbation which requires $k_1 = \omega_{\mathrm{R}}$. The condition that we can drop the new perturbation $\mathbf{H}_2$ is to make sure $k_2$ is far from the resonance condition compared to the resonance width,
 \begin{equation}
-\frac{\lvert k_2 -\omega_{\mathrm R}\rvert}{\lvert A_2\rvert} \gg 1.
+Q \equiv \frac{\lvert A_2\rvert}{\lvert k_2 -\omega_{\mathrm R}\rvert} \ll 1.
 \end{equation}
 
 
