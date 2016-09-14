@@ -550,14 +550,14 @@ which is similar to the single frequency matter potential Hamiltonian. For illus
 \subsection{The Important Factors}
 
 
-\fbox{
-\parbox{0.9\columnwidth}{
-\begin{itemize}
-            \item Width of resonance $B$
-            \item Deviation from exact resonance $g$, called {\bf{detuning}} (value).
-            \item Oscillation wavelength of mode (determined by Rabi frequency, which is in turn related to $B$ and $g$ ) compared to size of physical system
-\end{itemize}
-}}
+% \fbox{
+% \parbox{0.9\columnwidth}{
+% \begin{itemize}
+%             \item Width of resonance $B$
+%             \item Deviation from exact resonance $g$, called {\bf{detuning}} (value).
+%             \item Oscillation wavelength of mode (determined by Rabi frequency, which is in turn related to $B$ and $g$ ) compared to size of physical system
+% \end{itemize}
+% }}
 
 
 To determine the important modes and justify the approximations used in Sec.~\ref{sec:simple}, the resonance width for each mode which is determined by $B_n$, the deviation from exact resonance (i.e., detuning) which is calculated as $\lvert n k_1 - \omega_{\mathrm{m}} \rvert$, and oscillation wavelength of each mode compared to the size of the physical system should be considered.
@@ -568,7 +568,7 @@ More specifically, we define the resonance quality of each mode using the recipr
 　\begin{equation}
 　Q_n = \lvert B_n/( n k_1 - \omega_{\mathrm{m}}  )\rvert,
 　\end{equation}
-which measures how well the resonance is. For exact resonance, $Q_n=0$, while large $Q_n$ says the system is too far away from the resonance of this specific mode. FIG.~\ref{fig-modes-and-detuning} explains the meaning of $Q_n$. Small $Q_n$ modes are the modes that are dramatically important to the system, on the other hand, modes that has much larger oscillation wavelength are not subjected to be considered even though their $Q_n$'s are close to zero, which is due to the fact that such modes have not accumulated much transition probabilities within the size of the physical system.
+which measures how well the resonance is. For exact resonance, $Q_n=0$, while large $Q_n$ says the system is too far away from the resonance of this specific mode. FIG.~\ref{fig-modes-and-detuning} explains the meaning of $Q_n$. Small $Q_n$ modes are the modes that are dramatically important to the system. Meanwhile, modes that has much larger oscillation wavelength are not subjected to be considered even though their $Q_n$'s are close to zero, which is due to the fact that such modes have not accumulated much transition probabilities within the size of the physical system.
 
 
 \begin{figure}[!htbp]
@@ -586,13 +586,26 @@ FIGS:
     \item Resonance width and transition amplitude? But this is probably something people already know about.
     \item {\bf Width is dropping as n increase. Combine the plot with the limit when $n$ is large.}
     \item Show that only the first mode is important in some situations. And the correction due to higher orders.
+    \item How to show that? The widths are too small to be shown. Maybe stack the together? Or make a plot of width dropping vs n?
 \end{itemize}
 }
 }
 
 
-Similar quantities are to be considered for multi-frequency matter profile, such as the resonance width of each mode $B_N$, detuning $\lvert \sum_a n_a k_a - \omega_{\mathrm{m}} \rvert$, and Rabi frequency $\Omega_N$, as well as $Q_N =\lvert B_N/( \sum_a n_a k_a - \omega_{\mathrm{m}}  )\rvert$.
 
+
+
+\begin{figure}[!htbp]
+                \centering
+                \includegraphics[width=\columnwidth]{assets/placeholder.jpg}%fig-modes-and-detuning}
+                \caption{fig-important-factors-work: show that the $Q_n$ and the wavelength argument work. By choosing different $Q_n$'s and wave length. Make two figs maybe: one for varying $Q$, the other for varying wavelength. Higher order correction verification is also good.}
+                \label{fig-important-factors-work}
+\end{figure}
+
+
+
+
+Similar quantities are to be considered for multi-frequency matter profile, such as the resonance width of each mode $B_N$, detuning $\lvert \sum_a n_a k_a - \omega_{\mathrm{m}} \rvert$, and Rabi frequency $\Omega_N$, as well as $Q_N =\lvert B_N/( \sum_a n_a k_a - \omega_{\mathrm{m}}  )\rvert$. 
 
 
 
@@ -633,9 +646,9 @@ The first author would like to thank J. Kneller and K. Patton for their help dur
 
 % \clearpage
 \appendix
-\section{\label{sec:three-bases}Three Bases}
+% \section{\label{sec:three-bases}Three Bases}
 
-\fbox{Define the three different bases used.}
+% \fbox{Define the three different bases used.}
 
 \section{\label{sec:rabi-oscillations}Rabi Oscillations}
 
