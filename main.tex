@@ -260,11 +260,11 @@ where
 A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2i}.
 \end{equation}
 
-The resonance condition is determined by matching the energy gap $\omega_{\mathrm m}$ with external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula.
+The resonance condition is determined by matching the energy gap $\omega_{\mathrm m}$ with external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula. As defined in Appendix~\ref{sec:rabi-oscillations}, relative detuning $Q=\lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$ measures how off-resonance a system is. $Q\to 0$ indicates the system is very close to resonance, while $Q\to \infty$ indicates the system is far away from resonance.
 
 % For a graphical representation of such resonances, decompositions of Hamiltonian onto Pauli matrices are denoted as vectors on , c.f.~Appendix~\ref{sec:rabi-oscillations}. The Hamiltonian is decomposed into three different components, i.e., the constant energy gap on z axis $\vec H_z$, the varying perturbation on z axis $\vec H_{z}'$, and the rotating perturbations in xy plane $\vec H_{\pm}$. The frequency of the rotating component $H_{+}$ in the xy can easily match the energy gap $\omega_{\mathrm{m}}$ even with a varying $\vec H_z'$ component in the Hamiltonian vector, as long as the system is close to resonance.
 
-To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, black dots show the transition probability of neutrino oscillation in matter, while solid line stands for the result predicted using Rabi formula.
+To show that this conjecture is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}), with parameters chosen so that the two systems have the same energy split and driving field strength and frequency. In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, black dots show the transition probability of neutrino oscillation in matter, while solid line stands for the result predicted using Rabi formula. The corresponding relative detuning is $Q = 0$ as we have chosen $k_1=\omega_{\mathrm{m}}$, which sets the system on exact resonance.
 
 For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(r)$ associated with the matter profile at distance $r$ varies slowly~\cite{Krastev1989}. This condition is exactly the Rabi resonance condition when $n=1$, as such condition matches the driving field frequency to the energy split.
 
@@ -448,16 +448,22 @@ which leads to
 A_2 \geq \sqrt{2\omega_{\mathrm{m}}A_1} \equiv A_{2,\mathrm{Critical}}.
 \end{equation}
 
+The relative detuning $Q$ for the resonance mode also changes from 0 to
+\begin{equation}
+    Q_1' = \frac{\lvert k_1 - \omega_{\mathrm{m}} \rvert }{ A_1 } = \frac{A_2^2}{2\omega_{\mathrm{m}} A_1 }.
+\end{equation}
+If the conjecture is correct, we expect the transition amplitude to drop as we have larger $A_2$.
+
 
 \begin{figure}[!htbp]
                 \centering
                 \includegraphics[width=\columnwidth]{assets/interference-reduction}
-                \caption{Reduction of transition amplitudes. Black dots are the numerical transition amplitudes for only one mode perturbation which is at resonance, i.e., $A_1=0.000035\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$; Green diamonds are the numerical transition amplitude with a second mode, $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$; Red up-pointing triangles are the numerical transition amplitudes with a second mode, $A_2=0.01\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$; Blue down-pointing triangles  the numerical transition amplitudes with a second mode, $A_2=0.02\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$. The lines are the probabilities predicted using Rabi formula correspondingly. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
+                \caption{Reduction of transition amplitudes. Black dots are the numerical transition amplitudes for $A_2=0.00035\omega_{\mathrm m}$; Green up-pointing triangles are the numerical transition amplitude for $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Red diamonds are the numerical transition amplitudes for $A_2=0.015\omega_{\mathrm m}$. In all the calculations, we have set $A_1=0.000035\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$. The lines are the probabilities predicted using Rabi formula correspondingly. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
 
 
-We choose a system with two modes where the first modes has amplitude $A_1 = 0.000035\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. Without the appearance of the second mode, we obtain full resonance. For larger $A_2$ the destruction effect is more effective. As shown in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}, black dots, green diamonds, red up-pointing triangles, and blue down-pointing triangles are the numerical result for Hamiltonian Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}). The agreement between markers and corresponding lines verifies the approximation that the slow rotating field works as a shift in energy gaps. 
+We choose a system with two modes where the first modes has amplitude $A_1 = 0.000035\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. With a small amplitude of the second mode, $A_2=0.00035\omega_{\mathrm{m}}$, we obtain almost full resonance. For larger $A_2$ the destruction effect is more effective, as shown in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. The agreement between markers and corresponding lines verifies the approximation that the slow rotating field works as a shift in energy gaps. The relative detunings are $0.00175$, $1.000$, and $3.214$ for $A_2=10 A_1 = 0.00035\omega_{\mathrm{m}}$, $A_2=A_{2,\text{Critical}}=0.0083666\omega_{\mathrm{m}}$, and $A_2= 0.015 \omega_{\mathrm{m}}$ respectively. We also notice that the width of each cases doesn't change since we kept $A_1$ fixed for each calculation, which indicates that the decreasing in transition amplitude is because of the increasing in detuning.
 
 
 
@@ -470,12 +476,13 @@ We choose a system with two modes where the first modes has amplitude $A_1 = 0.0
 
 
 
-\begin{figure}[!htbp]
-                \centering
-                \includegraphics[width=\columnwidth]{assets/interference}
-                \caption{.... Remake this fig}
-                \label{fig-interference}
-\end{figure}
+
+% \begin{figure}[!htbp]
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{assets/interference}
+%                 \caption{.... Remake this fig}
+%                 \label{fig-interference}
+% \end{figure}
 
 
 
@@ -521,14 +528,14 @@ In Rabi basis, the Schr\"{o}dinger equation becomes
 %\end{widetext}
 where $\eta(x) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $ for single frequency matter profile with potential $\delta\lambda(x) = A_1\sin(k_1x)$.  One can easily show that the transition probability between two eigenstates in Rabi basis is the same as the transition probability between two eigenstates in background matter basis.
 
-To make connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in Ref.~\onlinecite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(\Phi \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n \Phi \right)$, i.e., to decompose spherical waves into plane waves. The decomposed form of Hamiltonian explicitly shows that the Hamiltonian is a summation of Rabi systems, which is
+To make connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in Ref.~\onlinecite{Kneller2013}, to decompose the $\exp\left( i z \cos\left(k_1 r \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(i n k_1 r \right)$, i.e., to decompose spherical waves into plane waves. The decomposed form of Hamiltonian explicitly shows that the Hamiltonian is a summation of Rabi systems, which is
 %\begin{widetext}
 \begin{equation*}
-    %H^{(\mathrm{R})} = 
+    H^{(\mathrm{R})} = 
     -\frac{\omega_{\mathrm{m}}}{2} 
     -  \frac{1}{2} \sum_{n=-\infty}^\infty B_n \begin{pmatrix}
-    0 &  \Phi_n e^{i (n k_1-\omega_{\mathrm{m}}) x} \\
-     \Phi_n^* e^{ - i (n k_1 -\omega_{\mathrm{m}}) x} & 0
+    0 &  \Phi_n e^{\mathrm i n k_1  x} \\
+     \Phi_n^* e^{ - \mathrm i n k_1 x} & 0
     \end{pmatrix},
 \end{equation*}
 %\end{widetext}
@@ -558,8 +565,8 @@ the Hamiltonian also takes a form of summation of Rabi oscillations,
 \begin{equation}
     H^{(\mathrm r)} = -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} \sum_{n_1=-\infty}^\infty \cdots \sum_{n_N = -\infty}^\infty B_N 
     \begin{pmatrix}
-    0 & \Phi_N e^{i\left( \sum_a n_a k_a - \omega_{\mathrm{m}}\right)x} \\
-    \Phi_N^* e^{-i\left( \sum_a n_a k_a - \omega_{\mathrm{m}}\right)x} & 0
+    0 & \Phi_N e^{i\left( \sum_a n_a k_a \right)x} \\
+    \Phi_N^* e^{-i\left( \sum_a n_a k_a \right)x} & 0
     \end{pmatrix},
 \end{equation}
 \end{widetext}
@@ -607,7 +614,7 @@ which measures how well the resonance is. For exact resonance, $Q_n=0$, while la
 
 
 \fbox{
-\parbox{\columnwidth}{%
+\parbox{0.9\columnwidth}{%
 FIGS:
 \begin{itemize}
     \item Resonance width and transition amplitude? But this is probably something people already know about.
@@ -637,6 +644,13 @@ Similar quantities are to be considered for multi-frequency matter profile, such
 
 
 
+\subsection{Single Frequency Matter Profile}
+
+For the single frequency matter profile discussed in Sec.~\ref{sec:single-freq}, 
+
+
+
+\subsection{Castle Wall Matter Profile}
 
 
 
