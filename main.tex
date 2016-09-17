@@ -534,8 +534,8 @@ To make connection with Rabi oscillation, we apply Jacobi-Anger expansion, which
     H^{(\mathrm{R})} = 
     -\frac{\omega_{\mathrm{m}}}{2} 
     -  \frac{1}{2} \sum_{n=-\infty}^\infty B_n \begin{pmatrix}
-    0 &  \Phi_n e^{\mathrm i n k_1  x} \\
-     \Phi_n^* e^{ - \mathrm i n k_1 x} & 0
+    0 &  \Phi_n e^{\mathrm i n k_1  r} \\
+     \Phi_n^* e^{ - \mathrm i n k_1 r} & 0
     \end{pmatrix},
 \end{equation*}
 %\end{widetext}
@@ -549,7 +549,7 @@ The constant phase $\Phi_n$ doesn't play any role for the reason discussed in Ap
 
 When the system has one dominate resonance mode and without significant interference between the resonance mode and other modes, all off-resonance modes can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{sec:simple}, interference might happen between different modes. A qualitative measure should be introduced so that we know what the conditions are for dropping other modes. The following subsections will determine the important modes of the system (i.e., which $n$ to include) and explore the interference between modes hence explain the coincidence presented in the previous sections. For numerical calculations, we use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
 \begin{align*}
-    \hat x &= \omega_{\mathrm{m}}x, \\
+    \hat r &= \omega_{\mathrm{m}}r, \\
     \hat k_1 & = \frac{k_1}{\omega_{\mathrm{m}}}, \\
     \hat A_1 & = \frac{A_1}{\omega_{\mathrm{m}}}, \\
     \hat B_n &= \frac{B_n}{\omega_{\mathrm{m}}}.
@@ -558,15 +558,15 @@ When the system has one dominate resonance mode and without significant interfer
 
 Even for arbitrary multi-frequency matter potential
 \begin{equation}
-    \lambda(x) = \lambda_0 + \sum_n A_n \sin (n k_n),
+    \lambda(r) = \lambda_0 + \sum_n A_n \sin (n k_n r),
 \end{equation}
 the Hamiltonian also takes a form of summation of Rabi oscillations,
 \begin{widetext}
 \begin{equation}
-    H^{(\mathrm r)} = -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} \sum_{n_1=-\infty}^\infty \cdots \sum_{n_N = -\infty}^\infty B_N 
+    H^{(\mathrm R)} = -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} \sum_{n_1=-\infty}^\infty \cdots \sum_{n_N = -\infty}^\infty B_N 
     \begin{pmatrix}
-    0 & \Phi_N e^{i\left( \sum_a n_a k_a \right)x} \\
-    \Phi_N^* e^{-i\left( \sum_a n_a k_a \right)x} & 0
+    0 & \Phi_N e^{i\left( \sum_a n_a k_a \right)r} \\
+    \Phi_N^* e^{-i\left( \sum_a n_a k_a \right)r} & 0
     \end{pmatrix},
 \end{equation}
 \end{widetext}
@@ -646,7 +646,14 @@ Similar quantities are to be considered for multi-frequency matter profile, such
 
 \subsection{Single Frequency Matter Profile}
 
-For the single frequency matter profile discussed in Sec.~\ref{sec:single-freq}, 
+For the single frequency matter profile discussed in Sec.~\ref{sec:single-freq}, we removed the varying $\sigma_3$ term by arguing that this term has no effect on transition probabilities when the system is close to resonance, $k_1 \sim \omega_{\mathrm m}$. The reason is that only the first mode $n=1$ is on resonance when $k_1=\omega_{\mathrm m}$ and all other modes are far from resonance, thus
+\begin{equation}
+H^{\mathrm R} \approx -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} B_1 \begin{pmatrix}
+0 & \Phi_1 e^{i k_1 r} \\
+\Phi_1^* e^{-ik_1r} & 0
+\end{pmatrix},
+\end{equation}
+which is similar to the approximation we used in Sec.~\ref{sec:single-freq} but with different resonance width. Since the system is on resonance, the resonance width is ..... wow not really explaining anything.
 
 
 
