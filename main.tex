@@ -251,13 +251,13 @@ The first example we examine is single frequency matter profile $\delta\lambda(r
 %     \label{eq-hamiltonian-bg-matter-basis-single-frequency}
 % \end{align}
 \begin{align}
-H^{(\mathrm{m})} \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m} \sin( k_1 r ) \sigma_1 \\
+H^{(\mathrm{m})} \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m} \sin( k_1 r ) \sigma_1\label{eq-hamiltonian-bg-matter-basis-single-frequency} \\
 \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2,\nonumber 
-    \label{eq-hamiltonian-bg-matter-basis-single-frequency}
 \end{align}
 where
 \begin{equation}
 A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2i}.
+\label{eq-define-a1}
 \end{equation}
 
 The resonance condition is determined by matching the energy gap $\omega_{\mathrm m}$ with external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As the condition is approaching resonance condition, the transition probability is predicted well using Rabi formula. As defined in Appendix~\ref{sec:rabi-oscillations}, relative detuning $Q=\lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$ measures how off-resonance a system is. $Q\to 0$ indicates the system is very close to resonance, while $Q\to \infty$ indicates the system is far away from resonance.
@@ -518,7 +518,7 @@ For convenience, we name this unitary transformation Rabi transformation in Eq.~
 \end{widetext}
 in which the varying diagonal elements in Hamiltonian can be eliminated by choosing $\eta(x)$ properly, i.e.,
 \begin{equation}
-    \eta(x) - \eta(0) = - \frac{\omega_{\mathrm{m}}}{2} x + \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^x \delta\lambda (\tau) d\tau.
+    \eta(x) - \eta(0) =  \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^x \delta\lambda (\tau) d\tau.
 \end{equation}
 In Rabi basis, the Schr\"{o}dinger equation becomes
 %\begin{widetext}
@@ -545,7 +545,13 @@ where
     \Phi_n &= e^{i\pi (3n/2+1)},
 \end{align*}
 with $J_n$ standing for the Bessel function.
-The constant phase $\Phi_n$ doesn't play any role for the reason discussed in Appendix~\ref{sec:rabi-oscillations}. Phase in matter potential is not included in the current problem due to the same reason. The first term in Hamiltonian describes the energy gap, while the second term is the summation of many driving fields. The resonance width for a given mode $n$ is $\lvert B_{n}\rvert$.
+The constant phase $\Phi_n$ doesn't play any role for the reason discussed in Appendix~\ref{sec:rabi-oscillations}. Phase in matter potential would also go into $\Phi_n$, for which reason, phase is not included in the current problem. The first term in Hamiltonian describes the energy gap, while the second term is the summation of many driving fields. The resonance width for a given mode $n$ is $\lvert B_{n}\rvert$. It's worth mentioning that for large $n$, we have~\cite{Ploumistakis20092897}
+\begin{equation}
+J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }.
+\end{equation}
+It's straightforward to prove that resonance width decreases dramatically for large $n$ thus higher order modes become insignificant.
+
+
 
 When the system has one dominate resonance mode and without significant interference between the resonance mode and other modes, all off-resonance modes can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{sec:simple}, interference might happen between different modes. A qualitative measure should be introduced so that we know what the conditions are for dropping other modes. The following subsections will determine the important modes of the system (i.e., which $n$ to include) and explore the interference between modes hence explain the coincidence presented in the previous sections. For numerical calculations, we use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
 \begin{align*}
@@ -554,6 +560,8 @@ When the system has one dominate resonance mode and without significant interfer
     \hat A_1 & = \frac{A_1}{\omega_{\mathrm{m}}}, \\
     \hat B_n &= \frac{B_n}{\omega_{\mathrm{m}}}.
 \end{align*}
+
+Through the Rabi transformation and Jacobi-Anger expansion, the varying diagonal elements in Hamiltonian, i.e., varying $\sigma_3$ term, is transformed to a perturbing field with many different frequencies $n k_1$.
 
 
 Even for arbitrary multi-frequency matter potential
@@ -575,7 +583,7 @@ where
     B_N &=  \tan 2\theta_{\mathrm m} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
     \Phi_N &= e^{i\pi (3\sum_a n_a/2+1)},
 \end{align*}
-which is similar to the single frequency matter potential Hamiltonian. For illustration purpose, we use single frequency matter profile to demonstrate the important factors in this system.
+which is similar to the single frequency matter potential Hamiltonian. %For illustration purpose, we use single frequency matter profile to demonstrate the important factors in this system.
 
 
 
@@ -646,14 +654,21 @@ Similar quantities are to be considered for multi-frequency matter profile, such
 
 \subsection{Single Frequency Matter Profile}
 
-For the single frequency matter profile discussed in Sec.~\ref{sec:single-freq}, we removed the varying $\sigma_3$ term by arguing that this term has no effect on transition probabilities when the system is close to resonance, $k_1 \sim \omega_{\mathrm m}$. The reason is that only the first mode $n=1$ is on resonance when $k_1=\omega_{\mathrm m}$ and all other modes are far from resonance, thus
-\begin{equation}
-H^{\mathrm R} \approx -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} B_1 \begin{pmatrix}
+For the single frequency matter potential $\lambda = \lambda_0 + \lambda_1 \sin(k_1 r)$ discussed in Sec.~\ref{sec:single-freq}, we removed the varying $\sigma_3$ term by arguing that this term has no effect on transition probabilities when the system is close to resonance, $k_1 \sim \omega_{\mathrm m}$. The reason is that only the first mode $n=1$ is on resonance when $k_1=\omega_{\mathrm m}$ and all other modes are far from resonance, thus
+\begin{align}
+H^{\mathrm R} \approx & -\frac{\omega_{\mathrm m}}{2}\sigma_3 - \frac{1}{2} B_1 \begin{pmatrix}
 0 & \Phi_1 e^{i k_1 r} \\
 \Phi_1^* e^{-ik_1r} & 0
-\end{pmatrix},
-\end{equation}
-which is similar to the approximation we used in Sec.~\ref{sec:single-freq} but with different resonance width. Since the system is on resonance, the resonance width is ..... wow not really explaining anything.
+\end{pmatrix}\label{eq-single-frequency-first-mode-hamiltonian} \\
+\approx & -\frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{A_1}{2} \cos(k_1 r) \sigma_1 + \frac{A_1}{2} \sin(k_1 r) \sigma_2\nonumber,
+\end{align}
+where $A_1$ is defined in Eq.~(\ref{eq-define-a1}) and approximation
+\begin{equation*}
+J_1\left( \frac{\lambda_1}{k_1}\cos (2\theta_{\mathrm m}) \right) \approx \frac{\lambda_1}{2k_1}\cos (2\theta_{\mathrm m})
+\end{equation*}
+for small $\frac{\lambda_1}{k_1}$ is used in the last step. Thus we reach a similar equation to the approximation we used in Sec.~\ref{sec:single-freq}. Small $\frac{\lambda_1}{k_1}$ corresponds to small resonance width for Eq.~(\ref{eq-hamiltonian-bg-matter-basis-single-frequency}) and also Eq.~(\ref{eq-single-frequency-first-mode-hamiltonian}) so that the interferences are small. For $\lambda_1 \cos(2\theta_{\mathrm{m}})/k_1\gg 1$, the resonance width is very large compared to $\lvert n k_1 - \omega_{\mathrm{m}}$, which is the distance between different order of resonances, thus bringing in the interference between different modes.
+
+
 
 
 
