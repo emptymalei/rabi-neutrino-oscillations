@@ -367,7 +367,7 @@ determines the transitions between the two background matter states.
 %\end{widetext}
 
 
-In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a proper $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbations frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first mode is the resonance mode due to the value we choose. As an estimation, we drop all other modes. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, so that
+In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a proper $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbations frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first mode $n=1$ is the resonance mode if we set it to be on resonance. As an estimation, we drop all other modes. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, so that
 \begin{align*}
     H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m}  \cos\left( k_0 r \right) \sigma_1\\
     \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} A_1 \cos ( k_0 r) \sigma_1 + \frac{1}{2} A_1 \sin(k_0 r) \sigma_2,
@@ -390,7 +390,7 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two mat
 %%%%%%%%
 
 
-\subsection{Interference with Long Wave Length Mode}
+\subsection{\label{sec:interference-with-long-wavelength-mode}Interference with Long Wave Length Mode}
 
 % \fbox{
 % \parbox{0.9\columnwidth}{
@@ -564,27 +564,6 @@ When the system has one dominate resonance mode and without significant interfer
 Through the Rabi transformation and Jacobi-Anger expansion, the varying diagonal elements in Hamiltonian, i.e., varying $\sigma_3$ term, is transformed to a perturbing field with many different frequencies $n k_1$.
 
 
-Even for arbitrary multi-frequency matter potential
-\begin{equation}
-    \lambda(r) = \lambda_0 + \sum_n A_n \sin (n k_n r),
-\end{equation}
-the Hamiltonian also takes a form of summation of Rabi oscillations,
-\begin{widetext}
-\begin{equation}
-    H^{(\mathrm R)} = -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} \sum_{n_1=-\infty}^\infty \cdots \sum_{n_N = -\infty}^\infty B_N 
-    \begin{pmatrix}
-    0 & \Phi_N e^{i\left( \sum_a n_a k_a \right)r} \\
-    \Phi_N^* e^{-i\left( \sum_a n_a k_a \right)r} & 0
-    \end{pmatrix},
-\end{equation}
-\end{widetext}
-where
-\begin{align*}
-    B_N &=  \tan 2\theta_{\mathrm m} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
-    \Phi_N &= e^{i\pi (3\sum_a n_a/2+1)},
-\end{align*}
-which is similar to the single frequency matter potential Hamiltonian. %For illustration purpose, we use single frequency matter profile to demonstrate the important factors in this system.
-
 
 
 
@@ -610,15 +589,15 @@ More specifically, we define the resonance quality of each mode using the recipr
 　\begin{equation}
 　Q_n = \lvert B_n/( n k_1 - \omega_{\mathrm{m}}  )\rvert,
 　\end{equation}
-which measures how well the resonance is. For exact resonance, $Q_n=0$, while large $Q_n$ says the system is too far away from the resonance of this specific mode. FIG.~\ref{fig-modes-and-detuning} explains the meaning of $Q_n$. Small $Q_n$ modes are the modes that are dramatically important to the system. Meanwhile, modes that has much larger oscillation wavelength are not subjected to be considered even though their $Q_n$'s are close to zero, which is due to the fact that such modes have not accumulated much transition probabilities within the size of the physical system.
+which measures how well the resonance is. For exact resonance, $Q_n=0$, while large $Q_n$ says the system is too far away from the resonance of this specific mode. Small $Q_n$ modes are the modes that are dramatically important to the system. Meanwhile, modes that has much larger oscillation wavelength are not subjected to be considered even though their $Q_n$'s are close to zero, which is due to the fact that such modes have not accumulated much transition probabilities within the size of the physical system.
 
 
-\begin{figure}[!htbp]
-                \centering
-                \includegraphics[width=\columnwidth]{assets/placeholder.jpg}%fig-modes-and-detuning}
-                \caption{fig-modes-and-detuning}
-                \label{fig-modes-and-detuning}
-\end{figure}
+% \begin{figure}[!htbp]
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{assets/placeholder.jpg}%fig-modes-and-detuning}
+%                 \caption{fig-modes-and-detuning}
+%                 \label{fig-modes-and-detuning}
+% \end{figure}
 
 
 \fbox{
@@ -672,7 +651,39 @@ for small $\frac{\lambda_1}{k_1}$ is used in the last step. Thus we reach a simi
 
 
 
-\subsection{Castle Wall Matter Profile}
+\subsection{Fourier Transform of Matter Profile}
+
+
+A matter profile as complicated as the castle wall profile can be decomposed into a summation of multiple frequencies. Even for arbitrary multi-frequency matter potential
+\begin{equation}
+    \lambda(r) = \lambda_0 + \sum_n A_n \sin (n k_n r),
+\end{equation}
+the Hamiltonian also takes a form of summation of Rabi oscillations,
+\begin{widetext}
+\begin{equation}
+    H^{(\mathrm R)} = -\frac{\omega_{\mathrm m}}{2} - \frac{1}{2} \sum_{n_1=-\infty}^\infty \cdots \sum_{n_N = -\infty}^\infty B_{\{n_i\}} 
+    \begin{pmatrix}
+    0 & \Phi_{\{n_i\}} e^{i\left( \sum_a n_a k_a \right)r} \\
+    \Phi_{\{n_i\}}^* e^{-i\left( \sum_a n_a k_a \right)r} & 0
+    \end{pmatrix},
+\end{equation}
+\end{widetext}
+where
+\begin{align*}
+    B_{\{n_i\}} &=  \tan 2\theta_{\mathrm m} \left( \sum_a n_a k_a \right) \left( \prod_a J_{n_a}\left( \frac{A_a}{k_a}\cos 2\theta_m \right) \right),\\
+    \Phi_{\{n_i\}} &= e^{i\pi (3\sum_a n_a/2+1)},
+\end{align*}
+which is similar to the single frequency matter potential Hamiltonian. A mode is defined by a certain choice of $n_1,\cdots,n_N$. As defined for single frequency matter profile, a relative detuning can also be defined for multi-frequency matter profile
+\begin{equation}
+    Q_{\{n_i\}} = \frac{\lvert \sum_a n_a k_a - \omega_{\mathrm m} \rvert }{\lvert B_{\{n_i\}} \rvert}.
+\end{equation}
+
+As the number of frequencies becomes large, the resonance modes are easily clogged together since many set of $\{n_i\}$'s can be chosen so that the relative detunings are all close to 0. Resonance modes that has oscillation wavelength much larger than the physical system such as supernova explosion are neglected since these modes have not developed large transition probabilities within the size of the physical system. On the other hand, long wavelength modes are the source of resonance destruction for short wavelength resonance modes, as shown in Sec.~\ref{sec:interference-with-long-wavelength-mode}.
+
+
+
+
+
 
 
 
