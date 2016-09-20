@@ -360,7 +360,7 @@ determines the transitions between the two background matter states.
         \label{fig-akhmedovOscPlt-b}
     \end{subfigure}
     \caption{Transition probabilities for castle wall matter profile. 
-    The black dots, and blue triangles are the transition probabilities of castle wall matter profile calculated numerically for $\Lambda_2-\Lambda_1=0.04\Lambda_0$, and $\Lambda_2-\Lambda_1=0.8\Lambda_0$ respectively, while the black solid line, and blue dashed line are the corresponding Rabi formula. During the calculation, the energy of neutrinos is $10\,\mathrm{MeV}$, mass-squared difference is $\delta m^2=2.6\times 10^{-3}\,\mathrm{eV^2}$, and the vacuum mixing angle chosen so that $\sin^2(2\theta_v)=0.093$. The background potential $\Lambda_0$ is chosen so that it's half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
+    The black dots, and blue triangles are the transition probabilities of castle wall matter profile calculated numerically for $\Lambda_2-\Lambda_1=0.003\pi\Lambda_0$, and $\Lambda_2-\Lambda_1=3.065\pi\Lambda_0$ respectively, while the black solid line, and blue dashed line are the corresponding Rabi formula. During the calculation, the energy of neutrinos is $10\,\mathrm{MeV}$, mass-squared difference is $\delta m^2=2.6\times 10^{-3}\,\mathrm{eV^2}$, and the vacuum mixing angle chosen so that $\sin^2(2\theta_v)=0.093$. The background potential $\Lambda_0$ is chosen so that it's half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
                  }
     \label{fig-akhmedovOscPlt}
 \end{figure*}
@@ -378,7 +378,7 @@ A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2} .
 \end{equation*}
 
 
-FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance mode $k_0$ only matches the numerical results. The reason is that the resonance width of each mode is small, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results for large $\Lambda_2-\Lambda_1$, which is due to the destruction effect of the interference with between modes.
+FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance mode $k_0$ only matches the numerical results. The reason is that the resonance width of each mode is small, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results for large $\Lambda_2-\Lambda_1$, which is due to the destruction effect of the interference with between modes. A semi-quantitative analysis is done in the next subsection.
 
 
 
@@ -441,31 +441,76 @@ where we keep only first order of Taylor series.
     
 To begin with, the first rotating perturbation satisfies the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second slow rotating field shifting the system out of resonance is that the detuning becomes larger than the resonance width,
 \begin{equation}
-\lvert \omega_{\mathrm{m}}' - \omega_{\mathrm{m}} \rvert \geq A_1,
+\lvert \omega_{\mathrm{m}}' - \omega_{\mathrm{m}} \rvert \geq \lvert A_1 \rvert,
 \end{equation}
 which leads to
 \begin{equation}
-A_2 \geq \sqrt{2\omega_{\mathrm{m}}A_1} \equiv A_{2,\mathrm{Critical}}.
+\lvert A_2 \rvert \geq \sqrt{2\omega_{\mathrm{m}} \lvert A_1 \rvert} \equiv A_{2,\mathrm{Critical}}.
 \end{equation}
 
-The relative detuning $Q$ for the resonance mode also changes from 0 to
+The relative detuning $Q$ for the resonance frequency also changes from 0 to
 \begin{equation}
-    Q_1' = \frac{\lvert k_1 - \omega_{\mathrm{m}} \rvert }{ A_1 } = \frac{A_2^2}{2\omega_{\mathrm{m}} A_1 }.
+    Q_1' = \frac{\lvert k_1 - \omega_{\mathrm{m}} \rvert }{ \lvert A_1 \rvert } = \frac{A_2^2}{2\omega_{\mathrm{m}} \lvert A_1 \rvert }.
+    \label{eq-new-q-value-by-adding-new-long-wavelength-mode}
 \end{equation}
-If the conjecture is correct, we expect the transition amplitude to drop as we have larger $A_2$.
+If the conjecture is correct, we expect the transition amplitude to drop as we have larger $\lvert A_2\rvert$.
 
 
 \begin{figure}[!htbp]
                 \centering
                 \includegraphics[width=\columnwidth]{assets/interference-reduction}
-                \caption{Reduction of transition amplitudes. Black dots are the numerical transition amplitudes for $A_2=0.00035\omega_{\mathrm m}$; Green up-pointing triangles are the numerical transition amplitude for $A_2=A_{2,\mathrm{Critical}}=0.0083666\omega_{\mathrm m}$; Red diamonds are the numerical transition amplitudes for $A_2=0.015\omega_{\mathrm m}$. In all the calculations, we have set $A_1=0.000035\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$. The lines are the probabilities predicted using Rabi formula correspondingly. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
+                \caption{Reduction of transition amplitudes. Black dots are the numerical transition amplitudes for $A_2=0.000265\omega_{\mathrm m}$; Green up-pointing triangles are the numerical transition amplitude for $A_2=A_{2,\mathrm{Critical}}=0.00837\omega_{\mathrm m}$; Red diamonds are the numerical transition amplitudes for $A_2=0.0145\omega_{\mathrm m}$. In all the calculations, we have set $A_1=0.000035\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$. The lines are the probabilities predicted using Rabi formula correspondingly. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
 
 
-We choose a system with two modes where the first modes has amplitude $A_1 = 0.000035\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. With a small amplitude of the second mode, $A_2=0.00035\omega_{\mathrm{m}}$, we obtain almost full resonance. For larger $A_2$ the destruction effect is more effective, as shown in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. The agreement between markers and corresponding lines verifies the approximation that the slow rotating field works as a shift in energy gaps. The relative detunings are $0.00175$, $1.000$, and $3.214$ for $A_2=10 A_1 = 0.00035\omega_{\mathrm{m}}$, $A_2=A_{2,\text{Critical}}=0.0083666\omega_{\mathrm{m}}$, and $A_2= 0.015 \omega_{\mathrm{m}}$ respectively. We also notice that the width of each cases doesn't change since we kept $A_1$ fixed for each calculation, which indicates that the decreasing in transition amplitude is because of the increasing in detuning.
+We choose a system with two frequencies where the first frequency has amplitude $A_1 = 0.000035\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. With a small amplitude of the second frequency, $A_2=0.00035\omega_{\mathrm{m}}$, we obtain almost full resonance. For larger $A_2$ the destruction effect is more effective, as shown in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. The agreement between markers and corresponding lines verifies the approximation that the slow rotating field works as a shift in energy gaps. The relative detunings are $0.001$, $1$, and $3$ for $A_2= 0.000265\omega_{\mathrm{m}}$, $A_2=A_{2,\text{Critical}}=0.00837\omega_{\mathrm{m}}$, and $A_2= 0.0145 \omega_{\mathrm{m}}$ respectively. We also notice that the width of each cases doesn't change since we kept $A_1$ fixed for each calculation, which indicates that the decreasing in transition amplitude is because of the increasing in detuning.
 
 
+The resonance destruction effect in Fig.~\ref{fig-akhmedovOscPlt} is qualitatively described by the formula Eq.~\ref{eq-new-q-value-by-adding-new-long-wavelength-mode}. The salient feature of this Fourier series expanded matter profile is that the width of each frequency decreases as the order $n$ increases while the detuning of each frequency increases. We calculate the relative detuning for each frequency
+\begin{equation}
+Q_n = \frac{\lvert k_n -\omega_{\mathrm m} \rvert}{ \lvert \lambda_n  \sin 2\theta_{\mathrm m}/2 \rvert } = \frac{2(n-1)(2n-1)\pi \omega_{\mathrm m}}{(\Lambda_2 - \Lambda_1)\sin 2\theta_{\mathrm m}}
+\end{equation}
+which is quadratic in $n$. Table~\ref{tab-q-values-each-mode} lists the relative detuning for each frequency in Fig.~\ref{fig-akhmedovOscPlt-a} and Fig.~\ref{fig-akhmedovOscPlt-b}. Since the higher order relative detunings $Q_n$ for $n\geq 2$ are much larger than 1 for $\Lambda_2-\Lambda_1 = 0.003\pi\Lambda_0$, we expect the $k_1$ frequency term dominates. In the other situation, the $Q_2$ term is small which indicates a possible interference between $k_2$ and $k_1$ frequency. We perform the approximation Eq.~(\ref{eq-new-q-value-by-adding-new-long-wavelength-mode}) for the Fourier series expanded castle profile and include only the first two frequencies since higher frequencies terms have very large $Q$'s. We find the relative detuning $Q_1$ change from $0$ to $0.001$ and $1$ for $\Lambda_2-\Lambda_1 = 0.003\pi\Lambda_0$ and $\Lambda_2-\Lambda_1 =3.065\pi\Lambda_0$ respectively. A very small relative detuning $Q_1'=0.001$ have almost no effect on the transition amplitude which is what we observe in Fig.~\ref{fig-akhmedovOscPlt-a}, while $Q_1=1$ will supress the amplitude by half, which mathches what is shown in Fig.~\ref{fig-akhmedovOscPlt-b}.
+
+
+
+% Find the data in MMA file `akhmedov-parametric-resonance.nb`
+% {0., 6129.81, 20432.7, 42908.7}
+% {0., 5.99981, 19.9994, 41.9987}
+
+\begin{table}
+\caption{\label{tab-q-values-each-mode}Relative detuning of each frequency.} 
+\begin{ruledtabular} 
+\begin{tabular}{lll} 
+  & $\Lambda_2-\Lambda_1 = 0.003\pi\Lambda_0$ & $\Lambda_2-\Lambda_1 =3.065\pi\Lambda_0$ \\
+\hline \\
+ $Q_1$ & $0$ &  $0$ \\ 
+ $Q_2$ & $6.1\times 10^3$ &  $6.0$ \\ 
+ $Q_3$ & $2.0\times 10^4$ &  $2.0\times 10^1$ \\ 
+ $Q_4$ & $4.3\times 10^4$ &  $4.2\times 10^1$ 
+\end{tabular} 
+\end{ruledtabular} 
+\end{table}
+
+
+
+Fig.~\ref{fig-interference-reduction-three-modes} shows an intriguing phenomenon we observe. The transition probabilities are for the Hamiltonian of three-frequency matter profile
+\begin{widetext}
+\begin{equation}
+H^{(\mathrm m)} =  -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 + \frac{1}{2} \sum_{n=1}^3 \cos 2\theta_{\mathrm m} A_n \sin (k_n r) \sigma_3  - \frac{1}{2} \sum_{n=1}^3 \sin 2\theta_{\mathrm m} A_n \cos (k_n r) \sigma_1 
+\label{eq-hamiltonian-rabi-three-frequency-interference}
+\end{equation}
+\end{widetext}
+with different combinations of $A_n$ and $k_n$. The most significant difference from the example for two-frequency interference Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is that we have varying energy gap shift. The red line shows the step-like increase in transition probability. Each step-like jump is the point where the second frequency matter potential becomes zero so that the resonance is restored. However, by adding another frequency we have eliminated such resonance restored points since the matter potential of the combination of second and third frequency have no zero points within this range of calculation. This is another verification of our conjecture that the destruction of resonance is due to the energy gap shift, or equivalently the relative detuning.
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{assets/interference-reduction-three-modes}
+    \caption{Resonance destruction due to energy gap shift. The black line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/Pi$, $A_1=0.000035\omega_{\mathrm m}$, $A_2 = 0.0084\omega_{\mathrm m}$; The red line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/10000 Pi$, $A_1=0.000035\omega_{\mathrm m}$, $A_2 = 0.0084\omega_{\mathrm m}$; The green line is the transition probability for three frequencies $k_1=\omega_{\mathrm m}$, $k_2=1/\pi$, $k_3=\omega_{\mathrm m}/5432\pi \omega_{\mathrm m}$, $A_1=0.000035\omega_{\mathrm m}$, $A_2 = 0.0084\omega_{\mathrm m}$, $A_3 = 0.0084\omega_{\mathrm m}$.}
+    \label{fig-interference-reduction-three-modes}
+\end{figure}
 
 
 
