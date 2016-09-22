@@ -502,7 +502,7 @@ H^{(\mathrm m)} =  -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 + \frac{1}{2} \sum_{n
 \label{eq-hamiltonian-rabi-three-frequency-interference}
 \end{equation}
 \end{widetext}
-with different combinations of $A_n$ and $k_n$. The most significant difference from the example for two-frequency interference Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is that we have varying energy gap shift. The red line shows the step-like increase in transition probability. Each step-like jump is the point where the second frequency matter potential becomes zero so that the resonance is restored. However, by adding another frequency we have eliminated such resonance restored points since the matter potential of the combination of second and third frequency have no zero points within this range of calculation. This is another verification of our conjecture that the destruction of resonance is due to the energy gap shift, or equivalently the relative detuning.
+with different combinations of $A_n$ and $k_n$. The most significant difference from the example for two-frequency interference Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is that we have varying energy gap shift. The red line shows the step-like increase in transition probability. Each step-like jump is the point where the second frequency matter potential becomes zero so that the resonance is restored. However, by adding another frequency we have eliminated such resonance restored points since the matter potential of the combination of second and third frequency have no zero points within this range of calculation. This is another verification of our conjecture that the destruction of resonance is due to the energy gap shift, or equivalently the relative detuning. The reason we do not observe this phenomenon in Fig.~\ref{fig-akhmedovOscPlt} is because the amplitude of matter potential is decreasing rapidly for for larger $n$'s which leads to a dramatic decrease in relative detuning.
 
 
 \begin{figure}[!htbp]
@@ -773,25 +773,32 @@ The first author would like to thank J. Kneller and K. Patton for their help dur
 
 %  trim={<left> <lower> <right> <upper>}
 %\begin{widetext}
-\begin{figure*}
-    \centering
-    \begin{subfigure}[b]{0.5\textwidth}
-        \centering
-        \includegraphics[trim={2cm 3.2cm 9.5cm 1cm},clip]{assets/rabi-isospin-static-frame}
-    \caption{}
-    \label{fig-rabi-isospin-static-frame}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[b]{0.5\textwidth}
-        \centering
-        \includegraphics[trim={6cm 3cm 9.5cm 2cm},clip]{assets/rabi-isospin-rotating-frame}
-        \caption{}
-        \label{fig-rabi-isospin-rotating-frame}
-    \end{subfigure}
-    \caption{Rabi oscillations in static frame and rotating frame. In both figures the red dashed vector is the flavor isospin, while the black solid vectors are the vectors of Hamiltonian. The left panel shows the rotating Hamiltonian $\mathbf{H}_3+\mathbf{H}_+$. The right panel shows the rotation of flavor isospin around a static vector $\mathbf{H}'_3+\mathbf{H}'_+$ in the rotating frame.}
-    \label{fig-rabi-isospin-different-frame}
-\end{figure*}
+% \begin{figure*}
+%     \centering
+%     \begin{subfigure}[b]{0.5\textwidth}
+%         \centering
+%         \includegraphics[trim={2cm 3.2cm 9.5cm 1cm},clip]{assets/rabi-isospin-static-frame}
+%     \caption{}
+%     \label{fig-rabi-isospin-static-frame}
+%     \end{subfigure}%
+%     ~ 
+%     \begin{subfigure}[b]{0.5\textwidth}
+%         \centering
+%         \includegraphics[trim={6cm 3cm 9.5cm 2cm},clip]{assets/rabi-isospin-rotating-frame}
+%         \caption{}
+%         \label{fig-rabi-isospin-rotating-frame}
+%     \end{subfigure}
+%     \caption{Rabi oscillations in static frame and rotating frame. In both figures the red dashed vector is the flavor isospin, while the black solid vectors are the vectors of Hamiltonian. The left panel shows the rotating Hamiltonian $\mathbf{H}_3+\mathbf{H}_+$. The right panel shows the rotation of flavor isospin around a static vector $\mathbf{H}'_3+\mathbf{H}'_+$ in the rotating frame.}
+%     \label{fig-rabi-isospin-different-frame}
+% \end{figure*}
 %\end{widetext}
+
+\begin{figure}
+        \centering
+        \includegraphics[width=\columnwidth, trim={20cm 10cm 50cm 10cm},clip]{assets/rabi-isospin-rotating-frame}
+    \caption{Rabi oscillations in static frame and rotating frame. In both figures the red dashed vector is the flavor isospin, while the black solid vectors are the vectors of Hamiltonian. The left panel shows the rotating Hamiltonian $\mathbf{H}_3+\mathbf{H}_+$. The right panel shows the rotation of flavor isospin around a static vector $\mathbf{H}'_3+\mathbf{H}'_+$ in the rotating frame.}
+    \label{fig-rabi-isospin-rotating-frame}
+\end{figure}
 
 In this appendix we introduce flavor isospin \cite{Duan2006a} to Rabi oscillations and derive the transition probabilities as well as explain the resonance and width briefly.
 
@@ -818,7 +825,7 @@ where $\boldsymbol{\sigma}$ is the the vector of Pauli matrices, and the three v
     \end{pmatrix}.
 \end{align}
 
-The three vectors are mapped onto a Cartesian coordinate system as shown in Fig.~\ref{fig-rabi-isospin-static-frame}, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$ is a rotating vectors in a plane perpendicular to $\mathbf{H}_3$. The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the state vector $\mathbf{s}$
+The three vectors are mapped onto a Cartesian coordinate system, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$ is a rotating vectors in a plane perpendicular to $\mathbf{H}_3$. The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the state vector $\mathbf{s}$
 \begin{align}
     \mathbf{s} =& \Psi^\dagger \frac{\boldsymbol{\sigma}}{2}\Psi \\
     =& \frac{1}{2}\begin{pmatrix}
