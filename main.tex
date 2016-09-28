@@ -690,14 +690,82 @@ where $A_1$ is defined in Eq.~(\ref{eq-define-a1}) and approximation
 \begin{equation*}
 J_1\left( \frac{\lambda_1}{k_1}\cos (2\theta_{\mathrm m}) \right) \approx \frac{\lambda_1}{2k_1}\cos (2\theta_{\mathrm m})
 \end{equation*}
-for small $\lambda_1\cos(2\theta_{\mathrm m})/k_1$ is used in the last step. Thus we reach a similar equation to the approximation we used in Sec.~\ref{sec:single-freq}. Small $\lambda_1\cos(2\theta_{\mathrm m})/k_1$ corresponds to small resonance width for Eq.~(\ref{eq-hamiltonian-bg-matter-basis-single-frequency}) and also Eq.~(\ref{eq-single-frequency-first-mode-hamiltonian}) so that the interferences are small. For $\lambda_1 \cos(2\theta_{\mathrm{m}})/k_1\gg 1$, the resonance width is very large compared to $\lvert n k_1 - \omega_{\mathrm{m}}$, which is the distance between different order of resonances, thus bringing in the interference between different modes. The relative detuning for each mode in the Jacobi-Anger expansion for single frequency matter profile used in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} is calculated.
+for small $\lambda_1\cos(2\theta_{\mathrm m})/k_1$ is used in the last step. Thus we reach a similar equation to the approximation we used in Sec.~\ref{sec:single-freq}. Small $\lambda_1\cos(2\theta_{\mathrm m})/k_1$ corresponds to small resonance width for Eq.~(\ref{eq-hamiltonian-bg-matter-basis-single-frequency}) and also Eq.~(\ref{eq-single-frequency-first-mode-hamiltonian}) so that the interferences are small. For $\lambda_1 \cos(2\theta_{\mathrm{m}})/k_1\gg 1$, the resonance width is very large compared to $\lvert n k_1 - \omega_{\mathrm{m}}$, which is the distance between different order of resonances, thus bringing in the interference between different modes. The relative detuning for each mode in the Jacobi-Anger expansion for single frequency matter profile used in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} is calculated, which shows that the relative detuning of the first mode is $0$, while the relative detuning of the second and third mode are $1.1\times 10^9$ and $9.7\times 10^{13}$ which are too huge to have any effect on the overall transition probability.
 
 
 
 
 
 
-\subsection{Fourier Transform of Matter Profile}
+
+\subsection{Multifrequency Matter Profile}
+
+The interference effect shown in Fig.~\ref{fig-interference-reduction-three-modes} is also interpretable by means of Jacobi-Anger expansion. Table~\ref{tab-q-values-lambda-each-mode-interference} shows the smallest relative detunings and corresponding oscillation wavelength of each mode. As expected, the third frequency introduced many small relative detuning modes, which interferes more compared to the two frequency cases.
+
+
+% {1,0}	0.
+% {0,1}	248.873
+% {0,-1}	481.292
+% {0,2}	6477.51
+% {0,-2}	29173.9
+% {0,3}	78458.1
+% {-1,0}	103283.
+% {1,1}	608730.
+% {1,-1}	1.17721*10^6
+% {0,-3}	3.40313*10^6
+
+% ,{1,0}	0.
+% {1,1}	215.309
+% {1,-1}	215.446
+% {1,2}	323.895
+% {1,-2}	324.307
+% {1,4}	590.72
+% {1,-4}	592.226
+% {1,3}	741.798
+% {1,-3}	743.216
+% {1,6}	806.351
+
+% ,{1,0,0}	0.
+% {1,35,-19}	17.913
+% {1,-35,19}	17.9131
+% {1,-11,6}	53.225
+% {1,11,-6}	53.2267
+% {1,37,-20}	63.8707
+% {1,-37,20}	63.8775
+% {1,-22,12}	111.436
+% {1,22,-12}	111.443
+% {1,39,-21}	129.027
+
+% }
+
+
+\begin{table*}
+\caption{\label{tab-q-values-lambda-each-mode-interference}Relative detuning and oscillation wavelength of each mode.} 
+\begin{ruledtabular} 
+\begin{tabular}{lll|lll|lll} 
+ \multicolumn{3}{c|}{$k_2=\omega_{\mathrm m}/\pi$} & \multicolumn{3}{c|}{$k_2=\omega_{\mathrm{m}}/1000\pi$} & \multicolumn{3}{c}{three-frequency} \\
+\hline
+   $\{n_i\}$ & $Q$ & $\lambda$ & $\{n_i\}$ & $Q$ & $\lambda$ & $\{n_i\}$ & $Q$ & $\lambda$  \\
+\hline 
+ {1,0} &	0.  &     324472.    & {1,0} &	0.  &   $3.32075\times 10^6$       & {1,0,0} &	0. &  $2.29097\times10^7$   \\
+{0,1} &	248.873 &   9.217      &  {1,1} &	215.309 &    19739.     &   {1,35,-19} &	17.913  & $2.1229\times 10^6$  \\
+{0,-1} &	481.292 &   4.76608    & {1,-1} &	215.446 &    19739.        &  {1,-35,19} &	17.9131 &  $2.1231\times 10^6$  \\
+{0,2} &	6477.51 &     17.2909       & {1,2} &	323.895 &   9869.56          & {1,-11,6} &	53.225 &  359495  \\
+{0,-2} &	29173.9 &    3.83912     & {1,-2} &	324.307  &    9869.56      &   {1,11,-6} &	53.2267   &      359556  \\
+{0,3} &	78458.1  &      139.408       &{1,4}  &	590.72   &     4934.8     &  {1,37,-20}  &	63.8707 & 241920 \\
+{-1,0} &	103283. &    3.14159      & {1,-4}  &	592.226  &     4934.8      & {1,-37,20} &	63.8775 & 241992. \\
+{1,1} &	608730.  &       19.7392      &  {1,3}  &	741.798  &   6579.73        &  {1,-22,12} &	111.436 &    162934.\\
+{1,-1} &	$1.17721\times10^6$  &    19.7392      & {1,-3} &	743.216 &     6579.73        & {1,22,-12} &	111.443  & 163032.\\
+\end{tabular} 
+\end{ruledtabular} 
+\end{table*}
+
+
+
+
+
+
+
 
 
 A matter profile as complicated as the castle wall profile can be decomposed into a summation of multiple frequencies. Even for arbitrary multi-frequency matter potential
