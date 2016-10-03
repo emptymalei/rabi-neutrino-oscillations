@@ -141,7 +141,7 @@ reprint,
 
 \begin{abstract}
 
-We develop an Rabi oscillations interpretation of neutrino oscillations in matter by neglecting the insignificant terms. The interference as a result of multi-frequency driving field is also explored and criteria of interference is proposed and verified numerically. Precise mapping into Rabi oscillations by expanding the system into superpositions of Rabi oscillations is made to explain the approximations made in the simple picture as well as providing more quantitative criteria on the interference effect.
+We develop a Rabi oscillations interpretation of neutrino oscillations in matter by neglecting the insignificant terms. The interference as a result of multi-frequency driving field is also explored and criteria of interference is proposed and verified numerically. Precise mapping into Rabi oscillations by expanding the system into superpositions of Rabi oscillations is made to explain the approximations made in the simple picture as well as providing more quantitative criteria on the interference effect.
 
 % \fbox{ABSTRACT PLACEHOLDER}
 % \begin{description}
@@ -176,7 +176,7 @@ In this paper, we take a step further and interpret parametric resonance~\cite{A
 
 \section{\label{sec:background}Background and Formalism}
 
-\fbox{TODO: Explain why two flavor}
+% \fbox{TODO: Explain why two flavor} didn't add this because the three flavor is really very different.
 
 We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ and mass-squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(r)$ along the path of neutrino propagation $r$. Three different bases are used in this work, i.e., flavor basis, in which the wave function describes the probability amplitude of different flavors, background matter basis, in which the wave function describe the probability amplitude of different mass states with the appearance of only background matter density, and Rabi basis which will be defined explicitly later. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian in flavor basis is
 \begin{equation}
@@ -277,7 +277,7 @@ For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
 
 
 
-\begin{figure}[!htbp]
+\begin{figure}
                 \centering
                 \includegraphics[width=\columnwidth]{assets/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
@@ -291,6 +291,8 @@ For a single frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
 
 
 \subsection{Castle Wall Matter Profile}
+
+
 
 The approach applied to single frequency matter profile also helps with the understanding of multiple frequency matter profile. Since any matter profile can be Fourier decomposed into superposition of many single frequency matter profile, we show an example of another well studied matter profile which is the periodic castle wall matter profile. The potential shown in Fig.~\ref{fig-castlewall-profile-illustration} is defined as,
 \begin{equation}
@@ -306,12 +308,7 @@ where $X_1$ and $X_2$ are the two periods of the matter profile or potential, $X
 \end{equation}
 where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for potential $\Lambda_1$ and $\Lambda_2$ respectively.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\columnwidth]{assets/castlewall-profile}
-    \caption{The castle wall matter potential profile with $X_1=X_2=X/2$.}
-    \label{fig-castlewall-profile-illustration}
-\end{figure}
+
 
 Even though this castle wall problem is exactly solved, the condition itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations by making appropriate approximation, which will be be specifically proved in Sec.~\ref{sec:jacobi}.
 
@@ -336,6 +333,13 @@ H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{
 \end{widetext}
 determines the transitions between the two background matter states.
 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{assets/castlewall-profile}
+    \caption{The castle wall matter potential profile with $X_1=X_2=X/2$.}
+    \label{fig-castlewall-profile-illustration}
+\end{figure}
 
 % \begin{figure}[!htbp]
 %                 \centering
@@ -461,7 +465,7 @@ The relative detuning $Q$ for the resonance frequency also changes from 0 to
 If the conjecture is correct, we expect the transition amplitude to drop as we have larger $\lvert A_2\rvert$.
 
 
-\begin{figure}[!htbp]
+\begin{figure}
                 \centering
                 \includegraphics[width=\columnwidth]{assets/interference-reduction}
                 \caption{Reduction of transition amplitudes. Black dots are the numerical transition amplitudes for $A_2=4.5\times 10^{-4}\omega_{\mathrm m}$; Green up-pointing triangles are the numerical transition amplitude for $A_2=A_{2,\mathrm{Critical}}=1.4\times10^{-2}\omega_{\mathrm m}$; Red diamonds are the numerical transition amplitudes for $A_2=2.4\times10^{-2}\omega_{\mathrm m}$. In all the calculations, we choose $A_1=10^{-4}\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$. The lines are the probabilities predicted using Rabi formula correspondingly. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
@@ -510,7 +514,7 @@ H^{(\mathrm m)} =  -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 + \frac{1}{2} \sum_{n
 with different combinations of $A_n$ and $k_n$. The most significant difference from the example for two-frequency interference Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is that we have varying energy gap shift. The red line shows the step-like increase in transition probability. Each step-like jump is the point where the second frequency matter potential becomes zero so that the resonance is restored. However, by adding another frequency we have eliminated such resonance restored points since the matter potential of the combination of second and third frequency have no zero points within this range of calculation. This is another verification of our conjecture that the destruction of resonance is due to the energy gap shift, or equivalently the relative detuning. The reason we do not observe this phenomenon in Fig.~\ref{fig-akhmedovOscPlt} is because the amplitude of matter potential is decreasing rapidly for for larger $n$'s which leads to a dramatic decrease in relative detuning.
 
 
-\begin{figure}[!htbp]
+\begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{assets/interference-reduction-three-modes}
     \caption{Resonance destruction due to energy gap shift. The black line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 = 1.4\times 10^{-2}\omega_{\mathrm m}$; The red line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/1000 \pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 = 1.4\times 10^{-2}\omega_{\mathrm m}$; The green line is the transition probability for three frequencies $k_1=\omega_{\mathrm m}$, $k_2=1/1000\pi$, $k_3=\omega_{\mathrm m}/543\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 =A_3 = 1.4\times10^{-2}\omega_{\mathrm m}$. The vertical gridlines are the points where the second matter potential becomes 0.}
@@ -813,7 +817,7 @@ As the number of frequencies becomes large, the resonance modes are easily clogg
 %%%% Do not repeat what has been said
 
 
-In this paper we have provided an novel interpretation for neutrino oscillation in matter. By intuition, we interpreted the neutrino oscillations in a single frequency matter profile as Rabi oscillations when the system is close to resonance. We anticipated the varying diagonal elements in Hamiltonian have limited effects, which is a result of the fact that the varying diagonal elements can be neglected by virtue of the solitary on resonance mode. We also showed the interference between on resonance high frequency and off resonance low frequency in Rabi oscillations is approximated by shift in energy gap. Consequently, the strength of interference is measured by modification of relative detuning. The Rabi oscillations view was rigorously developed to emphasis the approximations that the varying diagonal elements in Hamiltonian can be neglected as the system approachs resonance, as well as .
+In conclusion, we have provided an novel interpretation for neutrino oscillation in matter. By intuition, we interpreted the neutrino oscillations in a single frequency matter profile as Rabi oscillations when the system is close to resonance. We anticipated the varying diagonal elements in Hamiltonian have limited effects, which is a result of the fact that the varying diagonal elements can be neglected by virtue of the solitary on resonance mode. Relative detuning has been the key to this paper since it is critical to quantify how off resonance a system is. We showed the interference between on resonance high frequency and off resonance low frequency in Rabi oscillations is approximated by shift in energy gap. Consequently, the strength of interference is measured by modification of relative detuning. The Rabi oscillations view was rigorously developed to emphasis the approximations that the varying diagonal elements in Hamiltonian can be neglected as the system approaches resonance, as well as the destruction effect due to multiple frequencies.
 
 
 
@@ -824,7 +828,7 @@ In this paper we have provided an novel interpretation for neutrino oscillation 
 
 \section{\label{acknowledgement}Acknowledgement}
 
-The first author would like to thank J. Kneller and K. Patton for their help during this research.
+The first author would like to thank J. Kneller and K. Patton for their help during this research. 
 
 
 
@@ -951,7 +955,11 @@ where
 \text{Detuning} =&~\lvert k_{\mathrm{R}} - \omega_{\mathrm R} \rvert, \\
 \text{Resonance Width} =&~\lvert A_{\mathrm R} \rvert.
 \end{align}
-The transition probability oscillates with frequency $\Omega_{\mathrm R}$, however, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. The phase of the matter potential $\phi_{\mathrm{R}}$ has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\mathbf{H}_+$.
+The transition probability oscillates with frequency $\Omega_{\mathrm R}$. However, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. The phase of the matter potential $\phi_{\mathrm{R}}$ has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\mathbf{H}_+$. We also notice that the transition amplitude is determined by relative detuning $Q$, which is defined as
+\begin{equation}
+    Q = \left\lvert \frac{ k_{\mathrm R} - \omega_{\mathrm R}}{A_{\mathrm R}} \right\rvert.
+\end{equation}
+
 
 Given a Rabi oscillation system with two driving frequencies
 \begin{align*}
@@ -970,13 +978,15 @@ we decompose it into $\mathbf{H}_{\mathrm R}=\mathbf{H}_3 + \mathbf{H}_{1} + \ma
      0
       \end{pmatrix}.
 \end{equation*}
-Assume $\mathbf{H}_1$ is the on-resonance perturbation which requires $k_1 = \omega_{\mathrm{R}}$. The condition that we can drop the new perturbation $\mathbf{H}_2$ is to make sure $k_2$ is far from the resonance condition compared to the resonance width,
+Assume $\mathbf{H}_1$ is the on-resonance perturbation which requires $k_1 = \omega_{\mathrm{R}}$. The most general condition that we can drop the new perturbation $\mathbf{H}_2$ is to make sure $k_2$ is far from the resonance condition compared to the resonance width,
 \begin{equation}
 Q \equiv \frac{\lvert k_2 -\omega_{\mathrm R}\rvert}{\lvert A_2\rvert} \gg 1.
 \end{equation}
+A more applicable condition is derived in Sec.~\ref{sec:interference-with-long-wavelength-mode}.
 
 
-\bibliographystyle{unsrt}
+
+\bibliographystyle{apsrev4-1}
 \bibliography{ref.bib} 
 
 
