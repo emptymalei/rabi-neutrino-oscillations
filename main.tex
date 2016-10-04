@@ -313,7 +313,7 @@ where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy differenc
 
 Even though this castle wall problem is exactly solved, the condition itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations by making appropriate approximation, which will be be specifically proved in Sec.~\ref{sec:jacobi}.
 
-For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino transitions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
+For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino flavor conversions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
 \begin{equation}
 \lambda(r) = \lambda_0 + \sum_{n=1}^{\infty} \lambda_n \cos\left( k_n  r \right),
 \end{equation}
@@ -325,7 +325,7 @@ k_n &= (2n-1)k_0, \\
 k_0 &= 2\pi/X.
 \end{align*}
 
-To calculate the transitions between two mass states of background matter potential $\lambda_0$, we rotate to the background matter basis with respect to $\lambda_0$, in which the transition is zero when variations of matter profile vanishes. The Hamiltonian
+To calculate the transitions between two mass states of background matter potential $\lambda_0$, we use the background matter basis with respect to $\lambda_0$, in which the transition is zero when varying matter profile vanishes. The Hamiltonian
 \begin{widetext}
 \begin{equation}
 H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{n=1}^{\infty} \lambda_n \cos 2\theta_{\mathrm m} \cos\left( k_n  r \right)  \sigma_3 - \frac{1}{2} \sum_{n=1}^{\infty} \lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1,
@@ -377,7 +377,7 @@ determines the transitions between the two background matter states.
 %\end{widetext}
 
 
-In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a proper $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbations frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first mode $n=1$ is the resonance mode if we set it to be on resonance. As an estimation, we drop all other modes. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities when the system is close to resonance, so that
+In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbation frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first frequency $n=1$ is the resonance frequency since we are using $k_0=\omega_{\mathrm{m}}$. As an approximation, we drop all other frequencies $n>1$ regarding the fact that they are off-resonance. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities in our case, which leads to
 \begin{align*}
     H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m}  \cos\left( k_0 r \right) \sigma_1\\
     \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} A_1 \cos ( k_0 r) \sigma_1 + \frac{1}{2} A_1 \sin(k_0 r) \sigma_2,
@@ -388,7 +388,7 @@ A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2} .
 \end{equation*}
 
 
-FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two matter states for different $\Lambda_2-\Lambda_1$. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance mode $k_0$ only matches the numerical results. The reason is that the resonance width of each mode is small, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results for large $\Lambda_2-\Lambda_1$, which is due to the destruction effect of the interference with between modes. A semi-quantitative analysis is done in the next subsection.
+FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transition probabilities between the two matter states for different $\Lambda_2-\Lambda_1$. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance frequency $k_0=\omega_{\mathrm m}$ matches the numerical results. The reason is that the resonance widths of each other frequencies are small compared to the detuning $k_n-\omega_{\mathrm m}$, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results for large $\Lambda_2-\Lambda_1$, which is due to the destruction effect of the interference with between modes. We will provide a semi-quantitative analysis in the next subsection.
 
 
 
@@ -400,7 +400,7 @@ FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transitions between the two mat
 %%%%%%%%
 
 
-\subsection{\label{sec:interference-with-long-wavelength-mode}Interference with Long Wave Length Mode}
+\subsection{\label{sec:interference-with-long-wavelength-mode}Interference Between Different Frequencies}
 
 % \fbox{
 % \parbox{0.9\columnwidth}{
@@ -820,7 +820,7 @@ As the number of frequencies becomes large, the resonance modes are easily clogg
 
 In conclusion, we have provided a novel interpretation for neutrino flavor conversion in matter. The first step was to interpret the neutrino flavor conversions in background matter basis. By intuition, we interpreted the neutrino flavor conversion in a single frequency matter profile as Rabi oscillations when the matter fluctuation frequency is close to the energy gap, which is one of the resonance conditions. We anticipated the matter density fluctuations which introduced a varying part in the energy gap have limited effects on neutrino flavor conversions given the matter fluctuation frequency matches the background energy gap, so that the matter fluctuation only works as a pure flipping field that converts neutrinos from one flavor to another. Relative detuning has been the key to this paper since it is critical to quantify how off-resonance a Rabi oscillation is. In the case of single frequency matter profile, the relative detuning becomes $0$ under the resonance condition. We also showed that the interference in Rabi oscillations between a high frequency matter profile, which is on-resonance and a low frequency matter profile, which is off-resonance, is related to the shift in energy gap. Consequently, the strength of interference is measured by modification of relative detuning due to the shift of energy gap. 
 
-Neutrino flavor conversion in matter can also be rotated into a basis where the oscillations are consequences of superposition of Rabi oscillations, which are modes of oscillations. This view was applied to emphasis the approximations that the change of energy gap due to matter fluctuation can be neglected under resonance condition in the previous background matter basis. The destruction effect due to multiple frequencies matter profile was also explained as the interference between different modes. If only one mode has a close to zero relative detuning while all other modes have much larger relative detunings, only the one with small relative detuning dominates the neutrino flavor conversion. Otherwise, interferences serves as a destruction effect of the neutrino flavor conversion.
+Neutrino flavor conversions in matter can also be described in a basis where the oscillations are consequences of superposition of Rabi oscillations, which are modes of oscillations. This view was applied to emphasis the approximations that the change of energy gap due to matter fluctuation can be neglected under resonance condition in the previous background matter basis. The destruction effect due to multiple frequencies matter profile was also explained as the interference between different modes. If only one mode has a close to zero relative detuning while all other modes have much larger relative detunings, only the one with small relative detuning dominates the neutrino flavor conversion. Otherwise, interferences serves as a destruction effect of the neutrino flavor conversion.
 
 
 
