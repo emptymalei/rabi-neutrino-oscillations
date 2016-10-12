@@ -446,12 +446,11 @@ which is quadratic in $n$ and inversely proportional to $\Lambda_2-\Lambda_1$. T
 In Fig.~\ref{fig-akhmedovOscPlt}, the transition amplitude drops for larger fluctuations $\Lambda_2-\Lambda_1$. The essence of this phenomenon is that the high frequencies interference with the low frequency frequency which is at resonance. Another destruction effect that can be explained more quantitatively is the interference between a mode at resonance and another mode that has longer wavelength. The effect can be interpreted as shift of energy gap due to the long wavelength perturbation. To model the effect, we construct a Rabi oscillation Hamiltonian with two modes of different frequency,
 \begin{widetext}
 \begin{equation}
-H^{(\mathrm{m})}  = -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 - \frac{1}{2} \sum_{n=1}^2  A_n \cos (k_n r) \sigma_1 + \frac{1}{2} \sum_{n=1}^2  A_n \sin (k_n r) \sigma_2 .
+H^{(\mathrm{m})}  = -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 - \frac{1}{2} \sum_{n=1}^N  A_n \cos (k_n r) \sigma_1 + \frac{1}{2} \sum_{n=1}^N  A_n \sin (k_n r) \sigma_2,
 \label{eq-hamiltonian-rabi-two-modes-interference}
 \end{equation}
 \end{widetext}
-
-To show the destruction effect, the Hamiltonian Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is written as vectors with sigma matrices as the basis,
+where $N=2$ for two frequency case. To show the destruction effect, the Hamiltonian Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is written as vectors with sigma matrices as the basis,
 \begin{equation}
 \mathbf H = \begin{pmatrix}
 0\\
@@ -504,26 +503,43 @@ We choose a system with two frequencies where the first frequency has amplitude 
 
 
 
-
-
-
-
-Fig.~\ref{fig-interference-reduction-three-modes} shows an intriguing phenomenon we observe. The transition probabilities are for the Hamiltonian of three-frequency matter profile
-\begin{widetext}
-\begin{equation}
-H^{(\mathrm m)} =  -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 + \frac{1}{2} \sum_{n=1}^3 \cos 2\theta_{\mathrm m} A_n \sin (k_n r) \sigma_3  - \frac{1}{2} \sum_{n=1}^3 \sin 2\theta_{\mathrm m} A_n \cos (k_n r) \sigma_1 
-\label{eq-hamiltonian-rabi-three-frequency-interference}
-\end{equation}
-\end{widetext}
-with different combinations of $A_n$ and $k_n$. The most significant difference from the example for two-frequency interference Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is that we have varying energy gap shift. The red line shows the step-like increase in transition probability. Each step-like jump is the point where the second frequency matter potential becomes zero so that the resonance is restored. However, by adding another frequency we have eliminated such resonance restored points since the matter potential of the combination of second and third frequency have no zero points within this range of calculation. This is another verification of our conjecture that the destruction of resonance is due to the energy gap shift, or equivalently the relative detuning. The reason we do not observe this phenomenon in Fig.~\ref{fig-akhmedovOscPlt} is because the amplitude of matter potential is decreasing rapidly for larger $n$'s which leads to a dramatic decrease in relative detuning.
-
-
 \begin{figure}
     \centering
-    \includegraphics[width=\columnwidth]{assets/interference-reduction-three-modes}
-    \caption{Resonance destruction due to energy gap shift. The black line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 = 1.4\times 10^{-2}\omega_{\mathrm m}$; The red line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/1000 \pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 = 1.4\times 10^{-2}\omega_{\mathrm m}$; The green line is the transition probability for three frequencies $k_1=\omega_{\mathrm m}$, $k_2=1/1000\pi$, $k_3=\omega_{\mathrm m}/543\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 =A_3 = 1.4\times10^{-2}\omega_{\mathrm m}$. The vertical gridlines are the points where the second matter potential becomes 0.}
-    \label{fig-interference-reduction-three-modes}
+    \includegraphics[width=\columnwidth]{assets/interference-reduction-three-modes-rabi}
+    \caption{Resonance destruction with three pairs of frequencies. The black line is the transition probability for only one pair of frequencies rotating in opposite direction $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 = 5\times 10^{-2}\omega_{\mathrm m}$; The red line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/1000 \pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 = 5\times 10^{-2}\omega_{\mathrm m}$; The green line is the transition probability for three frequencies $k_1=\omega_{\mathrm m}$, $k_2=1/1000\pi$, $k_3=\omega_{\mathrm m}/543\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 =A_3 = 5\times10^{-2}\omega_{\mathrm m}$. The vertical gridlines are the points where the second matter potential becomes 0.}
+    \label{fig-interference-reduction-three-modes-rabi}
 \end{figure}
+
+
+
+
+
+Fig.~\ref{fig-interference-reduction-three-modes-rabi} shows an intriguing phenomenon we observe. We construct a system with three pairs of frequencies, with each pair rotating in a different direction,
+\begin{equation}
+    H^{(\mathrm{m})}  = -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 - \frac{1}{2} \sum_{n=1}^N  A_n \cos (k_n r) \sigma_1 .
+\label{eq-hamiltonian-rabi-two-modes-interference-3}
+\end{equation}
+We choose the parameters so that with the first frequency only, the neutrino flavor conversions amplitude is large, as shown in Fig.~\ref{fig-interference-reduction-three-modes-rabi} as black line. Then we add in a second frequency, which has a much smaller frequency. We observe the stepwise increase in the flavor conversions. Each step-like jump is the point where the potential of the second frequency becomes zero so that the resonance is restored. However, by adding a third frequency we have eliminated such resonance restored points since the matter potential of the combination of second and third frequency have no zero points within this range of calculation. This is another verification of our conjecture that the destruction of resonance is due to the energy gap shift, or equivalently the relative detuning.
+
+
+% The transition probabilities are for the Hamiltonian of three-frequency matter profile
+% \begin{widetext}
+% \begin{equation}
+% H^{(\mathrm m)} =  -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 + \frac{1}{2} \sum_{n=1}^3 \cos 2\theta_{\mathrm m} A_n \sin (k_n r) \sigma_3  - \frac{1}{2} \sum_{n=1}^3 \sin 2\theta_{\mathrm m} A_n \cos (k_n r) \sigma_1 
+% \label{eq-hamiltonian-rabi-three-frequency-interference}
+% \end{equation}
+% \end{widetext}
+
+
+
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\columnwidth]{assets/interference-reduction-three-modes}
+%     \caption{Resonance destruction due to energy gap shift. The black line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 =  10^{-2}\omega_{\mathrm m}$; The red line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/1000 \pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 =  10^{-2}\omega_{\mathrm m}$; The green line is the transition probability for three frequencies $k_1=\omega_{\mathrm m}$, $k_2=1/1000\pi$, $k_3=\omega_{\mathrm m}/543\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 =A_3 = 10^{-2}\omega_{\mathrm m}$. The vertical gridlines are the points where the second matter potential becomes 0.}
+%     \label{fig-interference-reduction-three-modes}
+% \end{figure}
 
 
 
