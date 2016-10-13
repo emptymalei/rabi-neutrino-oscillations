@@ -71,6 +71,7 @@ reprint,
 \newcommand{\avg}[1]{\left< #1 \right>}
 \newcommand{\sech}[1]{{\operatorname{sech}{#1}}}
 \newcommand{\csch}[1]{{\operatorname{csch}{#1}}}
+\newcommand{\RD}{D}
 %%%%%%  PREAMBLES %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -169,7 +170,7 @@ In many astrophysical environments, such as core-collapse supernova,  neutrinos 
 
 As one of the most intense neutrino sources, supernova neutrinos experience turbulent matter density as they propagate through out the explosion~\cite{Muller2015, Couch2015}, where the flavor conversion is modified by interaction with matter. Meanwhile with neutrinos depositing energy into the shock, neutrino flavor conversion is crucial to the shock evolution of supernova explosion. The turbulent matter density environment for neutrino flavor conversion has been researched~\cite{Loreti1994, Friedland2006,Kneller2010}. Recently matter stimulated neutrino flavor conversion in varying matter density has been researched using Jacobi-Anger expansion by Kneller, et al.~\cite{Kneller2013,Patton2014}. They have shown that many stimulated neutrino flavor conversions can be explained by resonances of the system.
 
-In this paper, we take a step further and interpret parametric resonance~\cite{Akhmedov2000, Krastev1989} as well as other stimulated neutrino flavor conversions~\cite{Kneller2013, Patton2014}, as superposition of Rabi oscillations. In Sec.~\ref{sec:background}, we define the formalism of neutrino flavor conversions in matter used in this paper where the equation of motion and Hamiltonian for neutrino flavor conversion in matter are explicitly written. In Sec.~\ref{sec:simple} we discuss how neutrino flavor conversions are related to Rabi oscillations by neglecting less important terms and show that the system can be reduced to Rabi oscillations systems. Single frequency matter profile, castle wall matter profile are calculated and interpreted as Rabi oscillations. Interference effect between different frequencies are explained using two-frequency matter profile and three-frequency matter profile. In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino flavor conversions into summation of Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion. In this section, we explain the reason why the approximations in Sec.~\ref{sec:simple} can be done.
+In this paper, we take a step further and interpret parametric resonance~\cite{Akhmedov2000, Krastev1989} as well as other matter stimulated neutrino flavor conversions~\cite{Kneller2013, Patton2014}, as superposition of Rabi oscillations. We also propose an criteria for the interference effect between different Rabi oscillations modes. In Sec.~\ref{sec:background}, we define the formalism of neutrino flavor conversions in matter used in this paper where the equation of motion and Hamiltonian for neutrino flavor conversion in matter are explicitly written. In Sec.~\ref{sec:single} we discuss how neutrino flavor conversions are related to Rabi oscillations. To begin with, we discuss a system with single frequency matter density fluctuation. We will show that such a system can be reduced to Rabi oscillations if resonance occurs. In Sec.~\ref{sec:multiple} we describe the interference effect between different frequencies of Rabi oscillations and develop the criteria for significant interference between two frequencies. As an example, we solve the neutrino flavor transitions in a castle wall matter profile, which is expanded using Fourier series into many single frequencies. We show that the interference between the many frequencies fits into the criteria we proposed for interference. In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino flavor conversions into summation of Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion. As the system is exactly decomposed into multiple Rabi oscillations, we can interpret neutrino flavor oscillations in any matter density fluctuations in principle.
 
 
 % \fbox{TODO:more about oscillation in matter}
@@ -228,7 +229,7 @@ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_
 %% Simplified Model
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\label{sec:simple}Parametric Resonance and Rabi oscillation --- a simplified model}%
+\section{\label{sec:single}Parametric Resonance and Rabi oscillation --- a simplified model}%
 
 
 In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations which have been well studied in quantum optics~\cite{Boyd2008}. In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
@@ -978,9 +979,9 @@ where
 \text{Detuning} =&~\lvert k_{\mathrm{R}} - \omega_{\mathrm R} \rvert, \\
 \text{Resonance Width} =&~\lvert A_{\mathrm R} \rvert.
 \end{align}
-The transition probability oscillates with frequency $\Omega_{\mathrm R}$. However, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. The phase of the matter potential $\phi_{\mathrm{R}}$ has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\mathbf{H}_+$. We also notice that the transition amplitude is determined by relative detuning $Q$, which is defined as
+The transition probability oscillates with frequency $\Omega_{\mathrm R}$. However, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. The phase of the matter potential $\phi_{\mathrm{R}}$ has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\mathbf{H}_+$. We also notice that the transition amplitude is determined by relative detuning $\RD$, which is defined as
 \begin{equation}
-    Q = \left\lvert \frac{ k_{\mathrm R} - \omega_{\mathrm R}}{A_{\mathrm R}} \right\rvert.
+    \RD = \left\lvert \frac{ k_{\mathrm R} - \omega_{\mathrm R}}{A_{\mathrm R}} \right\rvert.
 \end{equation}
 
 
@@ -1003,9 +1004,14 @@ we decompose it into $\mathbf{H}_{\mathrm R}=\mathbf{H}_3 + \mathbf{H}_{1} + \ma
 \end{equation*}
 Assume $\mathbf{H}_1$ is the on-resonance perturbation which requires $k_1 = \omega_{\mathrm{R}}$. The most general condition that we can drop the new perturbation $\mathbf{H}_2$ is to make sure $k_2$ is far from the resonance condition compared to the resonance width,
 \begin{equation}
-Q \equiv \frac{\lvert k_2 -\omega_{\mathrm R}\rvert}{\lvert A_2\rvert} \gg 1.
+\RD \equiv \frac{\lvert k_2 -\omega_{\mathrm R}\rvert}{\lvert A_2\rvert} \gg 1.
 \end{equation}
-A more applicable condition is derived in Sec.~\ref{sec:interference-with-long-wavelength-mode}.
+
+The transition amplitude between the two states becomes
+\begin{equation}
+P(r) = \frac{1}{1+\RD^2}\sin^2(\frac{\Omega_{\mathrm{R}}}{2}t).
+\end{equation}
+
 
 
 
