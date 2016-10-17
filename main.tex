@@ -179,28 +179,28 @@ In this paper, we take a step further and interpret parametric resonance~\cite{A
 
 % \fbox{TODO: Explain why two flavor} didn't add this because the three flavor is really very different.
 
-We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ and mass-squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(r)$ along the path of neutrino propagation $r$. Three different bases are used in this work, i.e., flavor basis, in which the wave function describes the probability amplitude of different flavors, background matter basis, in which the wave function describe the probability amplitude of different mass states with the appearance of only background matter density, and Rabi basis which will be defined explicitly later. The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation, in which the Hamiltonian in flavor basis is
-\begin{equation}
-    H^{(\mathrm{f})} =  \frac{1}{2} \begin{pmatrix}
+We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ and mass-squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(r)$ along the path of neutrino propagation $r$.  The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation. In flavor basis the wave function describes the probability amplitude of different flavors. The Hamiltonian in flavor basis consists the vacuum oscillation Hamiltonian $H^{(f)}_{\mathrm v}$ and the matter term $H^{(f)}_{\mathrm{m}}$ which describes the interaction between neutrinos and matter,
+\begin{align}
+    H^{(\mathrm{f})} =&  H^{(f)}_{\mathrm v} + H^{(f)}_{\mathrm m} \nonumber\\
+    =&  \frac{1}{2} \begin{pmatrix}
     -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} + \lambda(r) & \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \\
    \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}} & \omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} - \lambda(r)
     \end{pmatrix},
-\end{equation}
-where $\lambda(r)= \sqrt{2}G_{\mathrm F} n(r)$ is the potential of neutrino interaction with matter and $G_{\mathrm F}$ is the Fermi constant, $\theta_{\mathrm{v}}$ is the vacuum mixing angle, $\omega_{\mathrm{v}} = \delta m^2/2E$ is the vacuum oscillation frequency. For the convenience of notation, we use Pauli matrices $\sigma_i$ to denote the Hamiltonian, so that the Schr\"{o}dinger equation becomes,
-\begin{equation}
+\end{align}
+where $\lambda(r)= \sqrt{2}G_{\mathrm F} n(r)$ is the potential of neutrino interaction with matter and $G_{\mathrm F}$ is the Fermi constant, $\theta_{\mathrm{v}}$ is the vacuum mixing angle, $\omega_{\mathrm{v}} = \delta m^2/2E$ is the vacuum oscillation frequency. The potential $\lambda(r)$ is called matter profile since it reflects the matter density fluctuations. For the convenience of notation, we use Pauli matrices $\sigma_i$ to rewrite the Hamiltonian, so that the Schr\"{o}dinger equation becomes,
+\begin{equation*}
     \mathrm i\frac{\mathrm d}{\mathrm d r}\Psi(r) = \frac{1}{2} \left(  
     (- \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} + \lambda(r) ) \sigma_3 + \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \sigma_1 
     \right)
     \Psi(r),
-\end{equation}
+\end{equation*}
 where $\Psi(r)$ is the wave function in flavor basis. For two flavor scenario, it is written as $ \Psi(r) = \left(
     \psi_{e} ,
     \psi_{x}
     \right)^{\mathrm{T}}$ 
 where $\psi_{e}$ and $\psi_{x}$ are the amplitudes for electron flavor and the second flavor ($\mu$ flavor or $\tau$ flavor) respectively. The equation of motion in flavor basis governs the transitions between different flavors.
 
-
-The potential $\lambda(r)$ for a general perturbation on top of a constant matter profile can be written as
+For arbitrary matter profile, we can always interpret it as perturbations on top of a constant matter profile,
 \begin{equation}
     \lambda(r) = \lambda_0 + \delta \lambda(r).
     \label{eq-general-matter-profile}
@@ -217,19 +217,23 @@ where $\theta_{\mathrm m}$ is the mixing angle in a constant matter profile $\la
 \begin{equation*}
 \tan 2\theta_{\mathrm{m}}=\sin 2\theta_{\mathrm v}/\left( \cos 2\theta_{\mathrm v} - \lambda_0/\omega_{\mathrm v} \right)
 \end{equation*}
-with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_{\mathrm v}$ denoting the vacuum mixing angle. The energy split is defined as
+with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_{\mathrm v}$ denoting the vacuum mixing angle. The frequency $\omega_{\mathrm m}$ is defined as
 \begin{equation}
 \omega_{\mathrm{m}} = \omega_{\mathrm{v}} \sqrt{ ( \lambda_0/\omega_{\mathrm{v}} - \cos (2\theta_{\mathrm{v}}) )^2 + \sin^2(2\theta_{\mathrm{v}}) }.
 \end{equation}
 
+In background matter basis, the wave function describes the amplitudes of different mass states defined when there is only background matter density $\lambda_0$. It's trivial to calculate the flavor conversion given the transition probability between the two mass states. However, since we'll concentrate on the flavor conversion due to the matter fluctuations, we'll only discuss the transition between mass states in the background matter basis.
+
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Simplified Model
+%% Single frequency
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\label{sec:single}Parametric Resonance and Rabi oscillation --- a simplified model}%
+
+
+\section{\label{sec:single}Single Frequency Matter Profile and Rabi oscillations}%
 
 
 In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations which have been well studied in quantum optics~\cite{Boyd2008}. In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
@@ -242,15 +246,7 @@ In this section we present a simple picture to explain neutrino parametric reson
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% The Hamiltonian Eq.~\ref{eq-hamiltonian-bg-matter-basis-general} has a lot in common with the Rabi oscillation Hamiltonian. One example of Rabi oscillation is the transition between low energy state and high energy state in two level atoms, when stimulated by optical fields with frequency that matches the energy gap of the two level atoms. As the frequency of optical field approaches the energy split of atom, large transition occurs, which is described by Rabi formula. 
-
-% In the light of Rabi oscillations, we argue that the second term in the neutrino system described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), i.e., the varying diagonal elements of Hamiltonian, is not relevant when the system is close to resonance, as we will explain later using Jacobi-Anger expansion. 
-
-
-\subsection{\label{sec:single-freq}Single Frequency Matter Profile}
-
-
-The first example we examine is single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. As will be proved later, the varying $\sigma_3$ term $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in Hamiltonian Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), which is the varying energy gap due to varying matter density fluctuations, has little effect on the transition probabilities when the system is close to resonance. With the varying $\sigma_3$ term removed, it indicates that this single frequency matter perturbation neutrino flavor conversion system is reduced to a Rabi oscillation system, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. By neglecting the off-resonance terms, the Hamiltonian can be simplified,
+We examine neutrino flavor conversions in single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. As will be proved later, the varying $\sigma_3$ term $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in Hamiltonian Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), which is the varying energy gap due to varying matter density fluctuations, has little effect on the transition probabilities when the system is close to resonance. With the varying $\sigma_3$ term removed, it indicates that this single frequency matter perturbation neutrino flavor conversion system is reduced to a Rabi oscillation system, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. By neglecting the off-resonance terms, the Hamiltonian can be simplified,
 % \begin{align}
 % H^{(\mathrm{m})}_1 &= -\frac{\omega_{\mathrm m}}{2} \sigma_3 + \frac{1}{2} \lambda_1 \sin(k_1 r) \cos 2\theta_{\mathrm m} \sigma_3 -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1 \\
 % &\to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1,
