@@ -44,6 +44,7 @@ reprint,
 \usepackage{graphicx}% Include figure files
 
 \usepackage{subcaption}
+%\usepackage[caption=false]{subfig}
 
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
@@ -224,6 +225,8 @@ with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_
 
 In background matter basis, the wave function describes the amplitudes of different mass states defined when there is only background matter density $\lambda_0$. It's trivial to calculate the flavor conversion given the transition probability between the two mass states. However, since we'll concentrate on the flavor conversion due to the matter fluctuations, we'll only discuss the transition between mass states in the background matter basis.
 
+In this paper, mixing angle is chosen so that $\sin^2(2\theta_{\mathrm v}) = 0.093$ and the mass squared difference is $\delta m^2 = 2.6\times 10^{-3}\mathrm{eV}^2$.
+
 
 
 
@@ -236,7 +239,7 @@ In background matter basis, the wave function describes the amplitudes of differ
 \section{\label{sec:single}Single Frequency Matter Profile and Rabi oscillations}%
 
 
-In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations which have been well studied in quantum optics~\cite{Boyd2008}. In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
+In this section we present a simple picture to explain neutrino parametric resonance in matter by utilizing the theory of Rabi oscillations which have been well studied in quantum optics~\cite{Boyd2008}. Rabi oscillations describes the transition between different energy levels due to an oscillatory external driving field, where maximum transition or resonance happens when the frequency of external driving field equals the energy gap. In Appendix~\ref{sec:rabi-oscillations}, we derive the Rabi oscillation transition probabilities using neutrino flavor isospin method introduced in Ref.~\onlinecite{Duan2006a}.
 
 
 
@@ -246,7 +249,7 @@ In this section we present a simple picture to explain neutrino parametric reson
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-We examine neutrino flavor conversions in single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. As will be proved later, the varying $\sigma_3$ term $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in Hamiltonian Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), which is the varying energy gap due to varying matter density fluctuations, has little effect on the transition probabilities when the system is close to resonance. With the varying $\sigma_3$ term removed, it indicates that this single frequency matter perturbation neutrino flavor conversion system is reduced to a Rabi oscillation system, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. By neglecting the off-resonance terms, the Hamiltonian can be simplified,
+We examine neutrino flavor conversions in single frequency matter profile $\delta\lambda(r) = \lambda_1 \sin(k_1 r)$. As will be proved later, the varying $\sigma_3$ term $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in Hamiltonian Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), which is the varying energy gap due to varying matter density fluctuations, has little effect on the transition probabilities when the system is not far from resonance. With the varying $\sigma_3$ term removed, it indicates that this single frequency matter perturbation neutrino flavor conversion system is reduced to a Rabi oscillation system, with external driving field frequency $k_1$ and energy gap $\omega_{\mathrm m}$. We can also decompose $\sin( k_1 r )$ into two exponentials so that we have two external driving frequencies $k_1$ and $-k_1$. By neglecting the off-resonance mode which has a frequency $-k_1$, the Hamiltonian can be simplified,
 % \begin{align}
 % H^{(\mathrm{m})}_1 &= -\frac{\omega_{\mathrm m}}{2} \sigma_3 + \frac{1}{2} \lambda_1 \sin(k_1 r) \cos 2\theta_{\mathrm m} \sigma_3 -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1 \\
 % &\to -\frac{\omega_{\mathrm m}}{2} \sigma_3  -\frac{1}{2}\lambda_1 \sin(k_1 r) \sin 2\theta_{\mathrm m} \sigma_1,
@@ -254,7 +257,8 @@ We examine neutrino flavor conversions in single frequency matter profile $\delt
 % \end{align}
 \begin{align}
 H^{(\mathrm{m})} \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m} \sin( k_1 r ) \sigma_1\label{eq-hamiltonian-bg-matter-basis-single-frequency} \\
-\to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2,\nonumber 
+\to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \exp (k_1 r) \sigma_1 \nonumber \\
+= & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2,\nonumber
 \end{align}
 where
 \begin{equation}
@@ -262,12 +266,15 @@ A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2i}.
 \label{eq-define-a1}
 \end{equation}
 
-The resonance condition is determined by matching the energy gap $\omega_{\mathrm m}$ with external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As the system is approaching resonance condition, the transition probability is predicted well using Rabi formula. As defined in Appendix~\ref{sec:rabi-oscillations}, relative detuning $Q=\lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$ measures how off-resonance a system is. $Q\to 0$ indicates the system is very close to resonance, while $Q\to \infty$ indicates the system is far away from resonance.
+The resonance condition is determined by matching the energy gap $\omega_{\mathrm m}$ with external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As the system approaches resonance condition, the transition probability between the two mass states is predicted well using Rabi formula.
 
 % For a graphical representation of such resonances, decompositions of Hamiltonian onto Pauli matrices are denoted as vectors on , c.f.~Appendix~\ref{sec:rabi-oscillations}. The Hamiltonian is decomposed into three different components, i.e., the constant energy gap on z axis $\vec H_z$, the varying perturbation on z axis $\vec H_{z}'$, and the rotating perturbations in xy plane $\vec H_{\pm}$. The frequency of the rotating component $H_{+}$ in the xy can easily match the energy gap $\omega_{\mathrm{m}}$ even with a varying $\vec H_z'$ component in the Hamiltonian vector, as long as the system is close to resonance.
 
-To show that this conjecture of simplifying neutrino flavor conversions to Rabi oscillations is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}), and Rabi formula Eq.~(\ref{rabi-system-transition-probability}) from the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}).
-In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, black dots show the transition probability of neutrino flavor conversions in matter, while solid line stands for the result predicted using Rabi formula. The corresponding relative detuning is $Q = 0$ as we have chosen $k_1=\omega_{\mathrm{m}}$, which sets the system on exact resonance and explains the agreement between Rabi formula and the numerical calculation.
+To show that this conjecture of simplifying neutrino flavor conversions to Rabi oscillations is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) numerically, and compare them with Rabi formula Eq.~(\ref{rabi-system-transition-probability}) from the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}). 
+
+In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, we plotted the numerical results using markers as well as the prediction using Rabi formula using lines. The agreement between numerical solutions of neutrino transitions between mass states and Rabi formula will be explained more precisely in Sec.~\ref{sec:jacobi}. For now, we address the significance of relative detuning $Q=\lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$,  which is defined in Appendix~\ref{sec:rabi-oscillations}. It measures how off-resonance a system is. We know that $Q\to 0$ indicates the system is very close to resonance, while $Q\to \infty$ indicates the system is far away from resonance. The corresponding relative detunings are $0$, $0.5$, $1.0$, and $5.2$ for $k_1=\omega_{\mathrm{m}}$, $k_1=(1-10^{-4})\omega_{\mathrm m}$, $k_1=(1-2\times 10^{-4})\omega_{\mathrm m}$, and $k_1=(1-10^{-3})\omega_{\mathrm m}$.
+
+% 0, 0.516197,1.03239,5.16197
 
 For a single-frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(r)$ associated with the matter profile at distance $r$ varies slowly~\cite{Krastev1989}. This condition is exactly the Rabi resonance condition when $n=1$, as such condition matches the driving field frequency to the energy split. All the $n>1$ cases in their condition corresponds to the higher modes derived in Sec.~\ref{sec:jacobi}.
 
@@ -276,10 +283,9 @@ For a single-frequency perturbation in matter profile $\lambda(r) =\lambda_1 +  
 
 
 \begin{figure}
-                \centering
                 \includegraphics[width=\columnwidth]{assets/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
-                \caption{Single frequency matter profile and Rabi oscillation.  Black dots are the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$ and mixing angle is chosen so that $\sin^2(2\theta_{\mathrm v}) = 0.093$. The solid line is the probabilities predicted using Rabi formula.}
+                \caption{Single frequency matter profile and Rabi oscillation. The markers are numerical results for the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. The dots, diamonds, triangles, and squares are for $k_1=\omega_{\mathrm m}$, $k_1=(1-10^{-4})\omega_{\mathrm m}$, $k_1=(1-2\times 10^{-4})\omega_{\mathrm m}$, and $k_1=(1-10^{-3})\omega_{\mathrm m}$ respectively. The lines are the predictions using Rabi formula. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$ and mixing angle is chosen so that $\sin^2(2\theta_{\mathrm v}) = 0.093$.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
