@@ -321,14 +321,14 @@ The approach applied to single frequency matter profile also helps with the unde
 % }
 
 
-Another destruction effect that can be explained more quantitatively is the interference between a mode at resonance and another mode that has longer wavelength. The effect can be interpreted as shift of energy gap due to the long wavelength perturbation. To model the effect, we construct a Rabi oscillation Hamiltonian with two modes of different frequency,
+We explain the interference between different modes of Rabi oscillations using the idea of energy gap shift. Suppose we have a Rabi oscillation system with two modes, one mode at resonance with frequency $k_1$ and another mode with frequency $k_2$ that has off resonance. In some cases, there can be a significant transition amplitude decrease because of the off resonance frequency $k_2$, which can be interpreted as shift of energy gap due to the frequency $k_2$. To model the effect, we construct a Rabi oscillation Hamiltonian with two modes of different frequency,
 \begin{widetext}
 \begin{equation}
 H^{(\mathrm{m})}  = -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 - \frac{1}{2} \sum_{n=1}^N  A_n \cos (k_n r) \sigma_1 + \frac{1}{2} \sum_{n=1}^N  A_n \sin (k_n r) \sigma_2,
 \label{eq-hamiltonian-rabi-two-modes-interference}
 \end{equation}
 \end{widetext}
-where $N=2$ for two frequency case. To show the destruction effect, the Hamiltonian Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is written as vectors with sigma matrices as the basis,
+where $N=2$ for two frequency case. To show the destruction effect, the Hamiltonian Eq.~(\ref{eq-hamiltonian-rabi-two-modes-interference}) is reformed into a vector with sigma matrices as the basis,
 \begin{equation}
 \mathbf H = \begin{pmatrix}
 0\\
@@ -345,7 +345,9 @@ A_2 \cos (k_2 r)\\
 \end{pmatrix}.
 \end{equation}
 
-The three terms are defined as $\mathbf  H_3$, $\mathbf H_1$, and $\mathbf H_2$, where $\mathbf H_3$ is perpendicular to the other two vectors. Assuming $\mathbf H_2$ is the slow rotating field, i.e., $k_2<k_1$, the shift of energy gap is calculated as
+The three terms are defined as $\mathbf  H_3$, $\mathbf H_1$, and $\mathbf H_2$, where $\mathbf H_3$ is perpendicular to the other two vectors. To work out the energy gap shift, we go to the frame that corotates with $\mathbf H_2$, in which we have the new frequencies $k_1'=k_1-k_2$ and $k_2'=0$ as well as new energy gap $\omega_{\mathrm m}' = \omega_{\mathrm m}- k_2$. The resonance mode $\mathbf H_1$ retains the resonance condition since $k_1-k_2 = \omega_{\mathrm m}-k_2$ holds in the new frame. On the other hand, we have .
+
+Assuming $\mathbf H_2$ is the slow rotating field, i.e., $k_2<k_1$, the shift of energy gap is calculated as
 \begin{align}
     \omega_{\mathrm{m}}' =& \sqrt{\omega_{\mathrm{m}}^2 + A_2^2 } \\
     \approx & \omega_{\mathrm{m}} + \frac{A_2^2}{2\omega_{m}},
