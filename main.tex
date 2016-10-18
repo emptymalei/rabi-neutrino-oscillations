@@ -272,7 +272,7 @@ The resonance condition is determined by matching the energy gap $\omega_{\mathr
 
 To show that this conjecture of simplifying neutrino flavor conversions to Rabi oscillations is correct, we calculate transition probabilities of the neutrinos described by Eq.~(\ref{eq-hamiltonian-bg-matter-basis-general}) numerically, and compare them with Rabi formula Eq.~(\ref{rabi-system-transition-probability}) from the Rabi oscillations described by Eq.~(\ref{rabi-oscillation-single-perturbation}). 
 
-In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, we plotted the numerical results using markers as well as the prediction using Rabi formula using lines. The agreement between numerical solutions of neutrino transitions between mass states and Rabi formula will be explained more precisely in Sec.~\ref{sec:jacobi}. For now, we address the significance of relative detuning $Q=\lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$,  which is defined in Appendix~\ref{sec:rabi-oscillations}. It measures how off-resonance a system is. We know that $Q\to 0$ indicates the system is very close to resonance, while $Q\to \infty$ indicates the system is far away from resonance. The corresponding relative detunings are $0$, $0.5$, $1.0$, and $5.2$ for $k_1=\omega_{\mathrm{m}}$, $k_1=(1-10^{-4})\omega_{\mathrm m}$, $k_1=(1-2\times 10^{-4})\omega_{\mathrm m}$, and $k_1=(1-10^{-3})\omega_{\mathrm m}$.
+In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, we plotted the numerical results using markers as well as the prediction using Rabi formula using lines. The agreement between numerical solutions of neutrino transitions between mass states and Rabi formula will be explained more precisely in Sec.~\ref{sec:jacobi}. For now, we address the significance of relative detuning $\RD = \lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$,  which is defined in Appendix~\ref{sec:rabi-oscillations}. It measures how off-resonance a system is. We know that $\RD\to 0$ indicates the system is very close to resonance, while $\RD\to \infty$ indicates the system is far away from resonance. The corresponding relative detunings are $0$, $0.5$, $1.0$, and $5.2$ for $k_1=\omega_{\mathrm{m}}$, $k_1=(1-10^{-4})\omega_{\mathrm m}$, $k_1=(1-2\times 10^{-4})\omega_{\mathrm m}$, and $k_1=(1-10^{-3})\omega_{\mathrm m}$.
 
 % 0, 0.516197,1.03239,5.16197
 
@@ -347,12 +347,16 @@ A_2 \cos (k_2 r)\\
 
 The three terms are defined as $\mathbf  H_3$, $\mathbf H_1$, and $\mathbf H_2$, where $\mathbf H_3$ is perpendicular to the other two vectors. To work out the energy gap shift, we go to the frame that corotates with $\mathbf H_2$, in which we have the new frequencies $k_1'=k_1-k_2$ and $k_2'=0$ as well as new energy gap $\omega_{\mathrm m}' = \omega_{\mathrm m}- k_2$. The resonance mode $\mathbf H_1$ retains the resonance condition since $k_1-k_2 = \omega_{\mathrm m}-k_2$ holds in the new frame. On the other hand, we have two static fields $\mathbf H_3$ and $\mathbf H_2$ together as the new energy gap, as long as $\mathbf H_2\ll \mathbf H_3$, which is the usual case. The new energy gap in this frame is calculated as
 \begin{align}
-    \tilde\omega_{\mathrm{m}}' =& \sqrt{\omega_{\mathrm{m}}'^2 + A_2^2 } \\
-    \approx & \omega_{\mathrm{m}}' + \frac{A_2^2}{2\omega_{\mathrm m}'},
+    \tilde\omega_{\mathrm{m}}' =& \sqrt{\omega_{\mathrm{m}}'^2 + A_2^2 } \nonumber\\
+    \approx & \omega_{\mathrm{m}}' + \frac{A_2^2}{2\omega_{\mathrm m}'} \nonumber\\
+    =& \omega_{\mathrm m} - k_2 + \frac{1}{2}\frac{A_2^2}{\omega_{\mathrm m} - k_2},
 \end{align}
-where we keep only first order of Taylor series.
-    
-To begin with, we choose the first rotating perturbation to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second slow rotating field shifting the system out of resonance is that the detuning becomes larger than the resonance width,
+where we kept only first order of Taylor series. As an approximation, the transitions between the two energy states follows the Rabi oscillations with energy gap $\tilde \omega_{\mathrm m}$ and driving field with frequency $k_1-k_2$. Consequently, we can estimate how much the amplitude of the transition is suppressed due to $k_1$ mode by calculating the new relative detuning,
+\begin{align}
+    \RD = \frac{\lvert k_1' - \tilde \omega_{\mathrm m}'' \rvert}{\lvert A_1 \rvert} = \frac{\lvert k_1-\omega_{\mathrm m}\rvert}{\lvert A_1\rvert} + \frac{\lvert A_2^2 \rvert}{2 \lvert A_1 ( k_2 - \omega_{\mathrm m}) \rvert}.
+\end{align}
+
+To verify the condition, we choose the first rotating perturbation to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second slow rotating field shifting the system out of resonance is that the detuning becomes larger than the resonance width,
 \begin{equation}
 \lvert \omega_{\mathrm{m}}' - \omega_{\mathrm{m}} \rvert \geq \lvert A_1 \rvert,
 \end{equation}
