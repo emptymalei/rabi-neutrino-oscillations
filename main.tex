@@ -350,38 +350,30 @@ The three terms are defined as $\mathbf  H_3$, $\mathbf H_1$, and $\mathbf H_2$,
     \tilde\omega_{\mathrm{m}}' =& \sqrt{\omega_{\mathrm{m}}'^2 + A_2^2 } \nonumber\\
     \approx & \omega_{\mathrm{m}}' + \frac{A_2^2}{2\omega_{\mathrm m}'} \nonumber\\
     =& \omega_{\mathrm m} - k_2 + \frac{1}{2}\frac{A_2^2}{\omega_{\mathrm m} - k_2},
+    \label{eq-}
 \end{align}
 where we kept only first order of Taylor series. As an approximation, the transitions between the two energy states follows the Rabi oscillations with energy gap $\tilde \omega_{\mathrm m}$ and driving field with frequency $k_1-k_2$. Consequently, we can estimate how much the amplitude of the transition is suppressed due to $k_1$ mode by calculating the new relative detuning,
 \begin{align}
-    \RD = \frac{\lvert k_1' - \tilde \omega_{\mathrm m}'' \rvert}{\lvert A_1 \rvert} = \frac{\lvert k_1-\omega_{\mathrm m}\rvert}{\lvert A_1\rvert} + \frac{\lvert A_2^2 \rvert}{2 \lvert A_1 ( k_2 - \omega_{\mathrm m}) \rvert}.
+    \RD' = \frac{\lvert k_1' - \tilde \omega_{\mathrm m}' \rvert}{\lvert A_1 \rvert} = \frac{\lvert k_1-\omega_{\mathrm m}\rvert}{\lvert A_1\rvert} + \frac{\lvert A_2^2 \rvert}{2 \lvert A_1 ( k_2 - \omega_{\mathrm m}) \rvert}.
 \end{align}
 
-To verify the condition, we choose the first rotating perturbation to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second slow rotating field shifting the system out of resonance is that the detuning becomes larger than the resonance width,
+The condition can be verified by comparing the numerical solution and estimation using Rabi formula. However, we are most interested in the amplitude change due to $\mathbf H_2$ mode. Relative detuning is the only variable that we need to calculate the amplitude, hence we only compare the numerical results with estimated amplitudes using $1/(1+\RD'^2)$.
+To verify the condition, we choose the first rotating perturbation to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second rotating field shifting the system out of resonance is that the relative detuning becomes larger than $1$, which leads to
 \begin{equation}
-\lvert \omega_{\mathrm{m}}' - \omega_{\mathrm{m}} \rvert \geq \lvert A_1 \rvert,
+\lvert A_2 \rvert \geq \sqrt{2\omega_{\mathrm{m}} \lvert A_1 (k_2-\omega_{\mathrm m})\rvert} \equiv A_{2,\mathrm{Critical}}.
 \end{equation}
-which leads to
-\begin{equation}
-\lvert A_2 \rvert \geq \sqrt{2\omega_{\mathrm{m}} \lvert A_1 \rvert} \equiv A_{2,\mathrm{Critical}}.
-\end{equation}
-
-The relative detuning $Q$ for the resonance frequency also changes from 0 to
-\begin{equation}
-    Q_1' = \frac{\lvert k_1 - \omega_{\mathrm{m}} \rvert }{ \lvert A_1 \rvert } = \frac{A_2^2}{2\omega_{\mathrm{m}} \lvert A_1 \rvert }.
-    \label{eq-new-q-value-by-adding-new-long-wavelength-mode}
-\end{equation}
-If the conjecture is correct, we expect the transition amplitude to decrease as we have larger $\lvert A_2\rvert$.
+We expect the transition amplitude to decrease as we have larger $\lvert A_2\rvert$.
 
 
 \begin{figure}
                 \centering
                 \includegraphics[width=\columnwidth]{assets/interference-reduction}
-                \caption{Reduction of transition amplitudes. Black dots are the numerical transition amplitudes for $A_2=4.5\times 10^{-4}\omega_{\mathrm m}$; Green up-pointing triangles are the numerical transition amplitude for $A_2=A_{2,\mathrm{Critical}}=1.4\times10^{-2}\omega_{\mathrm m}$; Red diamonds are the numerical transition amplitudes for $A_2=2.4\times10^{-2}\omega_{\mathrm m}$. In all the calculations, we choose $A_1=10^{-4}\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$, $k_2=0.01\omega_{\mathrm m}$. The lines are the probabilities predicted using Rabi formula correspondingly. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
+                \caption{Reduction of transition amplitudes due to interference. Dashed line, dotted line, dash-dotted line, and solid line are for $A_2=10^{-2}\omega_{\mathrm{m}}$, $k_2=10\omega_{\mathrm m}$, $A_2=10^{-2}\omega_{\mathrm{m}}$, $k_2=1.0\times 10^{-1}\omega_{\mathrm m}$, $A_2=5.0\times 10^{-2}\omega_{\mathrm{m}}$, $k_2=10\omega_{\mathrm m}$, and $A_2=5.0\times 10^{-2}\omega_{\mathrm{m}}$, $k_2=1.0\times 10^{-1}\omega_{\mathrm m}$. In all the calculations, we choose $A_1=10^{-4}\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$. The grid lines are the transition amplitudes estimated using $\RD'$. During the calculation, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
                 \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
 
 
-We choose a system with two frequencies where the first frequency has amplitude $A_1 = 10^{-4}\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. With a small amplitude of the second frequency, $A_2=4.5\times10^{-4}\omega_{\mathrm{m}}$, we obtain almost full resonance. For larger $A_2$ the destruction effect is more effective, as shown in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. The agreement between markers and corresponding lines verifies the approximation that the slow rotating field works as a shift in energy gaps. The relative detunings are $0.001$, $1$, and $3$ for $A_2= 2.4\times10^{-4}\omega_{\mathrm{m}}$, $A_2=A_{2,\text{Critical}}=1.4\times10^{-2}\omega_{\mathrm{m}}$, and $A_2= 2.4\times10^{-2} \omega_{\mathrm{m}}$ respectively. We also notice that the width of each cases doesn't change since we kept $A_1$ fixed for each calculation, which indicates that the decreasing in transition amplitude is because of the increasing in detuning.
+We choose the two modes where the first one has amplitude $A_1 = 10^{-4}\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. With a small amplitude of the second frequency, $A_2=10^{-4}\omega_{\mathrm{m}}$, and large frequency $k_2=10\omega_{\mathrm{m}}$, we obtain almost full resonance. For larger $A_2$ the destruction effect is more effective, as shown in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. The estimation of transition amplitude is in good agreement with the numerical results. We also notice that the width of each cases doesn't change since we kept $A_1$ fixed for each calculation, which indicates that the decreasing in transition amplitude is because of the increasing in detuning.
 
 
 
@@ -392,7 +384,7 @@ We choose a system with two frequencies where the first frequency has amplitude 
     \label{fig-interference-reduction-three-modes-rabi}
 \end{figure}
 
-
+% 2016-10-18
 
 Is it possible to have large flavor conversions when all other frequencies have large fluctuation amplitudes. It is possible when all of the other frequencies have periodic cancellations except for the resonance frequency. Fig.~\ref{fig-interference-reduction-three-modes-rabi} shows an intriguing phenomenon we observe. We construct a system with five frequencies. The first frequency is a perturbation that satisfies the resonance condition, while of the other two pairs of frequencies rotate in a different direction,
 \begin{align}
