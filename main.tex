@@ -393,7 +393,7 @@ Is it possible to have large flavor conversions when all other frequencies have 
     &+ \frac{1}{2}A_1\sin(k_1 r) \sigma_2.
 \label{eq-hamiltonian-rabi-two-modes-interference-3}
 \end{align}
-We choose the parameters so that with the first frequency only, the neutrino flavor conversions amplitude is large, as shown in Fig.~\ref{fig-interference-reduction-three-modes-rabi} as black line. Then we add in another pair of frequencies, which has a much smaller frequency. The amplitude of this pair of frequencies is chosen to be large enough to destroy the resonance of the first frequency. We observe the stepwise increase in the flavor conversions. Each step-like jump is the point where the potential of the second frequency becomes zero so that the resonance is restored. However, by adding a third frequency we have eliminated such resonance restored points since the matter potential of the combination of second and third frequency have no zero points within this range of calculation. This is another verification of our conjecture that the destruction of resonance is due to the energy gap shift, or equivalently the relative detuning.
+We choose the parameters so that with the first frequency only, the neutrino flavor conversions amplitude is large, as shown in Fig.~\ref{fig-interference-reduction-three-modes-rabi} as black line. Then we add in another pair of frequencies, which has a much smaller frequency. The amplitude of this pair of frequencies is chosen to be large enough to destroy the resonance of the first frequency. In this case the resulting relative detuning is $18.3$, which should lead to amplitude as samll as $0.003$. However, we observe the stepwise increase in the flavor conversions and the overall transition amplitude is much larger than the expected amplitude $0.003$. Each step-like jump is the point where the potential of the second frequency becomes zero so that the resonance is restored. However, by adding a third frequency we have eliminated such resonance restored points since the matter potential of the combination of second and third frequency have no zero points within this range of calculation. This is another verification of our conjecture that the destruction of resonance is due to the energy gap shift, or equivalently the relative detuning.
 
 
 % The transition probabilities are for the Hamiltonian of three-frequency matter profile
@@ -438,7 +438,7 @@ We choose the parameters so that with the first frequency only, the neutrino fla
 
 
 
- Since any matter profile can be Fourier decomposed into superposition of many single frequency matter profile, we show an example of another well studied matter profile which is the periodic castle wall matter profile. The potential shown in Fig.~\ref{fig-castlewall-profile-illustration} is defined as,
+One of the multi-frequency matter profiles that has been well studied is the castle wall matter profile. Since any matter profile can be Fourier decomposed into superposition of many single frequency matter profile, we decompose the periodic castle wall matter profile into many frequencies and study the interference effect. The potential shown in Fig.~\ref{fig-castlewall-profile-illustration} is defined as,
 \begin{equation}
     \lambda(r) = \begin{cases} 
 \Lambda_1, &\quad -\frac{X_1}{2}+nX\le r\le \frac{X_1}{2}+nX \\
@@ -454,9 +454,7 @@ where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy differenc
 
 
 
-Even though this castle wall problem is exactly solved, the condition itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations by making appropriate approximation, which will be be specifically proved in Sec.~\ref{sec:jacobi}.
-
-For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino flavor conversions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
+Even though this castle wall problem is exactly solved, the condition itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations. For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino flavor conversions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
 \begin{equation}
 \lambda(r) = \lambda_0 + \sum_{n=1}^{\infty} \lambda_n \cos\left( k_n  r \right),
 \label{eq-castle-wall-fourier-expanded}
@@ -521,20 +519,25 @@ determines the transitions between the two background matter states.
 %\end{widetext}
 
 
-In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbation frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first frequency $n=1$ is the resonance frequency since we are using $k_0=\omega_{\mathrm{m}}$. As an approximation, we drop all other frequencies $n>1$ regarding the fact that they are off-resonance. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities in our case, which leads to
+In principle, the base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbation frequencies show up in Eq.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first frequency $n=1$ is the resonance frequency since we are using $k_0=\omega_{\mathrm{m}}$. As an approximation, we drop all other frequencies $n>2$ regarding the fact that they are far from resonance. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities in our case, which leads to
 \begin{align*}
-    H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m}  \cos\left( k_0 r \right) \sigma_1\\
-    \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} A_1 \cos ( k_0 r) \sigma_1 + \frac{1}{2} A_1 \sin(k_0 r) \sigma_2,
+    H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2\lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1\\
+    \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2 A_n \cos ( k_n r) \sigma_1 \\
+    & + \frac{1}{2} \sum_{n=1}^2A_n \sin(k_n r) \sigma_2,
 \end{align*}
 where
 \begin{equation*}
-A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2} .
+A_n = \frac{\lambda_n \sin 2\theta_{\mathrm m} }{2} .
 \end{equation*}
-
-
-FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transition probabilities between the two matter states for different $\Lambda_2-\Lambda_1$. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance frequency $k_0=\omega_{\mathrm m}$ matches the numerical results. The reason is that the resonance widths of each other frequencies are small compared to the detunings defined by $k_n-\omega_{\mathrm m}$, so that the interference between the resonance mode and all other modes are small. We notice larger deficit between Rabi formula predictions and numerical results for large $\Lambda_2-\Lambda_1$. The transition amplitude drops for larger fluctuations $\Lambda_2-\Lambda_1$. The essence of this phenomenon is that the high frequencies interference with the low frequency frequency which is at resonance. More precisely, the resonance in Fig.~\ref{fig-akhmedovOscPlt-a} and resonance destruction effect in Fig.~\ref{fig-akhmedovOscPlt-b} is qualitatively described the comparison of relative detunings of different frequencies. The salient feature of this Fourier series expanded matter profile Eq.~(\ref{eq-castle-wall-fourier-expanded}) is that the width of each frequency decreases as the order $n$ increases while the detuning of each frequency increases. We calculate the relative detuning for each frequency
+The relative detuning is $0$ if we have only the first mode. However, it becomes
 \begin{equation}
-Q_n = \frac{\lvert k_n -\omega_{\mathrm m} \rvert}{ \lvert \lambda_n  \sin 2\theta_{\mathrm m}/2 \rvert } = \frac{2(n-1)(2n-1)\pi \omega_{\mathrm m}}{(\Lambda_2 - \Lambda_1)\sin 2\theta_{\mathrm m}}
+\RD_1'= \frac{A_2^2}{2\lvert A_1 (\omega_{\mathrm m} - k_2) \rvert},   
+\end{equation}
+if we include the second frequency $k_2$.
+
+FIG.~\ref{fig-akhmedovOscPlt} shows the neutrino transition probabilities between the two matter states for different $\Lambda_2-\Lambda_1$. For small $\Lambda_2-\Lambda_1$, the Rabi formula prediction using the resonance frequency $k_0=\omega_{\mathrm m}$ matches the numerical results. The reason is that the resonance widths of each other frequencies are small compared to the detunings defined by $k_n-\omega_{\mathrm m}$, so that the interference between the resonance mode and all other modes are small. Quantitatively, we can calculate the shifted relative detuning due to the second frequency, which is $\RD_1'=$. We notice larger deficit between Rabi formula predictions and numerical results for large $\Lambda_2-\Lambda_1$. The transition amplitude drops for larger fluctuations $\Lambda_2-\Lambda_1$. The essence of this phenomenon is that the high frequencies interference with the low frequency frequency which is at resonance. More precisely, the resonance in Fig.~\ref{fig-akhmedovOscPlt-a} and resonance destruction effect in Fig.~\ref{fig-akhmedovOscPlt-b} is qualitatively described the comparison of relative detunings of different frequencies. The salient feature of this Fourier series expanded matter profile Eq.~(\ref{eq-castle-wall-fourier-expanded}) is that the width of each frequency decreases as the order $n$ increases while the detuning of each frequency increases. We calculate the relative detuning for each frequency
+\begin{equation}
+\RD_n = \frac{\lvert k_n -\omega_{\mathrm m} \rvert}{ \lvert \lambda_n  \sin 2\theta_{\mathrm m}/2 \rvert } = \frac{2(n-1)(2n-1)\pi \omega_{\mathrm m}}{(\Lambda_2 - \Lambda_1)\sin 2\theta_{\mathrm m}}
 \end{equation}
 which is quadratic in $n$ and inversely proportional to $\Lambda_2-\Lambda_1$. Table~\ref{tab-q-values-each-mode} lists the relative detuning for each frequency in Fig.~\ref{fig-akhmedovOscPlt-a} and Fig.~\ref{fig-akhmedovOscPlt-b}. Since the higher order relative detunings $Q_n$ for $n\geq 2$ are much larger than 1 for $\Lambda_2-\Lambda_1 = 0.003\pi\Lambda_0$, we expect the term with frequency $k_1$ dominates. In the other situations, the $Q_2$ term is small which indicates a possible interference between $k_2$ and $k_1$ frequency. 
 %We perform the approximation Eq.~(\ref{eq-new-q-value-by-adding-new-long-wavelength-mode}) for the Fourier series expanded castle profile and include only the first two frequencies since higher frequencies terms have very large $Q$'s. We find the relative detuning $Q_1$ change from $0$ to $0.001$ and $1$ for $\Lambda_2-\Lambda_1 = 0.003\pi\Lambda_0$ and $\Lambda_2-\Lambda_1 =3.065\pi\Lambda_0$ respectively. A very small relative detuning $Q_1'=0.001$ have almost no effect on the transition amplitude which is what we observe in Fig.~\ref{fig-akhmedovOscPlt-a}, while $Q_1'=1$ will supress the amplitude by half, which mathches what is shown in Fig.~\ref{fig-akhmedovOscPlt-b}.
