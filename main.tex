@@ -281,11 +281,11 @@ To show that this conjecture of simplifying neutrino flavor conversions to Rabi 
 \begin{figure}
                 \includegraphics[width=\columnwidth]{assets/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
-                \caption{Single frequency matter profile and Rabi oscillation. The markers are numerical results for the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. The dots, diamonds, triangles, and squares are for $k_1=\omega_{\mathrm m}$, $k_1=(1-2\times 10^{-4})\omega_{\mathrm m}$, and $k_1=(1-10^{-3})\omega_{\mathrm m}$ respectively. The lines are the predictions using Rabi formula. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$ and mixing angle is chosen so that $\sin^2(2\theta_{\mathrm v}) = 0.093$.}
+                \caption{Single frequency matter profile and Rabi oscillation. The markers are numerical results for the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. The dots, diamonds, triangles, and squares are for $k_1=\omega_{\mathrm m}$, $k_1=(1-2\times 10^{-5})\omega_{\mathrm m}$, and $k_1=(1-10^{-4})\omega_{\mathrm m}$ respectively. The lines are the predictions using Rabi formula. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$ and mixing angle is chosen so that $\sin^2(2\theta_{\mathrm v}) = 0.093$.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
-In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, we plotted the numerical results using markers as well as the prediction using Rabi formula using lines. The agreement between numerical solutions of neutrino transitions between mass states and Rabi formula will be explained more precisely in Sec.~\ref{sec:jacobi}. For now, we address the significance of relative detuning $\RD = \lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$,  which is defined in Appendix~\ref{sec:rabi-oscillations}. It measures how off-resonance a system is. We know that $\RD\to 0$ indicates the system is very close to resonance, while $\RD\to \infty$ indicates the system is far away from resonance. The corresponding relative detunings are $0$, $1.0$, and $5.2$ for $k_1=\omega_{\mathrm{m}}$, $k_1=(1-2\times 10^{-4})\omega_{\mathrm m}$, and $k_1=(1-10^{-3})\omega_{\mathrm m}$.
+In FIG.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, we plotted the numerical results using markers as well as the prediction using Rabi formula using lines. The agreement between numerical solutions of neutrino transitions between mass states and Rabi formula will be explained more precisely in Sec.~\ref{sec:jacobi}. For now, we address the significance of relative detuning $\RD = \lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$,  which is defined in Appendix~\ref{sec:rabi-oscillations}. It measures how off-resonance a system is. We know that $\RD\to 0$ indicates the system is very close to resonance, while $\RD\to \infty$ indicates the system is far away from resonance. The corresponding relative detunings are $0$, $1.0$, and $5.2$ for $k_1=\omega_{\mathrm{m}}$, $k_1=(1-2\times 10^{-5})\omega_{\mathrm m}$, and $k_1=(1-10^{-4})\omega_{\mathrm m}$.
 
 % 0, 0.516197,1.03239,5.16197
 
@@ -354,9 +354,9 @@ The three terms are defined as $\mathbf  H_3$, $\mathbf H_1$, and $\mathbf H_2$,
     \tilde\omega_{\mathrm{m}}' =& \sqrt{\omega_{\mathrm{m}}'^2 + A_2^2 } \nonumber\\
     \approx & \omega_{\mathrm{m}}' + \frac{A_2^2}{2\omega_{\mathrm m}'} \nonumber\\
     =& \omega_{\mathrm m} - k_2 + \frac{1}{2}\frac{A_2^2}{\omega_{\mathrm m} - k_2},
-    \label{eq-}
+    \label{eq-new-energy-gap-due-to-second-mode-approximation}
 \end{align}
-where we kept only first order of Taylor series. As an approximation, the transitions between the two energy states follows the Rabi oscillations with energy gap $\tilde \omega_{\mathrm m}$ and driving field with frequency $k_1-k_2$. Consequently, we can estimate how much the amplitude of the transition is suppressed due to $k_1$ mode by calculating the new relative detuning,
+where we kept only first order of Taylor series. The Taylor expansion in Eq.~\ref{eq-new-energy-gap-due-to-second-mode-approximation} holds as long as the relative detuning for the second frequency is large which means the second frequency is off resonance. As an approximation, the transitions between the two energy states follows the Rabi oscillations with energy gap $\tilde \omega_{\mathrm m}$ and driving field with frequency $k_1-k_2$. Consequently, we can estimate how much the amplitude of the transition is suppressed due to $k_1$ mode by calculating the new relative detuning,
 \begin{align}
     \RD' = \frac{\lvert k_1' - \tilde \omega_{\mathrm m}' \rvert}{\lvert A_1 \rvert} = \frac{\lvert k_1-\omega_{\mathrm m}\rvert}{\lvert A_1\rvert} + \frac{\lvert A_2^2 \rvert}{2 \lvert A_1 ( k_2 - \omega_{\mathrm m}) \rvert}.
 \end{align}
@@ -557,9 +557,52 @@ J_1\left( \frac{\lambda_1}{k_1}\cos (2\theta_{\mathrm m}) \right) \approx \frac{
 \end{equation*}
 for $\lambda_1\cos(2\theta_{\mathrm m})/k_1\ll 1$ is used in the last step. Thus we reach a similar equation to the approximation we used in Sec.~\ref{sec:single}. $\lambda_1\cos(2\theta_{\mathrm m})/k_1\ll 1$ corresponds to small resonance width for Eq.~(\ref{eq-hamiltonian-bg-matter-basis-single-frequency}) and also Eq.~(\ref{eq-single-frequency-first-mode-hamiltonian}) so that the interferences are small. 
 
-Using Jacobi-Anger expansion, we can calculate the relative detuning for each mode as well as the interference effect. The relative detuning for each mode in the Jacobi-Anger expansion for single frequency matter profile used in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} is calculated.
+Using Jacobi-Anger expansion, we can calculate the relative detuning for each mode as well as the interference effect. The relative detuning for each mode in the Jacobi-Anger expansion for single frequency matter profile used in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} is calculated and listed in Table.~\ref{tab-q-values-single-frequency-example}. It clearly shows that the first mode takes the whole system so that the approximation of neglecting the varying $\sigma_3$ terms in Hamiltonian is accurate enough. One can also show that the interference effect due to higher order modes is negligible.
 
 
+
+% {
+%  {{1}, 0.},
+%  {{-1}, 103239.},
+%  {{2}, 1.11987*10^9},
+%  {{-2}, 3.3596*10^9},
+%  {{3}, 9.71798*10^13},
+%  {{-3}, 1.9436*10^14},
+%  {{4}, 9.48722*10^18}
+% }
+% {324336., 3.14159, 6.28319, 2.0944}
+
+% {
+%  {{1}, 1.03239},
+%  {{-1}, 103238.},
+%  {{2}, 1.1198*10^9},
+%  {{-2}, 3.35948*10^9}
+% }
+% {225656., 3.14162, 6.28356, 2.09446}
+
+% {
+%  {{1}, 5.16197},
+%  {{-1}, 103234.},
+%  {{2}, 1.11953*10^9},
+%  {{-2}, 3.35904*10^9}
+% }
+% {61685., 3.14175, 6.28507, 2.09474}
+
+\begin{table*}
+\caption{\label{tab-q-values-single-frequency-example}Relative detuning and oscillation wavelength of each mode for single frequency matter profile.} 
+\begin{ruledtabular} 
+\begin{tabular}{lll|lll|lll}
+ \multicolumn{3}{c|}{$k_1=\omega_{\mathrm m}$} & \multicolumn{3}{c|}{$k_1=(1-2\times 10^{-5})\omega_{\mathrm{m}}$} & \multicolumn{3}{c}{$k_1=(1-10^{-4})\omega_{\mathrm m}$} \\
+\hline
+   $n$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_n$ & $n$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_n$ & $n$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_n$  \\
+\hline 
+ 1 &	0  &    $3\times10^5$   & 1 &	1  &   $2\times 10^5$       & 1   &	5 &  $6\times10^4$   \\
+-1 &	$10^5$ &    3     &     -1 &	$10^5$ &    3               &  -1 &	$10^5$  & 3  \\
+2 &	$10^9$  &   6    &           2 & 	$10^9$ &    6               &  2  &	$10^9$ &  6  \\
+-2 &	$3\times 10^9$  & 2 &    -2 &	$3\times10^9$ &  2          & -2  &	$3\times 10^9$ &  2  \\
+\end{tabular} 
+\end{ruledtabular} 
+\end{table*}
 
 
 
@@ -611,7 +654,7 @@ The interference effect shown in Fig.~\ref{fig-interference-reduction-three-mode
 \begin{tabular}{lll|lll|lll} 
  \multicolumn{3}{c|}{$k_2=\omega_{\mathrm m}/\pi$} & \multicolumn{3}{c|}{$k_2=\omega_{\mathrm{m}}/1000\pi$} & \multicolumn{3}{c}{three-frequency} \\
 \hline
-   $\{n_i\}$ & $Q$ & $\lambda$ & $\{n_i\}$ & $Q$ & $\lambda$ & $\{n_i\}$ & $Q$ & $\lambda$  \\
+   $\{n_i\}$ & $Q$ & $\omega_{\mathrm m}\lambda$ & $\{n_i\}$ & $Q$ & $\omega_{\mathrm m}\lambda$ & $\{n_i\}$ & $Q$ & $\omega_{\mathrm m}\lambda$  \\
 \hline 
  {1,0} &	0.  &     324472.    & {1,0} &	0.  &   $3.32075\times 10^6$       & {1,0,0} &	0. &  $2.29097\times10^7$   \\
 {0,1} &	248.873 &   9.217      &  {1,1} &	215.309 &    19739.     &   {1,35,-19} &	17.913  & $2.1229\times 10^6$  \\
