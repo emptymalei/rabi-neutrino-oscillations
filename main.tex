@@ -382,7 +382,6 @@ We choose the two modes where the first one has amplitude $A_1 = 10^{-4}\omega_{
 
 
 \begin{figure}
-    \centering
     \includegraphics[width=\columnwidth]{assets/interference-reduction-three-modes-rabi}
     \caption{Resonance destruction with three pairs of frequencies. The black line is the transition probability for only one pair of frequencies rotating in opposite direction $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 = 5\times 10^{-2}\omega_{\mathrm m}$; The red line is the transition probability for two frequencies $k_1=\omega_{\mathrm m}$, $k_2=\omega_{\mathrm m}/1000 \pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 = 5\times 10^{-2}\omega_{\mathrm m}$; The green line is the transition probability for three frequencies $k_1=\omega_{\mathrm m}$, $k_2=1/1000\pi$, $k_3=\omega_{\mathrm m}/543\pi$, $A_1=10^{-4}\omega_{\mathrm m}$, $A_2 =A_3 = 5\times10^{-2}\omega_{\mathrm m}$. The vertical gridlines are the points where the second matter potential becomes 0.}
     \label{fig-interference-reduction-three-modes-rabi}
@@ -541,7 +540,7 @@ In principle, we can always approximate the system by including more modes with 
 
 
 
-\subsection{Single Frequency Matter Profile}
+\subsection{Single Frequency Matter Profile Revisited}
 
 For the single frequency matter potential $\lambda = \lambda_0 + \lambda_1 \sin(k_1 r)$ discussed in Sec.~\ref{sec:single}, we removed the varying $\sigma_3$ term by arguing that this term has no effect on transition probabilities when the system is close to resonance, $k_1 \sim \omega_{\mathrm m}$. The reason is that only the first mode $n=1$ is on resonance when $k_1=\omega_{\mathrm m}$ and all other modes are far from resonance, thus
 \begin{align}
@@ -607,9 +606,29 @@ Using Jacobi-Anger expansion, we can calculate the relative detuning for each mo
 
 
 
-\subsection{Multi-frequency Matter Profile}
 
-The interference effect shown in Fig.~\ref{fig-interference-reduction-three-modes} is also interpretable by means of Jacobi-Anger expansion. Table~\ref{tab-q-values-lambda-each-mode-interference} shows the smallest relative detunings and corresponding oscillation wavelength of each mode. As expected, the third frequency introduced many small relative detuning modes, which interferes more compared to the two frequency cases.
+\subsection{Multi-frequency Matter Profile Revisited}
+
+
+Using Jacobi-Anger expansion, two-frequency matter profile can also be analyzed. Nevertheless, in this section we consider a matter profile with three different frequencies, which leads to the Hamiltonian
+
+\begin{widetext}
+\begin{equation}
+H^{(\mathrm m)} =  -\frac{\omega_{\mathrm{m}}}{2} \sigma_3 + \frac{1}{2} \sum_{n=1}^3 \cos 2\theta_{\mathrm m} A_n \sin (k_n r) \sigma_3  - \frac{1}{2} \sum_{n=1}^3 \sin 2\theta_{\mathrm m} A_n \cos (k_n r) \sigma_1 .
+\label{eq-hamiltonian-rabi-three-frequency-interference-neutrino}
+\end{equation}
+\end{widetext}
+The numerical results are shown in Fig.~\ref{fig-interference-reduction-three-modes-neutrino}.
+
+\begin{figure}
+    \includegraphics[width=\columnwidth]{assets/interference-reduction-three-modes-neutrino}
+    \caption{The transition probabilities between two background mass states. In the calculation, $k_1=\omega_{\mathrm m}$, $A_1 = 10^{-4}$, $A_2=A_3=10^{-2}$. Dashed black line and solid red line are for two-frequency matter profile with $k_2=10^{-1}$ and $k_2=10^{-4}$ respectively, while the dotted green line is for three-frequency matter profile with $k_2=10^{-4}$ and $k_3=1/(1000\pi$. The vertical grid lines are the points where the second matter potential becomes 0.}
+    \label{fig-interference-reduction-three-modes-neutrino}
+\end{figure}
+
+% 2016-10-21
+
+The interference effect shown in Fig.~\ref{fig-interference-reduction-three-modes-neutrino} is also interpretable by means of Jacobi-Anger expansion. Table~\ref{tab-q-values-lambda-each-mode-interference} shows the smallest relative detunings and corresponding oscillation wavelength of each mode. As expected, the third frequency introduced many small relative detuning modes, which interferes more compared to the two frequency cases.
 
 
 % {1,0}	0.
@@ -654,7 +673,7 @@ The interference effect shown in Fig.~\ref{fig-interference-reduction-three-mode
 \begin{tabular}{lll|lll|lll} 
  \multicolumn{3}{c|}{$k_2=\omega_{\mathrm m}/\pi$} & \multicolumn{3}{c|}{$k_2=\omega_{\mathrm{m}}/1000\pi$} & \multicolumn{3}{c}{three-frequency} \\
 \hline
-   $\{n_i\}$ & $Q$ & $\omega_{\mathrm m}\lambda$ & $\{n_i\}$ & $Q$ & $\omega_{\mathrm m}\lambda$ & $\{n_i\}$ & $Q$ & $\omega_{\mathrm m}\lambda$  \\
+   $\{n_a\}$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_{\{n_a\}}$ & $\{n_i\}$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_{\{n_a\}}$ & $\{n_a\}$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_{\{n_a\}}$  \\
 \hline 
  {1,0} &	0.  &     324472.    & {1,0} &	0.  &   $3.32075\times 10^6$       & {1,0,0} &	0. &  $2.29097\times10^7$   \\
 {0,1} &	248.873 &   9.217      &  {1,1} &	215.309 &    19739.     &   {1,35,-19} &	17.913  & $2.1229\times 10^6$  \\
