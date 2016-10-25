@@ -358,8 +358,14 @@ The three terms are defined as $\mathbf  H_3$, $\mathbf H_1$, and $\mathbf H_2$,
 \end{align}
 where we kept only first order of Taylor series. The Taylor expansion in Eq.~\ref{eq-new-energy-gap-due-to-second-mode-approximation} holds as long as the relative detuning for the second frequency is large which means the second frequency is off resonance. As an approximation, the transitions between the two energy states follows the Rabi oscillations with energy gap $\tilde \omega_{\mathrm m}$ and driving field with frequency $k_1-k_2$. Consequently, we can estimate how much the amplitude of the transition is suppressed due to $k_1$ mode by calculating the new relative detuning,
 \begin{align}
-    \RD' = \frac{\lvert k_1' - \tilde \omega_{\mathrm m}' \rvert}{\lvert A_1 \rvert} = \frac{\lvert k_1-\omega_{\mathrm m}\rvert}{\lvert A_1\rvert} + \frac{\lvert A_2^2 \rvert}{2 \lvert A_1 ( k_2 - \omega_{\mathrm m}) \rvert}.
+    \RD' =& \frac{\lvert k_1' - \tilde \omega_{\mathrm m}' \rvert}{\lvert A_1 \rvert}\nonumber\\
+    =& \left \lvert \frac{ k_1-\omega_{\mathrm m}}{ A_1} \right \rvert + \left\lvert \frac{ A_2^2 }{2  A_1 ( k_2 - \omega_{\mathrm m})} \right  \rvert\\
+    =& \left \lvert  \frac{ k_1-\omega_{\mathrm m}}{ A_1} \right \rvert + \left \lvert \frac{ A_2 }{2 A_1 \RD_2 }\right \rvert ,
 \end{align}
+where $\RD_2$ is the relative detuning of the second mode,
+\begin{equation*}
+\RD_2 =  \left\lvert \frac{ k_2 - \omega_{\mathrm m}}{A_2} \right \rvert.
+\end{equation*}
 
 The condition can be verified by comparing the numerical solution and estimation using Rabi formula. However, we are most interested in the amplitude change due to $\mathbf H_2$ mode. Relative detuning is the only variable that we need to calculate the amplitude, hence we only compare the numerical results with estimated amplitudes using $1/(1+\RD'^2)$.
 To verify the condition, we choose the first rotating perturbation to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second rotating field shifting the system out of resonance is that the relative detuning becomes larger than $1$, which leads to
@@ -595,10 +601,10 @@ Using Jacobi-Anger expansion, we can calculate the relative detuning for each mo
 \hline
    $n$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_n$ & $n$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_n$ & $n$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_n$  \\
 \hline 
- 1 &	0  &    $3\times10^5$   & 1 &	1  &   $2\times 10^5$       & 1   &	5 &  $6\times10^4$   \\
--1 &	$10^5$ &    3     &     -1 &	$10^5$ &    3               &  -1 &	$10^5$  & 3  \\
-2 &	$10^9$  &   6    &           2 & 	$10^9$ &    6               &  2  &	$10^9$ &  6  \\
--2 &	$3\times 10^9$  & 2 &    -2 &	$3\times10^9$ &  2          & -2  &	$3\times 10^9$ &  2  \\
+ 1 &	0  &    $3.2\times10^5$   & 1 &	1  &   $2.2\times 10^5$       & 1   &	$5.2$ &  $6.2\times10^4$   \\
+-1 &	$10^5$ &    $3.1$     &     -1 &	$10^5$ &    $3.1$               &  -1 &	$10^5$  & $3.1$  \\
+2 &	$1.1\times 10^9$  &   $6.3$    &  2 & 	$1.1\times 10^9$ &    $6.3$   &  2  &	$1.2\times 10^9$ & $6.3$  \\
+-2 &	$3.4\times 10^9$  & $2.1$ &    -2 &	$3.4\times10^9$ &  $2.1$          & -2  &	$3.4\times 10^9$ &  $2.1$  \\
 \end{tabular} 
 \end{ruledtabular} 
 \end{table*}
@@ -622,48 +628,67 @@ The numerical results are shown in Fig.~\ref{fig-interference-reduction-three-mo
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{assets/interference-reduction-three-modes-neutrino}
-    \caption{The transition probabilities between two background mass states. In the calculation, $k_1=\omega_{\mathrm m}$, $A_1 = 10^{-4}$, $A_2=A_3=10^{-2}$. Dashed black line and solid red line are for two-frequency matter profile with $k_2=10^{-1}$ and $k_2=10^{-4}$ respectively, while the dotted green line is for three-frequency matter profile with $k_2=10^{-4}$ and $k_3=1/(1000\pi$. The vertical grid lines are the points where the second matter potential becomes 0.}
+    \caption{The transition probabilities between two background mass states. In the calculation, $k_1=\omega_{\mathrm m}$, $A_1 = 10^{-4}$, $A_2=A_3=10^{-2}$. Dashed black line and solid red line are for two-frequency matter profile with $k_2=10^{-1}$ and $k_2=10^{-4}$ respectively, while the dotted green line is for three-frequency matter profile with $k_2=10^{-4}$ and $k_3=1/(1000\pi)$. The vertical grid lines are the points where the second matter potential becomes 0.}
     \label{fig-interference-reduction-three-modes-neutrino}
 \end{figure}
 
-% 2016-10-21
-
-The interference effect shown in Fig.~\ref{fig-interference-reduction-three-modes-neutrino} is also interpretable by means of Jacobi-Anger expansion. Table~\ref{tab-q-values-lambda-each-mode-interference} shows the smallest relative detunings and corresponding oscillation wavelength of each mode. As expected, the third frequency introduced many small relative detuning modes, which interferes more compared to the two frequency cases.
 
 
-% {1,0}	0.
-% {0,1}	248.873
-% {0,-1}	481.292
-% {0,2}	6477.51
-% {0,-2}	29173.9
-% {0,3}	78458.1
-% {-1,0}	103283.
-% {1,1}	608730.
-% {1,-1}	1.17721*10^6
-% {0,-3}	3.40313*10^6
+The interference effect shown in Fig.~\ref{fig-interference-reduction-three-modes-neutrino} is also interpretable by means of Jacobi-Anger expansion. Without using Jacobi-Anger expansion, the step-like structure for two frequencies and the destruction of the step-like structure by including another frequency are explained as Fig.~\ref{fig-interference-reduction-three-modes-rabi}. Table~\ref{tab-q-values-lambda-each-mode-interference} shows the smallest relative detunings and corresponding oscillation wavelength of each mode. As expected, the third frequency introduced many small relative detuning modes, which interferes more compared to the two frequency cases.
 
-% ,{1,0}	0.
-% {1,1}	215.309
-% {1,-1}	215.446
-% {1,2}	323.895
-% {1,-2}	324.307
-% {1,4}	590.72
-% {1,-4}	592.226
-% {1,3}	741.798
-% {1,-3}	743.216
-% {1,6}	806.351
 
-% ,{1,0,0}	0.
-% {1,35,-19}	17.913
-% {1,-35,19}	17.9131
-% {1,-11,6}	53.225
-% {1,11,-6}	53.2267
-% {1,37,-20}	63.8707
-% {1,-37,20}	63.8775
-% {1,-22,12}	111.436
-% {1,22,-12}	111.443
-% {1,39,-21}	129.027
+% {
+%%%%%  {{-1, 20}, 0., 4.20892*10^50},
+%%%%%%%  {{0, 10}, 0., 1.25313*10^21},
+%  {{1, 0}, 0., 325026.},
+%%%%%%  {{2, -10}, 0., 1.17958*10^30},
+%%%%%%  {{3, -20}, 0., 1.18857*10^60},
+%  {{0, 1}, 465.071, 3246.81},
+%  {{0, -1}, 568.42, 3246.81},
+%  {{0, 2}, 8965.27, 70413.1},
+%  {{0, -2}, 13447.9, 70413.1},
+%  {{1, 1}, 101914., 6.40346*10^6},
+%  {{-1, 0}, 103459., 325026.},
+%  {{1, -1}, 124562., 7.82645*10^6},
+%  {{0, 3}, 340310., 3.05462*10^6},
+%  {{0, -3}, 632005., 3.05462*10^6},
+%  {{-1, -1}, 2.1402*10^6, 6.40346*10^6}
+% }
 
+% {
+%  {{1, 0}, 0., 4.08067*10^6},
+%  {{1, 2}, 130.747, 4.10753*10^6},
+%  {{1, -2}, 130.799, 4.10917*10^6},
+%  {{1, 1}, 209.094, 1.31378*10^7},
+%  {{1, -1}, 209.136, 1.31404*10^7},
+%  {{1, 4}, 267.643, 4.20413*10^6},
+%  {{1, -4}, 267.858, 4.2075*10^6},
+%  {{1, 6}, 422.045, 4.41965*10^6},
+%  {{1, -6}, 422.552, 4.42496*10^6},
+%  {{1, 3}, 550.734, 1.15346*10^7},
+%  {{1, -3}, 551.065, 1.15415*10^7},
+%  {{1, 8}, 619.504, 4.86557*10^6},
+%  {{1, -8}, 620.496, 4.87336*10^6},
+%  {{1, 5}, 741.244, 9.31475*10^6},
+%  {{1, -5}, 741.986, 9.32407*10^6}
+% }
+
+% {
+%  {{1, 0, 0}, 0., 2.76694*10^7},
+%  {{1, -35, 11}, 8.95625, 3.9946*10^7},
+%  {{1, 35, -11}, 8.95628, 3.99461*10^7},
+%  {{1, -19, 6}, 60.4489, 3.85231*10^7},
+%  {{1, 19, -6}, 60.4501, 3.85239*10^7},
+%  {{1, -54, 17}, 65.8547, 3.67212*10^7},
+%  {{1, 54, -17}, 65.8562, 3.67221*10^7},
+%  {{1, 51, -16}, 114.9, 1.02522*10^8},
+%  {{1, -51, 16}, 114.902, 1.02523*10^8},
+%  {{1, 13, -4}, 120.309, 2.82479*10^7},
+%  {{1, -13, 4}, 120.316, 2.82494*10^7},
+%  {{1, 29, -9}, 147.648, 2.63469*10^7},
+%  {{1, -29, 9}, 147.659, 2.63487*10^7},
+%  {{1, 48, -15}, 157.795, 3.91081*10^7},
+%  {{1, -48, 15}, 157.803, 3.911*10^7}
 % }
 
 
@@ -675,16 +700,16 @@ The interference effect shown in Fig.~\ref{fig-interference-reduction-three-mode
 \hline
    $\{n_a\}$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_{\{n_a\}}$ & $\{n_i\}$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_{\{n_a\}}$ & $\{n_a\}$ & $\RD$ & $2\pi\omega_{\mathrm m}/\Omega_{\{n_a\}}$  \\
 \hline 
- {1,0} &	0.  &     324472.    & {1,0} &	0.  &   $3.32075\times 10^6$       & {1,0,0} &	0. &  $2.29097\times10^7$   \\
-{0,1} &	248.873 &   9.217      &  {1,1} &	215.309 &    19739.     &   {1,35,-19} &	17.913  & $2.1229\times 10^6$  \\
-{0,-1} &	481.292 &   4.76608    & {1,-1} &	215.446 &    19739.        &  {1,-35,19} &	17.9131 &  $2.1231\times 10^6$  \\
-{0,2} &	6477.51 &     17.2909       & {1,2} &	323.895 &   9869.56          & {1,-11,6} &	53.225 &  359495  \\
-{0,-2} &	29173.9 &    3.83912     & {1,-2} &	324.307  &    9869.56      &   {1,11,-6} &	53.2267   &      359556  \\
-{0,3} &	78458.1  &      139.408       &{1,4}  &	590.72   &     4934.8     &  {1,37,-20}  &	63.8707 & 241920 \\
-{-1,0} &	103283. &    3.14159      & {1,-4}  &	592.226  &     4934.8      & {1,-37,20} &	63.8775 & 241992. \\
-{1,1} &	608730.  &       19.7392      &  {1,3}  &	741.798  &   6579.73        &  {1,-22,12} &	111.436 &    162934.\\
-{1,-1} &	$1.17721\times10^6$  &    19.7392      & {1,-3} &	743.216 &     6579.73        & {1,22,-12} &	111.443  & 163032.\\
-\end{tabular} 
+ \{1,0\} &	$0.0$  &     $3.3\times 10^5$    &  \{1,0\} &	$0.0$  &   $4.1\times 10^6$       & \{1,0,0\} &	$0.0$ &  $2.8\times10^7$   \\
+\{0,1\} &	$4.6\times 10^2$ &  $3.2\times 10^{3}$      &  \{1,2\} & $1.3\times 10^2$ &  $4.1\times 10^6$   &   \{1,35,11\} & $9.0$  & $4.0\times 10^7$  \\
+\{0,-1\} &	$5.7\times 10^{2}$ &  $3.2\times 10^3$    & \{1,-2\} &	$1.3\times 10^2$ & $4.1\times 10^6$  &  \{1,-35,-11\} & $9.0$ &  $4.0\times 10^7$  \\
+\{0,2\} &	$9.0\times 10^{3}$ &    $7.0\times 10^{4}$     & \{1,1\} & $2.1\times 10^2$  & $1.3\times 10^7$  & \{1,-19,6\} & $6.0\times 10^1$ & $3.9\times 10^7$  \\
+\{0,-2\} & $1.3\times 10^{4}$ &   $7.0\times 10^{4}$     & \{1,-1\} &	$2.1\times 10^2$  & $1.3\times 10^7$  &   \{1,19,-6\} &	$6.0\times 10^1$   &  $3.9\times 10^7$  \\
+\{1,1\} &	$1.0\times 10^5$  & $6.4\times 10^6$   & \{1,4\}  & $2.7\times 10^2$  & $4.2\times 10^6$  &  \{1,-54,17\}  &	$6.6\times 10^1$ & $3.7\times 10^7$ \\
+\{-1,0\} & $1.0\times 10^5$ &  $3.2\times 10^5$  & \{1,-4\}  & $2.7\times 10^2$  & $4.2\times 10^6$  & \{1,54,-17\} &	$6.6\times 10^1$ & $3.7\times 10^7$ \\
+% {1,1} &	608730.  &       19.7392      &  \{1,3\}  &	   &      &  {1,-22,12} &	111.436 &    162934.\\
+% {1,-1} &	$1.17721\times10^6$  &   19.7392  & \{1,-3\} &	  &  & {1,22,-12} &	111.443  & 163032.\\
+\end{tabular}
 \end{ruledtabular} 
 \end{table*}
 
