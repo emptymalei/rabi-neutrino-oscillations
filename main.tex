@@ -362,12 +362,13 @@ where we kept only first order of Taylor series. The Taylor expansion in Eq.~(\r
     \RD' =& \frac{\lvert k_1' - \tilde \omega_{\mathrm m}' \rvert}{\lvert A_1 \rvert}\nonumber\\
     =& \left \lvert \frac{ k_1-\omega_{\mathrm m}}{ A_1} + \frac{ A_2^2 }{2  A_1 ( k_2 - \omega_{\mathrm m})} \right  \rvert\\
     =& \left \lvert  \frac{\sign({ k_1-\omega_{\mathrm m}})}{\sign (k_2 - \omega_{\mathrm m})} \RD_1 +  \frac{ A_2 }{2 A_1 \RD_2 }\right \rvert ,
+    \label{eq-relative-detuning-changed}
 \end{align}
 where $\RD_2$ is the relative detuning of the second mode,
 \begin{equation*}
 \RD_i =  \left\lvert \frac{ k_i - \omega_{\mathrm m}}{A_i} \right \rvert.
 \end{equation*}
-We observe the importance of the relative detuning. For the second mode to significantly interfere with the first mode, we need a small $\RD_2$ and a large amplitude or width $A_2\gg A_1$.
+There are a lot of interesting features in Eq.~(\ref{eq-relative-detuning-changed}). However, for the purpose of the paper we only discuss the most important destruction effect by choosing $\RD_1 = 0$. We observe the importance of the relative detuning. For the second mode to significantly interfere with the first mode, we need a small $\RD_2$ and a large amplitude or width $A_2\gg A_1$.
 
 The condition can be verified by comparing the numerical solution and estimation using Rabi formula. However, we are most interested in the amplitude change due to $\mathbf H_2$ mode. Relative detuning is the only variable that we need to calculate the amplitude, hence we only compare the numerical results with estimated amplitudes using $1/(1+\RD'^2)$.
 To verify the condition, we choose the first rotating perturbation to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second rotating field shifting the system out of resonance is that the relative detuning becomes larger than $1$, which leads to
@@ -561,7 +562,7 @@ Using Jacobi-Anger expansion, we can calculate the relative detuning for each mo
 
 
 
-\subsection{Multi-frequency Matter Profile Revisited}
+\subsection{Multi-frequency Matter Profile}
 
 
 Using Jacobi-Anger expansion, two-frequency matter profile can also be analyzed. Nevertheless, in this section we consider a matter profile with three different frequencies, which leads to the Hamiltonian
