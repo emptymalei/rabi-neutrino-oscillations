@@ -1,0 +1,295 @@
+%!TEX program = pdflatex
+\documentclass{tufte-handout}
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{assets/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% For Timeline %%%%%%
+
+% http://tex.stackexchange.com/questions/196794/how-can-you-create-a-vertical-timeline
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{environ}
+\usepackage{tikz}
+\usetikzlibrary{calc,matrix}
+
+\makeatletter
+\let\matamp=&
+\catcode`\&=13
+\makeatletter
+\def&{\iftikz@is@matrix
+  \pgfmatrixnextcell
+  \else
+  \matamp
+  \fi}
+\makeatother
+
+\newcounter{lines}
+\def\endlr{\stepcounter{lines}\\}
+
+\newcounter{vtml}
+\setcounter{vtml}{0}
+
+\newif\ifvtimelinetitle
+\newif\ifvtimebottomline
+\tikzset{description/.style={
+  column 2/.append style={#1}
+ },
+ timeline color/.store in=\vtmlcolor,
+ timeline color=red!80!black,
+ timeline color st/.style={fill=\vtmlcolor,draw=\vtmlcolor},
+ use timeline header/.is if=vtimelinetitle,
+ use timeline header=false,
+ add bottom line/.is if=vtimebottomline,
+ add bottom line=false,
+ timeline title/.store in=\vtimelinetitle,
+ timeline title={},
+ line offset/.store in=\lineoffset,
+ line offset=4pt,
+}
+
+\NewEnviron{vtimeline}[1][]{%
+\setcounter{lines}{1}%
+\stepcounter{vtml}%
+\begin{tikzpicture}[column 1/.style={anchor=east},
+ column 2/.style={anchor=west},
+ text depth=0pt,text height=1ex,
+ row sep=1ex,
+ column sep=1em,
+ #1
+]
+\matrix(vtimeline\thevtml)[matrix of nodes]{\BODY};
+\pgfmathtruncatemacro\endmtx{\thelines-1}
+\path[timeline color st] 
+($(vtimeline\thevtml-1-1.north east)!0.5!(vtimeline\thevtml-1-2.north west)$)--
+($(vtimeline\thevtml-\endmtx-1.south east)!0.5!(vtimeline\thevtml-\endmtx-2.south west)$);
+\foreach \x in {1,...,\endmtx}{
+ \node[circle,timeline color st, inner sep=0.15pt, draw=white, thick] 
+ (vtimeline\thevtml-c-\x) at 
+ ($(vtimeline\thevtml-\x-1.east)!0.5!(vtimeline\thevtml-\x-2.west)$){};
+ \draw[timeline color st](vtimeline\thevtml-c-\x.west)--++(-3pt,0);
+ }
+ \ifvtimelinetitle%
+  \draw[timeline color st]([yshift=\lineoffset]vtimeline\thevtml.north west)--
+  ([yshift=\lineoffset]vtimeline\thevtml.north east);
+  \node[anchor=west,yshift=16pt,font=\large]
+   at (vtimeline\thevtml-1-1.north west) 
+   {\textsc{Timeline \thevtml}: \textit{\vtimelinetitle}};
+ \else%
+  \relax%
+ \fi%
+ \ifvtimebottomline%
+   \draw[timeline color st]([yshift=-\lineoffset]vtimeline\thevtml.south west)--
+  ([yshift=-\lineoffset]vtimeline\thevtml.south east);
+ \else%
+   \relax%
+ \fi%
+\end{tikzpicture}
+}
+
+
+%%%% Timeline END %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{Neutrino Oscillations in Matter \thanks{Candidacy Exam Notes}}
+\author[Lei Ma]{Lei Ma}
+\date{\today}  % if the \date{} command is left out, the current date will be used
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% Tufte Style Requirement %%%%%%%%%%%%%%
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+\usepackage{ulem}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% code highlighting
+\usepackage{listings}
+
+% For url links
+\usepackage{hyperref}
+
+
+% \usepackage{minted}
+% \usepackage[utf8]{inputenc}
+% \usepackage[english]{babel}
+
+% Provides paragraphs of dummy text
+
+%%%%%%%%%% Tufte Style Requirement END %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+\maketitle % this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent Notes for my candidacy exam
+\end{abstract}
+
+\tableofcontents
+
+\section{Outline}
+
+The plan of the presentation is to give a short introduction about neutrino oscillation then neutrino oscillations with matter presence. The most important points are 
+
+
+\begin{enumerate}
+\item What do I want to find out
+\item What have I done
+\end{enumerate}
+
+
+In the introduction, I should notice the audience about the importance of neutrino oscillations, here I address the neutrino oscillations in matter.
+
+The story line should be
+
+\begin{enumerate}
+    \item What is neutrino?
+    \item What is neutrino oscillation?
+    \item Why do they oscillate?
+    \item Why is neutrino oscillations important
+    \item Math Related to neutrino oscillation
+    \item Add in matter will it be easy
+    \item Approach to oscillations in matter 
+\end{enumerate}
+
+
+%%%%%%%%% 
+\section{Concepts  Questions}
+
+\begin{itemize}
+\item What are flavors?
+\item What is exactly the interaction between neutrinos and matter?
+\end{itemize}
+
+
+
+
+\section{Introduction}
+
+
+\subsection{What is Neutrino?}
+
+
+
+\begin{vtimeline}[description={text width=10cm}, 
+ row sep=4ex, 
+ use timeline header,
+ timeline title={(Partial) History of Neutrino}]
+1930 & Pauli, letter to "Radioactive Ladies and Gentlemen"\endlr
+1933 & Fermi, the name "neutrino" \endlr
+1956 & Reines \& Cowan, first neutrino evidence \endlr
+1957 & \textbf{Pontecorvo, theory of neutrino oscillations} \endlr
+1968 & Homestake, first solar neutrino detection \endlr
+1969 & Gribov \& Pontecorvo, solar neutrino oscillations \endlr
+1978 \& 1985 & \textbf{Wolfenstein \& Mikheyev \& Smirnov, MSW effect} \endlr
+1987 & Kamioka mine \& Morton salt mine, SN1987A neutrino\endlr
+1998 \& 2001 & Super-Kamiokande \& SNO, solar neutrino oscillations \endlr
+\end{vtimeline}
+
+
+\begin{enumerate}
+\item Pauli's letter postulated a neutral particle to explain the continuous beta spectrum. \url{http://microboone-docdb.fnal.gov/cgi-bin/RetrieveFile?docid=953;filename=pauli%20letter1930.pdf}
+    
+\end{enumerate}
+
+
+\section{Tell the Story of Stimulated Neutrino Oscillations}
+
+
+Questions expected
+
+\begin{itemize}
+    \item Is is really stimulated? Compared to what?
+    \item Phase in matter profile is not related to the final result? I am not quite sure here because a redefinition of coordinate will cause two constant phase shift that have different signs in the two off-diagonal terms. 
+    
+    RWA in fact shows that the phase term is only the coupling between different orders of the effects.
+    
+    The numerical results are not really related to this phase. Probably an approximation. {\color{red}NEED SOME PROOF.}
+    \item How to know hierarchy from solar neutrino experiment? Why not atmospheric neutrino experiments?
+    
+\end{itemize}
+
+
+
+\subsection{How to Introduce the Solution I Had}
+
+First of all, the Hamiltonian we are dealing with is
+
+\begin{equation*}
+\mathbf H = - \frac{\omega_m}{2}\boldsymbol{\sigma_3} + \frac{\delta \lambda}{2} \cos 2\theta_m \boldsymbol{\sigma_3} - \frac{\delta \lambda}{2} \sin \theta_m \boldsymbol{\sigma_1},
+\end{equation*}
+
+where the matter profile we used is
+
+\begin{equation*}
+    \lambda(x) = \lambda_0 + \delta \lambda(x).
+\end{equation*}
+
+
+I need to explain what basis I will use, a basis where the wave function is related to the background matter basis through
+
+\begin{equation*}
+    \begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix} = \begin{pmatrix} e^{-i \eta (x)} & 0 \\  0 & e^{-i \eta (x)}  \end{pmatrix} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix}.
+\end{equation*}
+
+Why? I need to remove the position dependence of the diagonal term. \footnote{
+{\color{red} I am not actually sure what is the advantage of this basis. I just found it and it worked.}
+}
+
+I can solve out the unitary "rotation" matrix of the wave function.
+
+\begin{equation*}
+    \eta(x) - \eta(0) = - \frac{\omega_m}{2} x + \frac{\cos 2\theta_m}{2} \int_0^x \delta\lambda (\tau) d\tau.
+\end{equation*}
+
+
+
+\subsection{Rabi Oscillation}
+
+Rabi oscillation Hamiltonian
+
+\begin{equation*}
+    \mathbf H = \begin{pmatrix}
+    E_1 &  h \\
+    h^* & E_2 \\
+    \end{pmatrix}.
+\end{equation*}
+
+
+
+
+
+
+
+\bibliography{notes-ref}
+\bibliographystyle{plainnat}
+
+
+\end{document}

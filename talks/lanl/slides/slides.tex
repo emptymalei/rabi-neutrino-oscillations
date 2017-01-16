@@ -1,0 +1,1930 @@
+\documentclass[10pt]{beamer}
+
+\usetheme{bjeldbak}
+\setbeamertemplate{headline}{}
+%\usetheme[titleformat=smallcaps]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+
+\usepackage[T1]{fontenc}
+\usefonttheme[onlymath]{serif}
+\renewcommand\sfdefault{cmbr}
+
+
+
+%\usepackage{booktabs}
+%\usepackage[scale=2]{ccicons}
+\usepackage{tcolorbox}
+
+%\usepackage{floatrow}
+
+%\usepackage{minted}
+%\usemintedstyle{trac}
+
+% For the 68 colors
+\usepackage{xcolor}
+\definecolor{ao}{rgb}{0.0, 0.5, 0.0}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+
+\usepackage{subfig}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{tikz}
+
+
+
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usetikzlibrary{arrows,shapes}
+
+
+\usepackage{mathtools}
+
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+\newcommand{\equalto}[2]{\underset{\scriptstyle\overset{\mkern4mu\huge \verteq}{#2}}{#1}}
+
+
+\newcommand{\bra}[1]{\left\langle #1\right|}
+\newcommand{\ket}[1]{\left| #1\right\rangle}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\avg}[1]{\left< #1 \right>}
+\newcommand{\ii}{\mathrm{i}}
+\DeclareMathOperator{\sech}{sech}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% For Timeline %%%%%%
+
+% http://tex.stackexchange.com/questions/196794/how-can-you-create-a-vertical-timeline
+
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{environ}
+\usepackage{tikz}
+\usetikzlibrary{calc,matrix}
+
+\makeatletter
+\let\matamp=&
+\catcode`\&=13
+\makeatletter
+\def&{\iftikz@is@matrix
+  \pgfmatrixnextcell
+  \else
+  \matamp
+  \fi}
+\makeatother
+
+\newcounter{lines}
+\def\endlr{\stepcounter{lines}\\}
+
+\newcounter{vtml}
+\setcounter{vtml}{0}
+
+\newif\ifvtimelinetitle
+\newif\ifvtimebottomline
+\tikzset{description/.style={
+  column 2/.append style={#1}
+ },
+ timeline color/.store in=\vtmlcolor,
+ timeline color=red!80!black,
+ timeline color st/.style={fill=\vtmlcolor,draw=\vtmlcolor},
+ use timeline header/.is if=vtimelinetitle,
+ use timeline header=false,
+ add bottom line/.is if=vtimebottomline,
+ add bottom line=false,
+ timeline title/.store in=\vtimelinetitle,
+ timeline title={},
+ line offset/.store in=\lineoffset,
+ line offset=4pt,
+}
+
+\NewEnviron{vtimeline}[1][]{%
+\setcounter{lines}{1}%
+\stepcounter{vtml}%
+\begin{tikzpicture}[column 1/.style={anchor=east},
+ column 2/.style={anchor=west},
+ text depth=0pt,text height=1ex,
+ row sep=1ex,
+ column sep=1em,
+ #1
+]
+\matrix(vtimeline\thevtml)[matrix of nodes]{\BODY};
+\pgfmathtruncatemacro\endmtx{\thelines-1}
+\path[timeline color st] 
+($(vtimeline\thevtml-1-1.north east)!0.5!(vtimeline\thevtml-1-2.north west)$)--
+($(vtimeline\thevtml-\endmtx-1.south east)!0.5!(vtimeline\thevtml-\endmtx-2.south west)$);
+\foreach \x in {1,...,\endmtx}{
+ \node[circle,timeline color st, inner sep=0.15pt, draw=white, thick] 
+ (vtimeline\thevtml-c-\x) at 
+ ($(vtimeline\thevtml-\x-1.east)!0.5!(vtimeline\thevtml-\x-2.west)$){};
+ \draw[timeline color st](vtimeline\thevtml-c-\x.west)--++(-3pt,0);
+ }
+ \ifvtimelinetitle%
+  \draw[timeline color st]([yshift=\lineoffset]vtimeline\thevtml.north west)--
+  ([yshift=\lineoffset]vtimeline\thevtml.north east);
+  \node[anchor=west,yshift=16pt,font=\large]
+   at (vtimeline\thevtml-1-1.north west) 
+   {%\textsc{Timeline \thevtml}: 
+   \textit{\vtimelinetitle}};
+ \else%
+  \relax%
+ \fi%
+ \ifvtimebottomline%
+   \draw[timeline color st]([yshift=-\lineoffset]vtimeline\thevtml.south west)--
+  ([yshift=-\lineoffset]vtimeline\thevtml.south east);
+ \else%
+   \relax%
+ \fi%
+\end{tikzpicture}
+}
+
+
+%%%% Timeline END %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{Neutrino Oscillations in Matter}
+\subtitle{PhD Candidacy Exam}
+\date{April 19, 2016}
+\author{Lei Ma\\
+{\bf{Supervisor}}: Huaiyu Duan}
+\institute{Department of Physics\\
+UNM}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+  {%
+    \setbeamertemplate{headline}{}
+    \frame{\titlepage}
+  }
+
+%\maketitle % The reason why two title pages
+
+\begin{frame}{Outline}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+
+% \subsection{History of Neutrinos}
+
+% \begin{frame}[fragile]{Neutrino Timeline}
+
+
+% \begin{vtimeline}[description={text width=\textwidth}, 
+%  row sep=2ex, 
+%  use timeline header,
+%  timeline title={History of Neutrino (Partial)}]
+% 1930 & Pauli, letter to ``Radioactive Ladies and Gentlemen"\endlr
+% 1933 & Fermi, the name ``neutrino" \endlr
+% 1956 & Reines \& Cowan, reactor neutrinos \endlr
+% %1957 & Pontecorvo, theory of neutrino oscillations \endlr
+% 1968 & Homestake, solar neutrinos \endlr
+% %1969 & Gribov \& Pontecorvo, solar neutrino oscillations \endlr
+% 1978 \& 1985 & Mikheyev--Smirnov--Wolfenstein (MSW) effect \endlr
+% 1987 & SN1987A neutrinos $\sim$ 20 events\endlr
+% 1998 \& 2001 & Super--Kamiokande \& SNO, neutrino oscillations \endlr
+% \end{vtimeline}
+
+
+% \end{frame}
+
+
+
+
+
+
+
+%%%% Neutrino as a Particle
+\subsection{What are Neutrinos}
+
+\begin{frame}{What are Neutrinos?}
+
+\begin{figure}
+\includegraphics[width=0.9\linewidth,height=0.9\textheight,keepaspectratio]{assets/beta-decay.png}
+\caption*{Beta decay and antineutrino production. Source: Beta\_Decay@Wikipedia}
+\end{figure}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{What are Neutrinos?}
+
+\begin{minipage}[\textheight]{\textwidth}
+\begin{columns}[T]
+
+\begin{column}{0.6\textwidth}
+\begin{figure}
+\includegraphics[width=0.9\linewidth,height=0.8\textheight,keepaspectratio]{assets/elementary-particles.jpg}
+\caption*{Table of elementary particles. Source: Fermilab} % http://www-d0.fnal.gov/Run2Physics/WWW/results/final/TOP/T06C/T06C.html
+\end{figure}
+\end{column}
+
+\begin{column}{0.4\textwidth}
+
+
+    \begin{itemize}
+    \item[] Neutrinos are
+    \item fermions,
+    \item electrically neutral,
+    \item light.
+    \end{itemize}
+
+
+
+\only<1-1>{
+\begin{figure}
+\includegraphics[width=\textwidth]{assets/neutrino-mass-normal-hierarchy-simple.png}
+\caption*{Adapted from Olga Mena \& Stephen Parke (2004)}
+\end{figure}
+}
+
+\only<2-2>{
+\begin{figure}
+\includegraphics[width=\textwidth]{assets/neutrino-mass-inverted-hierarchy-simple.png}
+\caption*{Adapted from Olga Mena \& Stephen Parke (2004)}
+\end{figure}
+}
+
+\end{column}
+
+
+\end{columns}
+\end{minipage}
+
+\end{frame}
+
+
+
+%%%%% Neutrino Oscillations %%%%%%%%%
+
+\subsection{Neutrino Oscillations}
+
+
+
+
+
+\begin{frame}{What is Neutrino Oscillation?}
+
+\setbeamercovered{invisible}
+
+
+\only<1-1>{
+
+\begin{tcolorbox}
+\begin{equation*}
+  \equalto{\textbf{\large Neutrino Oscillation} }{ \textbf{\large Neutrino Flavor Conversion } }
+\end{equation*}
+
+\end{tcolorbox}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/neutrino-oscillations-illustration}
+    \caption*{Neutrino Oscillations}
+\end{figure}
+
+}
+
+
+\only<2-2>{
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/vacuum-oscillations-3-flavor}
+    \caption*{Probabilities of finding neutrinos to be in each flavor.}
+    %Neutrino energy: 1MeV}
+\end{figure}
+
+}
+
+
+
+
+\end{frame}
+
+
+
+
+
+
+
+%%%%%% Why Neutrinos Oscillate? %%%%%%%%%
+
+\subsection{Why Do Neutrinos Oscillate}
+
+% For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+\tikzstyle{every picture}+=[remember picture]
+
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+\everymath{\displaystyle}
+
+
+\begin{frame}[fragile]{Why Do Neutrinos Oscillate?}
+
+\begin{tcolorbox}[title=Equation of Motion]
+
+\begin{equation*}
+i\partial_x \ket{\Psi} = \hat {\mathbf H} \ket{\Psi}
+\end{equation*}
+
+\end{tcolorbox}
+
+
+
+
+\begin{itemize}
+\item Basis: Hamiltonian diagonalized basis/mass basis/propagation basis, $\{ \ket{\nu_1}, \ket{\nu_2}\}$.
+
+\item
+\begin{equation*}
+    \mathbf H = - \frac{\omega_\mathrm v}{2}\boldsymbol{\sigma_3}, \qquad \text{where } \omega_{\mathrm v} = \frac{\delta m^2}{2E}=\frac{m_2^2 - m_1^2}{2E} .
+\end{equation*}
+
+
+
+\item The system can be solved given initial condition of the amplitudes of the two eigenstates $(\braket{\nu_1}{\Psi(0)},\braket{\nu_2}{\Psi(0)} )^T$,
+\begin{equation*}
+    \begin{pmatrix}
+    \braket{\nu_1}{\Psi(x)} \\
+    \braket{\nu_2}{\Psi(x)}
+    \end{pmatrix} = \begin{pmatrix}
+    \braket{\nu_1}{\Psi(0)} \exp\left( i  \omega_{\mathrm v} x /2 \right) \\
+    \braket{\nu_2}{\Psi(0)} \exp\left( -i  \omega_{\mathrm v} x/2 \right)
+    \end{pmatrix} 
+\end{equation*}
+
+
+\end{itemize}
+
+
+
+
+\end{frame}
+
+
+%%%%%%%%%
+
+
+
+\begin{frame}[fragile]{Why Do Neutrinos Oscillate?}
+\setbeamercovered{invisible}
+
+\begin{tcolorbox}[title=Flavor basis]
+
+
+Neutrino wave function in flavor basis $\{\ket{\nu_{\mathrm e}}, \ket{\nu_{\mathrm \mu}} \}$ is related to state in energy basis $\{\ket{\nu_1},\ket{\nu_2} \}$ through
+
+\begin{equation*}
+\begin{pmatrix}\ket{\nu_{\mathrm e}} \\ \ket{\nu_{\mathrm \mu} } \end{pmatrix} = \begin{pmatrix}  \cos\theta_{\mathrm{v}}  & \sin\theta_{\mathrm{v}} \\ -\sin\theta_{\mathrm{v}}  & \cos\theta_{\mathrm{v}} \end{pmatrix}   \begin{pmatrix}\ket{\nu_1} \\ \ket{\nu_2}\end{pmatrix}
+\end{equation*}
+$\theta_{\mathrm{v}}$: vacuum mixing angle
+
+
+\end{tcolorbox}
+
+\pause
+
+\begin{tcolorbox}[title=Hamiltonian $\mathbf H$]
+
+\begin{columns}[T] % align columns
+\begin{column}{.49\textwidth}
+
+\centering Mass basis
+
+
+\begin{align*}
+&\frac{\omega_{\mathrm{v}}}{2}\begin{pmatrix}
+-1  & 0 \\
+0 & 1
+\end{pmatrix}\\
+=&
+-\frac{\omega_{\mathrm v} }{2}\boldsymbol{ \sigma_3 }
+\end{align*}
+
+
+
+\end{column}%
+\hfill%
+
+\begin{column}{.49\textwidth}
+
+\centering Flavor basis
+
+\begin{align*}
+&\frac{\omega_{\mathrm v} }{2}\begin{pmatrix} -\cos 2\theta_{\mathrm{v}} & \sin 2 \theta_{\mathrm{v}} \\ \sin 2\theta_{\mathrm{v}} & \cos 2\theta_{\mathrm{v}}  \end{pmatrix} \\
+=&
+\frac{\omega_{\mathrm v} }{2}\left( - \cos 2\theta_{\mathrm{v}}\boldsymbol{ \sigma_3 } + \sin 2\theta_{\mathrm{v}} \boldsymbol{\sigma_1} \right)
+\end{align*}
+
+\end{column}%
+\end{columns}
+
+\end{tcolorbox}
+
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]{Nature of Neutrino Oscillation}
+\setbeamercovered{invisible}
+
+
+
+\begin{tcolorbox}[title=Transition Probability]
+
+\begin{equation*}
+P(\ket{\nu_{\mathrm e} }\to\ket{\nu_{\mu}})  =  \sin^2(2\theta_{\mathrm v}) \sin^2 \left( \omega_{\mathrm v} x/2 \right) 
+\end{equation*}
+\begin{itemize}
+    \item $\omega_{\mathrm v}=(m_2^2-m_1^2)/2E$ determines oscillation wavelength.
+    \item Mixing angle $\theta_{\mathrm v}$ determines flavor oscillation amplitude.
+\end{itemize}
+
+
+
+
+\end{tcolorbox}
+
+
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Matter Effect %%%%%%%%%%%%%%%
+
+
+\section{Matter Effect}
+
+
+\subsection{Matter Interaction}
+
+
+\begin{frame}{Matter Interaction}
+
+
+% \begin{tcolorbox}[title=PLACEHOLDER]
+% SHOULD ADD IN WHY MATTER INTERACTION IS LIKE THIS.
+% \end{tcolorbox}
+
+
+\begin{figure}[ht]
+\centering
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[height=0.42\textheight]{assets/neutral-current.png}
+\caption*{Neutral current interaction between\\
+$\nu_{\mathrm e}$, $\nu_{\mu}$, $\nu_{\tau}$, \\
+and $e^{-}$, quarks and antiquarks.}
+\end{minipage}%
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[height=0.42\textheight]{assets/charged-current.png}
+\caption*{Charged current interaction between $\nu_{\mathrm e}$ and $e^{-}$}
+\end{minipage}
+\end{figure}
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{assets/charged-current.png}
+%     \caption*{Interaction between $\nu_{\mathrm e}$ and $e^{-}$}
+% \end{figure}
+
+
+\end{frame}
+
+
+
+
+
+% For every picture that defines or uses external nodes, you'll have to
+% apply the 'remember picture' style. To avoid some typing, we'll apply
+% the style to all pictures.
+\tikzstyle{every picture}+=[remember picture]
+
+
+% By default all math in TikZ nodes are set in inline mode. Change this to
+% displaystyle so that we don't get small fractions.
+\everymath{\displaystyle}
+
+
+
+\begin{frame}{Matter Interaction}
+\setbeamercovered{invisible}
+
+\tikzstyle{na} = [baseline=-.5ex]
+
+
+
+
+\begin{itemize}
+    \item[] Hamiltonian with matter interaction in flavor basis  ($\omega_{\mathrm{v}}=\delta m^2/2E$):
+        \tikz[na] \node[coordinate] (n1) {};
+\end{itemize}
+
+
+\only<1-1>{
+\begin{equation*}
+    \mathbf{H} = 
+    \tikz[baseline]{
+            \node[fill=blue!20,anchor=base] (t1)
+            {$ \frac{\omega_{\mathrm{v}}}{2}\begin{pmatrix} -\cos 2\theta_{\mathrm{v}} & \sin 2 \theta_{\mathrm{v}} \\ \sin 2\theta_{\mathrm{v}} & \cos 2\theta_{\mathrm{v}}  \end{pmatrix} $}
+            } 
+            \tikz[baseline]{
+            \node[fill=red!20, anchor=base] (t2)
+            {$ 
+            \pm \sqrt{2}G_{\mathrm{F}} n_{\mathrm{e}}(x) \begin{pmatrix}
+            1 & 0 \\
+            0 & 0
+            \end{pmatrix}
+            $};
+        }
+\end{equation*}
+
+
+
+}
+
+
+
+
+% \only<2-2>{
+% \begin{equation*}
+%     \mathbf{H} = 
+%     \tikz[baseline]{
+%             \node[fill=blue!20,anchor=base] (t1)
+%             {$ \frac{\omega_{\mathrm{v}}}{2}\begin{pmatrix} -\cos 2\theta_{\mathrm{v}} & \sin 2 \theta_{\mathrm{v}} \\ \sin 2\theta_{\mathrm{v}} & \cos 2\theta_{\mathrm{v}}  \end{pmatrix} $}
+%             } + 
+%             \tikz[baseline]{
+%             \node[fill=red!20, anchor=base] (t2)
+%             {$ 
+%             \frac{\sqrt{2}G_{\mathrm{F}} n_{\mathrm{e}}(x)}{2} \begin{pmatrix}
+%             1 & 0 \\
+%             0 & -1
+%             \end{pmatrix}
+%             $};
+%         }
+% \end{equation*}
+
+% }
+
+% \only<2>{
+% \begin{equation*}
+%     \mathbf{H} = 
+%     \tikz[baseline]{
+%             \node[fill=blue!20,anchor=base] (t1)
+%             {$ \frac{\omega_{\mathrm{v}}}{2}\left( - \cos 2\theta_{\mathrm{v}} \boldsymbol{\sigma_3} + \sin 2\theta_{\mathrm{v}} \boldsymbol{\sigma_1} \right) $}
+%             } + 
+%             \tikz[baseline]{
+%             \node[fill=red!20, anchor=base] (t2)
+%             {$ 
+%             \frac{\sqrt{2}G_{\mathrm{F}} n_{\mathrm{e}}(x)}{2} \boldsymbol{\sigma_3}
+%             $};
+%         }
+% \end{equation*}
+
+% }
+
+\only<2->{
+\begin{equation*}
+    \mathbf{H} = 
+    \tikz[baseline]{
+            \node[fill=blue!20,anchor=base] (t1)
+            {$ \frac{\omega_{\mathrm{v}}}{2}\left( - \cos 2\theta_{\mathrm{v}} \boldsymbol{\sigma_3} + \sin 2\theta_{\mathrm{v}} \boldsymbol{\sigma_1} \right) $}
+            } 
+            \tikz[baseline]{
+            \node[fill=red!20, anchor=base] (t2)
+            {$ 
+            +\frac{\lambda(x)}{2} \boldsymbol{\sigma_3}
+            $};
+        }
+\end{equation*}
+
+}
+
+
+\begin{itemize}
+    \item Vacuum Hamiltonian
+        \tikz[na]\node [coordinate] (n2) {};
+    \item Matter interaction
+        \tikz[na]\node [coordinate] (n3) {};
+    \item<2-> $\lambda(x) = \sqrt{2}G_{\mathrm{F}} n_{\mathrm{e}}(x)$ 
+\end{itemize}
+
+
+
+
+
+% Now it's time to draw some edges between the global nodes. Note that we
+% have to apply the 'overlay' style.
+\begin{tikzpicture}[overlay]
+        \path[->]<1-> (n2) edge [bend right] (t1);
+        \path[->]<1-> (n3) edge [bend right=20] (t2);
+\end{tikzpicture}
+
+
+
+
+\end{frame}
+
+% \begin{frame}{Matter Interaction}
+
+
+% \begin{tcolorbox}[title=Hamiltonian with Matter Potential]
+
+% \begin{equation*}
+%     \mathbf{H} = 
+% \end{equation*}
+
+% \end{tcolorbox}
+
+
+
+% \end{frame}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%
+\subsection{MSW Effect}
+
+\begin{frame}{MSW Effect}
+
+
+
+\begin{tcolorbox}[title=Hamiltonian in Vacuum]
+
+\begin{equation*}
+    \mathbf{H}_{\mathrm{vacuum}}=\frac{\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} }{2} \boldsymbol{\sigma_3} + \frac{ \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}}}{2} \boldsymbol{\sigma_1}
+\end{equation*}
+
+\end{tcolorbox}
+
+
+
+
+% \begin{align*}
+%     \mathbf{H} &= \left({\color{red}\frac{\lambda(x)  }{2} } {\color{blue}- \frac{\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}}  }{2} } \right) \boldsymbol{\sigma_3} {\color{blue} + \frac{ \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}}}{2} } \boldsymbol{\sigma_1}  \\
+%     & =\frac{  {\color{red}\omega_{\mathrm{m}}(x) }    {\color{blue}\cos 2\theta_{\mathrm{m}}(x)}  }{2} \boldsymbol{\sigma_3} + \frac{ {\color{red}\omega_{\mathrm{m}}(x) }   {\color{blue}\sin 2\theta_{\mathrm{m}}(x) } }{2} \boldsymbol{\sigma_1},
+% \end{align*}
+
+\begin{align*}
+    \mathbf{H} &= \frac{\lambda(x) - \omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}}  }{2}  \boldsymbol{\sigma_3}  + \frac{ \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}}}{2}  \boldsymbol{\sigma_1}  \\
+    & =\frac{ \omega_{\mathrm{m}}(x)   \cos 2\theta_{\mathrm{m}}(x)  }{2} \boldsymbol{\sigma_3} + \frac{ \omega_{\mathrm{m}}(x)    \sin 2\theta_{\mathrm{m}}(x)  }{2} \boldsymbol{\sigma_1},
+\end{align*}
+
+
+where
+
+\begin{align*}
+    \omega_{\mathrm{m}}(x)  = & ~\sqrt{ \left(\lambda(x) - \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} \right)^2 + \omega_{\mathrm{v}}^2 \sin^2 2\theta_{\mathrm{v}}  } ,\\
+    \tan 2\theta_{\mathrm{m}}(x)  = & ~\frac{\omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}}  }{ \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} - \lambda(x)  }.
+\end{align*}
+
+
+
+
+\end{frame}
+
+
+\begin{frame}{MSW Effect}
+
+Constant matter profile $\lambda_0$ as an example,
+
+\begin{tcolorbox}[title=Significance of $\theta_{\mathrm{m}}$]
+
+Define matter basis $\{\ket{\nu_{\mathrm{L}}}, \ket{\nu_{\mathrm{H}}}\}$
+
+\begin{equation*}
+\begin{pmatrix}
+\ket{\nu_{\mathrm{e}}} \\
+\ket{\nu_{\mu}}
+\end{pmatrix} =
+\begin{pmatrix}
+\cos\theta_{\mathrm m} & \sin\theta_{\mathrm m} \\
+-\sin\theta_{\mathrm m} & \cos\theta_{\mathrm m}
+\end{pmatrix}\begin{pmatrix}
+\ket{\nu_{\mathrm{L}}} \\
+\ket{\nu_{\mathrm{H}}}
+\end{pmatrix}
+\end{equation*}
+
+\end{tcolorbox}
+
+
+In matter basis
+
+\begin{equation*}
+    \mathbf{H}_{\text{matter-basis}} = -\frac{\omega_{\mathrm m}}{2}\boldsymbol{\sigma_3}
+\end{equation*}
+
+
+
+
+
+
+\end{frame}
+
+
+
+
+
+
+
+% \begin{frame}{MSW Effect}
+
+% For constant matter profile $\lambda_0$
+
+
+
+% \begin{equation*}
+% P(\ket{\nu_{\mathrm{e}}}\to\ket{\nu_\mu})  =  {\color{blue}\sin^2(2\theta_{\mathrm{m}})} \sin^2 \left( {\color{red}\omega_{\mathrm{m}}} x \right)
+% \end{equation*}
+
+% \only<1-1>{
+% where
+% \begin{align*}
+%     {\color{red}\omega_{\mathrm{m}}(x) } = & ~\sqrt{ \left(\lambda - \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} \right)^2 + \omega_{\mathrm{v}}^2 \sin^2 2\theta_{\mathrm{v}}  } ,\\
+%     {\color{blue}\tan 2\theta_{\mathrm{m}}} = & ~\frac{\omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}}  }{ \cos 2\theta_{\mathrm{v}}\omega_{\mathrm{v}} - \lambda  } .
+% \end{align*}
+% }
+
+
+
+
+% % \only<2->{
+% % \begin{itemize}
+% %     \item Oscillation amplitude depends on $\theta_{\mathrm{m}}$
+% %     \item Oscillation angular frequency is
+% % \begin{equation*}
+% %     \omega_{\mathrm{m}} \geq \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}}
+% % \end{equation*}
+
+% % \end{itemize}
+% % }
+
+
+% \end{frame}
+
+
+
+\begin{frame}{MSW Resonance}
+
+
+\begin{tcolorbox}[title=Hamiltonian with Matter Potential]
+
+\begin{align*}
+    \mathbf{H} &= \frac{\lambda(x) -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} }{2} \boldsymbol{\sigma_3}  + \frac{ \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}}}{2}  \boldsymbol{\sigma_1} \\
+    &=\frac{ \omega_{\mathrm{m}}(x)    \cos 2\theta_{\mathrm{m}}(x)  }{2} \boldsymbol{\sigma_3} + \frac{ \omega_{\mathrm{m}}(x)    \sin 2\theta_{\mathrm{m}}(x)  }{2} \boldsymbol{\sigma_1}
+\end{align*}
+
+\begin{equation*}
+\tan 2\theta_{\mathrm{m}}(x) =  \frac{\omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}}  }{ \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} - \lambda(x)  }.
+\end{equation*}
+
+
+\begin{equation*}
+\begin{pmatrix}
+\ket{\nu_{\mathrm{e}}} \\
+\ket{\nu_{\mu}}
+\end{pmatrix} =
+\begin{pmatrix}
+\cos\theta_{\mathrm m} & \sin\theta_{\mathrm m} \\
+-\sin\theta_{\mathrm m} & \cos\theta_{\mathrm m}
+\end{pmatrix}\begin{pmatrix}
+\ket{\nu_{\mathrm{L}}} \\
+\ket{\nu_{\mathrm{H}}}
+\end{pmatrix}
+\end{equation*}
+
+
+\end{tcolorbox}
+
+
+
+
+
+\begin{tcolorbox}[title=Transition Probability]
+\begin{equation*}
+P(\ket{\nu_{\mathrm{e}}}\to\ket{\nu_\mu})  =  \sin^2(2\theta_{\mathrm{m}}) \sin^2 \left( \omega_{\mathrm{m}} x \right)
+\end{equation*}
+
+\end{tcolorbox}
+
+
+
+
+
+\end{frame}
+
+
+
+
+%%%%%%% MSW Effect %%%%%%%%%
+
+\subsection{Solar Neutrino Problem}
+
+\begin{frame}{Solar Neutrino Problem}
+
+% \begin{tcolorbox}[title=Solar Neutrinos]
+% {\color{gray}pp chain}, $\mathrm{{}^7Be}$, $\mathrm{{}^8B}$, pep, CNO
+% \end{tcolorbox}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/chlorine-detector-solar-neutrinos.jpg} %https://ase.tufts.edu/cosmos/print_images.asp?id=37
+    %https://ase.tufts.edu/cosmos/view_picture.asp?id=585
+    \caption*{Chlorine detector (Homestake experiment) results and theory predictions. SNU: 1 event for $10^{36}$ target atoms per second. Kenneth R. Lang (2010)}
+\end{figure}
+
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\textwidth]{assets/colortheoryvsexp.png}
+% \caption*{Less electron flavor neutrinos observed in experiments than the Standard Solar Model prediction. Bahcall \& Serendelli, 2005}
+% \end{figure}
+
+
+    
+\end{frame}
+
+\begin{frame}{MSW Effect and Solar Neutrinos}
+
+\setbeamercovered{invisible}
+
+
+
+\begin{equation*}
+    \mathbf{H} = \frac{\lambda(x) - \omega_{\mathrm v} \cos 2\theta_{\mathrm v}}{2} \boldsymbol{\sigma_3} + \frac{ \omega_{\mathrm v} \sin 2\theta_{\mathrm v}}{2} \boldsymbol{\sigma_1}
+\end{equation*}
+
+
+\begin{equation*}
+\begin{pmatrix}
+\ket{\nu_{\mathrm{L}}} \\
+\ket{\nu_{\mathrm{H}}}
+\end{pmatrix} =
+\begin{pmatrix}
+\cos\theta_{\mathrm m} & -\sin\theta_{\mathrm m} \\
+\sin\theta_{\mathrm m} & \cos\theta_{\mathrm m}
+\end{pmatrix}\begin{pmatrix}
+\ket{\nu_{\mathrm{e}}} \\
+\ket{\nu_{\mu}}
+\end{pmatrix}
+\end{equation*}
+
+
+
+
+\begin{equation*}
+    \mathbf{H}_{\text{matter-basis}} = -\frac{\omega_{\mathrm m}}{2}\boldsymbol{\sigma_3}
+\end{equation*}
+
+
+
+
+
+
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{assets/msw-and-density.png}
+\caption*{Yellow bar is the resonance point. Red: $\ket{\nu_e}$. Green: $\ket{\nu_\mu}$. Adapted from Smirnov, 2003.}
+\end{figure}
+
+
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{MSW Effect}
+
+
+Suppose $\omega_{\mathrm v} = (m_2^2 - m_1^2)/2E <0$,
+
+\begin{equation*}
+    \mathbf{H} = \colorbox{blue!20}{$
+    -\frac{\omega_{\mathrm{v}}}{2}\begin{pmatrix} -\cos 2\theta_{\mathrm{v}} & \sin 2 \theta_{\mathrm{v}} \\ \sin 2\theta_{\mathrm{v}} & \cos 2\theta_{\mathrm{v}}  \end{pmatrix} 
+    $}
+             \colorbox{red!20}{$
+            + \sqrt{2}G_{\mathrm{F}} n_{\mathrm{e}}(x) \begin{pmatrix}
+            1 & 0 \\
+            0 & 0
+            \end{pmatrix}
+            $}
+\end{equation*}
+
+\centering
+$\big\downarrow$
+
+\begin{equation*}
+    \mathbf{H} =
+    \left( 
+    %\colorbox{blue!20}{$ 
+     \frac{-\omega_{\mathrm{v}}}{2} \cos 2\theta_{\mathrm{v}}  
+    % $} \colorbox{red!20}{$ 
+    + \frac{\lambda(x)}{2}
+    % $}
+    \right) \boldsymbol{\sigma_3}
+    % \colorbox{blue!20}{$ 
+            - \frac{\omega_{\mathrm v}}{2}\sin 2\theta_{\mathrm v} \boldsymbol{\sigma_1}
+     %       $}
+\end{equation*}
+
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Parametric Effect %%%%%%%%%%%%%%%
+
+
+% \begin{frame}{Parametric Effect}
+
+% \begin{tcolorbox}[title=Parametric Effect]
+
+% Parametric Effect, Parametric Resonance?
+
+% \end{tcolorbox}
+
+% \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Stimulated Effect/Multi-frequency stimulation %%%%%%%%%%%%%%%
+
+\subsection{Stimulated Neutrino Oscillations}
+
+% \begin{frame}{Length Scales}
+
+% \begin{tcolorbox}[title=Characteristic Scales]
+% \begin{itemize}
+%     \item Vacuum problem:
+%     \begin{equation*}
+%         l_{\mathrm v} \sim \frac{1}{\omega_{\mathrm v}}
+%     \end{equation*}
+    
+%     \item Constant matter profile $\lambda_0$:
+%     \begin{equation*}
+%         l_{\mathrm v}, \quad l_{\mathrm m} \sim \frac{1}{\omega_{\mathrm m}} 
+%     \end{equation*}
+    
+%     \item Varying matter profile $\lambda(x) = \lambda_0 + A \sin (k x)$,
+    
+%     \begin{equation*}
+%         l_{\mathrm v}, \quad l_{\mathrm m}, \quad l_{k} \sim \frac{1}{k}
+%     \end{equation*}
+% \end{itemize}
+
+% \end{tcolorbox}
+
+% % \only<2-2>{
+% % \begin{textblock*}{64mm}(64mm,0.01\textheight)
+
+% % \tiny
+% % $$\omega_{\mathrm m} = \omega_{\mathrm v}\sqrt{ \left(\frac{\lambda}{\omega_{\mathrm v}} - \cos 2\theta_{\mathrm v} \right)^2 + \sin^2 2\theta_{\mathrm v}  }$$
+% % \normalsize
+
+% % \end{textblock*}
+% % }
+
+
+% \only<1>{
+% \begin{tcolorbox}[title=MSW Resonance]
+
+
+% \begin{equation*}
+%     l_{\mathrm v} \sim l_{\mathrm m} \sin 2\theta_{\mathrm v}
+% \end{equation*}
+
+% \end{tcolorbox}
+% }
+
+% \only<2-2>{
+
+% \begin{tcolorbox}[title=Other Resonance?]
+% \centering
+% $l_{\mathrm m}$, and $l_{k}$?
+
+% \end{tcolorbox}
+
+% }
+
+
+
+% \end{frame}
+
+
+
+\begin{frame}{Supernova Matter Density Profile}
+
+\begin{tcolorbox}[title=Why Do We Care]
+
+Astrophysical environments: supernovae, accretion disks etc
+
+\end{tcolorbox}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.5\textheight]{assets/supernova-shock-turbulence.png}
+    \caption*{Supernova shock and turbulence. E. Borriello, et al  (2014)}
+    %https://inspirehep.net/record/1262293?ln=en
+    % arXiv: 1310.7488
+\end{figure}
+
+\vspace{-1em}
+\begin{equation*}
+\Delta n_e (r) = \sum_n c_n \sin( k_n r + \phi_n )
+\end{equation*}
+    
+
+\end{frame}
+
+
+
+
+
+
+    
+
+
+
+\begin{frame}{Stimulated Neutrino Oscillations}
+
+
+\only<1-1>{
+% Matter profile
+\begin{tcolorbox}[title=Matter Profile]
+\begin{equation*}
+    \lambda(x)  = \lambda_0 + {\color{red}\delta\lambda(x)}
+\end{equation*}
+\end{tcolorbox}
+
+
+% Basis
+
+
+\begin{tcolorbox}[title=Basis]
+
+Background matter basis: Hamiltonian is diagonalized with only background matter profile $\lambda_0$,
+
+\begin{equation*}
+    \mathrm{H}_{\mathrm{background}} = -\frac{\omega_{\mathrm{m}}}{2} \boldsymbol{\sigma_3}.
+\end{equation*}
+
+\end{tcolorbox}
+
+
+% Hamiltonian of with perturbation in matter profile, in background matter basis
+\begin{tcolorbox}[title=Hamiltonian]
+
+\begin{equation*}
+    \mathbf H = \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}\delta \lambda(x)} \cos 2\theta_{\mathrm{m}} \right) \boldsymbol{\sigma_3} - \frac{{\color{red}\delta \lambda(x) } }{2} \sin \theta_{\mathrm{m}} \boldsymbol{\sigma_1}.
+\end{equation*}
+
+
+\end{tcolorbox}
+
+}
+
+\only<2-2>{
+
+% \begin{tcolorbox}
+% Kneller, J. P., McLaughlin, G. C., \& Patton, K. M. (2013). J. Phys. G: Nucl. Part. Phys. {\bf{40}} (2013) 055002.
+% \end{tcolorbox}
+
+\begin{tcolorbox}
+P. Krastev and A. Smirnov (1989); J. Kneller et al (2013);\\ K. Patton et al (2014);
+\end{tcolorbox}
+
+
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{assets/stimulated-oscillation-phenomenon.png}
+%stimulated-neutrino-oscillations-kneller.png}
+\caption*{Stimulated oscillations. $\lambda(x) = \lambda_0 +  A \sin (k x)$  with $\hat x = \omega_{\mathrm m} x $, $A=0.1\omega_{\mathrm m}$, $k=0.995\omega_{\mathrm m}$, $\theta_{\mathrm{m}}=\pi/6$}
+\end{figure}
+
+
+}
+
+
+
+% %%% A text block that should be displayed later
+% \only<3->{
+% \begin{textblock*}{64mm}(32mm,0.4\textheight)
+
+% \begin{tcolorbox}
+% \centering
+% %\rotatebox{0}{
+% ${\color{red}\delta\lambda(x)}$ is the problem here.
+% \begin{itemize}
+%     \item Varying background eigenenergy
+%     \item $\cdots$
+% \end{itemize}
+% %}
+% \vspace{1em}
+% \end{tcolorbox}
+
+% \end{textblock*}
+% }
+
+
+\end{frame}
+
+
+
+
+
+
+
+\section{Understanding Stimulated Oscillations}
+
+
+
+% \begin{frame}{Supernova Matter Density Profile}
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{assets/supernova-matter-density-profile-power-spectra.png}
+%     \caption*{Supernova matter density power spectra from two simulations. E. Borriello, et al (2014)}
+% \end{figure}
+
+
+% \begin{align*}
+% P &= 4 \lvert c_n \rvert^2 \\
+% \Delta \rho(r) &= \sum_n c_n e^{i k_n r}    
+% \end{align*}
+    
+
+
+
+
+% \end{frame}
+
+
+
+
+\subsection{Hamiltonian, and Basis}
+
+
+\begin{frame}{Understanding Stimulated Oscillations}
+
+
+Matter profile
+\begin{equation*}
+    \lambda(x) = \lambda_0 + {\color{red}A \sin (k x)},
+\end{equation*}
+
+
+\begin{tcolorbox}[title=Hamiltonian in Background Matter Basis]
+    \begin{equation*}
+    \mathbf {H} = \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}\delta \lambda(x)} \cos 2\theta_{\mathrm{m}} \right) \boldsymbol{\sigma_3} - \frac{  {\color{red}\delta \lambda(x)}  }{2} \sin \theta_{\mathrm{m}} \boldsymbol{\sigma_1}.
+\end{equation*}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[title=A Better Basis]
+
+
+Define new basis \{$\ket{\tilde\nu_{\mathrm{L} }}$,$\ket{\tilde\nu_{\mathrm{H} }}$\} is related to background matter basis \{$\ket{\nu_{\mathrm{L} }}$,$\ket{\nu_{\mathrm{H} }}$\} through
+
+\begin{equation*}
+    \begin{pmatrix}
+    \ket{\nu_{\mathrm{L} }} \\
+    \ket{\nu_{\mathrm{H} }}
+    \end{pmatrix} = \begin{pmatrix}
+     e^{-i \eta (x)} & 0 \\  0 & e^{i \eta (x)} 
+    \end{pmatrix}\begin{pmatrix}
+    \ket{\tilde\nu_{\mathrm{L} }}\\
+    \ket{\tilde\nu_{\mathrm{H} }}
+    \end{pmatrix},
+\end{equation*}
+
+where
+
+\begin{equation*}
+    \eta(x) - \eta(0) = - \frac{\omega_{\mathrm{m}}}{2} x + \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^x {\color{red}\delta\lambda (\tau)} d\tau.
+\end{equation*}
+
+\end{tcolorbox}
+
+% \begin{tcolorbox}[title=Transition Probability in Background Basis]
+
+% \begin{equation*}
+%     P_{1 \to 2} (x) = \left\lvert e^{i\eta} \psi_{p2} (x) \right \rvert^2 = \left\lvert \psi_{p2} (x)  \right\rvert^2 .
+% \end{equation*}
+
+% \end{tcolorbox}
+
+
+
+\end{frame}
+
+
+
+
+
+
+
+\subsection{Single Frequency Matter Profile}
+
+
+
+\begin{frame}{Single Frequency Matter Profile}
+
+
+Hamiltonian in new basis
+\begin{equation*}
+    \mathbf{\widetilde H} = - \frac{ {\color{red}\delta \lambda(x)}  }{2} \sin 2\theta_{\mathrm{m}} \begin{pmatrix} 0 & e^{2i\eta(x)} \\ e^{-2 i\eta(x) } & 0 \end{pmatrix} = \begin{pmatrix}
+    0 & h \\
+    h^* & 0
+    \end{pmatrix}
+\end{equation*} 
+
+
+
+
+% \only<1>{
+
+% \begin{tcolorbox}[title=Hamiltonian in New Basis]
+
+% \begin{equation*}
+%     \frac{i}{4}\begin{pmatrix}
+%     0 & e^{i(k x + 2\eta)} - e^{i(-k x + 2\eta)} \\
+%     e^{i(k x - 2\eta)} - e^{i(-k x - 2\eta)} & 0
+%     \end{pmatrix}
+% \end{equation*}
+
+% \begin{equation*}
+%     \eta(x) = - \frac{\omega_{\mathrm m} }{2}x - \frac{\cos 2\theta_{\mathrm m} }{2} \frac{A}{k} \cos (k x ).
+% \end{equation*}
+
+% \begin{equation*}
+%     \phantom{\frac{1}{2}}\\
+%     \phantom{1}
+% \end{equation*}
+
+% \end{tcolorbox}
+% }
+
+%\only<2>{
+\begin{tcolorbox}[title=Hamiltonian in New Basis]
+
+\begin{align*}
+    h &\equiv -\frac{ {\color{red}\delta \lambda(x)}  }{2} e^{2i\eta(x)} \\
+    & = \frac{i}{4}\left[ \exp\left(i(k + \omega_{\mathrm m})x + i\cos 2\theta_{\mathrm m} \frac{A}{k} \cos (k x ) \right) \right. \\
+    &\phantom{=} \left. - \exp\left(i(-k  + \omega_{\mathrm m})x + i\cos 2\theta_{\mathrm m} \frac{A}{k} \cos (k x ) \right) \right]
+\end{align*}
+
+
+\end{tcolorbox}
+%}
+
+
+
+\end{frame}
+
+
+\begin{frame}{Rabi Oscillation}
+
+
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+\begin{tcolorbox}[title=Rabi Oscillation]
+
+Hamiltonian
+
+\begin{equation*}
+    \begin{pmatrix}
+    -\omega_0/2 & \alpha \omega_0 e^{i \omega x}\\
+    \alpha \omega_0  e^{-i k x} & \omega_0/2
+    \end{pmatrix},
+\end{equation*}
+\end{tcolorbox}
+
+\end{column}%
+\begin{column}{0.6\textwidth}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{assets/rabi-diagram.png}
+\end{figure}
+
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+
+\begin{frame}{Rabi Oscillations}
+
+\only<1>{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/rabi-oscillations.png}
+    \caption*{}
+\end{figure}
+
+}
+
+\only<2->{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/rabi-resonance.png}
+    \caption*{Resonance}
+\end{figure}
+}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Single Frequency Matter Profile}
+
+
+
+
+
+
+
+\begin{tcolorbox}[title=Off-diagonal Term in Our System]
+
+\begin{equation*}
+    \mathbf{\widetilde H}= \begin{pmatrix}
+    0 & h \\
+    h^* & 0
+    \end{pmatrix}
+\end{equation*}
+
+\begin{align*}
+    h & \propto \left[ \exp\left(i(k + \omega_{\mathrm m})x + i\cos 2\theta_{\mathrm m} \frac{A}{k} \cos (k x ) \right) \right. \\
+    &\phantom{\propto} \left. - \exp\left(i(-k  + \omega_{\mathrm m})x + i\cos 2\theta_{\mathrm m} \frac{A}{k} \cos (k x ) \right) \right]
+\end{align*}
+
+\end{tcolorbox}
+
+
+
+
+Jacobi-Anger expansion
+
+\begin{equation*}
+e^{i \beta \cos ( k x)} = \sum_{n=-\infty}^\infty i^n J_n(\beta) e^{i n k x},
+\end{equation*}
+
+where $J_n(\beta)$ are Bessel's functions of the first kind.
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Single Frequency Matter Profile}
+
+\only<1-1>{
+\begin{tcolorbox}[title=Scaled Quantities]
+Characteristic scale: $\omega_{\mathrm{m}}$
+
+
+
+\begin{itemize}
+\item $\hat A = A/\omega_{\mathrm{m}}$
+    \item $\hat k = k/\omega_{\mathrm{m}}$
+    \item $\hat x = \omega_{\mathrm{m}} x$
+    \item $\hat h= h/\omega_{\mathrm{m}}$
+\end{itemize}
+\end{tcolorbox}
+}
+
+
+
+\only<2-2>{
+\begin{tcolorbox}[title=Rotation Wave Approximation]
+
+The off-diagonal element of Hamiltonian
+
+% \begin{equation*}
+% \hat h= \sum_{n=-\infty}^{\infty} \frac{1}{2} \hat B_n e^{i  {\color{blue} (n\hat k-1) } \hat x},
+% \end{equation*}
+
+\begin{equation*}
+\mathbf{\widetilde H}= \sum_{n=-\infty}^{\infty} \begin{pmatrix}
+0 & \frac{1}{2} \hat B_n e^{i  {\color{blue} (n\hat k-1) } \hat x}\\
+\frac{1}{2} \hat B_n^* e^{ -i  {\color{blue} (n\hat k-1) } \hat x} & 0
+\end{pmatrix}
+\end{equation*}
+
+
+where $\hat B_n =  - (-i)^n  n \hat k \tan 2\theta_{\mathrm{m}}  J_n ( \hat A \cos 2\theta_{\mathrm{m}} / \hat k ) $.
+
+
+%${\color{blue} (n \hat k-1) }$ $\to$ perturbation frequency in matter profile for each component.
+
+\end{tcolorbox}
+
+
+% \begin{tcolorbox}[title=Near Resonance]
+% \centering
+% small ${\color{blue} (n\hat k-1)}$ $\to$ important term
+
+% \centering
+% Find integer $n_0 = \mathrm{Round}\left[ 1/\hat k \right]$ that minimizes ${\color{blue} n\hat k -1}$.
+
+% \end{tcolorbox}
+
+}
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Single Frequency Matter Profile}
+
+
+\begin{tcolorbox}[title=Transition Probability]
+
+\begin{equation*}
+    P_{\mathrm{L\to H}}^{(n)} = \frac{  \left\lvert \hat B_{n}  \right\rvert^2 }{ \left\lvert  \hat B_{n}  \right\rvert^2 + ( n \hat k - 1 )^2  } \sin^2 \left( \frac{ q^{(n)} }{2} x \right)  ,
+\end{equation*}
+
+where
+
+\begin{align*}
+    q^{(n)} &= \sqrt{\left\lvert  \Gamma^{(n)} \right\rvert^2 + ( n \hat k - 1 )^2},\quad \text{frequency of oscillations} \\
+    \Gamma^{(n)} &= \left\lvert \hat B_{n} \right\rvert, \quad \text{width of resonance ($n\hat k$ as parameter)}
+\end{align*}
+
+
+\end{tcolorbox}
+
+
+\end{frame}
+
+
+\begin{frame}{Single Frequency Matter Profile}
+
+
+
+
+% \only<1-1>{
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.9\textwidth]{assets/stimulated-single-frequency-width-nk-orders.png}
+% \caption*{Width of the resonances for $A=0.1$, $\theta_{\mathrm{m}} = \pi/5$. Each width is a parameter of $n \hat k$.}
+% \end{figure}
+
+% }
+
+
+%\only<2-2>{
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{assets/stimulated-single-frequency-resonances-k-orders.png}
+\caption*{Resonances of different $n = 1/\hat k$.}
+\end{figure}
+
+%}
+
+
+\end{frame}
+
+
+\begin{frame}{Single Frequency Matter Profile}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/stimulated-oscillation-rwa-and-numerical.png}
+    \caption*{$\hat A=0.1$, $\hat k=0.995$, $\theta_{\mathrm{m}}=\pi/6$}
+\end{figure}
+
+\end{frame}
+
+
+
+
+
+
+% \begin{frame}{Single Frequency Matter Profile}
+
+
+% \begin{tcolorbox}[title=PLACEHOLDER]
+% \color{red}
+% NEED A GRAPH TO EXPLAIN WHY FOR A SPECIFIC n WE ONLY TAKE THE ONE THAT IS MOST CLOSE TO RESONANCE!!!
+
+% \end{tcolorbox}
+
+
+
+% \end{frame}
+
+\subsection{Two-frequency Matter Profile}
+
+\begin{frame}{Two-frequency Matter Profile}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{assets/2-freq-numerical-and-first-5-rwa.png}
+    \caption*{$\lambda(x) = \lambda_0 + A_1\sin(k_1 x) + A_2\sin(k_2 x)$. $\hat k_1=0.3$, $\hat k_2=0.7$, $A_1=A_2=0.1$, $\theta_m=\pi/5$.}
+\end{figure}
+
+
+\end{frame}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Summary & Outlook/Future Work %%%%%%%%%%%%%%
+
+% You should see now what I am trying to do here.
+% In reality, a matter profile can be decomposed into many Fourier modes. If we can find a way to determine which terms are important, it would be very useful for more complicated calculations such as the combination of COLLECTIVE neutrino oscillations and matter effect.
+% Rather easy to numerically solve such systems. However, it is also good to learn the physics behind numerical calculation. Look into the most important term.
+
+\section{Summary \& Future Work}
+
+\begin{frame}{Summary \& Future Work}
+
+
+
+\begin{itemize}\color{ao}
+\item 
+The fact that neutrino flavor sates are not mass states causes vacuum oscillations.
+\item 
+MSW resonance happens when matter potential cancels out the vacuum diagonal elements of the Hamiltonian.
+\item
+Even matter profile doesn't match MSW requirement, variation in matter profile can cause resonances.
+\item
+Single frequency perturbations in matter profile is a combination of many Rabi oscillations.
+\end{itemize}
+
+
+
+\begin{itemize}\color{red}
+ \item 
+ How to understand and calculate systems with multi-frequency matter profile (turbulence).
+ \item
+ Combine periodic or even turbulent matter profile with neutrino self-interaction.
+\end{itemize}
+
+
+
+
+\end{frame}
+
+
+
+\begin{frame}{Acknowledgement}
+
+I am very thankful to my advisor Professor Huaiyu Duan, and everyone in our group Dr. Sajad Abbar, and Dr. Shashank Shalgar, for all the help in both research and life.
+
+Supported by DOE EPSCoR grant \#DE-SC0008142 at UNM.
+
+\end{frame}
+
+
+
+
+
+
+
+\appendix
+
+
+\begin{frame}{Backup Slides}
+
+\begin{tcolorbox}
+\centering
+BACKUP SLIDES
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}{Parameters Used for Vacuum Oscillations}
+
+$\theta_{12} = 33.36/180\pi$;
+$\theta_{13} = 8.66/180\pi$;
+$\theta_{23} = 40/180*\pi$;
+$\delta_{cp} = 0$;
+$m_1^2 = 0.01$;
+$m_2^2 = m_1^2 + 0.000079$;
+$E=1$MeV
+
+
+\end{frame}
+
+
+
+\begin{frame}{Single Frequency Matter Profile}
+
+
+\only<1-1>{
+
+\begin{tcolorbox}[title=Why Does It Work?]
+
+\begin{equation*}
+    J_n(n \sech \alpha) \sim \frac{ e^{ - n(\alpha -\tanh\alpha )} }{ \sqrt{ 2\pi n \tanh \alpha } }, \quad \text{for large } n
+\end{equation*}
+
+% Hamiltonian off-diagonal element amplitude
+
+% \begin{equation*}
+%     \hat B_n \propto n J_n(n \sech \alpha) \sim \sqrt{n} \frac{ e^{ - n(\alpha -\tanh\alpha )} }{ \sqrt{ 2\pi  \tanh \alpha } }, \quad \text{for large } n
+% \end{equation*}
+
+% where $\sech\alpha = \hat A\cos 2\theta_{\mathrm{m}}$.
+
+$\Rightarrow$
+
+\begin{equation*}
+    \Gamma \propto \hat B_n \propto  \frac{ e^{ - n ( \alpha - \tanh \alpha )} }{\sqrt{2\pi n \tanh \alpha} } 
+\end{equation*}
+
+Small perturbation $\Rightarrow$ Small $\hat A$ $\Rightarrow$ Large $\alpha$ $\Rightarrow$ Drops fast at large $n$.
+
+
+\end{tcolorbox}
+}
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}{Two-frequency Matter Profile}
+
+
+\only<1-1>{
+\begin{tcolorbox}[title=Matter Profile]
+
+\begin{equation*}
+    \lambda(x) = \lambda_0 + \color{red}\delta\lambda(x),\quad     \color{red}\delta \lambda(x) = A_1 \sin (k_1 x) +  A_2 \sin (k_2 x).
+\end{equation*}
+\end{tcolorbox}
+}
+
+\only<2->{
+\begin{tcolorbox}[title=Hamiltonian Off-diagonal Element]
+
+Apply Jacobi-Anger expansion,
+
+\begin{equation*}
+\hat h  = \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}  \frac{1}{2} \hat B_{n_1,n_2}(\hat k_1,\hat k_2)
+ e^{i(n_1 \hat k_1 + n_2 \hat k_2 - 1)\hat x},
+\end{equation*}
+
+where
+
+\begin{align*}
+&\hat B_{n_1,n_2}( \hat k_1,\hat k_2)\\
+= & -(-i)^{n_1+n_2} ( n_1 \hat k_1 + n_2 \hat k_2 ) J_{n_1}\left( \frac{\hat A_1\cos 2\theta_{\mathrm{m}}}{\hat k_1} \right) J_{n_2}\left( \frac{\hat A_2\cos 2\theta_{\mathrm{m}}}{\hat k_2} \right) 
+\end{align*}
+
+
+\end{tcolorbox}
+}
+
+
+\only<2->{
+\begin{tcolorbox}
+\centering
+\color{red}Which terms are important?
+\end{tcolorbox}
+
+}
+
+\only<2->{
+
+\begin{textblock*}{64mm}(68mm,0.01\textheight)
+
+\small
+\begin{equation*}
+\hat h=\sum_{n=-\infty}^{\infty} \frac{1}{2} \hat B_n e^{i  {\color{magenta} (n\hat k-1) } \hat x},
+\end{equation*}
+\normalsize
+
+\end{textblock*}
+
+
+}
+
+
+
+
+\end{frame}
+
+
+\begin{frame}{Two-frequency Matter Profile}
+
+\only<1-1>{
+\begin{tcolorbox}[title=Resonance Lines]
+
+There are still resonances, i.e., (almost) zero phases, on lines
+
+\begin{equation*}
+    n_{1,0} \hat k_1 + n_{2,0} \hat k_2 -1 =0
+\end{equation*}
+
+in $\{\hat k_1,\hat k_2\}$ plane. 
+{\centering
+$\Rightarrow$
+}
+Resonance width for each point on resonance lines.
+
+\end{tcolorbox}
+}
+
+\only<2-2>{
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{assets/density-plot-of-transition-amplitudes-demonstration.png}
+    \caption*{Density plot of transition amplitudes calculated using only one term out of the whole summation in Hamiltonian. $n_1,n_2\in [-2, 2]$}
+\end{figure}
+
+\begin{textblock*}{64mm}(70mm,0.01\textheight)
+\tiny
+\begin{equation*}
+\hat h  = \sum_{n_1} \sum_{n_2}  \frac{1}{2} \hat B_{n_1,n_2}(\hat k_1, \hat k_2)
+ e^{i(n_1 \hat k_1 + n_2 \hat k_2 - 1)\hat x},
+\end{equation*}
+\normalsize
+\end{textblock*}
+
+}
+
+
+\only<3->{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{assets/stimulated-2-freq-width-diagram.png}
+    \caption*{Resonance line, distance to resonance, and width}
+\end{figure}
+}
+
+
+
+\end{frame}
+
+
+
+\begin{frame}{Two-frequency Matter Profile}
+
+
+\begin{tcolorbox}[title=Width]
+
+\begin{equation*}
+    \Gamma_2 = \frac{\hat B_{n_1,n_2}(\hat k_{1,\mathrm{intercept}}, \hat k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
+\end{equation*}
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[title=Distance to Resonance Line]
+
+\begin{equation*}
+d = \frac{\lvert n_1 \hat k_{10} + n_2 \hat k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.
+\end{equation*}
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[title=Distance to Resonance Width Ratio]
+
+\begin{equation*}
+Q_2 = \frac{d}{\Gamma_2}.    
+\end{equation*}
+
+
+\end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}{Two-frequency Matter Profile}
+
+
+
+\only<1-1>{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/q-ordering-1.png}
+    \caption*{}
+\end{figure}
+}
+
+
+\only<2-2>{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/q-ordering-2.png}
+    \caption*{}
+\end{figure}
+}
+
+
+\only<3-3>{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/q-ordering-3.png}
+    \caption*{}
+\end{figure}
+}
+
+\only<4-4>{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/q-ordering-4.png}
+    \caption*{}
+\end{figure}
+}
+
+\only<5-5>{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/q-ordering-5.png}
+    \caption*{}
+\end{figure}
+}
+
+\only<6-6>{
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/2-freq-numerical-and-first-5-rwa.png}
+    \caption*{}
+\end{figure}
+}
+
+\end{frame}
+
+
+
+\begin{frame}{Bessel's Function}
+
+
+\begin{equation*}
+    J_n(\beta) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \, \Gamma(m+n+1)} {\left(\frac{\beta}{2}\right)}^{2m+n} 
+\end{equation*}
+
+
+\end{frame}
+
+
+
+\begin{frame}[allowframebreaks]{References}
+
+  \bibliography{ref}
+  \bibliographystyle{abbrv}
+
+\end{frame}
+
+\end{document}
