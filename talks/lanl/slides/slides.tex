@@ -33,7 +33,17 @@
 
 
 \usepackage{subfig}
-\usepackage[absolute,overlay]{textpos}
+\usepackage[absolute
+,overlay
+]{textpos}
+
+%%%%% eso-pic package that set up a grid system for the slides BEGIN
+\usepackage[texcoord,
+grid,gridcolor=red!10,subgridcolor=green!10,gridunit=pt]
+{eso-pic}
+% grid,gridcolor=red!20,subgridcolor=green!20,gridunit=pt
+%%%%% eso-pic package that set up a grid system for the slides END
+
 \usepackage{tikz}
 
 
@@ -151,11 +161,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\title{Neutrino Oscillations in Matter}
-\subtitle{PhD Candidacy Exam}
-\date{April 19, 2016}
+\title{Stimulated Neutrino Transitions and Rabi Oscillations}
+%\subtitle{PhD Candidacy Exam}
+\date{\today}
 \author{Lei Ma\\
-{\bf{Supervisor}}: Huaiyu Duan}
+%{\bf{Supervisor}}: Huaiyu Duan
+}
 \institute{Department of Physics\\
 UNM}
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
@@ -1198,7 +1209,118 @@ P. Krastev and A. Smirnov (1989); J. Kneller et al (2013);\\ K. Patton et al (20
 
 
 
-\subsection{Hamiltonian, and Basis}
+\subsection{Hamiltonian, and Basis, and Rabi Oscillations}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Intuitive Demonstration BEGIN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Hamiltonian}
+
+
+
+\begin{tcolorbox}[title=Hamiltonian in Background Matter Basis]
+    \begin{equation*}
+    \mathbf {H} = \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}\delta \lambda(x)} \cos 2\theta_{\mathrm{m}} \right) \sigma_3 - \frac{  {\color{red}\delta \lambda(x)}  }{2} \sin \theta_{\mathrm{m}} \sigma_1.
+\end{equation*}
+\end{tcolorbox}
+
+
+Matter profile
+\begin{equation*}
+    \lambda(x) = \lambda_0 + {\color{red}A \sin (k x)},
+\end{equation*}
+
+
+\begin{equation*}
+    \mathbf {H} = \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}A\sin(kx)} \cos 2\theta_{\mathrm{m}} \right) \sigma_3 - \frac{  {\color{red}A\sin \theta_{\mathrm{m}}}  }{2} \sin(kx)  \sigma_1.
+\end{equation*}
+
+
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Rabi Oscillations}
+\setbeamercovered{invisible}
+
+
+\begin{itemize}
+ 
+\item[]<1->
+  
+\begin{columns}[T]
+\begin{column}{0.4\textwidth}
+\begin{tcolorbox}[title=Rabi Oscillation]
+
+Hamiltonian
+
+\begin{equation*}
+    -\frac{\omega_0}{2} \sigma_3 - \alpha \sin(k t)\sigma_1
+\end{equation*}
+\end{tcolorbox}
+
+\end{column}%
+\begin{column}{0.6\textwidth}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{assets/rabi-diagram.png}
+\end{figure}
+
+
+\end{column}
+\end{columns}
+
+\item[]<2->
+
+
+\begin{textblock*}{10pt}(160pt,1pt)
+\small
+\begin{equation*}
+   \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}A\sin(kx)} \cos 2\theta_{\mathrm{m}} \right) \sigma_3 - \frac{  {\color{red}A\sin \theta_{\mathrm{m}}}  }{2} \sin(kx)  \sigma_1
+\end{equation*}
+\end{textblock*}
+
+
+The transition probability from low energy to high energy is
+
+\begin{equation*}
+    P_{1\to 2} = \frac{\alpha^2}{\Omega_{\mathrm R}^2} \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} t \right).
+\end{equation*}
+
+
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Rabi Formula Works}
+
+
+
+
+\end{frame}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Intuitive Demonstration END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \begin{frame}{Understanding Stimulated Oscillations}
@@ -1253,7 +1375,6 @@ where
 
 
 \end{frame}
-
 
 
 
@@ -1318,35 +1439,6 @@ Hamiltonian in new basis
 
 \end{frame}
 
-
-\begin{frame}{Rabi Oscillation}
-
-
-\begin{columns}[T]
-\begin{column}{0.4\textwidth}
-\begin{tcolorbox}[title=Rabi Oscillation]
-
-Hamiltonian
-
-\begin{equation*}
-    \begin{pmatrix}
-    -\omega_0/2 & \alpha \omega_0 e^{i \omega x}\\
-    \alpha \omega_0  e^{-i k x} & \omega_0/2
-    \end{pmatrix},
-\end{equation*}
-\end{tcolorbox}
-
-\end{column}%
-\begin{column}{0.6\textwidth}
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{assets/rabi-diagram.png}
-\end{figure}
-
-\end{column}
-\end{columns}
-
-\end{frame}
 
 
 
@@ -1642,6 +1734,26 @@ Supported by DOE EPSCoR grant \#DE-SC0008142 at UNM.
 \centering
 BACKUP SLIDES
 \end{tcolorbox}
+
+\end{frame}
+
+
+\begin{frame}{Rabi Oscillations}
+
+
+The coupling strength is calculated as
+
+\begin{equation*}
+    \alpha = \langle 1 \vert \mathbf d \cdot \mathbf E \vert 2 \rangle
+\end{equation*}
+
+where the electric field is 
+
+\begin{equation*}
+    \mathbf E = \mathbf E_0 \sin(k t).
+\end{equation*}
+
+and $\mathbf d$ is the dipole moment.
 
 \end{frame}
 
