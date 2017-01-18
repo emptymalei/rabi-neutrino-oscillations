@@ -38,9 +38,7 @@
 ]{textpos}
 
 %%%%% eso-pic package that set up a grid system for the slides BEGIN
-\usepackage[texcoord,
-grid,gridcolor=red!10,subgridcolor=green!10,gridunit=pt]
-{eso-pic}
+%\usepackage[texcoord,grid,gridcolor=red!10,subgridcolor=green!10,gridunit=pt]{eso-pic}
 % grid,gridcolor=red!20,subgridcolor=green!20,gridunit=pt
 %%%%% eso-pic package that set up a grid system for the slides END
 
@@ -80,6 +78,8 @@ grid,gridcolor=red!10,subgridcolor=green!10,gridunit=pt]
 \usepackage{environ}
 \usepackage{tikz}
 \usetikzlibrary{calc,matrix}
+
+
 
 \makeatletter
 \let\matamp=&
@@ -159,6 +159,9 @@ grid,gridcolor=red!10,subgridcolor=green!10,gridunit=pt]
 
 %%%% Timeline END %%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 
 \title{Stimulated Neutrino Transitions and Rabi Oscillations}
@@ -1227,19 +1230,19 @@ P. Krastev and A. Smirnov (1989); J. Kneller et al (2013);\\ K. Patton et al (20
 
 \begin{tcolorbox}[title=Hamiltonian in Background Matter Basis]
     \begin{equation*}
-    \mathbf {H} = \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}\delta \lambda(x)} \cos 2\theta_{\mathrm{m}} \right) \sigma_3 - \frac{  {\color{red}\delta \lambda(x)}  }{2} \sin \theta_{\mathrm{m}} \sigma_1.
+    \mathbf {H} = \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}\delta \lambda(x)} \cos 2\theta_{\mathrm{m}} \right) \sigma_3 - \frac{  {\color{red}\delta \lambda(x)}  }{2} \sin 2\theta_{\mathrm{m}} \sigma_1.
 \end{equation*}
 \end{tcolorbox}
 
 
 Matter profile
 \begin{equation*}
-    \lambda(x) = \lambda_0 + {\color{red}A \sin (k x)},
+    \lambda(x) = \lambda_0 + {\color{red}A \cos (k x)},
 \end{equation*}
 
 
 \begin{equation*}
-    \mathbf {H} = \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}A\sin(kx)} \cos 2\theta_{\mathrm{m}} \right) \sigma_3 - \frac{  {\color{red}A\sin \theta_{\mathrm{m}}}  }{2} \sin(kx)  \sigma_1.
+    \mathbf {H} = \frac{1}{2}\left( - \omega_{\mathrm{m}} +  \cos 2\theta_{\mathrm{m}}{\color{red}A\cos(kx)} \right) \sigma_3 - \frac{  \sin 2\theta_{\mathrm{m} }  }{2}{\color{red}A \cos(kx)}  \sigma_1.
 \end{equation*}
 
 
@@ -1255,9 +1258,9 @@ Matter profile
 \setbeamercovered{invisible}
 
 
-\begin{itemize}
+
  
-\item[]<1->
+\only<1->{
   
 \begin{columns}[T]
 \begin{column}{0.4\textwidth}
@@ -1266,7 +1269,10 @@ Matter profile
 Hamiltonian
 
 \begin{equation*}
-    -\frac{\omega_0}{2} \sigma_3 - \alpha \sin(k t)\sigma_1
+    -\frac{\omega_0}{2} \sigma_3 - \frac{\alpha}{2} \begin{pmatrix}
+    0 & e^{ikt}\\
+    e^{-ikt} & 0
+    \end{pmatrix}
 \end{equation*}
 \end{tcolorbox}
 
@@ -1281,13 +1287,14 @@ Hamiltonian
 \end{column}
 \end{columns}
 
-\item[]<2->
+}
 
 
+\only<2>{
 \begin{textblock*}{10pt}(160pt,1pt)
 \small
 \begin{equation*}
-   \frac{1}{2}\left( - \omega_{\mathrm{m}} + {\color{red}A\sin(kx)} \cos 2\theta_{\mathrm{m}} \right) \sigma_3 - \frac{  {\color{red}A\sin \theta_{\mathrm{m}}}  }{2} \sin(kx)  \sigma_1
+  \frac{1}{2}\left( - \omega_{\mathrm{m}} +  \cos 2\theta_{\mathrm{m}}{\color{red}A\cos(kx)} \right) \sigma_3 - \frac{  \sin 2\theta_{\mathrm{m} }  }{2}{\color{red}A \cos(kx)}  \sigma_1
 \end{equation*}
 \end{textblock*}
 
@@ -1295,31 +1302,243 @@ Hamiltonian
 The transition probability from low energy to high energy is
 
 \begin{equation*}
-    P_{1\to 2} = \frac{\alpha^2}{\Omega_{\mathrm R}^2} \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} t \right).
+    P_{1\to 2} = \frac{\colorbox{red!20}{$\alpha$}^2}{\colorbox{red!20}{$\alpha$}^2+(\colorbox{blue!20}{$\omega_0 - k$})^2} \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} t \right),
 \end{equation*}
 
 
-\end{itemize}
+where
+\begin{equation*}
+\Omega_{\mathrm R} = \sqrt{\colorbox{red!20}{$\alpha$}^2+(\colorbox{blue!20}{$\omega_0 - k$})^2}    
+\end{equation*}
+
+is Rabi frequency.
+
+}
+
+\only<3>{
+
+The transition probability from low energy to high energy is
+
+\begin{equation*}
+    P_{1\to 2} = \frac{1}{1 + D^2} \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} t \right),
+\end{equation*}
+
+where
+
+\begin{equation*}
+    D = \left\vert\frac{\omega_0 - k}{\alpha} \right\vert.
+\end{equation*}
+
+}
+
 
 \end{frame}
 
+
+\begin{frame}{Visualizing Rabi Oscillations}
+
+\begin{textblock*}{10pt}(250pt,1pt)
+\small
+\begin{equation*}
+  % The Pauli matrices form
+  %-\frac{\omega_0}{2} \sigma_3 - \frac{\alpha}{2} \cos(kt)\sigma_1 + \frac{\alpha}{2}\sin(kt)\sigma_2
+  % The single matrix form
+   -\frac{\omega_0}{2} \sigma_3 - \frac{\alpha}{2} \begin{pmatrix}
+    0 & e^{ikt}\\
+    e^{-ikt} & 0
+    \end{pmatrix}
+\end{equation*}
+\end{textblock*}
+
+
+
+\begin{columns}[T]
+\begin{column}{0.6\textwidth}
+
+\begin{align*}
+    &-\frac{\omega_0}{2} \sigma_3 - \frac{\alpha}{2} \cos(kt) \sigma_1 + \frac{\alpha}{2}\sin(kt) \sigma_2 \\
+= & \begin{pmatrix}
+\alpha \cos(kt) &
+-\alpha \sin(kt) &
+\omega_0
+\end{pmatrix}
+\colorbox{blue!20}{$\begin{pmatrix}
+-\sigma_1/2 \\
+-\sigma_2/2 \\
+-\sigma_3/2
+\end{pmatrix}
+$} \\
+=& \vec H \cdot (-\vec{\sigma}/2)
+\end{align*}
+
+\end{column}%
+\begin{column}{0.4\textwidth}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth,trim={2cm 0 3cm 0},clip]{assets/rabi-bloch-vector-rotation}
+\end{figure}
+
+
+\end{column}
+\end{columns}
+
+
+\begin{equation*}
+    D = \left\vert\frac{\omega_0 - k}{\alpha} \right\vert
+\end{equation*}
+
+is 
+
+\end{frame}
+
+\begin{frame}{Interferences of Rabi Oscillations}
+
+\begin{textblock*}{10pt}(250pt,16pt)
+\small
+\begin{equation*}
+  % The Pauli matrices form
+  %-\frac{\omega_0}{2} \sigma_3 - \frac{\alpha}{2} \cos(kt)\sigma_1 + \frac{\alpha}{2}\sin(kt)\sigma_2
+  % The single matrix form
+%   -\frac{\omega_0}{2} \sigma_3 - \frac{\alpha}{2} \begin{pmatrix}
+%     0 & e^{ikt}\\
+%     e^{-ikt} & 0
+%     \end{pmatrix}
+\begin{pmatrix}
+0\\
+0\\
+\omega_0
+\end{pmatrix} +  \alpha\begin{pmatrix}
+ \cos(kt) \\
+- \sin(kt) \\
+0
+\end{pmatrix}
+\end{equation*}
+\end{textblock*}
+
+
+\begin{align*}
+    \mathbf {H} =& \frac{1}{2}\left( - \omega_{\mathrm{m}} \colorbox{gray!20}{$+  \cos 2\theta_{\mathrm{m}}A\cos(kx) $} \right) \sigma_3 - \frac{  \sin 2\theta_{\mathrm{m} }  }{2}A \cos(kx)  \sigma_1\\
+    \to& -\frac{\omega_m}{2} \sigma_3 - \frac{A\sin 2\theta_{\mathrm m}}{2} \cos(kx)\sigma_1 
+    % =&-\frac{\omega_m}{2} \sigma_3 - \frac{A\sin 2\theta_{\mathrm m}}{2} \frac{1}{2}\begin{pmatrix}
+    % 0 & e^{ikx}\\
+    % e^{-ikx} & 0
+    % \end{pmatrix}
+    % - \frac{A\sin 2\theta_{\mathrm m}}{2} \frac{1}{2}\begin{pmatrix}
+    % 0 & e^{i(-k)x} \\
+    % e^{-i(-k)x} & 0
+    % \end{pmatrix}
+\end{align*}
+
+\begin{equation*}
+    \vec H = \begin{pmatrix}
+    0\\
+    0\\
+    \omega_m
+    \end{pmatrix} + \frac{A\sin 2\theta_{\mathrm m}}{2}\begin{pmatrix}
+     \cos(kx)\\
+    -\sin(kx)\\
+    0
+    \end{pmatrix} + \frac{A\sin 2\theta_{\mathrm m}}{2}\begin{pmatrix}
+    \cos(-kx)\\
+    -\sin(-kx)\\
+    0
+    \end{pmatrix}
+\end{equation*}
+
+\begin{tcolorbox}
+Two frequencies!
+\end{tcolorbox}
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Interferences of Rabi Oscillations}
+
+
+\begin{equation*}
+    \vec H = \begin{pmatrix}
+    0\\
+    0\\
+    \omega_m
+    \end{pmatrix} + \alpha_1\begin{pmatrix}
+     \cos(k_1x)\\
+    -\sin(k_1x)\\
+    0
+    \end{pmatrix} + \colorbox{blue!20}{$\alpha_2\begin{pmatrix}
+    \cos(k_2x)\\
+    -\sin(k_2x)\\
+    0
+    \end{pmatrix}$}
+\end{equation*}
+
+Corotating frame of the second frequency,
+
+
+
+\begin{equation*}
+    \vec H = \begin{pmatrix}
+    0\\
+    0\\
+    \omega_m - k_2
+    \end{pmatrix} + \alpha_1\begin{pmatrix}
+     \cos(k_1-k_2x)\\
+    -\sin(k_1-K_2x)\\
+    0
+    \end{pmatrix} + \colorbox{blue!20}{$\alpha_2\begin{pmatrix}
+    1\\
+    0\\
+    0
+    \end{pmatrix}$}
+\end{equation*}
+
+
+
+
+\end{frame}
 
 
 
 \begin{frame}{Rabi Formula Works}
 
 
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{assets/rabiOscillationsNeutrinoCoincidence-single-frequency}
+%stimulated-neutrino-oscillations-kneller.png}
+\caption*{
+Dots, diamonds, triangles, and squares are for $k=\omega_{\mathrm m}$, $k=(1-2\times 10^{-5})\omega_{\mathrm m}$, and $k=(1-10^{-4})\omega_{\mathrm m}$ respectively.\\
+Lines: Rabi formula
+}
+\end{figure}
 
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Intuitive Demonstration END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Interferences of Rabi Oscillations}
+
+
+
+\begin{frame}{Interferences of Rabi Oscillations}
+
+Matter profile with two frequencies,
+
+\begin{equation*}
+    \lambda(x) = \lambda_0  + \frac{\alpha_1}{2}\sin(k_1 x) \sigma_1 
+\end{equation*}
 
 \end{frame}
 
 
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Intuitive Demonstration END
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -1754,6 +1973,38 @@ where the electric field is
 \end{equation*}
 
 and $\mathbf d$ is the dipole moment.
+
+\end{frame}
+
+
+\begin{frame}{Interferences of Rabi Oscillations}
+
+\begin{textblock*}{10pt}(250pt,1pt)
+\small
+\begin{equation*}
+  % The Pauli matrices form
+  %-\frac{\omega_0}{2} \sigma_3 - \frac{\alpha}{2} \cos(kt)\sigma_1 + \frac{\alpha}{2}\sin(kt)\sigma_2
+  % The single matrix form
+   -\frac{\omega_0}{2} \sigma_3 - \frac{\alpha}{2} \begin{pmatrix}
+    0 & e^{ikt}\\
+    e^{-ikt} & 0
+    \end{pmatrix}
+\end{equation*}
+\end{textblock*}
+
+
+\begin{align*}
+    \mathbf {H} =& \frac{1}{2}\left( - \omega_{\mathrm{m}} \colorbox{gray!20}{$+  \cos 2\theta_{\mathrm{m}}A\cos(kx) $} \right) \sigma_3 - \frac{  \sin 2\theta_{\mathrm{m} }  }{2}A \cos(kx)  \sigma_1\\
+    \to& -\frac{\omega_m}{2} \sigma_3 - \frac{A\sin 2\theta_{\mathrm m}}{2} \cos(kx)\sigma_1 \\
+    =&-\frac{\omega_m}{2} \sigma_3 - \frac{A\sin 2\theta_{\mathrm m}}{2} \frac{1}{2}\begin{pmatrix}
+    0 & e^{ikx}\\
+    e^{-ikx} & 0
+    \end{pmatrix}
+    - \frac{A\sin 2\theta_{\mathrm m}}{2} \frac{1}{2}\begin{pmatrix}
+    0 & e^{i(-k)x} \\
+    e^{-i(-k)x} & 0
+    \end{pmatrix}
+\end{align*}
 
 \end{frame}
 
