@@ -405,7 +405,7 @@ With the intuition of the Rabi oscillations itself as well as the interference b
     \mathbf{U} =  \begin{pmatrix} e^{-\ri \eta (r)} & 0 \\  0 & e^{\mathrm i \eta (r)}  \end{pmatrix},
     \label{eq-rabi-transformation}
 \end{equation}
-which is a transformation used in Ref.~\onlinecite{Kneller2006} to remove the diagonal elements of the Hamiltonian. This transformation is essentially a rotation $exp\left(-\mathrm i\frac{\sigma_3}{2}\cdot 2\eta\right)$. In this work, this transformation is used to remove the varying $\sigma_3$ terms $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in the Hamiltonian, so that the energy gap is fixed in the new basis $\left(\ket{\nu_{\mathrm{r1}}},\ket{\nu_{\mathrm{r2}}}\right)^{\mathrm{T}}$, which is defined as
+which is a transformation used in Ref.~\onlinecite{Kneller2006} to remove the diagonal elements of the Hamiltonian. This transformation is essentially a rotation $\exp\left(-\mathrm i\frac{\sigma_3}{2}\cdot 2\eta\right)$. In this work, this transformation is used to remove the varying $\sigma_3$ terms $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$ in the Hamiltonian, so that the energy gap is fixed in the new basis $\left(\ket{\nu_{\mathrm{r1}}},\ket{\nu_{\mathrm{r2}}}\right)^{\mathrm{T}}$, which is defined as
 \begin{equation}
     \begin{pmatrix} \ket{\nu_{\mathrm{r1}}}\\ \ket{\nu_{\mathrm{r2}}} \end{pmatrix} =  \mathbf{U}^\dagger \begin{pmatrix} \ket{\nu_{\mathrm{L}}} \\ \ket{\nu_{\mathrm{H}}} \end{pmatrix}.
     \label{eq-rabi-basis}
@@ -417,19 +417,19 @@ For convenience, we name this unitary transformation in Eq.~(\ref{eq-rabi-transf
     = \left[ -\frac{\omega_{\mathrm m} }{2} \sigma_3  + \frac{\delta \lambda}{2} \cos 2\theta_{\mathrm m}  \sigma_3  - \frac{\delta \lambda}{2} \sin 2\theta_{\mathrm m} \begin{pmatrix} 0 & e^{2\mathrm i\eta} \\ e^{-2 \mathrm i\eta } & 0 \end{pmatrix}   \right] \begin{pmatrix} \psi_{\mathrm R1} \\ \psi_{\mathrm R2} \end{pmatrix},
 \end{equation*}
 \end{widetext}
-in which the varying diagonal elements in Hamiltonian can be eliminated by choosing $\eta(x)$ properly, i.e.,
+in which the varying diagonal elements in Hamiltonian can be eliminated by choosing $\eta(r)$ properly, i.e.,
 \begin{equation}
     \eta(r) - \eta(0) =  \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^r \delta\lambda (\tau) d\tau.
 \end{equation}
 In Rabi basis, the Schr\"{o}dinger equation becomes
 %\begin{widetext}
 \begin{equation*}
-    \ri \frac{d}{dr} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} = \left[ - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_m \begin{pmatrix} 0 & e^{2\ri\eta} \\ e^{-2 \ri \eta } & 0 \end{pmatrix}\right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix}.
+    \ri \frac{d}{dr} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} = \left[ - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_{\mathrm m} \begin{pmatrix} 0 & e^{2\ri\eta} \\ e^{-2 \ri \eta } & 0 \end{pmatrix}\right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix}.
 \end{equation*}
 %\end{widetext}
 One can easily show that the transition probability between two eigenstates in Rabi basis is the same as the transition probability between two eigenstates in background matter basis, given the initial condition that the system is in low energy state.
 
-For single frequency matter profile with potential $\delta\lambda(r) = A_1\sin(k_1x)$, we have $\eta(r) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 x)/(2 k) $. To make connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in Ref.~\onlinecite{Kneller2013}, to decompose the $\exp\left( \ri z \cos\left(k_1 r \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(\ri n k_1 r \right)$, i.e., to decompose spherical waves into plane waves. The decomposed form of Hamiltonian explicitly shows that the Hamiltonian is a summation of Rabi systems, which is
+For single frequency matter profile with potential $\delta\lambda(r) = A_1\sin(k_1 r)$, we have $\eta(r) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 r)/(2 k) $. To make connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in Ref.~\onlinecite{Kneller2013}, to decompose the $\exp\left( \ri z \cos\left(k_1 r \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(\ri n k_1 r \right)$, i.e., to decompose spherical waves into plane waves. The decomposed form of Hamiltonian explicitly shows that the Hamiltonian is a summation of Rabi systems, which is
 %\begin{widetext}
 \begin{equation*}
     H^{(\mathrm{R})} = 
@@ -698,7 +698,7 @@ Another view is to switch to a basis where the neutrino oscillations Hamiltonian
 
 \section{\label{acknowledgement}Acknowledgement}
 
-The first author would like to thank J. Kneller and K. Patton for their help during this research. This reseach is supported by \fbox{XXXXXX}.
+The first author would like to thank J. Kneller and K. Patton for their help during this research. This reseach is supported by DOE EPSCoR grant \#DE-SC0008142.
 
 
 
