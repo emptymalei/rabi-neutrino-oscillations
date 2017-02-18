@@ -1,0 +1,234 @@
+%merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+%Control: key (0)
+%Control: author (72) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (-1) disabled
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{20}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{http://dx.doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Mikheev}\ and\ \citenamefont
+  {Smirnov}(1985)}]{Mikheev:1986gs}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~P.}\ \bibnamefont
+  {Mikheev}}\ and\ \bibinfo {author} {\bibfnamefont {A.~{\relax Yu}.}\
+  \bibnamefont {Smirnov}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Sov. J. Nucl. Phys.}\ }\textbf {\bibinfo {volume} {42}},\ \bibinfo
+  {pages} {913} (\bibinfo {year} {1985})},\ \bibinfo {note} {[Yad.
+  Fiz.42,1441(1985)]}\BibitemShut {NoStop}%
+%%CITATION = SJNCA,42,913;%%
+\bibitem [{\citenamefont {Wolfenstein}(1978)}]{wolf78}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Wolfenstein}},\ }\href {\doibase 10.1103/PhysRevD.17.2369} {\bibfield
+  {journal} {\bibinfo  {journal} {Physical Review D}\ }\textbf {\bibinfo
+  {volume} {17}},\ \bibinfo {pages} {2369} (\bibinfo {year}
+  {1978})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wolfenstein}(1979)}]{wolfensteinprd1979}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Wolfenstein}},\ }\href {\doibase 10.1103/PhysRevD.20.2634} {\bibfield
+  {journal} {\bibinfo  {journal} {Physical Review D}\ }\textbf {\bibinfo
+  {volume} {20}},\ \bibinfo {pages} {2634} (\bibinfo {year}
+  {1979})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Petcov}\ and\ \citenamefont
+  {Piai}(2002)}]{Petcov2002}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Petcov}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Piai}},\
+  }\href {\doibase 10.1016/S0370-2693(02)01591-5} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physics Letters B}\ }\textbf {\bibinfo {volume}
+  {533}},\ \bibinfo {pages} {94} (\bibinfo {year} {2002})},\ \Eprint
+  {http://arxiv.org/abs/hep-ph/0112074} {arXiv:hep-ph/0112074 [hep-ph]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kuo}\ and\ \citenamefont
+  {Pantaleone}(1989)}]{kuo1989}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~K.}\ \bibnamefont
+  {Kuo}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Pantaleone}},\ }\href {\doibase 10.1103/RevModPhys.61.937} {\bibfield
+  {journal} {\bibinfo  {journal} {Reviews of Modern Physics}\ }\textbf
+  {\bibinfo {volume} {61}},\ \bibinfo {pages} {937} (\bibinfo {year}
+  {1989})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Krastev}\ and\ \citenamefont
+  {Smirnov}(1989)}]{Krastev1989}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Krastev}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Smirnov}},\ }\href {\doibase 10.1016/0370-2693(89)91206-9} {\bibfield
+  {journal} {\bibinfo  {journal} {Physics Letters B}\ }\textbf {\bibinfo
+  {volume} {226}},\ \bibinfo {pages} {341} (\bibinfo {year}
+  {1989})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Akhmedov}(2000)}]{Akhmedov2000}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~K.}\ \bibnamefont
+  {Akhmedov}},\ }\href {\doibase 10.1007/s12043-000-0006-4} {\bibfield
+  {journal} {\bibinfo  {journal} {Pramana}\ }\textbf {\bibinfo {volume} {54}},\
+  \bibinfo {pages} {47} (\bibinfo {year} {2000})},\ \Eprint
+  {http://arxiv.org/abs/9907435} {arXiv:9907435 [hep-ph]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Akhmedov}(1999)}]{Akhmedov1999}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Akhmedov}},\ }\href {\doibase 10.1016/S0550-3213(98)00723-8} {\bibfield
+  {journal} {\bibinfo  {journal} {Nuclear Physics B}\ }\textbf {\bibinfo
+  {volume} {538}},\ \bibinfo {pages} {25} (\bibinfo {year} {1999})},\ \Eprint
+  {http://arxiv.org/abs/hep-ph/9805272} {arXiv:hep-ph/9805272 [hep-ph]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Petcov}(1998)}]{Petcov1998b}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~T.}\ \bibnamefont
+  {Petcov}},\ }\href {\doibase 10.1016/S0370-2693(98)00742-4} {\bibfield
+  {journal} {\bibinfo  {journal} {Physics Letters B}\ }\textbf {\bibinfo
+  {volume} {434}},\ \bibinfo {pages} {321} (\bibinfo {year} {1998})},\ \Eprint
+  {http://arxiv.org/abs/9805262} {arXiv:9805262 [hep-ph]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Muller}\ and\ \citenamefont
+  {Janka}(2015)}]{Muller2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {B.}~\bibnamefont
+  {Muller}}\ and\ \bibinfo {author} {\bibfnamefont {H.-T.}\ \bibnamefont
+  {Janka}},\ }\href {\doibase 10.1093/mnras/stv101} {\bibfield  {journal}
+  {\bibinfo  {journal} {Monthly Notices of the Royal Astronomical Society}\
+  }\textbf {\bibinfo {volume} {448}},\ \bibinfo {pages} {2141} (\bibinfo {year}
+  {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Couch}\ and\ \citenamefont {Ott}(2015)}]{Couch2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~M.}\ \bibnamefont
+  {Couch}}\ and\ \bibinfo {author} {\bibfnamefont {C.~D.}\ \bibnamefont
+  {Ott}},\ }\href {\doibase 10.1088/0004-637X/799/1/5} {\bibfield  {journal}
+  {\bibinfo  {journal} {The Astrophysical Journal}\ }\textbf {\bibinfo {volume}
+  {799}},\ \bibinfo {pages} {5} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Loreti}\ and\ \citenamefont
+  {Balantekin}(1994)}]{Loreti1994}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {F.~N.}\ \bibnamefont
+  {Loreti}}\ and\ \bibinfo {author} {\bibfnamefont {A.~B.}\ \bibnamefont
+  {Balantekin}},\ }\href {\doibase 10.1103/PhysRevD.50.4762} {\bibfield
+  {journal} {\bibinfo  {journal} {Physical Review D}\ }\textbf {\bibinfo
+  {volume} {50}},\ \bibinfo {pages} {4762} (\bibinfo {year} {1994})},\ \Eprint
+  {http://arxiv.org/abs/9406003} {arXiv:9406003 [nucl-th]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Friedland}\ and\ \citenamefont
+  {Gruzinov}(2006)}]{Friedland2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Friedland}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Gruzinov}},\ }\href {http://arxiv.org/abs/astro-ph/0607244} {\enquote
+  {\bibinfo {title} {{Neutrino signatures of supernova turbulence}},}\ }
+  (\bibinfo {year} {2006}),\ \Eprint {http://arxiv.org/abs/0607244}
+  {arXiv:0607244 [astro-ph]} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kneller}\ and\ \citenamefont
+  {Volpe}(2010)}]{Kneller2010}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Kneller}}\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Volpe}},\ }\href {\doibase 10.1103/PhysRevD.82.123004} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physical Review D}\ }\textbf {\bibinfo {volume} {82}},\
+  \bibinfo {pages} {123004} (\bibinfo {year} {2010})},\ \Eprint
+  {http://arxiv.org/abs/1006.0913} {arXiv:1006.0913} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kneller}\ \emph {et~al.}(2013)\citenamefont
+  {Kneller}, \citenamefont {McLaughlin},\ and\ \citenamefont
+  {Patton}}]{Kneller2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
+  {Kneller}}, \bibinfo {author} {\bibfnamefont {G.~C.}\ \bibnamefont
+  {McLaughlin}}, \ and\ \bibinfo {author} {\bibfnamefont {K.~M.}\ \bibnamefont
+  {Patton}},\ }\href {\doibase 10.1088/0954-3899/40/5/055002} {\bibfield
+  {journal} {\bibinfo  {journal} {Journal of Physics G: Nuclear and Particle
+  Physics}\ }\textbf {\bibinfo {volume} {40}},\ \bibinfo {pages} {055002}
+  (\bibinfo {year} {2013})},\ \Eprint {http://arxiv.org/abs/arXiv:1202.0776v1}
+  {arXiv:arXiv:1202.0776v1} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Patton}\ \emph {et~al.}(2014)\citenamefont {Patton},
+  \citenamefont {Kneller},\ and\ \citenamefont {McLaughlin}}]{Patton2014}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~M.}\ \bibnamefont
+  {Patton}}, \bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont {Kneller}},
+  \ and\ \bibinfo {author} {\bibfnamefont {G.~C.}\ \bibnamefont {McLaughlin}},\
+  }\href {\doibase 10.1103/PhysRevD.89.073022} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review D}\ }\textbf {\bibinfo {volume} {89}},\ \bibinfo
+  {pages} {073022} (\bibinfo {year} {2014})},\ \Eprint
+  {http://arxiv.org/abs/arXiv:1407.7835v1} {arXiv:arXiv:1407.7835v1}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{R. W. Boyd}}(2008)}]{Boyd2008}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{R. W. Boyd}}},\ }\href
+  {http://www.sciencedirect.com/science/book/9780123694706} {\emph {\bibinfo
+  {title} {{Nonlinear Optics}}}},\ \bibinfo {edition} {3rd}\ ed.\ (\bibinfo
+  {publisher} {Elsevier},\ \bibinfo {year} {2008})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Duan}\ \emph {et~al.}(2006)\citenamefont {Duan},
+  \citenamefont {Fuller},\ and\ \citenamefont {Qian}}]{Duan2006a}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Duan}}, \bibinfo {author} {\bibfnamefont {G.~M.}\ \bibnamefont {Fuller}}, \
+  and\ \bibinfo {author} {\bibfnamefont {Y.-Z.}\ \bibnamefont {Qian}},\ }\href
+  {\doibase 10.1103/PhysRevD.74.123004} {\bibfield  {journal} {\bibinfo
+  {journal} {Physical Review D}\ }\textbf {\bibinfo {volume} {74}},\ \bibinfo
+  {pages} {123004} (\bibinfo {year} {2006})},\ \Eprint
+  {http://arxiv.org/abs/0703776} {arXiv:0703776 [astro-ph]} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Kneller}\ and\ \citenamefont
+  {McLaughlin}(2006)}]{Kneller2006}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~P.}\ \bibnamefont
+  {Kneller}}\ and\ \bibinfo {author} {\bibfnamefont {G.~C.}\ \bibnamefont
+  {McLaughlin}},\ }\href {\doibase 10.1103/PhysRevD.73.056003} {\bibfield
+  {journal} {\bibinfo  {journal} {Physical Review D}\ }\textbf {\bibinfo
+  {volume} {73}},\ \bibinfo {pages} {056003} (\bibinfo {year}
+  {2006})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ploumistakis}\ \emph {et~al.}(2009)\citenamefont
+  {Ploumistakis}, \citenamefont {Moustaizis},\ and\ \citenamefont
+  {Tsohantjis}}]{Ploumistakis20092897}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Ploumistakis}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Moustaizis}}, \ and\ \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Tsohantjis}},\ }\href {\doibase
+  http://dx.doi.org/10.1016/j.physleta.2009.06.015} {\bibfield  {journal}
+  {\bibinfo  {journal} {Physics Letters A}\ }\textbf {\bibinfo {volume}
+  {373}},\ \bibinfo {pages} {2897 } (\bibinfo {year} {2009})}\BibitemShut
+  {NoStop}%
+\end{thebibliography}%
