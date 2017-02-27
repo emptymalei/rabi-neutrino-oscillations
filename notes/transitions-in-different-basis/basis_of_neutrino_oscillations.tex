@@ -1,0 +1,163 @@
+\documentclass[%
+% reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ %aps,
+ prd,
+%linenumbers,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+
+%\usepackage{subcaption}
+%\usepackage[caption=false]{subfig}
+
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  PREAMBLES %%%%%%%%%
+\newcommand{\ud}[1]{{#1^{\dagger}}}
+\newcommand{\bra}[1]{\left\langle #1\right|}
+\newcommand{\ket}[1]{\left| #1\right\rangle}
+\newcommand\Tr{\mathrm{Tr}}
+\newcommand{\braket}[2]{\langle #1 \mid #2 \rangle}
+\newcommand\I{\mathbb{I}}
+\newcommand{\avg}[1]{\left< #1 \right>}
+\newcommand{\sech}[1]{{\operatorname{sech}{#1}}}
+\newcommand{\csch}[1]{{\operatorname{csch}{#1}}}
+\newcommand{\RD}{D}
+\newcommand{\ri}{\mathrm{i}}
+\DeclareMathOperator{\sign}{sign}
+
+%%%%%%  PREAMBLES %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[utf8]{inputenc}
+% \usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Evolution of state in different basis}
+\author{}
+\date{}
+
+
+
+\maketitle
+
+\section{Evolution of State in Different Basis}
+
+In general, resonance in one basis doesn't render resonance in another basis. We denote the wave function in flavor basis, background matter basis, and Rabi basis as 
+
+\begin{equation}
+    \begin{pmatrix}
+    \psi_{\mathrm e} \\
+    \psi_{\mu}
+    \end{pmatrix},
+    \begin{pmatrix}
+    \psi_{\mathrm L} \\
+    \psi_{\mathrm H}
+    \end{pmatrix},
+    \begin{pmatrix}
+    \psi_{\mathrm R1} \\
+    \psi_{\mathrm R2}
+    \end{pmatrix}.
+\end{equation}
+
+
+As we have defined, the representations of wave function in different basis are related
+
+\begin{equation}
+    \begin{pmatrix}
+    \psi_{\mathrm e} \\
+    \psi_{\mu}
+    \end{pmatrix} = 
+    \begin{pmatrix}
+    \cos \theta_{\mathrm m} & \sin \theta_{\mathrm m}\\
+    -\sin \theta_{\mathrm m} & \cos \theta_{\mathrm m}
+    \end{pmatrix}
+    \begin{pmatrix}
+    \psi_{\mathrm L} \\
+    \psi_{\mathrm H}
+    \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    \begin{pmatrix}
+    \psi_{\mathrm L} \\
+    \psi_{\mathrm H}
+    \end{pmatrix}= 
+    \begin{pmatrix}
+    e^{-i \eta(r)} & 0\\
+    0 & e^{i\eta(r)}
+    \end{pmatrix}
+     \begin{pmatrix}
+    \psi_{\mathrm R1} \\
+    \psi_{\mathrm R2}
+    \end{pmatrix}.
+\end{equation}
+
+In principle we can calculate the probability of flavors given wave function in any basis.
+
+\begin{align}
+    P_\mu &= \lvert \psi_\mu \rvert^2 \\
+    & = \lvert -\sin\theta_{\mathrm m} \psi_{\mathrm L} + \cos \theta_{\mathrm m} \psi_{\mathrm H} \rvert^2 \\
+    &= \sin^2\theta_{\mathrm m} \lvert\psi_{\mathrm L} \rvert^2 + \cos^2\theta_{\mathrm m} \lvert \psi_{\mathrm H} \rvert^2 - \sin \theta_{\mathrm m}\cos\theta_{\mathrm m} \mathrm{Re}(\psi_{\mathrm L}^* \psi_{\mathrm H})\\
+    &= \lvert -\sin\theta_{\mathrm m} e^{-i\eta} \psi_{\mathrm R1} + \cos\theta_{\mathrm m} e^{i\eta} \psi_{\mathrm R2}  \rvert^2 \\
+    &= \sin^2\theta_{\mathrm m} \lvert\psi_{\mathrm R1} \rvert^2 + \cos^2\theta_{\mathrm m} \lvert \psi_{\mathrm R2} \rvert^2 - \sin \theta_{\mathrm m}\cos\theta_{\mathrm m} \mathrm \cos(2\eta) \mathrm{Re}(\psi_{\mathrm L}^* \psi_{\mathrm H}).
+\end{align}
+
+Resonance in Rabi basis indicates a resonance in background matter basis. However, due to the quadratic cross terms, resonance in one basis doesn't necessarily result in resonance in flavor basis. Even without transitions between two background matter eigen states, vacuum oscillations contribute to the mixing between flavor states, which is described by the cross terms. Thus the two contributions to flavor oscillations are transitions between background matter basis $\sin^2\theta_{\mathrm m} \lvert\psi_{\mathrm L} \rvert^2 + \cos^2\theta_{\mathrm m} \lvert \psi_{\mathrm H} \rvert^2 $ and vacuum oscillations $- \sin \theta_{\mathrm m}\cos\theta_{\mathrm m} \mathrm{Re}(\psi_{\mathrm L}^* \psi_{\mathrm H})$.
+
+The oscillation wavelength of stimulated transitions is usually much larger than the vacuum oscillation wavelength due to the cross terms. In the single matter perturbation frequency case, the oscillation frequencies have scales of
+
+
+\begin{equation}
+    \Omega_{\mathrm R} = \sqrt{ \lvert \tan 2\theta_{\mathrm m}  n  k_1 J_n\left (A_1\cos 2\theta_{\mathrm m}/k_1\right) \rvert^2 + (n k_1 -\omega_{\mathrm m})^2 } ,
+\end{equation}
+
+where $A_1$ and $k_1$ are the matter perturbation amplitude and wave number.
+
+If the resonance happens at low orders, i.e., small $n$'s,
+
+\begin{equation}
+    \Omega_{\mathrm R} \ll k_1 \sim \omega_{\mathrm m},
+\end{equation}
+
+since $n \tan 2\theta_{\mathrm m} J_n(A_1\cos 2\theta_{\mathrm m}/k_1)\ll 1$. We assumed that the background matter density is far away from MSW resonance density.
+
+With a much larger oscillation wavelength due to stimulated transitions, we can conclude that large transitions between background matter eigen states leads to large transitions between flavor states.
+
+
+
+
+\end{document}
