@@ -24,3 +24,5 @@ data-for-paper
     └── paper-single-frequency-simple-theory-prob-a1-0.0001-k1-1.csv       # Rabi formula: A_1=1e-4, k_1=1
 ```
 
+
+All the data files contain two columns, the first of which is the coordinate for the horizontal axis for whatever that means, the second of which is the coordinate for the vertical axis. It would be easier to use the data if we transpose the data after loading them.
